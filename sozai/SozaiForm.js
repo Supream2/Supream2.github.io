@@ -262,7 +262,8 @@ var BouguName = {"h":"頭防具","b":"胴防具","a":"腕防具","w":"腰防具"
 	BukiName = {0:"大剣",1:"ヘビィボウガン",2:"ハンマー",3:"ランス",4:"片手剣",5:"ライトボウガン",6:"双剣",7:"太刀",8:"狩猟笛",9:"ガンランス","A":"弓","B":"穿龍棍","C":"ｽﾗｯｼｭｱｯｸｽ","D":"ﾏｸﾞﾈｯﾄｽﾊﾟｲｸ","a":"Ｐ大剣","c":"Ｐハンマー"},
 	BukiId = {0:"taiken",1:"heavy",2:"hammer",3:"lance",4:"katate",5:"right",6:"souken",7:"tachi",8:"horn",9:"gunlance","A":"yumi","B":"tonfa","C":"slaxe","D":"magspike","a":"taiken_partnya","c":"hammer_partnya"},
 	Craft = {0:"生産",1:"強化",2:"G生産",3:"G強化",4:"G確定"},
-	MST_Equip = setBuki();
+}    
+MST_Equip = setBuki();
 if (MST_Equip.Sozai[item_id]) {
 	var txt = "<table><tr><th style=\"width:7em;\">武器種類</th><th style=\"width:10em;\">武器名</th><th style=\"width:2.5em;\">製作</th><th style=\"width:2em;\">数</th></tr>";
 	for (var i = 0,su_sum = 0,list = MST_Equip.Sozai[item_id].split(","),m = list.length; i < m; i++) {
