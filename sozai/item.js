@@ -1,6 +1,6 @@
 "use strict";
 var setItem = function (){return {
-"0001":["Book of Combos 1",4,100,1,1,"0001","調合の概念を学ぶための書物。所持することで、調合の成功確率アップ。"]
+"0001":["Book of Combos 1",4,100,1,1,"0001","A book to learn the concept of combining. Possession of the book increases the probability of success in combining."]
 ,"0002":["Book of Combos 2",4,200,1,1,"0002","調合の初歩を学ぶための書物。調合書①と合わせ持つことで調合の成功確率アップ。"]
 ,"0003":["Book of Combos 3",4,500,1,1,"0003","調合の基礎を学ぶための書物。調合書①②と合わせ持つことで調合の成功確率アップ。"]
 ,"0004":["Book of Combos 4",5,1000,1,1,"0004","調合の応用を学ぶための書物。調合書①②③と合わせ持つことで調合の成功確率アップ。"]
