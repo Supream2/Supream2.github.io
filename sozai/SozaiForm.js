@@ -7,10 +7,9 @@ var item_id = location.search.substring(1,5).toUpperCase(),
 	MST_Saisyu = setSaisyu(),
 	MST_Mos = setMonster(),
 	MST_Other = setOther(),
-	Quest_Season = ["",":Warm",":Breeding",":Cold"],
-	Quest_Time = ["","/Day","/Night"],
-	Saisyu_Name = ["General","Jungle","Desert","Swamp","Snowy Mtn","Volcano","Forest & Hills","Tower", "Great Forest","Interception Base","Fortress","Town","Battleground",
-	"Arena","Gorge","Solitude Island","Highlands","Tidal Island","Polar Sea","Flower Field","White Lake","Painted Falls"],
+	Quest_Season = ["","：温暖期","：繁殖期","：寒冷期"],
+	Quest_Time = ["","/昼","/夜"],
+	Saisyu_Name = ["汎用","密林","砂漠","沼地","雪山","火山","森丘","塔", "樹海","迎撃拠点","砦","城","決戦場","闘技演習","峡谷","絶島","高地","潮島","極海","花畑","白湖","彩の滝"],
 	Saisyu_Id	= ["",	"mitu","saba","numa","yuki","kaza","mori","tou","zyu", "def",		"toride","siro","kessen","tougi",	"kyou","sima","kou", "shio","kyoku","hana","bya","sai"];
 setItem = setQuest = setSaisyu = setMonster = setOther = null;
 var addEvent = function (elm, type, func) {
@@ -63,14 +62,14 @@ var creSaiLink = function (data,obj,rank,season) {
 	for (var i = 0,list = data.split(","),m = list.length,txt = ""; i < m; i++) {
 		var w = list[i].split("|"),
 			map_id = Saisyu_Id[w[0]] + "-";
-		txt += Saisyu_Name[w[0]] + " Area:" +
-				(w[3].indexOf("h") !== -1	? w[3].replace("h"," <span id=\"" + map_id + w[1] + "." + map_id + rank + "." + w[2] + "." + season + i + "\"><span class=h>Day</span> ")
-											: w[3].replace("y"," <span id=\"" + map_id + w[1] + "." + map_id + rank + "." + w[2] + "." + season + i + "\"><span class=y>Night</span> ")
+		txt += Saisyu_Name[w[0]] + " エリア：" +
+				(w[3].indexOf("h") !== -1	? w[3].replace("h"," <span id=\"" + map_id + w[1] + "." + map_id + rank + "." + w[2] + "." + season + i + "\"><span class=h>昼</span> ")
+											: w[3].replace("y"," <span id=\"" + map_id + w[1] + "." + map_id + rank + "." + w[2] + "." + season + i + "\"><span class=y>夜</span> ")
 				) + "%</span>" +
-				(w.length > 4	? " <span id=\"" + map_id + w[4] + "." + map_id + rank + "." + w[5] + "." + season + i + "\"><span class=y>Night</span> " + w[6] + "%</span><br>"
+				(w.length > 4	? " <span id=\"" + map_id + w[4] + "." + map_id + rank + "." + w[5] + "." + season + i + "\"><span class=y>夜</span> " + w[6] + "%</span><br>"
 								: "<br>");
 	}
-	obj.innerHTML = txt;/*.replace(/s /g," Mining ").replace(/m /g," Insects ").replace(/t /g," Fishing ")*/;
+	obj.innerHTML = txt.replace(/s /g,"採掘 ").replace(/m /g,"虫網 ").replace(/t /g,"釣り ");
 	if (m > 4) {
 		obj.style.height = "5em";
 		obj.style.overflow = "auto";
@@ -122,7 +121,7 @@ var creQueLink = function (data,obj) {
 	if (!data) return;
 	for (var i = 0,list = data.split(","),m = list.length,txt = ""; i < m; i++) {
 		var w = MST_Quest.Name[list[i].substring(0,4)].split(","),hosyu = list[i].substring(6).split("%");
-		txt += "<a href=\"../quest/" + w[0] + ".htm#l" + list[i].substring(0,4) + "\"" + (w[1].charAt(4) ? " class="+w[1].charAt(4) : "") + ">" + MST_Quest.Btype[parseInt(w[1].substring(0,2),16)] + Quest_Season[w[1].charAt(2)] + Quest_Time[w[1].charAt(3)] + ":" + w[3] + MST_Quest.Qtype[parseInt(w[2],16)] + w[4] + "</a> " + MST_Quest.Htype[parseInt(list[i].substring(4,6),16)] + " - " + (hosyu.length === 1 ? hosyu[0] + "x" : hosyu[0] + "x (" + hosyu[1] + "%)") + "<br>";
+		txt += "<a href=\"../quest/" + w[0] + ".htm#l" + list[i].substring(0,4) + "\"" + (w[1].charAt(4) ? " class="+w[1].charAt(4) : "") + ">" + MST_Quest.Btype[parseInt(w[1].substring(0,2),16)] + Quest_Season[w[1].charAt(2)] + Quest_Time[w[1].charAt(3)] + "：" + w[3] + MST_Quest.Qtype[parseInt(w[2],16)] + w[4] + "</a> " + MST_Quest.Htype[parseInt(list[i].substring(4,6),16)] + " で " + (hosyu.length === 1 ? hosyu[0] + "個" : hosyu[0] + "個 (" + hosyu[1] + "%)") + "<br>";
 	}
 	obj.innerHTML = txt;
 }
@@ -137,19 +136,19 @@ if (MST_Other.Shop[item_id]) {
 	document.getElementById("shop").innerHTML = txt;
 }
 //------------------------------------調合----------
-var CyougoType = ["","","マカ漬けの壷・","ニャカ漬けの壷:","マイガーデン:","","マイトレ冒険屋:",""],
-	CyougoName = ["調合:","マイトレ調合:LV","CP調合:","貢献P調合:","特別調合:","秘伝珠交換:","魂綬勲交換:","秘伝カフ素材交換:"],
-	JijiMei = ["密林/樹海爺:","森丘爺:","沼地爺:","砂漠爺:","雪山爺:","峡谷爺:","高地爺:","潮島爺:","極海爺:","竹林奥部爺:","爺:"];
+var CyougoType = ["","","マカ漬けの壷・","ニャカ漬けの壷：","マイガーデン：","","マイトレ冒険屋：",""],
+	CyougoName = ["調合：","マイトレ調合：LV","CP調合：","貢献P調合：","特別調合：","秘伝珠交換：","魂綬勲交換：","秘伝カフ素材交換："],
+	JijiMei = ["密林/樹海爺：","森丘爺：","沼地爺：","砂漠爺：","雪山爺：","峡谷爺：","高地爺：","潮島爺：","極海爺：","竹林奥部爺：","爺："];
 if (MST_Other.Cyougo[item_id]) {
 	var JijiMeiKoukan = [" と交換「トッテオキ」で高確率"," と交換「オタカラ」で高確率"," と交換 どちらでも高確率"," と交換 どちらでも低確率"," と交換"],
-		GalleryName = ["ギャラリー大会:","ギャラリー大会Ｇ:"],
+		GalleryName = ["ギャラリー大会：","ギャラリー大会Ｇ："],
 		GalleryPont =["1999ポイント以下の賞品 ","2000ポイント以上の賞品 ","10000ポイント以上の賞品 ","20000ポイント以上の賞品 ","40000ポイント以上の賞品 ","60000ポイント以上の賞品 ","60000ポイント以上の賞品 ","80000ポイント以上の賞品 ","90000ポイント以上の賞品 ","100000ポイント以上の賞品 "],
 		GardenName = ["水撒き","掃除","肉焼き","採掘","虫の世話","掘り出し物","落し物ネコ"],
 		BoukenName = ["Lv1 寒い湖畔","Lv1 足の裏が暑い砂漠の平地","Lv1 霧の掛かった湿地","Lv1 緑が生い茂った平地","Lv2 きれいな湖岸","Lv2 遺跡が見える場所","Lv2 危険な毒の沼地","Lv2 巨木のある深緑の平地","Lv2 溶岩流れる洞窟","Lv3 遺跡となった場所","Lv3 襲撃されやすい場所","Lv3 吹雪いた山頂","Lv3 伝説が生まれそうな場所","Lv3 熱すぎる火口付近","(稀)ジメっとして生臭い場所","(稀)ランゴスタの巣","(稀)何かの巣","(稀)大闘技場付近","(稀)秘密の抜け穴","LV3 落雷、落石注意の平地","Lv3 風が強い赤土の谷","Lv3 潮の香りがする水辺","(SR稀) 長く険しい道","GR 身を焦がす灼地","GR 緑豊かな水辺","GR 輝く壁面の洞穴","GR 地面が凍る場所","GR(稀) 甘い香りのする草原","GR600 花弁が舞い散る平地","GR600 驟雨の降る丘","GR600 氷雪吹き巻く頂","GR600 光が射す場所","GR600(稀) 危険植物の洞窟","GR600(稀) 草木の生えない荒地"],
 		BoukenRank = [" で最大 ","★1 で最大 ","★2 で最大 ","★3(HR31) で最大 ","HR1～10 で最大 ","HR11～20 で最大 ","HR21～30 で最大 ","HR31～ で最大 ","HR100～ で最大 ","HR1～ で ","HR1～16 で ","HR1～30 で ","HR1～99 で ","HR17～ で ","HR17～30 で ","HR17～99 で ","HR31～ で ","HR31～99 で ","HR51～ で ","HR100～ で ","GR600～ で "],
 		BoukenDan = ["(上段) ","(下段) "],
 		MakaTubo = [" を5分未満漬ける(白色)"," を5分以上漬ける(紫色)"," を10分以上漬ける(青色)"," を15分以上漬ける(緑色)"," を20分以上漬ける(黄色)"," を30分以上漬ける(赤色)"],
-		NyakaTubo = ["を入れて 0:白 まで漬ければ ","を入れて 1:紫 まで漬ければ ","を入れて 2:青 まで漬ければ ","を入れて 3:緑 まで漬ければ ","を入れて 4:黄 まで漬ければ ","を入れて 5～:赤 まで漬ければ ","を入れて 6～:虹 まで漬ければ "];
+		NyakaTubo = ["を入れて 0:白 まで漬ければ ","を入れて 1：紫 まで漬ければ ","を入れて 2：青 まで漬ければ ","を入れて 3：緑 まで漬ければ ","を入れて 4：黄 まで漬ければ ","を入れて 5～：赤 まで漬ければ ","を入れて 6～：虹 まで漬ければ "];
 	for (var i = 0,list = MST_Other.Cyougo[item_id].split(","),m = list.length,txt = ""; i < m; i++) {
 		txt += CyougoType[list[i].charAt(0)];
 		switch (list[i].charAt(0)) {
@@ -179,20 +178,19 @@ if (MST_Other.Cyougo[item_id]) {
 			break;
 		}
 	}
-	document.getElementById("cyougou").innerHTML = txt.replace(/\|[0-9A-F]{4}/g, function(s1){return " <a href=\"../sozai/sozai.htm?" + s1.substring(1) + "\">" + MST_Item[s1.substring(1)][0] + "</a> "});
-	//.replace(/K\d+\%/g, function(s1){return "x (" + s1.substring(1) + ")"})/*.replace(/K/g,"x ")*/;
+	document.getElementById("cyougou").innerHTML = txt.replace(/\|[0-9A-F]{4}/g, function(s1){return " <a href=\"../sozai/sozai.htm?" + s1.substring(1) + "\">" + MST_Item[s1.substring(1)][0] + "</a> "}).replace(/K\d+\%/g, function(s1){return "個 (" + s1.substring(1) + ")"}).replace(/K/g,"個 ");
 }
 if (MST_Quest.Lot[item_id]) { //くじ
 	for (var i = 0,list = MST_Quest.Lot[item_id].split(","),m = list.length,txt = ""; i < m; i++) {
 		var w = MST_Quest.Name[list[i].substring(0,4)].split(","),hosyu = list[i].substring(6).split("%");
-		txt += "<a href=\"../quest/" + w[0] + ".htm#l" + list[i].substring(0,4) + "\"" + (w[1].charAt(4) ? " class="+w[1].charAt(4) : "") + ">" + MST_Quest.Btype[parseInt(w[1].substring(0,2),16)] + Quest_Season[w[1].charAt(2)] + Quest_Time[w[1].charAt(3)] + ":" + w[3] + MST_Quest.Qtype[parseInt(w[2],16)] + w[4] + "</a> " + MST_Quest.Htype[parseInt(list[i].substring(4,6),16)] + " - " + (hosyu.length === 1 ? hosyu[0] + "x" : hosyu[0] + "x (" + hosyu[1] + "%)") + "<br>";
+		txt += "<a href=\"../quest/" + w[0] + ".htm#l" + list[i].substring(0,4) + "\"" + (w[1].charAt(4) ? " class="+w[1].charAt(4) : "") + ">" + MST_Quest.Btype[parseInt(w[1].substring(0,2),16)] + Quest_Season[w[1].charAt(2)] + Quest_Time[w[1].charAt(3)] + "：" + w[3] + MST_Quest.Qtype[parseInt(w[2],16)] + w[4] + "</a> " + MST_Quest.Htype[parseInt(list[i].substring(4,6),16)] + " で " + (hosyu.length === 1 ? hosyu[0] + "個" : hosyu[0] + "個 (" + hosyu[1] + "%)") + "<br>";
 	}
 	document.getElementById("cyougou").innerHTML = (MST_Other.Cyougo[item_id] ? document.getElementById("cyougou").innerHTML : "") + txt.replace(/HR\D/g,"SR");
 }
 //------------------------------------その他の利用----------
 if (MST_Other.Riyou[item_id]) {
 	for (var i = 0,list = MST_Other.Riyou[item_id].split(","),m = list.length,txt = ""; i < m; i++) {
-		txt += CyougoType[list[i].charAt(0)].replace("・",":");
+		txt += CyougoType[list[i].charAt(0)].replace("・","：");
 		switch (list[i].charAt(0)) {
 		case "0": //調合
 			txt += CyougoName[list[i].charAt(1)] + list[i].substring(2) + "作成<br>";
@@ -208,12 +206,12 @@ if (MST_Other.Riyou[item_id]) {
 			break;
 		}
 	}
-	document.getElementById("riyou").innerHTML = txt.replace(/\|[0-9A-F]{4}/g, function(s1){return " <a href=\"../sozai/sozai.htm?" + s1.substring(1) + "\">" + MST_Item[s1.substring(1)][0] + "</a> "}).replace(/K\d+\%/g, function(s1){return "x (" + s1.substring(1) + ")"})/*.replace(/K/g,"x ")*//*.replace(/M/g,"調合して ")*/;
+	document.getElementById("riyou").innerHTML = txt.replace(/\|[0-9A-F]{4}/g, function(s1){return " <a href=\"../sozai/sozai.htm?" + s1.substring(1) + "\">" + MST_Item[s1.substring(1)][0] + "</a> "}).replace(/K\d+\%/g, function(s1){return "個 (" + s1.substring(1) + ")"}).replace(/K/g,"個 ").replace(/M/g,"調合して ");
 }
 if (MST_Quest.Riyou[item_id]) { //クエスト
 	for (var i = 0,list = MST_Quest.Riyou[item_id].split(","),m = list.length,txt = ""; i < m; i++) {
 		var w = MST_Quest.Name[list[i].substring(0,4)].split(",");
-		txt += "<a href=\"../quest/" + w[0] + ".htm#l" + list[i].substring(0,4) + "\"" + (w[1].charAt(4) ? " class="+w[1].charAt(4) : "") + ">" + MST_Quest.Btype[parseInt(w[1].substring(0,2),16)] + Quest_Season[w[1].charAt(2)] + Quest_Time[w[1].charAt(3)] + ":" + w[3] + MST_Quest.Qtype[parseInt(w[2],16)] + w[4] + "</a> -" + list[i].substring(5) + "x " +(list[i].charAt(4) === "N" ? "納品<br>" : "受注で消費<br>");
+		txt += "<a href=\"../quest/" + w[0] + ".htm#l" + list[i].substring(0,4) + "\"" + (w[1].charAt(4) ? " class="+w[1].charAt(4) : "") + ">" + MST_Quest.Btype[parseInt(w[1].substring(0,2),16)] + Quest_Season[w[1].charAt(2)] + Quest_Time[w[1].charAt(3)] + "：" + w[3] + MST_Quest.Qtype[parseInt(w[2],16)] + w[4] + "</a> で" + list[i].substring(5) + "個 " +(list[i].charAt(4) === "N" ? "納品<br>" : "受注で消費<br>");
 	}
 	document.getElementById("riyou").innerHTML = (MST_Other.Riyou[item_id] ? document.getElementById("riyou").innerHTML : "") + txt.replace(/HR\D/g,"SR");
 }
@@ -261,8 +259,8 @@ var BouguName = {"h":"頭防具","b":"胴防具","a":"腕防具","w":"腰防具"
 	BouguId = {"h":"head","b":"body","a":"arm","w":"wst","l":"leg","d":"deco","c":"decocf","p":"decosp","n":"deconk","t":"decotr","f":"decotf","k":"decotk","z":"decocz","s":"sigil","H":"head_pertnya","B":"body_pertnya"},
 	BukiName = {0:"大剣",1:"ヘビィボウガン",2:"ハンマー",3:"ランス",4:"片手剣",5:"ライトボウガン",6:"双剣",7:"太刀",8:"狩猟笛",9:"ガンランス","A":"弓","B":"穿龍棍","C":"ｽﾗｯｼｭｱｯｸｽ","D":"ﾏｸﾞﾈｯﾄｽﾊﾟｲｸ","a":"Ｐ大剣","c":"Ｐハンマー"},
 	BukiId = {0:"taiken",1:"heavy",2:"hammer",3:"lance",4:"katate",5:"right",6:"souken",7:"tachi",8:"horn",9:"gunlance","A":"yumi","B":"tonfa","C":"slaxe","D":"magspike","a":"taiken_partnya","c":"hammer_partnya"},
-	Craft = {0:"生産",1:"強化",2:"G生産",3:"G強化",4:"G確定"},  
-MST_Equip = setBuki();
+	Craft = {0:"生産",1:"強化",2:"G生産",3:"G強化",4:"G確定"},
+	MST_Equip = setBuki();
 if (MST_Equip.Sozai[item_id]) {
 	var txt = "<table><tr><th style=\"width:7em;\">武器種類</th><th style=\"width:10em;\">武器名</th><th style=\"width:2.5em;\">製作</th><th style=\"width:2em;\">数</th></tr>";
 	for (var i = 0,su_sum = 0,list = MST_Equip.Sozai[item_id].split(","),m = list.length; i < m; i++) {
@@ -310,7 +308,7 @@ if (MST_Equip.Sozai[item_id]) {
 			if (eq_name.lastIndexOf("SP") !== -1) {
 				txt += "<tr><td>" + BouguName[eq_rui] + "</td><td><a href='../bougu/" + BouguId[eq_rui] +  "sp.htm#l" + eq_id + "'>" + eq_name + "</a></td><td style=\"text-align:center;\">" + lv.replace("0","生") + "</td><td style=\"text-align:right;\">" + su + "</td></tr>";
 			} else {
-				txt += "<tr><td>" + BouguName[eq_rui] + "</td><td><a href='../bougu/tree.htm#" + BouguId[eq_rui].charAt(0) + eq_id + "'>" + eq_name + "</a></td><td style=\"text-align:center;\">" + lv.replace("0","生") + "</td><td style=\"text-align:right;\">" + su + "</td></tr>";
+				txt += "<tr><td>" + BouguName[eq_rui] + "</td><td><a href='../bougu/_tree.htm#" + BouguId[eq_rui].charAt(0) + eq_id + "'>" + eq_name + "</a></td><td style=\"text-align:center;\">" + lv.replace("0","生") + "</td><td style=\"text-align:right;\">" + su + "</td></tr>";
 			}
 		su_sum += +su;
 		}
