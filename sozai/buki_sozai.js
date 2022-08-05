@@ -8582,7 +8582,7 @@ return {Name : {
 ,"44214":"Attending Sword [Bind]"
 ,"44257":"Attending Sword [Last]"
 ,"44283":"Magma Sword [Opal]"
-,"44284":"Magma Sword "Arget"
+,"44284":"Magma Sword [Arget]
 ,"44285":"Magma Sword [Cornell]"
 ,"44286":"Magma Sword [Preniht]"
 ,"4433E":"Divine Galatine"
