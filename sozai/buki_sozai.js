@@ -9700,7 +9700,7 @@ return {Name : {
 ,"602C4":"Rex Slicers"
 ,"602C5":"Tigrex Claws"
 ,"602C6":"Akantor Blades"
-,"602C7":"Hecate's Scythe"
+,"602C7":"Leshe's Nails "
 ,"602C8":"Hecate's Nails"
 ,"602C9":"Twin Thunder"
 ,"602CA":"Twin Dress Sword"
