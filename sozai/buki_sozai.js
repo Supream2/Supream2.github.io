@@ -1,6 +1,6 @@
 var setBuki = function (){
 return {Name : {
-00001:"Iron Sword"
+"00001":"Iron Sword"
 ,"00002":"Iron Sword+"
 ,"00003":"Buster Sword"
 ,"00004":"Cat's Soul"
