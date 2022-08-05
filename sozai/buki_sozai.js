@@ -12151,7 +12151,7 @@ return {Name : {
 ,"715DA":"Facoves Ray"
 ,"716B9":"Floating Peak LS [White]"
 ,"716BA":"Floating Peak LS[Yellow]"
-,"716BB":"Floating Peak LS "Water"
+,"716BB":"Floating Peak LS [Water]"
 ,"716BC":"Blue Longsword"
 ,"716BD":"Blue Decapitator"
 ,"716BE":"Blue Judgement"
