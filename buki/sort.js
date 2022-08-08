@@ -256,8 +256,6 @@ var ckSlot_F = function (e) {
 };
 
 /*@if (@_jscript_version >=  9)@*/
-tH.cells[col].lastChild.style.position = "relative";
-tH.cells[col].lastChild.style.right = "1.8em";
 /*@end@*/
 
 //解除
