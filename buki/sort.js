@@ -246,12 +246,12 @@ var ckTeni_F = function (e) {
 }
 //スロ制限
 s.title = "スロットで絞込み";
-selectSet(s,["ｽﾛ","3","2","1"]);
+selectSet(s,["slot","3","2","1"]);
 tH.cells[col].removeChild(tH.cells[col].lastChild);
 tH.cells[col].appendChild(s.cloneNode(true));
-tH.cells[col].lastChild.style.marginTop = "0.2em";
+tH.cells[col].lastChild.style.marginTop = "0.0em";
 var ckSlot_F = function (e) {
-	return e === "ｽﾛ" ? function(){return true} : function (cell) {return cell.firstChild.nodeValue >= e;};
+	return e === "slot" ? function(){return true} : function (cell) {return cell.firstChild.nodeValue >= e;};
 };
 
 /*@if (@_jscript_version >=  9)@*/
