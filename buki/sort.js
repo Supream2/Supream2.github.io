@@ -167,8 +167,8 @@ if (treeCK){ //剣士弓
 			return e === "矢" ? function(){return true} : function (cell) {return cell./*@if (@_jscript_version < 9) innerText @else@*/ textContent /*@end@*/.lastIndexOf(e) !== -1;};
 		};
 	} else {
-		s.title = "リーチで絞込み";
-		selectSet(s,["ﾘｰﾁ","極長","長","中","短","極短","特殊"]);
+		s.title = "Sort by Length";
+		selectSet(s,["Length","Very Long","Long","Medium","Short","Very Short","Special"]);
 		var ckKobetu_F = function (e) {
 			e = "："+e;
 			return	e === "：ﾘｰﾁ" ? function(){return true} :
@@ -182,8 +182,8 @@ if (treeCK){ //剣士弓
 	}
 	tH.cells[3].appendChild(s.cloneNode(true));
 	//辿異制限
-	s.title = "辿異で絞込み";
-	selectSet(s,["辿異","スキル枠拡張","閃転強化","巧撃強化","属撃強化","纏雷強化","氷界創生強化","耳栓強化","風圧強化","耐震強化","耐毒強化","耐麻痺強化","耐睡眠強化","吸血強化","劇物強化","支援強化","弾丸節約術強化","ガード性能強化","適応撃強化","鼓舞強化","反射強化","巧流強化","血気活性強化","雌伏強化","喝強化"]);
+	s.title = "Sort by Zenith Skill";
+	selectSet(s,["Zenith Skill","Skill Slots Up+1","C. Conversion Up+1","S. Assault Up+1","Dissolver Up","Thunder Clad Up+1","Ice Age Up","Earplugs Up+1","Wind Res Up+1","Quake Res Up+1","Posion Res Up+1","Para Res Up+1","Sleep Res Up+1","Vampirism Up+1","Drug Knowledge Up","Assistance Up","Bullet Saver Up+1","Guard Up+1","Adaptation Up+1","Encourage Up+1","Reflect Up+1","Stylish Up","Vigorous Up","Obscurity Up","Soul Up"]);
 	tH.cells[col-1].appendChild(s.cloneNode(true));
 } else { //ガン
 	dt = document.createElement("div");
