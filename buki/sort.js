@@ -245,7 +245,7 @@ var ckTeni_F = function (e) {
 						: function (cell) {return cell.lastChild./*@if (@_jscript_version < 9) innerText @else@*/ textContent /*@end@*/.indexOf(e) !== -1;};
 }
 //スロ制限
-s.title = "スロットで絞込み";
+s.title = "Filter by Slot";
 selectSet(s,["slot","3","2","1"]);
 tH.cells[col].removeChild(tH.cells[col].lastChild);
 tH.cells[col].appendChild(s.cloneNode(true));
