@@ -249,7 +249,7 @@ s.title = "スロットで絞込み";
 selectSet(s,["slot","3","2","1"]);
 tH.cells[col].removeChild(tH.cells[col].lastChild);
 tH.cells[col].appendChild(s.cloneNode(true));
-tH.cells[col].lastChild.style.marginTop = "0.0em";
+tH.cells[col].lastChild.style.marginTop = "1.0em";
 var ckSlot_F = function (e) {
 	return e === "slot" ? function(){return true} : function (cell) {return cell.firstChild.nodeValue >= e;};
 };
