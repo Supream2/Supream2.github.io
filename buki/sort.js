@@ -214,7 +214,7 @@ if (treeCK){ //剣士弓
 	dt.appendChild(s.cloneNode(true));
 	//辿異制限
 	s.title = "辿異で絞込み";
-	selectSet(s,["辿異","スキル枠拡張","閃転強化","巧撃強化","属撃強化","纏雷強化","氷界創生強化","耳栓強化","風圧強化","耐震強化","耐毒強化","耐麻痺強化","耐睡眠強化","吸血強化","劇物強化","支援強化"]);
+	selectSet(s,["辿異","Skill Slots Up","閃転強化","巧撃強化","属撃強化","纏雷強化","氷界創生強化","耳栓強化","風圧強化","耐震強化","耐毒強化","耐麻痺強化","耐睡眠強化","吸血強化","劇物強化","支援強化"]);
 	dt.appendChild(s.cloneNode(true));
 	tH.cells[4].appendChild(dt);
 	var ckTama_F = function (e1,e2) {
@@ -241,7 +241,7 @@ if (treeCK){ //剣士弓
 //辿異制限
 var ckTeni_F = function (e) {
 	e = "："+e;
-	return	e === ":Zenith Skill" ? function(){return true}
+	return	e === "：Zenith Skill" ? function(){return true}
 						: function (cell) {return cell.lastChild./*@if (@_jscript_version < 9) innerText @else@*/ textContent /*@end@*/.indexOf(e) !== -1;};
 }
 //スロ制限
