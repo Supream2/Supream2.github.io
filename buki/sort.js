@@ -241,7 +241,7 @@ if (treeCK){ //剣士弓
 //辿異制限
 var ckTeni_F = function (e) {
 	e = "："+e;
-	return	e === "：Zenith Skill" ? function(){return true}
+	return	e === "：辿異" ? function(){return true}
 						: function (cell) {return cell.lastChild./*@if (@_jscript_version < 9) innerText @else@*/ textContent /*@end@*/.indexOf(e) !== -1;};
 }
 //スロ制限
