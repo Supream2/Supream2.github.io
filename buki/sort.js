@@ -172,10 +172,10 @@ if (treeCK){ //剣士弓
 		var ckKobetu_F = function (e) {
 			e = "："+e;
 			return	e === "：Length" ? function(){return true} :
-					e === "：Medium" ? function (cell) {return cell.lastChild./*@if (@_jscript_version < 9) innerText @else@*/ textContent /*@end@*/.indexOf("Zenith Skill: ") === -1 ?
+					e === "：Medium" ? function (cell) {return cell.lastChild./*@if (@_jscript_version < 9) innerText @else@*/ textContent /*@end@*/.indexOf("Zenith Skill：") === -1 ?
 															cell.lastChild./*@if (@_jscript_version < 9) innerText @else@*/ textContent /*@end@*/ === "" :
 															cell.lastChild.previousSibling./*@if (@_jscript_version < 9) innerText @else@*/ textContent /*@end@*/ === "" ;}
-								: function (cell) {return cell.lastChild./*@if (@_jscript_version < 9) innerText @else@*/ textContent /*@end@*/.indexOf("Zenith Skill: ") === -1 ?
+								: function (cell) {return cell.lastChild./*@if (@_jscript_version < 9) innerText @else@*/ textContent /*@end@*/.indexOf("Zenith Skill：") === -1 ?
 															cell.lastChild./*@if (@_jscript_version < 9) innerText @else@*/ textContent /*@end@*/.indexOf(e) !== -1 :
 															cell.lastChild.previousSibling./*@if (@_jscript_version < 9) innerText @else@*/ textContent /*@end@*/.indexOf(e) !== -1;};
 		};
@@ -241,7 +241,7 @@ if (treeCK){ //剣士弓
 //辿異制限
 var ckTeni_F = function (e) {
 	e = "："+e;
-	return	e === "：辿異" ? function(){return true}
+	return	e === "：Zenith Skill" ? function(){return true}
 						: function (cell) {return cell.lastChild./*@if (@_jscript_version < 9) innerText @else@*/ textContent /*@end@*/.indexOf(e) !== -1;};
 }
 //スロ制限
