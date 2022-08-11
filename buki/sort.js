@@ -70,26 +70,26 @@ if (treeCK){
 }
 if (ckG) {
 	//LV制限
-	s.title = "LVで絞込み";
+	s.title = "Filter by Level";
 	//selectSet(s,["Lv","全",50,49,48,47,46,45,44,43,42,41,40,39,38,37,36,35,34,33,32,31,30,29,28,27,26,25,24,23,22,21,20,19,18,17,16,15,14,13,12,11,10,9,8,7,6,5,4,3,2,1]);
-	selectSet(s,["Lv","全","簡","50"]);
+	selectSet(s,["Lv","All","Simple","50"]);
 	s.selectedIndex = 0;
 	dt.appendChild(s.cloneNode(true));
 	var ckRare_F = function (e) {
-		//return e === "Lv" || e === "全" ? function(){return true} : function (cell) {return cell.lastChild.firstChild.nodeValue === "Lv" + e;};
-		return  e === "Lv" || e === "全" ? function(){return true} : 
-				e === "簡" ? function (cell) {return cell.lastChild.firstChild.nodeValue === "Lv1" || cell.lastChild.firstChild.nodeValue === "Lv50";} :
+		//return e === "Lv" || e === "All" ? function(){return true} : function (cell) {return cell.lastChild.firstChild.nodeValue === "Lv" + e;};
+		return  e === "Lv" || e === "All" ? function(){return true} : 
+				e === "Simple" ? function (cell) {return cell.lastChild.firstChild.nodeValue === "Lv1" || cell.lastChild.firstChild.nodeValue === "Lv50";} :
 							function (cell) {return cell.lastChild.firstChild.nodeValue === "Lv" + e;};
 	};
 } else if (ckS) {
 	//LV制限
-	s.title = "LVで絞込み";
-	selectSet(s,["Lv","全","簡","100"]);
+	s.title = "Filter by Level";
+	selectSet(s,["Lv","All","Simple","100"]);
 	s.selectedIndex = 0;
 	dt.appendChild(s.cloneNode(true));
 	var ckRare_F = function (e) {
-		return  e === "Lv" || e === "全" ? function(){return true} : 
-				e === "簡" ? function (cell) {return cell.lastChild.firstChild.nodeValue === "Lv1" || cell.lastChild.firstChild.nodeValue === "Lv100";} :
+		return  e === "Lv" || e === "All" ? function(){return true} : 
+				e === "Simple" ? function (cell) {return cell.lastChild.firstChild.nodeValue === "Lv1" || cell.lastChild.firstChild.nodeValue === "Lv100";} :
 							function (cell) {return cell.lastChild.firstChild.nodeValue === "Lv" + e;};
 	};
 } else {
