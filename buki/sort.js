@@ -58,14 +58,14 @@ var tH = document.getElementsByTagName("thead")[0].rows[0],
 	s = document.createElement("select");
 i.type = "button";
 //名称ソート
-i.value = "名前",i.title = "名前順にソート";
+i.value = "名前",i.title = "Sort by Name";
 dt.appendChild(i.cloneNode(false));
 //攻撃ソート
-i.value = "攻撃",i.title = "攻撃順にソート";
+i.value = "攻撃",i.title = "Sort by Attack Value";
 dt.appendChild(i.cloneNode(false));
 //属性ソート
 if (treeCK){
-	i.value = "属性",i.title = "属性順にソート"; //,i.disabled = true
+	i.value = "属性",i.title = "Sort by Element Value"; //,i.disabled = true
 	dt.appendChild(i.cloneNode(false));
 }
 if (ckG) {
@@ -94,12 +94,12 @@ if (ckG) {
 	};
 } else {
 	//レア制限
-	s.title = "レアで絞込み";
-	selectSet(s,["ﾚｱ","12","11","10","9","8","7","6","5","4","3","2","1"]);
+	s.title = "Sort by Rarity";
+	selectSet(s,["Rarity","12","11","10","9","8","7","6","5","4","3","2","1"]);
 	s.selectedIndex = 0;
 	dt.appendChild(s.cloneNode(true));
 	var ckRare_F = function (e) {
-		return e === "ﾚｱ" ? function(){return true} : function (cell) {return +cell.firstChild.nodeValue <= e && !cell.firstChild.nextSibling;};
+		return e === "Rarity" ? function(){return true} : function (cell) {return +cell.firstChild.nodeValue <= e && !cell.firstChild.nextSibling;};
 	};
 }
 tH.cells[0].appendChild(dt);
