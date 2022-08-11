@@ -126,14 +126,14 @@ if (treeCK){ //剣士弓
 		};
 	}
 	//属性
-	s.style.display = "block",s.title = "属性で絞込み";
-	selectSet(s,["属性","無","火","水","雷","龍","氷","炎","光","雷極","天翔","熾凍","黒焔","奏","闇","紅魔","風","響","灼零","皇鳴"]);
+	s.style.display = "block",s.title = "Sort by Element";
+	selectSet(s,["Element","None","Fire","Water","Thunder","Dragon","Ice","Blaze","Light","Thunder Pole","Tenshou","Okiko","Black Flame","Music","Darkness","Crimson Demon","Wind","Sound","Burning Zero","Emperor's Roar"]);
 	tH.cells[2].appendChild(s.cloneNode(true));
 	tH.cells[2].childNodes.item(1).style.marginLeft = "0.5em";
 	var ckZoku_F = function (e) {
-		return	e === "属性" ? function(){return true} :
-				e === "無"	? function (cell) {return !(/[火水雷龍氷炎光天熾焔奏闇紅風響]/).test(cell./*@if (@_jscript_version < 9) innerText @else@*/ textContent /*@end@*/);} :
-				e === "雷"	? function (cell) {return cell./*@if (@_jscript_version < 9) innerText @else@*/ textContent /*@end@*/.lastIndexOf("雷極") === -1 && cell./*@if (@_jscript_version < 9) innerText @else@*/ textContent /*@end@*/.lastIndexOf(e) !== -1;}
+		return	e === "Element" ? function(){return true} :
+				e === "None"	? function (cell) {return !(/[火水雷龍氷炎光天熾焔奏闇紅風響]/).test(cell./*@if (@_jscript_version < 9) innerText @else@*/ textContent /*@end@*/);} :
+				e === "Thunder"	? function (cell) {return cell./*@if (@_jscript_version < 9) innerText @else@*/ textContent /*@end@*/.lastIndexOf("雷極") === -1 && cell./*@if (@_jscript_version < 9) innerText @else@*/ textContent /*@end@*/.lastIndexOf(e) !== -1;}
 							: function (cell) {return cell./*@if (@_jscript_version < 9) innerText @else@*/ textContent /*@end@*/.lastIndexOf(e) !== -1;};
 	};
 	if (location.pathname.indexOf("gunlance") !== -1) {
