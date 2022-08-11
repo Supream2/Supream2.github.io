@@ -261,7 +261,7 @@ tH.cells[col].lastChild.style.right = "1.8em";
 /*@end@*/
 
 //解除
-i.value = "解除",i.title = "絞込み解除",i.style.display = "block";
+i.value = "Clear Selections",i.title = "Clear Selected Drop Downs",i.style.display = "block";
 tH.cells[col+3].appendChild(i.cloneNode(true));
 tH.cells[col+3].style.marginRight = "auto";
 
