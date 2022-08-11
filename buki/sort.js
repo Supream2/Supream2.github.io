@@ -106,12 +106,12 @@ tH.cells[0].appendChild(dt);
 if (treeCK){ //剣士弓
 	if (location.pathname.indexOf("yumi") === -1) {
 		//状態異常
-		s.title = "状態異常で絞込み";
-		selectSet(s,["状態","無","麻痺","睡眠","毒","爆破"]);
+		s.title = "Sort by Status";
+		selectSet(s,["Status","None","Para","Sleep","Poison","Blast"]);
 		dt.appendChild(s.cloneNode(true));
 		var ckIzyo_F = function (e) {
-			return	e === "状態" ? function(){return true} :
-					e === "無"	? function (cell) {return !(/[麻睡毒爆]/).test(cell./*@if (@_jscript_version < 9) innerText @else@*/ textContent /*@end@*/);}
+			return	e === "Status" ? function(){return true} :
+					e === "None"	? function (cell) {return !(/[麻睡毒爆]/).test(cell./*@if (@_jscript_version < 9) innerText @else@*/ textContent /*@end@*/);}
 								: function (cell) {	return cell./*@if (@_jscript_version < 9) innerText @else@*/ textContent /*@end@*/.lastIndexOf(e) !== -1;};
 		};
 	} else {
