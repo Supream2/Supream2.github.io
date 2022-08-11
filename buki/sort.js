@@ -1191,7 +1191,7 @@ function (evt) {
 			N = tr.length,
 			x = [];
 		switch (t.title) {
-		case "名前順にソート":
+		case "Sort by Name":
 			marker.id = "N"+tB.id.substring(0,2);
 			var Fulltohalf = (function (){
 				var han = "0123456789.,-+ABCDEFGHIJKLMNOPQRSTUVWXYZｱｲｳｴｵｶｷｸｹｺｻｼｽｾｿﾀﾁﾂﾃﾄﾅﾆﾇﾈﾉﾊﾋﾌﾍﾎﾏﾐﾑﾒﾓﾔﾕﾖﾗﾘﾙﾚﾛﾜｦﾝｱｲｳｴｵｶｷｸｹｺｻｼｽｾｿﾀﾁﾂﾃﾄﾅﾆﾇﾈﾉﾊﾋﾌﾍﾎﾏﾐﾑﾒﾓﾔﾕﾖﾗﾘﾙﾚﾛﾜｦﾝｧｧｨｨｩｩｪｪｫｫｯｯｬｬｭｭｮｮｶｷｸｹｺｻｼｽｾｿﾀﾁﾂﾃﾄﾊﾋﾌﾍﾎﾊﾋﾌﾍﾎｶｷｸｹｺｻｼｽｾｿﾀﾁﾂﾃﾄﾊﾋﾌﾍﾎﾊﾋﾌﾍﾎｳ";
@@ -1209,14 +1209,14 @@ function (evt) {
 			for (var i = 0; i<N; marker.appendChild(x[i++].row));
 			tB.parentNode.replaceChild( marker,tB );
 			break;
-		case "攻撃順にソート":
+		case "Sort by Attack Value":
 			marker.id = "A"+tB.id.substring(0,2);
 			for (var i = 0; i<N; x[i] = [tr[i].cells[2].firstChild.nodeValue.split(" ")[0]], x[i].row = tr[i++]);
 			x.sort(function(a, b){return b - a});
 			for (var i = 0; i<N; marker.appendChild(x[i++].row));
 			tB.parentNode.replaceChild( marker,tB );
 			break;
-		case "属性順にソート":
+		case "Sort by Element Value":
 			marker.id = "Z"+tB.id.substring(0,2);
 			var s1 = document.getElementsByTagName("thead")[0].getElementsByTagName("select")[2].value,
 				s2 = document.getElementsByTagName("thead")[0].getElementsByTagName("select")[1].value;
@@ -1241,7 +1241,7 @@ function (evt) {
 			for (var i=0; i<N; marker.appendChild(x[i++].row));
 			tB.parentNode.replaceChild( marker,tB );
 			break;
-		case "絞込み解除":
+		case "Clear Selected Drop Downs":
 			var s = document.getElementsByTagName("thead")[0].getElementsByTagName("select");
 			for (var i = 0,m = s.length; i  <m; s[i++].selectedIndex = 0);
 			if (document.getElementById("top")) {
