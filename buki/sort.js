@@ -94,7 +94,7 @@ if (ckG) {
 	};
 } else {
 	//レア制限
-	s.title = "Sort by Rarity";
+	s.title = "Include rarity up to";
 	selectSet(s,["Rarity","12","11","10","9","8","7","6","5","4","3","2","1"]);
 	s.selectedIndex = 0;
 	dt.appendChild(s.cloneNode(true));
