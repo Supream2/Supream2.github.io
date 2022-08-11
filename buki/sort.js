@@ -138,10 +138,10 @@ if (treeCK){ //剣士弓
 	};
 	if (location.pathname.indexOf("gunlance") !== -1) {
 		//ガンランス
-		s.title = "砲撃タイプで絞込み";
-		selectSet(s,["砲撃","通常型","放射型","拡散型"]);
+		s.title = "Sort by Shot Type";
+		selectSet(s,["Shot","Normal","Long","Spread"]);
 		var ckKobetu_F = function (e) {
-			return e === "砲撃" ? function(){return true} : function (cell) {return cell.lastChild.firstChild.nodeValue.indexOf(e) !== -1;};
+			return e === "Shot" ? function(){return true} : function (cell) {return cell.lastChild.firstChild.nodeValue.indexOf(e) !== -1;};
 		};
 	} else if (location.pathname.indexOf("horn") !== -1) {
 		//狩猟笛
