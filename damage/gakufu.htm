@@ -37,7 +37,7 @@ input {font-size:80%;}
 td {border-color:#c0c0c0;} /*FF,Operaの罫線対応*/
 -->
 </style>
-<title>楽譜</title>
+<title>Sheet Music</title>
 </head>
 <body>
 <div id=tree>
@@ -84,69 +84,69 @@ var MST_Equip = {};
 var ZOKUNAME = ["無","火","水","雷","龍","氷","炎","光","雷極","天翔","熾凍","黒焔","奏","闇","紅魔","風","響"];
 var IZYONAME = ["","毒","麻痺","睡眠"];
 var SENRITU = {
-"ww":	"Movement Speed Up,10分,Less Bouncing,4分加算,最大10分間",
-"pp":	"Movement Speed Up,10分,Less Bouncing,4分加算,最大10分間",
-"bba":	"千里眼,30秒",
-"wr":	"攻撃力強化【小】[1.15倍]\nＧ級[1.10倍],120秒,さらに攻撃力強化[1.2倍]\nＧ級[1.15倍],90秒加算,最大120秒間",
-"prr":	"攻撃力強化【大】[1.2倍]\nＧ級[1.15倍],90秒,さらに攻撃力強化[1.3倍]\nＧ級[1.2倍],60秒加算,最大90秒間",
-"ry":	"防御力強化【小】[1.15倍]\nＧ級+120,120秒,さらに防御力強化[1.2倍]\nＧ級+160,90秒加算,最大120秒間",
-"rgr":	"防御力強化【大】[1.2倍]\nＧ級+160,90秒,さらに防御力強化[1.3倍]\nＧ級+240,60秒加算,最大90秒間",
-"raap":	"防御力強化【大】[1.2倍]\nＧ級+160,90秒,さらに防御力強化[1.3倍]\nＧ級+240,60秒加算,最大90秒間",
-"wb":	"スタミナ減少無効【小】,90秒,スタミナ減少無効,60秒加算,最大150秒間",
-"pbb":	"スタミナ減少無効【大】,150秒,スタミナ減少無効,60秒加算,最大150秒間",
-"ybyw":	"属性攻撃強化[10%UP],90秒,-,60秒加算,最大150秒間",
-"gypy":	"女神の赦し,60秒,-,30秒加算,最大90秒間",
-"rbw":	"体力増加【小】[+20],180秒,-,120秒加算,最大180秒間",
-"rra":	"体力増加【中】[+30],180秒,-,120秒加算,最大180秒間",
-"rbrp":	"体力増加【大】[+50],180秒,-,120秒加算,最大180秒間",
-"pg":	"体力回復【小】(1/3%) or 体力回復【微】(2/3%)",
-"gpy":	"体力回復【中】(1/3%) or 体力回復【微】(2/3%)",
-"ggpa":	"体力回復【大】(1/3%) or 体力回復【小】(2/3%)",
-"wg":	"体力回復【小】＆解毒(1/3%)  or 体力回復【微】＆解毒(2/3%)",
-"gbpb":	"体力回復【中】＆解毒(1/3%)  or 体力回復【微】＆解毒(2/3%)",
-"gwa":	"体力回復【中】＆消臭(1/3%)  or 体力回復【微】＆消臭(2/3%)",
-"ggy":	"回復速度【小】,120秒,-,60秒加算,最大180秒間",
-"grgp":	"回復速度【大】,120秒,-,60秒加算,最大180秒間",
-"bbr":	"風圧を軽減\n(風圧【小】無効),180秒,風圧を無効\n(風圧【大】無効),120秒,効果による",
-"bbg":	"風圧を無効\n(風圧【大】無効),180秒,風圧を完全無効\n(龍風圧無効),120秒,効果による",
-"bab":	"風圧を無効\n(風圧【大】無効),180秒,風圧を完全無効\n(龍風圧無効),120秒,効果による",
-"bbyp":	"風圧を完全無効\n(龍風圧無効),180秒,-,180秒,最大180秒間",
-"aar":	"聴覚保護【小】,180秒,聴覚保護【大】,120秒,効果による",
-"aagp":	"聴覚保護【大】,180秒,-,120秒,効果による",
-"aay":	"寒さ無効,240秒,-,240秒加算,最大480秒間",
-"aga":	"暑さ無効,240秒,-,240秒加算,最大480秒間",
-"abp":	"気絶無効,180秒,-,120秒加算,最大300秒間",
-"ayy":	"麻痺無効,180秒,-,120秒加算,最大300秒間",
-"I_aYA":	"耐震,180秒,-,120秒加算,最大300秒間",
-"yr":	"火耐性強化【小】[+10],60秒,さらに火耐性強化[+15],60秒,最大60秒間",
-"ybw":	"火耐性強化【大】[+15],60秒,さらに火耐性強化[+20],60秒,最大60秒間",
-"ybp":	"水耐性強化【小】[+10],60秒,さらに水耐性強化[+15],60秒,最大60秒間",
-"ybbw":	"水耐性強化【大】[+15],60秒,さらに水耐性強化[+20],60秒,最大60秒間",
-"yap":	"雷耐性強化【小】[+10],60秒,さらに雷耐性強化[+15],60秒,最大60秒間",
-"yyb":	"雷耐性強化【大】[+15],60秒,さらに雷耐性強化[+20],60秒,最大60秒間",
-"ywa":	"氷耐性強化【小】[+10],60秒,さらに氷耐性強化[+15],60秒,最大60秒間",
-"ygw":	"氷耐性強化【小】[+10],60秒,さらに氷耐性強化[+15],60秒,最大60秒間",
-"ypa":	"氷耐性強化【大】[+15],60秒,さらに氷耐性強化[+20],60秒,最大60秒間",
-"ygp":	"氷耐性強化【大】[+15],60秒,さらに氷耐性強化[+20],60秒,最大60秒間",
-"wy":	"龍耐性強化【小】[+10],60秒,さらに龍耐性強化[+15],60秒,最大60秒間",
-"pyy":	"龍耐性強化【大】[+15],60秒,さらに龍耐性強化[+20],60秒,最大60秒間",
-"bpyb":	"怯み無効,60秒,-,60秒加算,最大90秒間",
-"bgbp":	"怯み無効,60秒,-,60秒加算,最大90秒間",
-"abw":	"斬れ味回復【小】,75回復,-,-,",
-"agg":	"斬れ味回復【小】,75回復,-,-,",
-"apba":	"斬れ味回復【大】,150回復,-,-,"};
+"ww":	"Movement Speed Up,10 Mins,Less Bouncing,4 mins added,Max 10Mins",
+"pp":	"Movement Speed Up,10 Mins,Less Bouncing,4 mins added,Max 10Mins",
+"bba":	"Clairvoyance,30 secs",
+"wr":	"Attack Up [Small][1.15x]\nＧrank[1.10x],120 secs,Attack Up[1.2x]\nＧrank[1.15x],90 secs added,Max 120 secs",
+"prr":	"Attack Up【Large】[1.2x]\nＧrank[1.15x],90 secs,Attack Up[1.3x]\nＧrank[1.2x],60 secs added,Max 90 secs",
+"ry":	"Defense Up【Small】[1.15x]\nＧrank+120,120 secs,Defense Up[1.2x]\nＧrank+160,90 secs added,Max 120 secs",
+"rgr":	"Defense Up【Large】[1.2x]\nＧrank+160,90 secs,Defense Up[1.3x]\nＧrank+240,60 secs added,Max 90 secs",
+"raap":	"Defense Up【Large】[1.2x]\nＧrank+160,90 secs,Defense Up[1.3x]\nＧrank+240,60 secs added,Max 90 secs",
+"wb":	"No Stamina Loss【Small】,90 secs,No Stamina Loss,60 secs added,Max 150 secs",
+"pbb":	"No Stamina Loss【Large】,150 secs,No Stamina Loss,60 secs added,Max 150 secs",
+"ybyw":	"Elemental Attack Up[10%UP],90 secs,-,60 secs added,Max 150 secs",
+"gypy":	"Divine Protection,60 secs,-,30 secs added,Max90 secs",
+"rbw":	"Health Increase【Small】[+20],180 secs,-,120 secs added,Max 180 secs",
+"rra":	"Health Increase【Medium】[+30],180 secs,-,120 secs added,Max 180 secs",
+"rbrp":	"Health Increase【Large】[+50],180 secs,-,120 secs added,Max 180 secs",
+"pg":	"Health Rec【Small】(1/3%) or Health Rec【Tiny】(2/3%)",
+"gpy":	"Health Rec【Medium】(1/3%) or Health Rec【Tiny】(2/3%)",
+"ggpa":	"Health Rec【Large】(1/3%) or Health Rec【Small】(2/3%)",
+"wg":	"Health Rec【Small】＆Antidote(1/3%)  or Health Rec【Tiny】＆Antidote(2/3%)",
+"gbpb":	"Health Rec【Medium】＆Antidote(1/3%)  or Health Rec【Tiny】＆Antidote(2/3%)",
+"gwa":	"Health Rec【Medium】＆Deoderant(1/3%)  or Health Rec【Tiny】＆Deoderant(2/3%)",
+"ggy":	"Recovery Speed【Small】,120 secs,-,60 secs added,Max 180 secs",
+"grgp":	"Recovery Speed【Large】,120 secs,-,60 secs added,Max 180 secs",
+"bbr":	"Wind Pressure [Small],180 secs,Wind Pressure [Large],120 secs,Last played effect",
+"bbg":	"Wind Pressure [Large],180 secs,Wind Pressure Invalid,120 secs,Last played effect",
+"bab":	"Wind Pressure [Large],180 secs,Wind Pressure Invalid,120 secs,Last played effect",
+"bbyp":	"Wind Pressure Invalid,180 secs,-,180 secs,Max 180 secs",
+"aar":	"Hearing Protection【Small】,180 secs,Hearing Protection【Large】,120 secs,Last played effect",
+"aagp":	"Hearing Protection【Large】,180 secs,-,120 secs,Last played effect",
+"aay":	"Cold Invalid,240 secs,-,240 secs added,Max480 secs",
+"aga":	"Heat Invalid,240 secs,-,240 secs added,Max480 secs",
+"abp":	"Stun Immunity,180 secs,-,120 secs added,Max300 secs",
+"ayy":	"Paralysis Immunity,180 secs,-,120 secs added,Max300 secs",
+"I_aYA":	"Quake Res,180 secs,-,120 secs added,Max300 secs",
+"yr":	"Fire Res【Small】[+10],60 secs,Fire Res[+15],60 secs,Max 60 secs",
+"ybw":	"Fire Res【Large】[+15],60 secs,Fire Res[+20],60 secs,Max 60 secs",
+"ybp":	"Water Res【Small】[+10],60 secs,Water Res[+15],60 secs,Max 60 secs",
+"ybbw":	"Water Res【Large】[+15],60 secs,Water Res[+20],60 secs,Max 60 secs",
+"yap":	"Thunder Res【Small】[+10],60 secs,Thunder Res[+15],60 secs,Max 60 secs",
+"yyb":	"Thunder Res【Large】[+15],60 secs,Thunder Res[+20],60 secs,Max 60 secs",
+"ywa":	"Ice Res【Small】[+10],60 secs,Ice Res[+15],60 secs,Max 60 secs",
+"ygw":	"Ice Res【Small】[+10],60 secs,Ice Res[+15],60 secs,Max 60 secs",
+"ypa":	"Ice Res【Large】[+15],60 secs,Ice Res[+20],60 secs,Max 60 secs",
+"ygp":	"Ice Res【Large】[+15],60 secs,Ice Res[+20],60 secs,Max 60 secs",
+"wy":	"Dragon Res【Small】[+10],60 secs,Dragon Res[+15],60 secs,Max 60 secs",
+"pyy":	"Dragon Res【Large】[+15],60 secs,Dragon Res[+20],60 secs,Max 60 secs",
+"bpyb":	"No Flinching,60 secs,-,60 secs added,Max 90 secs",
+"bgbp":	"No Flinching,60 secs,-,60 secs added,Max 90 secs",
+"abw":	"Sharp Sword Recovery【Small】,75 Sharpness,-,-,",
+"agg":	"Sharp Sword Recovery【Small】,75 Sharpness,-,-,",
+"apba":	"Sharp Sword Recovery【Large】,150 Sharpness,-,-,"};
 
 var senritu_arasi = {
-"wcg":	"寒さ無効,240秒,-,240秒加算,最大480秒間",
-"bwc":	"暑さ無効,240秒,-,240秒加算,最大480秒間",
-"ycw":	"気絶無効,180秒,-,120秒加算,最大300秒間",
-"rpc":	"麻痺無効,180秒,-,120秒加算,最大300秒間",
-"ycp":	"気絶無効,180秒,-,120秒加算,最大300秒間",
-"rcw":	"耐震,180秒,-,120秒加算,最大300秒間",
-"pcg":	"火耐性強化【小】[+10],60秒,さらに火耐性強化[+15],60秒,最大60秒間",
-"bpc":	"氷耐性強化【小】[+10],60秒,さらに氷耐性強化[+15],60秒,最大60秒間",
-"acw":	"防御力強化【小】[1.15倍],120秒,さらに防御力強化[1.2倍],90秒加算,最大120秒間",
-"acp":	"属性攻撃強化[10%UP],90秒,-,60秒加算,最大150秒間"};
+"wcg":	"Cold Invalid,240 secs,-,240 secs added,Max 480 secs",
+"bwc":	"Heat Invalid,240 secs,-,240 secs added,Max 480 secs",
+"ycw":	"Stun Immunity,180 secs,-,120 secs added,Max 300 secs",
+"rpc":	"Paralysis Immunity,180 secs,-,120 secs added,Max 300 secs",
+"ycp":	"Stun Immunity,180 secs,-,120 secs added,Max 300 secs",
+"rcw":	"Quake Res,180 secs,-,120 secs added,Max300 secs",
+"pcg":	"Fire Res【Small】[+10],60 secs,Fire Res[+15],60 secs,Max 60 secs",
+"bpc":	"Ice Res【Small】[+10],60 secs,Ice Res[+15],60 secs,Max 60 secs",
+"acw":	"Defense Up【Small】[1.15x],120 secs,Defense Up[1.2x],90 secs added,Max 120 secs",
+"acp":	"Elemental Attack Up[10%UP],90 secs,-,60 secs added,Max 150 secs"};
 
 var onpu = function (w) {
 	switch (w) {
@@ -205,7 +205,7 @@ for (var e in SENRITU) {
 }
 var insHeader = document.createElement("th");
 insHeader.colSpan = 4;
-insHeader./*@if (@_jscript_version < 9) innerText @else@*/ textContent /*@end@*/ = "嵐の型";
+insHeader./*@if (@_jscript_version < 9) innerText @else@*/ textContent /*@end@*/ = "Storm Style";
 tBCre.appendChild(insHeader.cloneNode(true));
 //桜
 for (var e in senritu_arasi) {
