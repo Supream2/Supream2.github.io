@@ -145,11 +145,11 @@ if (treeCK){ //剣士弓
 		};
 	} else if (location.pathname.indexOf("horn") !== -1) {
 		//狩猟笛
-		s.title = "旋律で絞込み";
-		selectSet2(s,["旋律","白黄赤","白黄空","白青赤","白青黄","白緑赤","白緑黄","白緑青","白緑空","白空赤","白空青","紫黄赤","紫黄空","紫青赤","紫青黄","紫緑赤","紫緑黄","紫緑青","紫緑空","紫空赤","紫空青"],
-					["旋律","321","327","341","342","351","352","354","357","371","374","621","627","641","642","651","652","654","657","671","674"]);
+		s.title = "Sort by Melody";
+		selectSet2(s,["Melody","White|Yellow|Red","White|Yellow|L.blue","White|D.Blue|Red","White|D.Blue|Yellow","White|Green|Red","White|Green|Yellow","White|Green|D.Blue","White|Green|L.Blue","White|L.Blue|Red","White|L.Blue|D.Blue","Purple|Yellow|Red","Purple|Yellow|L.Blue","Purple|D.Blue|Red","Purple|D.Blue|Yellow","Purple|L.Blue|Red","Purple|Green|Yellow","Purple|Green|D.Blue","Purple|Green|L.Blue","Purple|L.Blue|Red","Purple|L.Blue|D.Blue"],
+					["Melody","321","327","341","342","351","352","354","357","371","374","621","627","641","642","651","652","654","657","671","674"]);
 		var ckKobetu_F = function (e) {
-			return e === "旋律" ? function(){return true} : function (cell) {return cell.lastChild.href.lastIndexOf(e) !== -1;};
+			return e === "Melody" ? function(){return true} : function (cell) {return cell.lastChild.href.lastIndexOf(e) !== -1;};
 		};
 	} else if (location.pathname.indexOf("slaxe") !== -1) {
 		//ガンランス
