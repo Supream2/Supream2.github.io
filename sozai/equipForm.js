@@ -18,11 +18,11 @@ if (!searchMei) return;
 
 var BouguName = {"h":"頭防具","b":"胴防具","a":"腕防具","w":"腰防具","l":"脚防具","d":"装飾品","p":"装飾品","t":"天廊石","f":"天封印","c":"カフ","s":"シジル","n":"ネコ","H":"Ｐ頭","B":"Ｐ胴"},
 	BouguId = {"h":"head","b":"body","a":"arm","w":"wst","l":"leg","d":"deco","c":"decocf","p":"decosp","n":"deconk","t":"decot","f":"decof","s":"sigil","H":"head_pertnya","B":"body_pertnya"},
-	BukiName = {0:"大剣",1:"ヘビィボウガン",2:"ハンマー",3:"ランス",4:"片手剣",5:"ライトボウガン",6:"双剣",7:"太刀",8:"狩猟笛",9:"ガンランス","A":"弓","B":"穿龍棍","C":"スラッシュアックス","D":"マグネットスパイク","a":"Ｐ大剣","b":"Ｐハンマー"},
+	BukiName = {0:"GS",1:"HBG",2:"Hammer",3:"Lance",4:"SnS",5:"LBG",6:"DS",7:"LS",8:"HH",9:"GL","A":"Bow","B":"Tonfa","C":"SwAxe","D":"MagSpike","a":"ＰGS","b":"ＰHammer"},
 	BukiId = {0:"taiken",1:"heavy",2:"hammer",3:"lance",4:"katate",5:"right",6:"souken",7:"tachi",8:"horn",9:"gunlance","A":"yumi","B":"tonfa","C":"slaxe","D":"magspike","a":"taiken_partnya","c":"hammer_partnya"},
 	MST_Equip = setBuki();
 
-var txt = "<table><tr><th style=\"width:7em;\">武器種類</th><th style=\"width:10em;\">武器名</th></tr>";
+var txt = "<table><tr><th style=\"width:7em;\">Weapon Type</th><th style=\"width:10em;\">Weapon Name</th></tr>";
 for (var i in MST_Equip.Name) {
 	if (MST_Equip.Name[i].indexOf(searchMei) !== -1) {
 		var eq_rui = i.charAt(0),
