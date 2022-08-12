@@ -153,10 +153,10 @@ if (treeCK){ //剣士弓
 		};
 	} else if (location.pathname.indexOf("slaxe") !== -1) {
 		//ガンランス
-		s.title = "ビンタイプで絞込み";
-		selectSet(s,["ビン","強撃","強属性","強異常","スタン"]);
+		s.title = "Sort by Phial";
+		selectSet(s,["Phial","Power","Ele","Status","Stun"]);
 		var ckKobetu_F = function (e) {
-			return e === "ビン" ? function(){return true} : function (cell) {return cell.lastChild.firstChild.nodeValue.indexOf(e) !== -1;};
+			return e === "Phial" ? function(){return true} : function (cell) {return cell.lastChild.firstChild.nodeValue.indexOf(e) !== -1;};
 		};
 	} else if (location.pathname.indexOf("yumi") !== -1) {
 		//弓
