@@ -259,12 +259,12 @@ MST_Item = MST_Quest = MST_Saisyu = MST_Mos = MST_Other =null;
 addEvent(document.getElementById("b_yt"),"click",function () {
 var BouguName = {"h":"頭防具","b":"胴防具","a":"腕防具","w":"腰防具","l":"脚防具","d":"装飾品","p":"装飾品","c":"カフ","t":"天廊石","f":"天封印","k":"天刻印","z":"カフＺ","s":"シジル","n":"ネコ","H":"Ｐ頭","B":"Ｐ胴"},
 	BouguId = {"h":"head","b":"body","a":"arm","w":"wst","l":"leg","d":"deco","c":"decocf","p":"decosp","n":"deconk","t":"decotr","f":"decotf","k":"decotk","z":"decocz","s":"sigil","H":"head_pertnya","B":"body_pertnya"},
-	BukiName = {0:"大剣",1:"ヘビィボウガン",2:"ハンマー",3:"ランス",4:"片手剣",5:"ライトボウガン",6:"双剣",7:"太刀",8:"狩猟笛",9:"ガンランス","A":"弓","B":"穿龍棍","C":"ｽﾗｯｼｭｱｯｸｽ","D":"ﾏｸﾞﾈｯﾄｽﾊﾟｲｸ","a":"Ｐ大剣","c":"Ｐハンマー"},
+	BukiName = {0:"GS",1:"HBG",2:"Hammer",3:"Lance",4:"SnS",5:"LBG",6:"DS",7:"LS",8:"HH",9:"GL","A":"Bow","B":"Tonfa","C":"SwAxe","D":"MagSpike","a":"ＰGS","c":"ＰHammer"},
 	BukiId = {0:"taiken",1:"heavy",2:"hammer",3:"lance",4:"katate",5:"right",6:"souken",7:"tachi",8:"horn",9:"gunlance","A":"yumi","B":"tonfa","C":"slaxe","D":"magspike","a":"taiken_partnya","c":"hammer_partnya"},
-	Craft = {0:"生産",1:"強化",2:"G生産",3:"G強化",4:"G確定"},
+	Craft = {0:"Craft",1:"Upgrade",2:"G Craft",3:"G Upgrade",4:"GLv"},
 	MST_Equip = setBuki();
 if (MST_Equip.Sozai[item_id]) {
-	var txt = "<table><tr><th style=\"width:7em;\">武器種類</th><th style=\"width:10em;\">武器名</th><th style=\"width:2.5em;\">製作</th><th style=\"width:2em;\">数</th></tr>";
+	var txt = "<table><tr><th style=\"width:7em;\">Weapon Type</th><th style=\"width:10em;\">Weapon Name</th><th style=\"width:2.5em;\">Craft</th><th style=\"width:2em;\">Num.</th></tr>";
 	for (var i = 0,su_sum = 0,list = MST_Equip.Sozai[item_id].split(","),m = list.length; i < m; i++) {
 		var eq_rui = list[i].charAt(0),
 			eq_id = list[i].substring(1,5),
