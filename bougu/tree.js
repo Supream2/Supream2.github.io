@@ -171,7 +171,7 @@ var sozaiHtml = function (recipe) {
 	return t.join(","); //ココだけ違う
 };
 //copyここまで
-		var BUINAME = ["頭","胴","腕","腰","脚"],
+		var BUINAME = ["<img alt="頭" src="https://supream2.github.io/img/head.png">","胴","腕","腰","脚"],
 			SEXNAME = ["","男性","女性"],
 			TYPENAME = ["","剣士","ガン"],
 			CLASSTYPE = {"":" ",A:"ＳＰ",B:"<p>剛種防具</p>",C:"<p>天嵐防具</p>",D:"<p>覇種防具</p>",E:"<p>HC防具</p>",F:"<p>狩護防具</p>",G:"<p>Ｇ級覇種防具</p>",H:"<p>烈種防具</p>",I:"<p>G級防具</p>",J:"<p>G級狩護防具</p>",K:"<p>秘伝防具</p>",L:"<p>G級秘伝防具</p>",M:"<p>始種防具</p>",N:"<p>天廊防具</p>",O:"<p>遷悠防具</p>",P:"<p>辿異防具</p>",Q:"<p>辿異狩護防具</p>"},
