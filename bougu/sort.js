@@ -73,7 +73,7 @@ if (armorCK) {
 	s.style.display = "block",s.title = "Sort by Resistances";
 	selectSet(s,["Res","Fire","Water","Thunder","Ice","Dragon"]);
 	tH.cells[3].appendChild(s.cloneNode(true));
-	var ckRes_F = function (e) {
+	var ckSkill_F = function (e) {
 		return	e === "Res" ? function(){return true} :
 				e === "Res"	? function (cell) {return !(/[火水雷龍氷炎光天熾焔奏闇紅風響]/).test(cell./*@if (@_jscript_version < 9) innerText @else@*/ textContent /*@end@*/);} :
 				e === "Thunder"	? function (cell) {return cell./*@if (@_jscript_version < 9) innerText @else@*/ textContent /*@end@*/.lastIndexOf("雷極") === -1 && cell./*@if (@_jscript_version < 9) innerText @else@*/ textContent /*@end@*/.lastIndexOf(e) !== -1;}
@@ -176,7 +176,6 @@ if (armorCK) {
 			ckSkill2 = ckSkill_F(s[3].value),
 			ckTeni = ckTeni_F(s[4].value),
 			ckSlot = ckSlot_F(s[5].value);
-			ckRes = ckRes_F(s[6].value);
 		for (var i = 0,cel; i < N; i++) cel = tr[i].cells,tr[i].style.display = ckRare(cel[2]) && ckSkill1(cel[4]) && ckSkill2(cel[4]) && ckTeni(cel[4]) && ckSlot(cel[5]) ? "" : "none";
 		}
 	var taisort = function () {
