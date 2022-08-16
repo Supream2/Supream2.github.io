@@ -176,6 +176,7 @@ if (armorCK) {
 			ckSkill2 = ckSkill_F(s[3].value),
 			ckTeni = ckTeni_F(s[4].value),
 			ckSlot = ckSlot_F(s[5].value);
+			ckRes = ckRes_F(s[6].value);
 		for (var i = 0,cel; i < N; i++) cel = tr[i].cells,tr[i].style.display = ckRare(cel[2]) && ckSkill1(cel[4]) && ckSkill2(cel[4]) && ckTeni(cel[4]) && ckSlot(cel[5]) ? "" : "none";
 		}
 	var taisort = function () {
