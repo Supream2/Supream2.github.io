@@ -45,10 +45,10 @@ s {font-size:80%;color:red;text-decoration:none;} /*説明欄*/
 #s col#cN {width:8em;}
 col#cTy {width:7em;}
 col#cR {width:4em}
-#b col#cDf {width:3.0em;text-align:right;}
-#b col#cTi {width:5.0em;}
+#b col#cDf {width:5.0em;text-align:right;}
+#b col#cTi {width:5.5em;}
 #c col#cSl {width:1.1em;text-align:center;}
-col#cSk {width:6.7em;text-align:right;}
+col#cSk {width:7.7em;text-align:right;}
 col#cSk2 {width:10em;text-align:right;}
 #s col#cSk {width:10em;text-align:right;}
 #s col#cRi {width:2.5em;}
