@@ -107,10 +107,10 @@ if (armorCK) {
 	};
 }
 //スキル制限
-s.style.display = "block",s.title = "スキルで絞込み";
+s.style.display = "block",s.title = "Sort by Skill";
 if (location.pathname.indexOf("deconk") !== -1) {
 	selectSetGroup(s,[
-	["スキル",["Selection"]],
+	["Skill",["Selection"]],
 	["攻撃系",["攻撃","会心","度胸","火属性強化","水属性強化","雷属性強化","氷属性強化","龍属性強化","剣術","心眼術","貫通投擲","特大投擲","麻痺攻撃","睡眠攻撃","毒攻撃","特殊攻撃"]],
 	["防御系",["防御","反射神経","反射術"]],
 	["体力・スタミナ系",["体力"]],
@@ -251,7 +251,7 @@ function (evt) {
 			N = tr.length,
 			x = [];
 		switch (t.title) {
-		case "名前順にソート":
+		case "Sort by Name":
 			var Fulltohalf = (function (){
 				var han = "0123456789.,-+ABCDEFGHIJKLMNOPQRSTUVWXYZｱｲｳｴｵｶｷｸｹｺｻｼｽｾｿﾀﾁﾂﾃﾄﾅﾆﾇﾈﾉﾊﾋﾌﾍﾎﾏﾐﾑﾒﾓﾔﾕﾖﾗﾘﾙﾚﾛﾜｦﾝｱｲｳｴｵｶｷｸｹｺｻｼｽｾｿﾀﾁﾂﾃﾄﾅﾆﾇﾈﾉﾊﾋﾌﾍﾎﾏﾐﾑﾒﾓﾔﾕﾖﾗﾘﾙﾚﾛﾜｦﾝｧｧｨｨｩｩｪｪｫｫｯｯｬｬｭｭｮｮｶｷｸｹｺｻｼｽｾｿﾀﾁﾂﾃﾄﾊﾋﾌﾍﾎﾊﾋﾌﾍﾎｶｷｸｹｺｻｼｽｾｿﾀﾁﾂﾃﾄﾊﾋﾌﾍﾎﾊﾋﾌﾍﾎｳ";
 				var zen = "０１２３４５６７８９．，－＋ＡＢＣＤＥＦＪＨＩＪＫＬＭＮＯＰＱＲＳＴＵＶＷＸＹＺアイウエオカキクケコサシスセソタチツテトナニヌネノハヒフヘホマミムメモヤユヨラリルレロワヲンあいうえおかきくけこさしすせそたちつてとなにぬねのはひふへほまみむめもやゆよらりるれろわをんぁァぃィぅゥぇェぉォっッゃャゅュょョがぎぐげござじずぜぞだぢづでどばびぶべぼぱぴぷぺぽガギグゲゴザジズゼゾダジヅデドバビブベボパピプペポヴ";
@@ -268,7 +268,7 @@ function (evt) {
 			for (var i = 0; i < N; marker.appendChild(x[i++].row));
 			tB.parentNode.replaceChild( marker,tB );
 			break;
-		case "防御順にソート":
+		case "Sort by Defence":
 			for (var i = 0; i < N; x[i] = [tr[i].cells[5].lastChild.nodeValue.split("/")[0]], x[i].row=tr[i++]);
 			x.sort(function(a, b){return b - a});
 			for (var i = 0; i < N; marker.appendChild(x[i++].row));
