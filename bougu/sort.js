@@ -73,8 +73,6 @@ if (armorCK) {
 	s.style.display = "block",s.title = "Sort by Resistances";
 	selectSet(s,["Res","Fire","Water","Thunder","Ice","Dragon"]);
 	tH.cells[3].appendChild(s.cloneNode(true));
-	var ckSkill_F = function (e) {
-		return	e === "Res" ? function(){return true} :
 	};
 	//スロ制限
 	s.title = "Sort by Slot";
