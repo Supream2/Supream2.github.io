@@ -72,7 +72,7 @@ if (armorCK) {
 	//耐性ソート
 	s.style.display = "block",s.title = "Sort by Resistances";
 	selectSet(s,["Res","Fire","Water","Thunder","Ice","Dragon"]);
-	tH.cells[3].appendChild(s.cloneNode(false));
+	tH.cells[3].appendChild(s.cloneNode(true));
 	//スロ制限
 	s.title = "Sort by Slot";
 	selectSet(s,["Slot","3","2","1"]);
