@@ -254,11 +254,11 @@ var sozaiHtml = function (recipe) {
 			insTD./*@if (@_jscript_version < 9) innerText @else@*/ textContent /*@end@*/ = eq[I_bRARE];
 			insTR.appendChild(insTD.cloneNode(true));
 			//耐性
-			insTD.innerHTML = "火:" + eq[I_bF] + "<br>"
-							+ "水:" + eq[I_bW] + "<br>"
-							+ "雷:" + eq[I_bT] + "<br>"
-							+ "氷:" + eq[I_bI] + "<br>"
-							+ "龍:" + eq[I_bD];
+			insTD.innerHTML = "Fire:" + eq[I_bF] + "<br>"
+							+ "Water:" + eq[I_bW] + "<br>"
+							+ "Thunder:" + eq[I_bT] + "<br>"
+							+ "Ice:" + eq[I_bI] + "<br>"
+							+ "Dragon:" + eq[I_bD];
 			insTR.appendChild(insTD.cloneNode(true));
 			//スキル
 			if (eq[I_bSP1]) {
