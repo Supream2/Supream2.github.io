@@ -73,6 +73,11 @@ if (armorCK) {
 	s.style.display = "block",s.title = "Sort by Resistances";
 	selectSet(s,["Res","Fire","Water","Thunder","Ice","Dragon"]);
 	tH.cells[3].appendChild(s.cloneNode(true));
+	var ckRes_F = function (e) {
+		return	e === "Res" ? function(){return true} :
+				e === "Res"	? function (cell) {return !(/[火水雷龍氷炎光天熾焔奏闇紅風響]/).test(cell./*@if (@_jscript_version < 9) innerText @else@*/ textContent /*@end@*/);} :
+				e === "Thunder"	? function (cell) {return cell./*@if (@_jscript_version < 9) innerText @else@*/ textContent /*@end@*/.lastIndexOf("雷極") === -1 && cell./*@if (@_jscript_version < 9) innerText @else@*/ textContent /*@end@*/.lastIndexOf(e) !== -1;}
+							: function (cell) {return cell./*@if (@_jscript_version < 9) innerText @else@*/ textContent /*@end@*/.lastIndexOf(e) !== -1;};
 	//スロ制限
 	s.title = "Sort by Slot";
 	selectSet(s,["Slot","3","2","1"]);
