@@ -150,11 +150,11 @@ var ckSkill_F = function (e) {
 //辿異制限
 if (armorCK || location.pathname.indexOf("decocz") !== -1) {
 	s = document.createElement("select");
-	s.title = "辿異で絞込み";
-	selectSet(s,["辿異","スキル枠拡張","閃転強化","巧撃強化","属撃強化","纏雷強化","氷界創生強化","耳栓強化","風圧強化","耐震強化","耐毒強化","耐麻痺強化","耐睡眠強化","吸血強化","劇物強化","支援強化","弾丸節約術強化","ガード性能強化","適応撃強化","鼓舞強化","反射強化","巧流強化","血気活性強化","雌伏強化","喝強化","幕無強化","猛進強化"]);
+	s.title = "Sort by Zenith Skill";
+	selectSet(s,["Zenith Skill","Skill Slots Up","Crit Conversion","Stylish Assault Up","Dissolver Up","Thunder Clad Up","Ice Age Up","Hearing Protection Up","Wind Res Up","Quake Res Up","Poison Res Up","Para Res Up","Sleep Res Up","Vampirism Up","Drug Knowledge Up","Assistance Up","Bullet Saver Up","Guard Up","Adaptation Up","Encourage Up","Reflect Up","Stylish Up","Vigorous Up","Obscurity Up","Soul Up","Ceaseless Up","Rush Up"]);
 	tH.cells[4].appendChild(s.cloneNode(true));
 	var ckTeni_F = function (e) {
-		return e === "辿異" ? function(){return true} : function (cell) {return cell.innerHTML.indexOf("「"+e) !== -1;};
+		return e === "Zenith Skill" ? function(){return true} : function (cell) {return cell.innerHTML.indexOf("「"+e) !== -1;};
 		};
 }
 tH=dt=i=s=null;
