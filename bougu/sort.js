@@ -151,7 +151,7 @@ var ckSkill_F = function (e) {
 if (armorCK || location.pathname.indexOf("decocz") !== -1) {
 	s = document.createElement("select");
 	s.title = "Sort by Zenith Skill";
-	selectSet(s,["Zenith Skill","Skill Slots Up","Crit Conversion","Stylish Assault Up","Dissolver Up","Thunder Clad Up","Ice Age Up","Hearing Protection Up","Wind Res Up","Quake Res Up","Poison Res Up","Para Res Up","Sleep Res Up","Vampirism Up","Drug Knowledge Up","Assistance Up","Bullet Saver Up","Guard Up","Adaptation Up","Encourage Up","Reflect Up","Stylish Up","Vigorous Up","Obscurity Up","Soul Up","Ceaseless Up","Rush Up"]);
+	selectSet(s,["Zenith Skill","Skill Slots Up","Crit Conversion Up","Stylish Assault Up","Dissolver Up","Thunder Clad Up","Ice Age Up","Hearing Protection Up","Wind Res Up","Quake Res Up","Poison Res Up","Para Res Up","Sleep Res Up","Vampirism Up","Drug Knowledge Up","Assistance Up","Bullet Saver Up","Guard Up","Adaptation Up","Encourage Up","Reflect Up","Stylish Up","Vigorous Up","Obscurity Up","Soul Up","Ceaseless Up","Rush Up"]);
 	tH.cells[4].appendChild(s.cloneNode(true));
 	var ckTeni_F = function (e) {
 		return e === "Zenith Skill" ? function(){return true} : function (cell) {return cell.innerHTML.indexOf("「"+e) !== -1;};
