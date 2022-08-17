@@ -70,7 +70,7 @@ if (armorCK) {
 		return e === "Rarity" ? function(){return true} : function (cell) {return +cell.firstChild.nodeValue <= e};
 	};
 	//耐性ソート
-	s.style.display = "block",s.title = "Sort by Resistances";
+	s.style.display = "none",s.title = "Sort by Resistances";
 	selectSet(s,["Res","Fire","Water","Thunder","Ice","Dragon"]);
 	tH.cells[3].appendChild(s.cloneNode(true));
 	//スロ制限
