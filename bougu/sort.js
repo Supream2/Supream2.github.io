@@ -184,7 +184,7 @@ if (armorCK) {
 			N = tr.length,
 			x = [];
 		for (var i = 0; i  <N; i++) {
-			x[i] = tr[i].style.display ? [0] : [+tr[i].cells[3].childNodes[s1*2].nodeValue.substring(2)];
+			x[i] = tr[i].style.display ? [0] : [+tr[i].cells[3].childNodes[s1*2].nodeValue.substring(5)];
 			x[i].row = tr[i];
 		}
 		x.sort(function(a, b){return b - a});
