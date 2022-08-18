@@ -97,9 +97,9 @@ if (armorCK) {
 	//素材絞りこみ
 	var dt = document.createElement("div"),
 		i = document.createElement("input");
-	i.type = "text",i.title = "素材で絞込み";
+	i.type = "text",i.title = "Filter by Material";
 	dt.appendChild(i.cloneNode(false));
-	i.type = "button",i.value = "絞込み",i.title = "素材で絞込み";
+	i.type = "button",i.value = "Search",i.title = "Filter by Material";
 	dt.appendChild(i.cloneNode(false));
 	tH.cells[7].appendChild(dt);
 	var ckSozai_F = function (e) {
