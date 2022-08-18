@@ -83,16 +83,16 @@ if (armorCK) {
 	};
 } else { //装飾品
 	//G制限
-	s.title = "GRで絞込み";
+	s.title = "GR Sort";
 	selectSet(s,["GR","GX","GF","G"]);
 	s.selectedIndex = 0;
 	if (location.pathname.indexOf("deco.htm") === -1) s.style.display = "none";
 	dt.appendChild(s.cloneNode(true));
 	var ckGr_F = function (e) {
 		return e === "GR" ? function(){return true} : 
-				e === "GX" ? function (cell) {return cell.firstChild.nodeValue.indexOf("射珠GX") !== -1 || cell.firstChild.nodeValue.indexOf("剣珠GX") !== -1;} :
-				e === "GF" ? function (cell) {return cell.firstChild.nodeValue.indexOf("射珠GF") !== -1 || cell.firstChild.nodeValue.indexOf("剣珠GF") !== -1;} :
-							function (cell) {return cell.firstChild.nodeValue.indexOf("射珠Ｇ") !== -1 || cell.firstChild.nodeValue.indexOf("剣珠Ｇ") !== -1;};
+				e === "GX" ? function (cell) {return cell.firstChild.nodeValue.indexOf("GN GX") !== -1 || cell.firstChild.nodeValue.indexOf("BM GX") !== -1;} :
+				e === "GF" ? function (cell) {return cell.firstChild.nodeValue.indexOf("GN GF") !== -1 || cell.firstChild.nodeValue.indexOf("BM GF") !== -1;} :
+							function (cell) {return cell.firstChild.nodeValue.indexOf("GN G") !== -1 || cell.firstChild.nodeValue.indexOf("BM G") !== -1;};
 	};
 	//素材絞りこみ
 	var dt = document.createElement("div"),
