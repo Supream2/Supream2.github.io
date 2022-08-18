@@ -138,7 +138,7 @@ for (var i=0;i<sokuzaiMax;i++) {
 		mesi_p["ATK"] *= mesi[ryori_p][1];
 		mesi_p["DEF"] *= mesi[ryori_p][1];
 		
-		insTD./*@if (@_jscript_version < 9) innerText @else@*/ textContent /*@end@*/ = kisetu.options[kisetu.selectedIndex].text.substring(0,2);
+		insTD./*@if (@_jscript_version < 9) innerText @else@*/ textContent /*@end@*/ = kisetu.options[kisetu.selectedIndex].text.substring(0,5);
 		insTR.appendChild(insTD.cloneNode(true));
 
 		insTD.innerHTML = "<a href=\"../sozai/sozai.htm?" + sokuzai[i][1] + "\">" + sokuzai[i][0] + "</a>";
