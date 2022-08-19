@@ -201,9 +201,9 @@ if (treeCK){ //剣士弓
 		if (e1 === "0" && e2 === "0" && e3 === "0") {
 			return function(){return true};
 		} else {
-			var wR = ["(Very Slow|Slow|Normal|Fast|Very Fast)","(Slow|Normal|Fast|Very Fast)","(Normal|Fast|Very Fast)","(Fast|Very Fast)","Very Fast"],
-				wK = ["(Very Large|Large|Medium|Small|Smaller)","(Large|Medium|Small|Smaller)","(Medium|Small|Smaller)","(Small|Smaller)","Smaller"],
-				wS = ["(Very Slow|Slow|Fast|Very Fast)","Very Slow","Slow","Fast","Very Fast"],
+			var wR = ["(遅い|やや遅い|普通|やや速い|速い)","(やや遅い|普通|やや速い|速い)","(普通|やや速い|速い)","(やや速い|速い)","速い"],
+				wK = ["(最大|大|中|やや小|小)","(大|中|やや小|小)","(中|やや小|小)","(やや小|小)","小"],
+				wS = ["(遅い|やや遅い|やや速い|速い)","遅い","やや遅い","やや速い","速い"],
 				reg = new RegExp("^" + wR[e1] + /*@if (@_jscript_version < 9) "\r\n" + /*@end@*/ wK[e2] + /*@if (@_jscript_version < 9) "\r\n" + /*@end@*/ wS[e3],"i");
 			return function (cell) {return reg.test(cell./*@if (@_jscript_version < 9) innerText @else@*/ textContent /*@end@*/);};
 		}
