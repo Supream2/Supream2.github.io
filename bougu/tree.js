@@ -236,7 +236,7 @@ var sozaiHtml = function (recipe) {
 			}
 			if (ck) t += "（Lv" + ck + "+）";
 			//精錬先名称
-			if (eq[I_bDEC]) t += "<a href=\"deco.htm#l" + eq[I_bDEC] + "\">→" + MST_Equip["deco"][eq[I_bDEC]].split(",")[0] + "</a>Lv7より精錬";
+			if (eq[I_bDEC]) t += "<a href=\"deco.htm#l" + eq[I_bDEC] + "\">→" + MST_Equip["deco"][eq[I_bDEC]].split(",")[0] + "</a>Lv7→Refined Gem";
 			t += "</div>";
 			t += CLASSTYPE[eq[I_bCLASS]];
 			
