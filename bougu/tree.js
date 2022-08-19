@@ -307,7 +307,7 @@ var sozaiHtml = function (recipe) {
 				tzeny += zeny_data[j] + "<br>";
 				//素材
 				if (j === 0 && eq[I_bRECIPE1]) {
-					treci += "生産:"
+					treci += "Create:"
 				}
 				treci += sozaiHtml(reci_data[j]) + "<br>";
 				//強化元があるのに生産素材もある
