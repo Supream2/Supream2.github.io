@@ -208,27 +208,27 @@ if (treeCK){ //剣士弓
 			return function (cell) {return reg.test(cell./*@if (@_jscript_version < 9) innerText @else@*/ textContent /*@end@*/);};
 		}
 	};
-	s.title = "弾で絞込み"
-	selectSet(s,["弾","通常1","通常1","通常2","通常3","貫通1","貫通2","貫通3","散弾1","散弾2","散弾3","徹甲1","徹甲2","徹甲3","拡散1","拡散2","拡散3","毒弾1","毒弾2","麻痺1","麻痺2","睡眠1","睡眠2","火炎","水冷","電撃","氷結","滅龍","ペ弾","回復","鬼人","硬化"]);
+	s.title = "Sort by Shot Type"
+	selectSet(s,["S","Normal1","Normal1","Normal2","Normal3","Pierce1","Pierce2","Pierce3","Pellet1","Pellet2","Pellet3","Crag1","Crag2","Crag3","Cluster1","Cluster2","Cluster3","Psn1","Psn2","Para1","Para2","Slp1","Slp2","Flaming","Water","Thunder","Ice","Dragon","Paint","Rec","Demon","Armor"]);
 	dt.appendChild(s.cloneNode(true));
 	dt.appendChild(s.cloneNode(true));
 	//辿異制限
-	s.title = "辿異で絞込み";
-	selectSet(s,["辿異","Skill Slots Up","閃転強化","巧撃強化","属撃強化","纏雷強化","氷界創生強化","耳栓強化","風圧強化","耐震強化","耐毒強化","耐麻痺強化","耐睡眠強化","吸血強化","劇物強化","支援強化"]);
+	s.title = "Sort by Zenith Skill";
+	selectSet(s,["Zenith Skill","Skill Slots Up","Crit Conversion Up","Stylish Assault Up","Dissolver Up","Thunder Clad Up","Ice Age Up","Hearing Protection Up","Wind Res Up","Quake Res Up","Poison Res Up","Para Res Up","Sleep Res Up","Vampirism Up","Drug Knowledge Up","Assistance Up"]);
 	dt.appendChild(s.cloneNode(true));
 	tH.cells[4].appendChild(dt);
 	var ckTama_F = function (e1,e2) {
-		if (e1 === "弾" && e2 === "弾") {
+		if (e1 === "S" && e2 === "S") {
 			return function(){return true};
 		} else {
 			var wT = [,"[0-9]+","(<u>|)([0-9]+|-)(</u>|)/[0-9]+","(<u>|)[0-9]+(</u>|)/(<u>|)[0-9]+(</u>|)/[0-9]"],
 				reg1,reg2;
-			if (e1 !== "弾") reg1 = e1.length === 2 ? new RegExp(e1 + "：" + wT[1]) : new RegExp(e1.substring(0,2) + "：" + wT[e1.substring(2,3)],"i");
-			if (e2 !== "弾") reg2 = e2.length === 2 ? new RegExp(e2 + "：" + wT[1]) : new RegExp(e2.substring(0,2) + "：" + wT[e2.substring(2,3)],"i");
+			if (e1 !== "S") reg1 = e1.length === 2 ? new RegExp(e1 + "：" + wT[1]) : new RegExp(e1.substring(0,2) + "：" + wT[e1.substring(2,3)],"i");
+			if (e2 !== "S") reg2 = e2.length === 2 ? new RegExp(e2 + "：" + wT[1]) : new RegExp(e2.substring(0,2) + "：" + wT[e2.substring(2,3)],"i");
 
-			if (e1 !== "弾" && e2 !== "弾") {
+			if (e1 !== "S" && e2 !== "S") {
 				return function (cell) {return reg1.test(cell.innerHTML) && reg2.test(cell.innerHTML);};
-			} else if (e1 !== "弾") {
+			} else if (e1 !== "S") {
 				return function (cell) {return reg1.test(cell.innerHTML);};
 			} else {
 				return function (cell) {return reg2.test(cell.innerHTML);};
