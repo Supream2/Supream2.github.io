@@ -223,8 +223,8 @@ if (treeCK){ //剣士弓
 		} else {
 			var wT = [,"[0-9]+","(<u>|)([0-9]+|-)(</u>|)/[0-9]+","(<u>|)[0-9]+(</u>|)/(<u>|)[0-9]+(</u>|)/[0-9]"],
 				reg1,reg2;
-			if (e1 !== "S") reg1 = e1.length === 5 ? new RegExp(e1 + "：" + wT[1]) : new RegExp(e1.substring(0,2) + "：" + wT[e1.substring(2,3)],"i");
-			if (e2 !== "S") reg2 = e2.length === 5 ? new RegExp(e2 + "：" + wT[1]) : new RegExp(e2.substring(0,2) + "：" + wT[e2.substring(2,3)],"i");
+			if (e1 !== "S") reg1 = e1.length === 5 ? new RegExp(e1 + "：" + wT[1]) : new RegExp(e1.substring(0,5) + "：" + wT[e1.substring(5,6)],"i");
+			if (e2 !== "S") reg2 = e2.length === 5 ? new RegExp(e2 + "：" + wT[1]) : new RegExp(e2.substring(0,5) + "：" + wT[e2.substring(5,6)],"i");
 
 			if (e1 !== "S" && e2 !== "S") {
 				return function (cell) {return reg1.test(cell.innerHTML) && reg2.test(cell.innerHTML);};
