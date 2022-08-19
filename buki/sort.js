@@ -187,23 +187,23 @@ if (treeCK){ //剣士弓
 	tH.cells[col-1].appendChild(s.cloneNode(true));
 } else { //ガン
 	dt = document.createElement("div");
-	s.title = "装填速度で絞込み"
-	selectSet2(s,["装填","遅い","やや遅","普通","やや速","速い"],["0","0","1","2","3","4"]);
+	s.title = "Sort by Reload Speed"
+	selectSet2(s,["Reload","Very Slow","Slow","Normal","Fast","Very Fast"],["0","0","1","2","3","4"]);
 	dt.appendChild(s.cloneNode(true));
-	s.title = "反動で絞込み"
-	selectSet2(s,["反動","最大","大","中","やや小","小"],["0","0","1","2","3","4"]);
+	s.title = "Sort by Recoil"
+	selectSet2(s,["Recoil","Very Large","Large","Medium","Small","Smaller"],["0","0","1","2","3","4"]);
 	dt.appendChild(s.cloneNode(true));
-	s.title = "弾速で絞込み"
-	selectSet2(s,["弾速","遅い","やや遅","やや速","速い"],["0","1","2","3","4"]);
+	s.title = "Sort by Bullet Speed"
+	selectSet2(s,["BSpeed","Very Slow","Slow","Fast","Very Fast"],["0","1","2","3","4"]);
 	dt.appendChild(s.cloneNode(true));
 	dt.appendChild(document.createElement("br"));
 	var ckGun_F = function (e1,e2,e3) {
 		if (e1 === "0" && e2 === "0" && e3 === "0") {
 			return function(){return true};
 		} else {
-			var wR = ["(遅い|やや遅い|普通|やや速い|速い)","(やや遅い|普通|やや速い|速い)","(普通|やや速い|速い)","(やや速い|速い)","速い"],
-				wK = ["(最大|大|中|やや小|小)","(大|中|やや小|小)","(中|やや小|小)","(やや小|小)","小"],
-				wS = ["(遅い|やや遅い|やや速い|速い)","遅い","やや遅い","やや速い","速い"],
+			var wR = ["(Very Slow|Slow|Normal|Fast|Very Fast)","(Slow|Normal|Fast|Very Fast)","(Normal|Fast|Very Fast)","(Fast|Very Fast)","Very Fast"],
+				wK = ["(Very Large|Large|Medium|Small|Smaller)","(Large|Medium|Small|Smaller)","(Medium|Small|Smaller)","(Small|Smaller)","Smaller"],
+				wS = ["(Very Slow|Slow|Fast|Very Fast)","Very Slow","Slow","Fast","Very Fast"],
 				reg = new RegExp("^" + wR[e1] + /*@if (@_jscript_version < 9) "\r\n" + /*@end@*/ wK[e2] + /*@if (@_jscript_version < 9) "\r\n" + /*@end@*/ wS[e3],"i");
 			return function (cell) {return reg.test(cell./*@if (@_jscript_version < 9) innerText @else@*/ textContent /*@end@*/);};
 		}
