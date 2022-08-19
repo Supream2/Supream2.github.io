@@ -234,7 +234,7 @@ var sozaiHtml = function (recipe) {
 					ck = upglist[l][k].charAt(8);
 				}
 			}
-			if (ck) t += "（Lv" + ck + "以上）";
+			if (ck) t += "（Lv" + ck + "+）";
 			//精錬先名称
 			if (eq[I_bDEC]) t += "<a href=\"deco.htm#l" + eq[I_bDEC] + "\">→" + MST_Equip["deco"][eq[I_bDEC]].split(",")[0] + "</a>Lv7より精錬";
 			t += "</div>";
