@@ -209,7 +209,7 @@ if (treeCK){ //剣士弓
 		}
 	};
 	s.title = "Sort by Shot Type"
-	selectSet(s,["S","Norm 1","Norm 1","Norm 2","Norm 3","Pierc1","Pierc2","Pierc3","Pelet1","Pelet2","Pelet3","Crag 1","Crag 2","Crag 3","Clust1","Clust2","Clust3","Psn  1","Psn  2","Para 1","Para 2","Slp  1","Slp  2","Flame","Water","Thund","Freez","Dragn","Paint","Recov","Demon","Armor"]);
+	selectSet(s,["Shot","Norm 1","Norm 1","Norm 2","Norm 3","Pierc1","Pierc2","Pierc3","Pelet1","Pelet2","Pelet3","Crag 1","Crag 2","Crag 3","Clust1","Clust2","Clust3","Psn  1","Psn  2","Para 1","Para 2","Slp  1","Slp  2","Flame","Water","Thund","Freez","Dragn","Paint","Recov","Demon","Armor"]);
 	dt.appendChild(s.cloneNode(true));
 	dt.appendChild(s.cloneNode(true));
 	//辿異制限
@@ -218,17 +218,17 @@ if (treeCK){ //剣士弓
 	dt.appendChild(s.cloneNode(true));
 	tH.cells[4].appendChild(dt);
 	var ckTama_F = function (e1,e2) {
-		if (e1 === "S" && e2 === "S") {
+		if (e1 === "Shot" && e2 === "Shot") {
 			return function(){return true};
 		} else {
 			var wT = [,"[0-9]+","(<u>|)([0-9]+|-)(</u>|)/[0-9]+","(<u>|)[0-9]+(</u>|)/(<u>|)[0-9]+(</u>|)/[0-9]"],
 				reg1,reg2;
-			if (e1 !== "S") reg1 = e1.length === 5 ? new RegExp(e1 + "：" + wT[1]) : new RegExp(e1.substring(0,5) + "：" + wT[e1.substring(5,6)],"i");
-			if (e2 !== "S") reg2 = e2.length === 5 ? new RegExp(e2 + "：" + wT[1]) : new RegExp(e2.substring(0,5) + "：" + wT[e2.substring(5,6)],"i");
+			if (e1 !== "Shot") reg1 = e1.length === 5 ? new RegExp(e1 + "：" + wT[1]) : new RegExp(e1.substring(0,5) + "：" + wT[e1.substring(5,6)],"i");
+			if (e2 !== "Shot") reg2 = e2.length === 5 ? new RegExp(e2 + "：" + wT[1]) : new RegExp(e2.substring(0,5) + "：" + wT[e2.substring(5,6)],"i");
 
-			if (e1 !== "S" && e2 !== "S") {
+			if (e1 !== "Shot" && e2 !== "Shot") {
 				return function (cell) {return reg1.test(cell.innerHTML) && reg2.test(cell.innerHTML);};
-			} else if (e1 !== "S") {
+			} else if (e1 !== "Shot") {
 				return function (cell) {return reg1.test(cell.innerHTML);};
 			} else {
 				return function (cell) {return reg2.test(cell.innerHTML);};
