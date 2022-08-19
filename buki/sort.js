@@ -209,7 +209,7 @@ if (treeCK){ //剣士弓
 		}
 	};
 	s.title = "Sort by Shot Type"
-	selectSet(s,["S","Normal1","Normal1","Normal2","Normal3","Pierce1","Pierce2","Pierce3","Pellet1","Pellet2","Pellet3","Crag1","Crag2","Crag3","Cluster1","Cluster2","Cluster3","Psn1","Psn2","Para1","Para2","Slp1","Slp2","Flaming","Water","Thunder","Ice","Dragon","Paint","Rec","Demon","Armor"]);
+	selectSet(s,["S","Norm1","Norm1","Norm2","Norm3","Pier1","Pier2","Pier3","Pell1","Pell2","Pell3","Crag1","Crag2","Crag3","Clus1","Clus2","Clus3","Psn 1","Psn 2","Para1","Para2","Slp1","Slp 2","Flam","Wat ","Thun","Ice ","Drag","Pain","Rec ","Demo","Armo"]);
 	dt.appendChild(s.cloneNode(true));
 	dt.appendChild(s.cloneNode(true));
 	//辿異制限
@@ -223,8 +223,8 @@ if (treeCK){ //剣士弓
 		} else {
 			var wT = [,"[0-9]+","(<u>|)([0-9]+|-)(</u>|)/[0-9]+","(<u>|)[0-9]+(</u>|)/(<u>|)[0-9]+(</u>|)/[0-9]"],
 				reg1,reg2;
-			if (e1 !== "S") reg1 = e1.length === 2 ? new RegExp(e1 + "：" + wT[1]) : new RegExp(e1.substring(0,2) + "：" + wT[e1.substring(2,3)],"i");
-			if (e2 !== "S") reg2 = e2.length === 2 ? new RegExp(e2 + "：" + wT[1]) : new RegExp(e2.substring(0,2) + "：" + wT[e2.substring(2,3)],"i");
+			if (e1 !== "S") reg1 = e1.length === 4 ? new RegExp(e1 + "：" + wT[1]) : new RegExp(e1.substring(0,2) + "：" + wT[e1.substring(2,3)],"i");
+			if (e2 !== "S") reg2 = e2.length === 4 ? new RegExp(e2 + "：" + wT[1]) : new RegExp(e2.substring(0,2) + "：" + wT[e2.substring(2,3)],"i");
 
 			if (e1 !== "S" && e2 !== "S") {
 				return function (cell) {return reg1.test(cell.innerHTML) && reg2.test(cell.innerHTML);};
