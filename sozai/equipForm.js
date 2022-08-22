@@ -16,7 +16,7 @@ addEvent(document.getElementById("b_search"),"click",function () {
 var searchMei = document.getElementById("equip").value;
 if (!searchMei) return;
 
-var BouguName = {"h":"頭防具","b":"胴防具","a":"腕防具","w":"腰防具","l":"脚防具","d":"装飾品","p":"装飾品","t":"天廊石","f":"天封印","c":"カフ","s":"シジル","n":"ネコ","H":"Ｐ頭","B":"Ｐ胴"},
+var BouguName = {"h":"Head","b":"Chest","a":"Arm","w":"Waist","l":"Leg","d":"Deco","p":"P Deco","t":"Tower Deco","f":"Tower Sigil","c":"Cuff","s":"Sigil","n":"Cat","H":"ＰHead","B":"ＰChest"},
 	BouguId = {"h":"head","b":"body","a":"arm","w":"wst","l":"leg","d":"deco","c":"decocf","p":"decosp","n":"deconk","t":"decot","f":"decof","s":"sigil","H":"head_pertnya","B":"body_pertnya"},
 	BukiName = {0:"GS",1:"HBG",2:"Hammer",3:"Lance",4:"SnS",5:"LBG",6:"DS",7:"LS",8:"HH",9:"GL","A":"Bow","B":"Tonfa","C":"SwAxe","D":"MagSpike","a":"ＰGS","b":"ＰHammer"},
 	BukiId = {0:"taiken",1:"heavy",2:"hammer",3:"lance",4:"katate",5:"right",6:"souken",7:"tachi",8:"horn",9:"gunlance","A":"yumi","B":"tonfa","C":"slaxe","D":"magspike","a":"taiken_partnya","c":"hammer_partnya"},
@@ -44,8 +44,8 @@ for (var i in MST_Equip.Name) {
 document.getElementById("tblBuki").innerHTML = txt + "<table>";
 
 MST_Equip = setBougu();
-var txt = "<table><tr><th style=\"width:4em;\">部位</th><th style=\"width:10em;\">防具名</th></tr>";
-var txts = "<table><tr><th style=\"width:4em;\">装飾品</th><th style=\"width:10em;\">装飾名</th></tr>";
+var txt = "<table><tr><th style=\"width:4em;\">Part</th><th style=\"width:10em;\">Armor Name</th></tr>";
+var txts = "<table><tr><th style=\"width:4em;\">Deco type</th><th style=\"width:10em;\">Deco Name</th></tr>";
 for (var i in MST_Equip.Name) {
 	if (MST_Equip.Name[i].indexOf(searchMei) !== -1) {
 		var eq_rui = i.charAt(0),
