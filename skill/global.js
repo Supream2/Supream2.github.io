@@ -190,43 +190,43 @@ SkillForm.setSeries = function (_id,_mei) {
 	case "ベルト":
 		series.F1 = ["アイアン","スキンライト","ハイド"];
 		break;
-	case "チェーン":
-		series.F1 = ["チェーン","Ｃ・"];
+	case "Chainmail ":
+		series.F1 = ["Chainmail ","Ｃ・"];
 		break;
-	case "ランポス":
-		series.F1 = ["ランポス","ギアノス"];
+	case "Veloci ":
+		series.F1 = ["Veloci ","Gia "];
 		break;
-	case "レイア":
-		if (_id.charAt(1) !== "7") series.F1 = ["レイア","リオハート","ゴールドルナ","Ｇ・ルナ"];
+	case "Rathian ":
+		if (_id.charAt(1) !== "7") series.F1 = ["Rathian ","Rath Heart ","ゴールドルナ","Ｇ・Lune R"];
 		break;
-	case "レウス":
-		if (_id.charAt(1) !== "7") series.F1 = ["レウス","リオソウル","シルバーソル","Ｓ・ソル"];
+	case "Rathalos ":
+		if (_id.charAt(1) !== "7") series.F1 = ["Rathalos ","Rath  ","S・Sol","S・Sol R"];
 		break;
-	case "キングロブスタ":
-		series.F1 = ["キングロブスタ","Ｋ・"];
+	case "King Lobster ":
+		series.F1 = ["King Lobster ","Ｋ・"];
 		break;
-	case "ピアス(ｲﾍﾞﾝﾄ)":
+	case "Piercings(ｲﾍﾞﾝﾄ)":
 		series.F1 = ["トリビュートピアス"];
 		break;
-	case "ピアス(書物)":
+	case "Piercings(書物)":
 		series.F1 = ["衝撃のピアス","射手のピアス","先見のピアス","捨身のピアス","慈愛のピアス"];
 		break;
-	case "ピアス(海陸空)":
+	case "Piercings(海陸空)":
 		series.F1 = ["マーレピアス","海洋のピアス","スカイピアス","天空のピアス","ランドピアス","大地のピアス"];
 		break;
-	case "ピアス(ビギナー)":
+	case "Piercings(ビギナー)":
 		series.F1 = ["ルーフスピアス","シーニーピアス","ジョーヌピアス","アルブスピアス","プレートピアス"];
 		break;
-	case "ピアス(封印石)":
+	case "Piercings(封印石)":
 		series.F1 = ["ソウイル","アンサズ","エオロー","ラグズ","ゲーボ","テイワズ","ウルズ","エイワズ"];
 		break;
 	case "カフェピアス":
 		series.F1 = [];
 		series.C = "3e#";
-		series.S = "ピアス";
+		series.S = "Piercings";
 		break;
-	case "ピアス":
-		series.F1 = ["レッドピアス","ブルーピアス","ブラックピアス","ホワイトピアス","セフティ"];
+	case "Piercings":
+		series.F1 = ["Red Piercings","Blue Piercings","Black Piercings","White Piercings","セフティ"];
 		break;
 	case "ネコピアス":
 		series.F1 = [];
@@ -251,72 +251,72 @@ SkillForm.setSeries = function (_id,_mei) {
 		series.S = mei;
 		series.C = "9";
 		break;
-	case "モノブロス":
-		series.F1 = ["モノブロ","モノデビル"];
-		if (_mei === "モノブロスＧ") series.R = ["モノデビル"];
+	case "Monoblos ":
+		series.F1 = ["モノブロ","Monodevil "];
+		if (_mei === "Monoblos G ") series.R = ["Monodevil "];
 		break;
 	case "ドラゴン>ミラ":
-		series.F1 = ["ドラゴン","ミラバルカン","ミラルーツ"];
+		series.F1 = ["Dragon ","ミラ Vulcan ","White Fatalis "];
 		break;
-	case "コムラド":
-		series.F1 = ["コムラド","コムラダ"];
+	case "Comrade":
+		series.F1 = ["Comrade","Comrade red"];
 		series.high_hr = 1999;
 		break;
-	case "コムラダ":
+	case "Comrade red":
 		series.low_hr = 2001;
 		break;
 	case "ホワイトメタル>>シエル":
-		series.F1 = ["ホワイトメタル","セレスト","シエル"];
+		series.F1 = ["White Metal ","Celeste ","Ciel "];
 		break;
-	case "プロギア>>ビステマ":
-		series.F1 = ["プロギア","オラシオン","レクイエム","ビステマ"];
+	case "Purogia>>ビステマ":
+		series.F1 = ["Purogia","Oracion ","Requiem ","ビステマ "];
 		break;
 	case "デュオ系":
-		series.F1 = ["デュオ","クアッド","Ｃｏｒｅ"];
+		series.F1 = ["Duo ","Quad ","Core "];
 		break;
-	case "エクスト":
+	case "エクスト ":
 		series.R = ["エクストラ"];
 		break;
-	case "マギサ|ウィザー":
-		series.F1 = ["マギサ","クロウリー","ウィザー","ファウスト"];
+	case "Magisa|Wizard":
+		series.F1 = ["Magisa","Crowley","Wizard","Faust"];
 		break;
-	case "マギサ>>ブルホ|ウィザー>>マーギア":
-		series.F1 = ["マギサ","クロウリー","ブルホ","ウィザー","ファウスト","マーギア"];
+	case "Magisa>>MagisaB|Wizard>>WizardB":
+		series.F1 = ["Magisa","Crowley","MagisaB","Wizard","Faust","WizardB"];
 		break;
 	case "ディジギア>>サルバシオン":
-		series.F1 = ["ディジギア","プリエール","サルバシオン"];
+		series.F1 = ["ディジギア","Priere ","Salvacion "];
 		break;
-	case "ガーディアン,ヘルパー|ギルドガード,ヒーラー":
-		series.F1 = ["ガーディアン","ヘルパー","ヒーラー","ギルドガード","Ｇ・ガード"];
+	case "Ian,Helper|Guild Guard,Healer":
+		series.F1 = ["ian ","Helper","Healer","Guild Guard","Ｇ・Guard"];
 		break;
 	case "キノス系":
-		series.F1 = ["キノス","ヒメロス","ブレシス","カリエン"];
+		series.F1 = ["Kinosu ","Himeros ","Bureshisu ","Charien "];
 		break;
-	case "キリン頭":
-		series.F1 = ["キリンベルデ","キリンルフス","キリンアピリ"];
+	case "Kirin Verde":
+		series.F1 = ["Kirin Verde","Kirin Rufus","Kirin アピリ"];
 		break;
-	case "エスピナ":
-		series.F1 = ["エスピナ","ヴァイス"];
+	case "Espinas ":
+		series.F1 = ["Espinas ","Weiss "];
 		break;
 	case "シュッツ>>ツヴィンガ":
-		series.F1 = ["シュッツ","ヒルフェ","ツヴィンガ"];
+		series.F1 = ["Schutz ","Hilfe ","Zer "];
 		break;
 	case "エスピマスク":
 		series.F1 = ["エスピ"];
 		series.F2 = ["マスク"];
 		break;
-	case "ハイメタＵ":
+	case "High Metal U ":
 		series.F1 = ["ハイメタＵヘルム・","ハイメタＲヘルム・"];
 		break;
-	case "ブートアップ":
-		series.F1 = ["ブートアップ","ブートＦ"];
+	case "Boot Up ":
+		series.F1 = ["Boot Up ","Buto F "];
 		break;
 	case "フィディ>>ヴェルフ":
-		series.F1 = ["フィディ","エピディ","ヴェルフィ","ヴェルフ"];
+		series.F1 = ["フィ Diablos ーム","エピ Diablos ーム","ヴェルフィ ","ヴェルフ"];
 		break;
 	case "ハーヴェスト>>コピアイ":
-		series.F1 = ["ハーヴェスト","フレイ","クロノス","レアー","ハーデス","コルヌー","コピアイ"];
-		series.R = ["フレイム"];
+		series.F1 = ["ハーヴェスト","フレイ ","クロノス ","レアー ","ハーデス ","コルヌー ","コピアイ "];
+		series.R = ["Flame "];
 		break;
 	case "チャーム系":
 		series.F1 = [];
@@ -325,71 +325,71 @@ SkillForm.setSeries = function (_id,_mei) {
 	case "ショウロウ|ミタマ":
 		series.F1 = ["ショウロウ","ミタマ","シャンテ"];
 		break;
-	case "ディアブロ":
-		series.F1 = ["ディアブロ","ディア"];
-		if (_mei === "ディアブロＧ") series.R = ["ディアー"];
+	case "Diablos ":
+		series.F1 = ["Diablos ","ディア"];
+		if (_mei === "Diablos G ") series.R = ["ディアー"];
 		break;
 	case "片手剣":
-		series.F1 = ["リリオ","ガーネット","ルベライト"];
+		series.F1 = ["リリオ ","Garnet ","Rubellite "];
 		series.S = "剣聖";
 		break;
 	case "双剣":
-		series.F1 = ["フレサ","アメジスト","ラズライト"];
+		series.F1 = ["フレサ ","Amethyst ","ラズライト "];
 		series.S = "双龍";
 		break;
 	case "大剣":
-		series.F1 = ["クラベル","コーラル","ジルコン"];
+		series.F1 = ["クラBeru ","Coral ","Zircon "];
 		series.S = "剣王";
 		break;
 	case "太刀":
-		series.F1 = ["シルエラ","クォーツ","スピネル"];
+		series.F1 = ["シルエラ ","Quartz ","Spinel "];
 		series.S = "刀神";
 		break;
 	case "ランス":
-		series.F1 = ["セレソ","ルビー","パイローブ"];
+		series.F1 = ["セレソ ","Ruby ","Pyrope "];
 		series.S = "天槍";
 		break;
 	case "ガンランス":
-		series.F1 = ["オリバ","サファイア","アイオラ"];
+		series.F1 = ["オリバ ","Sapphire ","アイオラ "];
 		series.S = "砲皇";
 		break;
 	case "ハンマー":
-		series.F1 = ["カメリア","エメラルド","ジェイド"];
+		series.F1 = ["カメ Lea ","Emerald ","Jade "];
 		series.S = "鈍器獣";
 		break;
 	case "狩猟笛":
-		series.F1 = ["ハシント","パール","アゲート"];
+		series.F1 = ["ハシント ","Pearl ","Agate "];
 		series.S = "奏帝";
 		break;
 	case "穿龍棍":
-		series.F1 = ["ヒスイ","ブラッド"];
+		series.F1 = ["Hisui ","Blood "];
 		series.S = "穿凰";
 		break;
 	case "ライト":
-		series.F1 = ["ラウレル","トパーズ","シトリン"];
+		series.F1 = ["ラウレル ","Topaz ","Citrine "];
 		series.S = "銃傑";
 		break;
 	case "ヘビィ":
-		series.F1 = ["ココ","トルマリン","ペリドット"];
+		series.F1 = ["ココ ","Tourmaline ","Peridot "];
 		series.S = "銃仙";
 		break;
 	case "弓":
-		series.F1 = ["グラナダ","ラピス","ターコイズ"];
+		series.F1 = ["グラナダ ","Lapis ","Turquoise "];
 		series.S = "弓鬼";
 		break;
 	case "ｽﾗｯｼｭｱｯｸｽ":
-		series.F1 = ["オニキス","ルチル"];
+		series.F1 = ["Onyx ","Rutile "];
 		series.S = "斬将";
 		break;
 	case "ﾏｸﾞﾈｯﾄｽﾊﾟｲｸ":
-		series.F1 = ["タンザナ","ヘマタイト"];
+		series.F1 = ["Tanzanite ","Hematite "];
 		series.S = "磁星";
 		break;
 	case "貢献証":
-		series.F1 = ["コントラ","ジントラ","アントラ","ビントラ","タントラ"];
+		series.F1 = ["Contra ","Jintora ","Antora ","Bintora ","Tantora "];
 		break;
 	case "調査兵団,訓練兵団":
-		series.F1 = ["調査兵団","訓練兵団","立体機動装置"];
+		series.F1 = ["Survey Corps ","Training Corps ","立体機動装置"];
 		break;
 	case "フランキー":
 		series.F1 = ["フラン"];
@@ -402,29 +402,29 @@ SkillForm.setSeries = function (_id,_mei) {
 			series.high_hr = 1999;
 		}
 		break;
-	case "エンプレス":
-		series.F1 = ["エンプレス","エンプレ"];
+	case "Empress ":
+		series.F1 = ["Empress ","エンプレ"];
 		break;
-	case "リオハート":
-		series.F1 = ["リオハート","ハート"];
+	case "Rath Heart ":
+		series.F1 = ["Rath Heart ","ハート"];
 		break;
-	case "リオソウル":
-		series.F1 = ["リオソウル","ソウル"];
+	case "Rath  ":
+		series.F1 = ["Rath  ","Soul"];
 		break;
 	case "ディアース":
 		series.F1 = ["ディアース","アース"];
 		break;
-	case "モノデビル":
-		series.F1 = ["モノデビル","モノデビ"];
+	case "Monodevil ":
+		series.F1 = ["Monodevil ","モノデビ"];
 		break;
 	case "ヒプシー":
 		series.F1 = ["ヒプシー","ヒプシ"];
 		break;
-	case "ラヴィ":
+	case "Raviente ":
 		series.high_hr = 0;
 		series.R = ["狂","猛","極"];
 		break;
-	case "ラヴィ：狂":
+	case "Raviente  : Violent":
 		series.high_hr = 0;
 		series.F1 = ["ラヴィ狂"];
 		series.S = "：狂";
@@ -437,14 +437,14 @@ SkillForm.setSeries = function (_id,_mei) {
 		series.F1 = ["ラヴィＧ極"];
 		series.S = "：極";
 		break;
-	case "カバリバ":
-		series.F1 = ["カバリバ","カバリ"];
+	case "Kabariba ":
+		series.F1 = ["Kabariba ","カバリ"];
 		break;
-	case "トルボダ":
-		series.F1 = ["トルボダ","トルボ"];
+	case "Toruboda ":
+		series.F1 = ["Toruboda ","トルボ"];
 		break;
 	case "アイルー|メラルー":
-		series.F1 = ["アイルー","メラルー","アメショ","チャトラ","ミケ","シロ","チャシロ","クロシロ"];
+		series.F1 = ["Felyne ","Melynx ","Tabby ","Brown ","Calico ","Monotone ","Chashiro ","Two-tone "];
 		break;
 	default:
 		if (mei.indexOf("：") !== -1) {
