@@ -1,248 +1,248 @@
 (function(){
 var Fulltohalf = (function (){
-	var han = "0123456789.,-+ABCDEFGHIJKLMNOPQRSTUVWXYZ±²³´µ¶·¸¹º»¼½¾¿ÀÁÂÃÄÅÆÇÈÉÊËÌÍÎÏĞÑÒÓÔÕÖ×ØÙÚÛÜ¦İ±²³´µ¶·¸¹º»¼½¾¿ÀÁÂÃÄÅÆÇÈÉÊËÌÍÎÏĞÑÒÓÔÕÖ×ØÙÚÛÜ¦İ§§¨¨©©ªª««¯¯¬¬­­®®¶·¸¹º»¼½¾¿ÀÁÂÃÄÊËÌÍÎÊËÌÍÎ¶·¸¹º»¼½¾¿ÀÁÂÃÄÊËÌÍÎÊËÌÍÎ³";
-	var zen = "‚O‚P‚Q‚R‚S‚T‚U‚V‚W‚XDC|{‚`‚a‚b‚c‚d‚e‚i‚g‚h‚i‚j‚k‚l‚m‚n‚o‚p‚q‚r‚s‚t‚u‚v‚w‚x‚yƒAƒCƒEƒGƒIƒJƒLƒNƒPƒRƒTƒVƒXƒZƒ\ƒ^ƒ`ƒcƒeƒgƒiƒjƒkƒlƒmƒnƒqƒtƒwƒzƒ}ƒ~ƒ€ƒƒ‚ƒ„ƒ†ƒˆƒ‰ƒŠƒ‹ƒŒƒƒƒ’ƒ“‚ ‚¢‚¤‚¦‚¨‚©‚«‚­‚¯‚±‚³‚µ‚·‚¹‚»‚½‚¿‚Â‚Ä‚Æ‚È‚É‚Ê‚Ë‚Ì‚Í‚Ğ‚Ó‚Ö‚Ù‚Ü‚İ‚Ş‚ß‚à‚â‚ä‚æ‚ç‚è‚é‚ê‚ë‚í‚ğ‚ñ‚Ÿƒ@‚¡ƒB‚£ƒD‚¥ƒF‚§ƒH‚Áƒb‚áƒƒ‚ãƒ…‚åƒ‡‚ª‚¬‚®‚°‚²‚´‚¶‚¸‚º‚¼‚¾‚À‚Ã‚Å‚Ç‚Î‚Ñ‚Ô‚×‚Ú‚Ï‚Ò‚Õ‚Ø‚ÛƒKƒMƒOƒQƒSƒUƒWƒYƒ[ƒ]ƒ_ƒWƒdƒfƒhƒoƒrƒuƒxƒ{ƒpƒsƒvƒyƒ|ƒ”";
+	var han = "0123456789.,-+ABCDEFGHIJKLMNOPQRSTUVWXYZï½±ï½²ï½³ï½´ï½µï½¶ï½·ï½¸ï½¹ï½ºï½»ï½¼ï½½ï½¾ï½¿ï¾€ï¾ï¾‚ï¾ƒï¾„ï¾…ï¾†ï¾‡ï¾ˆï¾‰ï¾Šï¾‹ï¾Œï¾ï¾ï¾ï¾ï¾‘ï¾’ï¾“ï¾”ï¾•ï¾–ï¾—ï¾˜ï¾™ï¾šï¾›ï¾œï½¦ï¾ï½±ï½²ï½³ï½´ï½µï½¶ï½·ï½¸ï½¹ï½ºï½»ï½¼ï½½ï½¾ï½¿ï¾€ï¾ï¾‚ï¾ƒï¾„ï¾…ï¾†ï¾‡ï¾ˆï¾‰ï¾Šï¾‹ï¾Œï¾ï¾ï¾ï¾ï¾‘ï¾’ï¾“ï¾”ï¾•ï¾–ï¾—ï¾˜ï¾™ï¾šï¾›ï¾œï½¦ï¾ï½§ï½§ï½¨ï½¨ï½©ï½©ï½ªï½ªï½«ï½«ï½¯ï½¯ï½¬ï½¬ï½­ï½­ï½®ï½®ï½¶ï½·ï½¸ï½¹ï½ºï½»ï½¼ï½½ï½¾ï½¿ï¾€ï¾ï¾‚ï¾ƒï¾„ï¾Šï¾‹ï¾Œï¾ï¾ï¾Šï¾‹ï¾Œï¾ï¾ï½¶ï½·ï½¸ï½¹ï½ºï½»ï½¼ï½½ï½¾ï½¿ï¾€ï¾ï¾‚ï¾ƒï¾„ï¾Šï¾‹ï¾Œï¾ï¾ï¾Šï¾‹ï¾Œï¾ï¾ï½³";
+	var zen = "ï¼ï¼‘ï¼’ï¼“ï¼”ï¼•ï¼–ï¼—ï¼˜ï¼™ï¼ï¼Œï¼ï¼‹ï¼¡ï¼¢ï¼£ï¼¤ï¼¥ï¼¦ï¼ªï¼¨ï¼©ï¼ªï¼«ï¼¬ï¼­ï¼®ï¼¯ï¼°ï¼±ï¼²ï¼³ï¼´ï¼µï¼¶ï¼·ï¼¸ï¼¹ï¼ºã‚¢ã‚¤ã‚¦ã‚¨ã‚ªã‚«ã‚­ã‚¯ã‚±ã‚³ã‚µã‚·ã‚¹ã‚»ã‚½ã‚¿ãƒãƒ„ãƒ†ãƒˆãƒŠãƒ‹ãƒŒãƒãƒãƒãƒ’ãƒ•ãƒ˜ãƒ›ãƒãƒŸãƒ ãƒ¡ãƒ¢ãƒ¤ãƒ¦ãƒ¨ãƒ©ãƒªãƒ«ãƒ¬ãƒ­ãƒ¯ãƒ²ãƒ³ã‚ã„ã†ãˆãŠã‹ããã‘ã“ã•ã—ã™ã›ããŸã¡ã¤ã¦ã¨ãªã«ã¬ã­ã®ã¯ã²ãµã¸ã»ã¾ã¿ã‚€ã‚ã‚‚ã‚„ã‚†ã‚ˆã‚‰ã‚Šã‚‹ã‚Œã‚ã‚ã‚’ã‚“ãã‚¡ãƒã‚£ã…ã‚¥ã‡ã‚§ã‰ã‚©ã£ãƒƒã‚ƒãƒ£ã‚…ãƒ¥ã‚‡ãƒ§ãŒããã’ã”ã–ã˜ãšãœãã ã¢ã¥ã§ã©ã°ã³ã¶ã¹ã¼ã±ã´ã·ãºã½ã‚¬ã‚®ã‚°ã‚²ã‚´ã‚¶ã‚¸ã‚ºã‚¼ã‚¾ãƒ€ã‚¸ãƒ…ãƒ‡ãƒ‰ãƒãƒ“ãƒ–ãƒ™ãƒœãƒ‘ãƒ”ãƒ—ãƒšãƒãƒ´";
 	return function (strVal) {
 		for (var i=0,str = "",m=strVal.length,c = "",n=0; i<m; i++){
 			c = strVal.charAt(i),n = zen.indexOf(c,0);
-			str += (n >= 0) ? han.charAt(n) : "Ş" + c;
+			str += (n >= 0) ? han.charAt(n) : "ï¾" + c;
 		}
 		return str;
 	}
 })();
 SkillForm.setDecoList([
-["“Vˆó",[
-"2CB3", //a‚ê–¡UP‚Ìˆó
-"2CB4", //ƒXƒLƒ‹UP‚Ìˆó
-"2CB5", //UŒ‚—ÍUP‚Ìˆó
-"2CB6", //‘®«Eó‘ÔUP‚Ìˆó
-"2CB7", //‹——£•â³‚Ìˆó
-"2CB8", //‹­Œ‚ƒrƒ“UP‚Ìˆó
-"2CB9", //–hŒä—ÍUP‚Ìˆó
-"2CBA", //ƒ_ƒ[ƒWŒyŒ¸‚Ìˆó
-"2CBB", //‘Ì—Í©“®‰ñ•œ‚Ìˆó
-"2CBC" //‚f‹‰–h‹ï‚Ìˆó
-]],["“V••ˆó",[
-"17BA", //[•Ğè]^‹ó‰ñ“]a
-"17BB", //[‘oŒ•]n‘Åp
-"17BC", //[‘åŒ•]“ã‚¬•¥‚¢
-"17BD", //[‘åŒ•]ƒK[ƒha‡T
-"17BE", //[‘åŒ•]ƒK[ƒha‡U
-"17BF", //[‘¾“]ŠÑh‚µ
-"17C0", //[e‘„]“¥aã‚°
-"17C1", //[’È]—­ˆÚ“®p‡T
-"17C2", //[’È]—­ˆÚ“®p‡U
-"17C3", //[’È]—­ˆÚ“®p‡V
-"17C4", //ƒXƒ^ƒ“’l‚Ìˆó
-"17C5", //‰¹”š”ÍˆÍŠg‘å‚Ìˆó
-"2B04", //‰Î‘®«‚Ìˆó
-"2B05", //…‘®«‚Ìˆó
-"2B06", //—‹‘®«‚Ìˆó
-"2B07", //—´‘®«‚Ìˆó
-"2B08", //•X‘®«‚Ìˆó
-"2B09", //–ƒáƒ‘®«‚Ìˆó
-"2B0A", //‡–°‘®«‚Ìˆó
-"2B0B", //“Å‘®«‚Ìˆó
-"2B0C", //‰ïS‚Ìˆó
-"2B0D", //’Êí’e‚Ìˆó‡T
-"2B0E", //ŠÑ’Ê’e‚Ìˆó‡T
-"2B0F", //U’e‚Ìˆó‡T
-"2B10", //“ObÖ’e‚Ìˆó‡T
-"2B11", //‰Î‰Š’e‚Ìˆó‡T
-"2B12", //…—â’e‚Ìˆó‡T
-"2B13", //“dŒ‚’e‚Ìˆó‡T
-"2B14", //•XŒ‹’e‚Ìˆó‡T
-"2B15", //’Êí’e‚Ìˆó‡U
-"2B16", //ŠÑ’Ê’e‚Ìˆó‡U
-"2B17", //U’e‚Ìˆó‡U
-"2B18", //“ObÖ’e‚Ìˆó‡U
-"2B19", //‰Î‰Š’e‚Ìˆó‡U
-"2B1A", //…—â’e‚Ìˆó‡U
-"2B1B", //“dŒ‚’e‚Ìˆó‡U
-"2B1C", //•XŒ‹’e‚Ìˆó‡U
-"3918", //ƒXƒLƒ‹˜g‚Ìˆó
-"3919", //‘M“]‹­‰»‚Ìˆó
-"391A", //IŒ‚‹­‰»‚Ìˆó
-"391B", //‘®Œ‚‹­‰»‚Ìˆó
-"391C", //“Z—‹‹­‰»‚Ìˆó
-"391D", //•XŠE‹­‰»‚Ìˆó
-"391E", //‹zŒŒ‹­‰»‚Ìˆó
-"391F", //Œ€•¨‹­‰»‚Ìˆó
-"3920", //x‰‡‹­‰»‚Ìˆó
-"3921", //¨ğ‹­‰»‚Ìˆó
-"3922", //•—ˆ³‹­‰»‚Ìˆó
-"3923", //‘Ïk‹­‰»‚Ìˆó
-"3924", //‘Ï“Å‹­‰»‚Ìˆó
-"3925", //‘Ï–ƒ‹­‰»‚Ìˆó
-"3926", //‘Ï‡‹­‰»‚Ìˆó
-"3927", //ß–ñ‹­‰»‚Ìˆó
-"3928", //ƒK«‹­‰»‚Ìˆó
-"3929", //“K‰‹­‰»‚Ìˆó
-"392A", //ŒÛ•‘‹­‰»‚Ìˆó
-"392B", //”½Ë‹­‰»‚Ìˆó
-"392C", //I—¬‹­‰»‚Ìˆó
-"392D", //ŒŒ‹C‹­‰»‚Ìˆó
-"3A61", //“•š‹­‰»‚Ìˆó
-"3AFD", //Š…‹­‰»‚Ìˆó
-"3D97", //–Òi‹­‰»‚Ìˆó
-"4086" //–‹–³‹­‰»‚Ìˆó
+["å¤©åˆ»å°",[
+"2CB3", //æ–¬ã‚Œå‘³UPã®å°
+"2CB4", //ã‚¹ã‚­ãƒ«UPã®å°
+"2CB5", //æ”»æ’ƒåŠ›UPã®å°
+"2CB6", //å±æ€§ãƒ»çŠ¶æ…‹UPã®å°
+"2CB7", //è·é›¢è£œæ­£ã®å°
+"2CB8", //å¼·æ’ƒãƒ“ãƒ³UPã®å°
+"2CB9", //é˜²å¾¡åŠ›UPã®å°
+"2CBA", //ãƒ€ãƒ¡ãƒ¼ã‚¸è»½æ¸›ã®å°
+"2CBB", //ä½“åŠ›è‡ªå‹•å›å¾©ã®å°
+"2CBC" //ï¼§ç´šé˜²å…·ã®å°
+]],["å¤©å°å°",[
+"17BA", //[ç‰‡æ‰‹]çœŸç©ºå›è»¢æ–¬
+"17BB", //[åŒå‰£]åˆƒæ‰“è¡“
+"17BC", //[å¤§å‰£]è–™ãæ‰•ã„
+"17BD", //[å¤§å‰£]ã‚¬ãƒ¼ãƒ‰æ–¬â… 
+"17BE", //[å¤§å‰£]ã‚¬ãƒ¼ãƒ‰æ–¬â…¡
+"17BF", //[å¤ªåˆ€]è²«åˆºã—
+"17C0", //[éŠƒæ§]è¸è¾¼æ–¬ä¸Šã’
+"17C1", //[éš]æºœç§»å‹•è¡“â… 
+"17C2", //[éš]æºœç§»å‹•è¡“â…¡
+"17C3", //[éš]æºœç§»å‹•è¡“â…¢
+"17C4", //ã‚¹ã‚¿ãƒ³å€¤ã®å°
+"17C5", //éŸ³çˆ†ç¯„å›²æ‹¡å¤§ã®å°
+"2B04", //ç«å±æ€§ã®å°
+"2B05", //æ°´å±æ€§ã®å°
+"2B06", //é›·å±æ€§ã®å°
+"2B07", //é¾å±æ€§ã®å°
+"2B08", //æ°·å±æ€§ã®å°
+"2B09", //éº»ç—ºå±æ€§ã®å°
+"2B0A", //ç¡çœ å±æ€§ã®å°
+"2B0B", //æ¯’å±æ€§ã®å°
+"2B0C", //ä¼šå¿ƒã®å°
+"2B0D", //é€šå¸¸å¼¾ã®å°â… 
+"2B0E", //è²«é€šå¼¾ã®å°â… 
+"2B0F", //æ•£å¼¾ã®å°â… 
+"2B10", //å¾¹ç”²æ¦´å¼¾ã®å°â… 
+"2B11", //ç«ç‚å¼¾ã®å°â… 
+"2B12", //æ°´å†·å¼¾ã®å°â… 
+"2B13", //é›»æ’ƒå¼¾ã®å°â… 
+"2B14", //æ°·çµå¼¾ã®å°â… 
+"2B15", //é€šå¸¸å¼¾ã®å°â…¡
+"2B16", //è²«é€šå¼¾ã®å°â…¡
+"2B17", //æ•£å¼¾ã®å°â…¡
+"2B18", //å¾¹ç”²æ¦´å¼¾ã®å°â…¡
+"2B19", //ç«ç‚å¼¾ã®å°â…¡
+"2B1A", //æ°´å†·å¼¾ã®å°â…¡
+"2B1B", //é›»æ’ƒå¼¾ã®å°â…¡
+"2B1C", //æ°·çµå¼¾ã®å°â…¡
+"3918", //ã‚¹ã‚­ãƒ«æ ã®å°
+"3919", //é–ƒè»¢å¼·åŒ–ã®å°
+"391A", //å·§æ’ƒå¼·åŒ–ã®å°
+"391B", //å±æ’ƒå¼·åŒ–ã®å°
+"391C", //çºé›·å¼·åŒ–ã®å°
+"391D", //æ°·ç•Œå¼·åŒ–ã®å°
+"391E", //å¸è¡€å¼·åŒ–ã®å°
+"391F", //åŠ‡ç‰©å¼·åŒ–ã®å°
+"3920", //æ”¯æ´å¼·åŒ–ã®å°
+"3921", //è€³æ “å¼·åŒ–ã®å°
+"3922", //é¢¨åœ§å¼·åŒ–ã®å°
+"3923", //è€éœ‡å¼·åŒ–ã®å°
+"3924", //è€æ¯’å¼·åŒ–ã®å°
+"3925", //è€éº»å¼·åŒ–ã®å°
+"3926", //è€ç¡å¼·åŒ–ã®å°
+"3927", //ç¯€ç´„å¼·åŒ–ã®å°
+"3928", //ã‚¬æ€§å¼·åŒ–ã®å°
+"3929", //é©å¿œå¼·åŒ–ã®å°
+"392A", //é¼“èˆå¼·åŒ–ã®å°
+"392B", //åå°„å¼·åŒ–ã®å°
+"392C", //å·§æµå¼·åŒ–ã®å°
+"392D", //è¡€æ°—å¼·åŒ–ã®å°
+"3A61", //é›Œä¼å¼·åŒ–ã®å°
+"3AFD", //å–å¼·åŒ–ã®å°
+"3D97", //çŒ›é€²å¼·åŒ–ã®å°
+"4086" //å¹•ç„¡å¼·åŒ–ã®å°
 ]]
 ]);
 SkillForm.setSeriesList([
-["ë—Â",["ƒuƒŠƒ[GX","‚sƒVƒƒƒc","ƒIƒEƒr[ƒg|ƒpƒsƒƒ‹","ƒK[ƒfƒBƒAƒ“,ƒwƒ‹ƒp[|ƒMƒ‹ƒhƒK[ƒh,ƒq[ƒ‰[","ƒMƒ‹ƒhƒiƒCƒg|ƒƒCƒh,ƒvƒ‰ƒCƒx[ƒg","ƒLƒ“ƒOƒƒuƒXƒ^","ƒNƒƒIƒr","ƒWƒƒ[ƒW[","ƒXƒJƒ‹","ƒXƒeƒB[ƒ‹","ƒZƒtƒeƒB","ƒ`ƒF[ƒ“","ƒlƒRƒsƒAƒX","ƒnƒCƒƒ^","ƒnƒ“ƒ^[","ƒoƒgƒ‹","ƒsƒAƒX","ƒrƒXƒgƒ","ƒxƒ‹ƒg","ƒ{[ƒ“","ƒz[ƒv","ƒ}ƒJƒ‹ƒp","ƒ}ƒtƒ‚ƒt","ƒƒ^ƒ‹","ƒƒ‰ƒ“","ƒƒ‹ƒzƒA","ƒ‹[ƒL[","ƒ‹[ƒWƒ…","ƒŒƒU[ƒ‰ƒCƒg","¬“×","”E","SP"].sort(function (a, b){return Fulltohalf(b) < Fulltohalf(a) ? 1 : -1}),
-	["ƒ‚ƒ“ƒXƒ^[",["ƒAƒCƒ‹[","ƒAƒJƒ€","ƒAƒNƒ‰","ƒAƒrƒI","ƒC[ƒIƒX","ƒGƒXƒsƒi","ƒGƒ“ƒvƒŒƒX","ƒJƒCƒU[","ƒKƒmƒX","ƒKƒuƒ‰ƒX","ƒKƒ‹ƒ‹ƒK","ƒKƒŒƒIƒX","ƒMƒUƒ~","ƒLƒŠƒ“","ƒNƒAƒ‹","ƒNƒVƒƒ","ƒNƒbƒN","ƒOƒ‰ƒrƒh","ƒOƒŒƒ“","ƒQƒlƒ|ƒX","ƒQƒŠƒ‡ƒX","ƒSƒS","ƒRƒ“ƒK","ƒUƒUƒ~","ƒUƒ€ƒU","ƒ^ƒƒX","ƒfƒBƒAƒuƒ","ƒhƒ‰ƒSƒ“>ƒ~ƒ‰","ƒoƒTƒ‹","ƒpƒŠƒA","ƒqƒvƒm","ƒuƒ‰ƒ“ƒS","ƒuƒ‹ƒtƒ@ƒ“ƒS","ƒtƒ‹ƒtƒ‹","ƒxƒ‹","ƒ~ƒdƒn|ƒgƒˆƒ^ƒ}","ƒ}ƒOƒVƒA","ƒ‚ƒX","ƒ‚ƒmƒuƒƒX","ƒ‰ƒ”ƒ@","ƒ‰ƒ”ƒB","ƒ‰ƒ”ƒBF‹¶","ƒ‰ƒ“ƒS","ƒ‰ƒ“ƒ|ƒX","ƒ‹ƒR","ƒŒƒCƒA","ƒŒƒEƒX","ƒŒƒbƒNƒX","‹Å,Œ|™z,‰","ˆî‰×|‹Ê‘”","_Šy|_À","‹àF|•q","‹à„|•s“®","–é³|C—…"].sort(function (a, b){return Fulltohalf(b) < Fulltohalf(a) ? 1 : -1})],
-	["ƒNƒGƒXƒg",["ƒA[ƒN","ƒAƒX[ƒ‹","ƒAƒXƒnƒ‹ƒe","ƒAƒiƒL","ƒAƒvƒJƒ‹","ƒAƒiƒgƒŠ","ƒAƒ‹ƒ‹","ƒCƒŠ[ƒN>ƒAƒtƒeƒB","ƒ”ƒHƒ‹","ƒJƒJƒu","ƒNƒNƒ{","ƒRƒJƒ","ƒSƒXƒyƒ‹","ƒWƒFƒX","ƒWƒƒƒK[","ƒVƒƒƒbƒZ","ƒfƒXƒMƒA","ƒmƒ[ƒ‹","ƒŠƒIƒfƒ…ƒI","ƒ[ƒN","‹S_|“¶q","—[Ä|—[ˆ©","•ŒÕ|••^","™‹’é—˜|”k—…–å","’´â","‚fvŒ£Ø"].sort(function (a, b){return Fulltohalf(b) < Fulltohalf(a) ? 1 : -1})],
-	["“äƒNƒGƒXƒg",["ƒAƒŠƒGƒbƒ^>ƒeƒ“ƒyƒXƒg","ƒ”ƒBƒŠƒ”ƒ‰>ƒAƒ“ƒOƒŠƒt","ƒ”ƒFƒ“ƒg>ƒ~ƒXƒgƒ‰ƒ‹","ƒWƒXƒg","ƒfƒBƒWƒMƒA>>ƒTƒ‹ƒoƒVƒIƒ“","ƒvƒƒMƒA>>ƒrƒXƒeƒ}","ƒ‹ƒNƒXƒg","ƒƒCƒ„ƒ‹>ƒ[ƒh","”’Ö|”’’¹"].sort(function (a, b){return Fulltohalf(b) < Fulltohalf(a) ? 1 : -1})],
-	["„/“V/”e",["ƒ”ƒHƒ“","ƒAƒ‹ƒSƒ‹","ƒAƒ‹ƒeƒ‰","ƒEƒBƒ“ƒh","ƒ”ƒ@ƒ‹","ƒGƒ~ƒbƒg","ƒIƒfƒBƒo","ƒKƒXƒ‰","ƒKƒ‹ƒo","ƒOƒ@ƒ“","ƒOƒŒƒA","ƒXƒgƒƒ}","ƒfƒBƒIƒŒ","ƒfƒBƒ{ƒA","ƒgƒA","ƒgƒŠƒh","ƒnƒ‹ƒh","ƒtƒŒƒCƒ€","ƒuƒŠƒbƒc","ƒtƒƒ‹","ƒ|ƒ{ƒ‹","ƒƒ‰ƒM","ƒŠƒ‹ƒX","ƒƒ_ƒcƒ~|ƒIƒJƒ~","•Ò|“úŒõ","‰ëE|‰ëú","•‚•ô|•‚—ä"].sort(function (a, b){return Fulltohalf(b) < Fulltohalf(a) ? 1 : -1})],
-	["”é“`",["•ĞèŒ•","‘oŒ•","‘åŒ•","‘¾“","ƒ‰ƒ“ƒX","ƒKƒ“ƒ‰ƒ“ƒX","ƒnƒ“ƒ}[","ë—Â“J","ú—´","½×¯¼­±¯¸½","Ï¸ŞÈ¯Ä½Êß²¸","ƒ‰ƒCƒg","ƒwƒrƒB","‹|"]],
-	["‚f‹‰",["ƒGƒ‹ƒ[‚f","ƒ[ƒi‚f","ƒLƒŠƒ“‚f","ƒ‹ƒR‚f","ƒAƒJƒ€ƒg‚f","ƒAƒNƒ‰‚f","ƒAƒr‚f","ƒC[ƒIƒX‚f","ƒ”ƒ@ƒCƒX‚f","ƒ”ƒHƒ‰‚f","ƒ”ƒFƒmƒ€‚f","ƒGƒXƒsƒX‚f","ƒGƒXƒsƒi‚f","ƒGƒ“ƒgƒ‰‚f","ƒGƒ“ƒvƒŒƒX‚f","ƒJƒCƒU[‚f","ƒKƒmƒX‚f","ƒKƒmƒ“‚f","ƒKƒ‹ƒ‹ƒK‚f","ƒKƒŒƒIƒX‚f","ƒMƒUƒ~‚f","ƒNƒAƒ‹‚f","ƒNƒbƒN‚f","ƒNƒNƒX‚f","ƒNƒVƒƒƒi‚f","ƒOƒ‰ƒrƒf‚f","ƒOƒ‰ƒrƒh‚f","ƒOƒŒƒ“‚f","ƒQƒlƒ|ƒX‚f","ƒQƒŠƒ‡ƒX‚f","ƒSƒS‚f","ƒRƒ“ƒK‚f","ƒUƒUƒ~‚f","ƒTƒx[ƒW‚f","ƒWƒFƒrƒA‚f","ƒVƒ‡ƒEƒƒE‚f|ƒ~ƒ^ƒ}‚f","ƒ\ƒ‹‚f","ƒfƒBƒA[ƒX‚f","ƒfƒBƒAƒuƒ‚f","ƒfƒBƒX‚f","ƒhƒ‰ƒMƒ…‚f","ƒhƒ‰ƒSƒ“‚f","ƒgƒ‹ƒyƒh‚f","ƒoƒTƒ‹‚f","ƒoƒ‹ƒJƒ“‚f","ƒpƒŠƒA‚f","ƒsƒGƒgƒ‰‚f","ƒqƒvƒm‚f","ƒqƒvƒbƒN‚f","ƒqƒvƒV[‚f","ƒtƒ@ƒ‹ƒm‚f","ƒtƒ‰ƒ“ƒL[‚f","ƒvƒ‰ƒ“ƒ_‚f","ƒuƒ‰ƒ“ƒS‚f","ƒtƒ‹ƒtƒ‹‚f","ƒtƒ‹ƒ“‚f","ƒwƒbƒW‚f","ƒxƒ‹‚f","ƒ|ƒJƒ‰‚f","ƒz[ƒv‚f","ƒ}ƒOƒVƒA‚f","ƒ~ƒdƒn‚f|ƒgƒˆƒ^ƒ}‚f","ƒ‚ƒmƒfƒrƒ‹‚f","ƒ‚ƒmƒuƒƒX‚f","ƒ‰ƒ”ƒ@‚f","ƒ‰ƒ”ƒB‚fF–Ò","ƒ‰ƒ”ƒB‚fF‹É","ƒ‰ƒ“ƒ|ƒX‚f","ƒŠƒIƒn[ƒg‚f","ƒŠƒIƒ\ƒEƒ‹‚f","ƒŒƒCƒA‚f","ƒŒƒEƒX‚f","ƒŒƒbƒNƒX‚f","ƒ‹ƒi‚f","ƒŒƒr‚f","ˆî‰×‚f|‹Ê‘”‚f","_Šy‚f|_À‚f","Œä_Šy‚f|—¢_Šy‚f","‹àF‚f|•q‚f","•‰e‚f|•‰A‚f","‰ë[‚f|‰ë•£‚f","‘n‰¹‘t‚f|‰¹–a‘t‚f","i‹â‚f|‘€‹â‚f","“{–e‚f|“{–Ê‚f","Æ—‹‚f|–¾—‹‚f","œWŠâ‚f|gŠâ‚f","’éª‚f|’é‰¤‚f"].sort(function (a, b){return Fulltohalf(b) < Fulltohalf(a) ? 1 : -1})],
-	["ë‰qí",["ƒAƒT[ƒN","ƒAƒuƒ„ƒh","ƒSƒ‹ƒbƒN","ƒfƒ]ƒ‹ƒg","ƒfƒŠƒ”","ƒnƒ‰ƒKƒ“","ƒuƒ‹ƒbƒN","ƒŒƒZ[ƒK"].sort(function (a, b){return Fulltohalf(b) < Fulltohalf(a) ? 1 : -1})],
-	["“V˜L",["—ùC","—ù–","—ùŒ","ƒNƒŒƒIƒ‰","—ù”ê‚y","—ù‰Ø‚y","—ù–P‚y","‘c—´GX","ƒŠƒ…ƒ~ƒG","ƒAƒ“ƒWƒ…‚f","ƒEƒBƒ‹","ƒPƒCƒX","ƒjƒ…ƒC","ƒjƒ“ƒtƒ@","ƒnƒŠƒƒm","ƒ{ƒjƒg","ƒ~ƒjƒIƒ€","ƒƒCƒŠƒ_","ƒ‰ƒCƒIƒX","ƒ‰ƒ“ƒ”ƒH","ƒƒhƒNƒ‹","ƒƒ“ƒX"].sort(function (a, b){return Fulltohalf(b) < Fulltohalf(a) ? 1 : -1})],
-	["‘J—I",["ƒVƒƒƒKƒ‹","ƒŒƒMƒIƒX","r“V|‘““V","ƒSƒA","ƒKƒ“ƒLƒ“","ƒWƒ“ƒIƒE","ƒiƒ‹ƒK","ƒoƒ“ƒMƒX","ƒuƒ‰ƒL","ƒxƒŠƒI","–˜T"].sort(function (a, b){return Fulltohalf(b) < Fulltohalf(a) ? 1 : -1})],
-	["’HˆÙ",["ƒnƒ‹ƒh‚y","ƒUƒ€ƒU‚y","ƒOƒ‰ƒr‚y","ƒoƒ‹ƒ‰‚y","ƒ{ƒKƒoƒh‚y","ƒAƒmƒ‹‚y","ƒCƒiƒKƒ~‚y","ƒKƒXƒ‰‚y","ƒKƒm‚y","ƒMƒA‚y","ƒgƒŠƒh‚y","ƒhƒ‰ƒMƒ…‚y","ƒqƒ…ƒW‚y","ƒ~ƒh‚y","ƒ‹ƒR‚y","ƒŒƒbƒNƒX‚y","ƒ”ƒ@ƒVƒ€‚y","ƒŒƒEƒX‚y","ƒuƒ‰ƒ“ƒS‚y","ƒGƒXƒsƒi‚y","ƒqƒvƒm‚y","ƒtƒ‹ƒtƒ‹‚y","ƒUƒUƒ~‚y"].sort(function (a, b){return Fulltohalf(b) < Fulltohalf(a) ? 1 : -1})]
+["ç‹©çŒŸ",["BlizeGX","ï¼´ã‚·ãƒ£ãƒ„","King Beetle |Butterfly ","ian ,Helper|Guild Guard,Healer","Guild Knight Red|Maid,Private","King Lobster ","Black Belt ","Jersey","Skull","Steel ","Safety","Chainmail ","Cat Piercings","High Metal ","Hunter's ","Battle ","ãƒ”ã‚¢ã‚¹","Bistro ","Belt","Bone ","Hope ","Makluva ","Mafumofu","Metal","Melan ","Melahoa ","Rookie ","Rouge ","Leather ","æ··æ²Œ ","Shinobi","SP"].sort(function (a, b){return Fulltohalf(b) < Fulltohalf(a) ? 1 : -1}),
+	["ãƒ¢ãƒ³ã‚¹ã‚¿ãƒ¼",["Felyne ","ã‚¢ã‚«ãƒ ","Akura ","Abiorugu ","Io ","Espinas ","Empress ","Kaiser ","Plesioth ","Remobra","Garuga ","Cepha ","Ceanataur ","Kirin ","Kuaru ","ã‚¯ã‚·ãƒ£","Kut-Ku ","Gravios ","Guren ","Gen ","Gypceros ","Gogo ","Congalala ","Hermitaur ","Zamuza ","Hornetaur ","Diablos ","Dragon>ãƒŸãƒ©","Basarios ","Pariapuria ","Hypnoc ","Blango ","Bullfango","Khezu ","Beru ","Mizuha|Toyotama","Gougarf","Mosswine ","Monoblos ","Lavasioth ","Raviente ","Raviente  : Violent","Vespoid ","Veloci ","Rukodiora ","Rathian ","Rathalos ","Tigrex ","æš,æ›™|å‡›,è‰¶","Inari|Tamamo","Kagura|Kamiza","Golden|Black Cub","Gold å‰›|ä¸å‹•","å¤œå‰|ä¿®ç¾…"].sort(function (a, b){return Fulltohalf(b) < Fulltohalf(a) ? 1 : -1})],
+	["ã‚¯ã‚¨ã‚¹ãƒˆ",["Arc ","Azul ","ã‚¢ã‚¹ãƒãƒ«ãƒ†","ã‚¢ãƒŠã‚­","Apkallu ","ã‚¢ãƒŠãƒˆãƒª","Aruru ","Iriku>ã‚¢ãƒ•ãƒ†ã‚£","ãƒ´ã‚©ãƒ«","Kakabu ","ã‚¯ã‚¯ãƒœ","ã‚³ã‚«ãƒ­","Gospel ","Jess ","Jyaga ","Shasse ","Death Stench ","Noir ","Rath Duo ","ãƒ­ãƒ¼ã‚¯","Demon Lord|ç«¥å­","Noon Glow|å¤•èŒœ","Black Tiger|é»’è±¹","åˆ¹å¸åˆ©|å©†ç¾…é–€","è¶…çµ¶"," ï¼§è²¢çŒ®è¨¼"].sort(function (a, b){return Fulltohalf(b) < Fulltohalf(a) ? 1 : -1})],
+	["è¬ã‚¯ã‚¨ã‚¹ãƒˆ",["Arietta>Tempest","ãƒ´ã‚£ãƒªãƒ´ãƒ©>Angriff","Vento>Mistral","ã‚¸ã‚¹ãƒˆ","ãƒ‡ã‚£ã‚¸ã‚®ã‚¢>>Salvacion","Purogia>>ãƒ“ã‚¹ãƒ†ãƒ","Luxt","Royal>Lord","White Snake|White Bird"].sort(function (a, b){return Fulltohalf(b) < Fulltohalf(a) ? 1 : -1})],
+	["å‰›/å¤©/è¦‡",["Voljang ","Algol","Altera ","Wind ","Varusa ","ã‚¨ãƒŸãƒƒãƒˆ","Odiva ","Gasura ","Garuba ","Guan ","Gureado ","Stroma ","Diore ","Diboa ","Toa ","Toridcless ","Harudo ","Flame ","Blitz ","Furoru ","Pobo","Meraginasu ","Lils ","Wadatsumi|Okami","æ­¦è€…|æ—¥å…‰","Elegance|Grace","Kurai|Kurai"].sort(function (a, b){return Fulltohalf(b) < Fulltohalf(a) ? 1 : -1})],
+	["ç§˜ä¼",["ç‰‡æ‰‹å‰£","åŒå‰£","å¤§å‰£","å¤ªåˆ€","ãƒ©ãƒ³ã‚¹","ã‚¬ãƒ³ãƒ©ãƒ³ã‚¹","ãƒãƒ³ãƒãƒ¼","ç‹©çŒŸç¬›","ç©¿é¾æ£","ï½½ï¾—ï½¯ï½¼ï½­ï½±ï½¯ï½¸ï½½","ï¾ï½¸ï¾ï¾ˆï½¯ï¾„ï½½ï¾Šï¾Ÿï½²ï½¸","ãƒ©ã‚¤ãƒˆ","ãƒ˜ãƒ“ã‚£","å¼“"]],
+	[" ï¼§ç´š",["Elzelion G ","Zena G ","Kirin G ","Rukodiora G ","Akantor ï¼§","Akura G ","Abi G ","Io G ","Weiss G ","Vola G ","Venom G ","Orange Espinas G ","Espinas G ","Entora G ","Empress G ","Kaiser G ","Plesioth G ","Green Plesi G ","Garuga G ","Cepha G ","Ceanataur G ","Kuaru G ","Kut-Ku G ","Blue Kut Ku G ","Kushala G ","Black Gravios G ","Gravios G ","Guren G ","Gen G ","Gypceros G ","Gogo G ","Congalala G ","Hermitaur G ","Giaorugu ï¼§","Jebia G ","Shourou ï¼§|Mitama ï¼§","Sol G ","Black Diablos G ","Diablos G ","Disu G ","Doragyurosu G ","Dragon G ","Torpedo G ","Basarios G ","Vulcan G ","Pariapuria G ","Pietra G ","Hypnoc G ","Bright Hypnoc G ","White Hypnoc G ","Farunokku G ","Franky G ","Plunder G ","Blango G ","Khezu G ","Red Khezu G ","Hyuj G ","Beru G ","Pokara G ","Hope G ","Gougarf G ","Mizuha ï¼§|Toyotama ï¼§","Monodevil G ","Monoblos G ","Lavasioth G ","Raviente G  : Berserk","Raviente G  : Extreme","Veloci G ","Rath Heart G ","Rath  G ","Rathian G ","Rathalos G ","Tigrex G ","Lune G ","Rebidiora G ","Inari ï¼§|Tamamo ï¼§","Kagura ï¼§|Kamiza ï¼§","Mikagura ï¼§|Satokagura ï¼§","Golden ï¼§|Black Cub ï¼§","Shadow ï¼§|Shade ï¼§","Elegance ï¼§|Grace ï¼§","Genesis ï¼§|Motion ï¼§","Solv Rule ï¼§|Solv Lord ï¼§","Wrath ï¼§|Anger ï¼§","Lightning ï¼§|Thunder ï¼§","Dreadrock ï¼§|Redrock ï¼§","Conqueror ï¼§|Emperor ï¼§"].sort(function (a, b){return Fulltohalf(b) < Fulltohalf(a) ? 1 : -1})],
+	["ç‹©è¡›æˆ¦",["Asaku ","Abuyado ","Gorukku ","Desordre ","Deliver ","Haragan ","Brooke ","Resega "].sort(function (a, b){return Fulltohalf(b) < Fulltohalf(a) ? 1 : -1})],
+	["å¤©å»Š",["Nerishoku","Rengoku","Nerigeki","Cleora ","Nerihi ï¼º","Renka ï¼º","Neriotori ï¼º","White Fatalis GX ","Lumiere ","Saint G ","ã‚¦ã‚£ãƒ«","Keisu ","Nyui ","ãƒ‹ãƒ³ãƒ•ã‚¡","Harimeno ","Bonito ","Miniomu ","Meirida ","Rios ","Ranvuo ","Rodokuru ","Once "].sort(function (a, b){return Fulltohalf(b) < Fulltohalf(a) ? 1 : -1})],
+	["é·æ‚ ",["Shagaru ","Seregios ","Tempest|Welkin","Gore ","Uragaan ","Zinogre ","Nargacuga ","Vangis ","Brachy ","Barioth ","Stygian "].sort(function (a, b){return Fulltohalf(b) < Fulltohalf(a) ? 1 : -1})],
+	["è¾¿ç•°",["Harudo  ï¼º","Zamuza  ï¼º","Gravios ï¼º","Baru ï¼º","Bogabado Z ","Anoru ï¼º","Inagami ï¼º","Gasura  ï¼º","Plesioth ï¼º","Gear Z ","Toridcless  ï¼º","Doragyurosu ï¼º","Hyujikiki Z ","Midogaron ï¼º","Rukodiora  ï¼º","Tigrex Z ","Vashimu Z ","Rathalos Z ","Blango Z ","Espinas Z ","Hypnoc Z ","Khezu Z ","Hermitaur Z "].sort(function (a, b){return Fulltohalf(b) < Fulltohalf(a) ? 1 : -1})]
 ],
-["—Â’c",["ƒLƒŠƒ““ª","ƒRƒT[ƒWƒ…","ƒRƒ€ƒ‰ƒh","ƒRƒ€ƒ‰ƒ_‚f","ƒVƒ…ƒbƒc>>ƒcƒ”ƒBƒ“ƒK","ƒ\ƒ‹ƒ_[ƒg>ƒQƒCƒuƒ‹","ƒeƒl[ƒ‹","ƒtƒFƒŠ","ƒ~ƒNƒZƒX","ƒ‹ƒfƒBƒA>ƒ‹ƒ‹ƒfƒB","ël","Šá‹¾","—Â’cˆõ"].sort(function (a, b){return Fulltohalf(b) < Fulltohalf(a) ? 1 : -1}),
-	["ëlÕ",["ƒWƒ“ƒhƒ‹‚f","ƒr[ƒ^[‚f","ƒRƒŒƒvƒg‚f","ƒŠƒ“ƒNƒX‚f","ƒAƒ‹ƒ~ƒ…‚f","ƒJƒVƒEƒX‚f","ƒJƒŠƒ”ƒ@‚f","ƒ`ƒƒƒgƒŒ‚f","ƒŠƒGƒuƒŒ‚f","ƒŠƒYƒ”ƒF‚f","ƒpƒVƒI","ƒ”ƒ@ƒNƒX","ƒmƒ‹ƒbƒN","ƒ”ƒ@ƒŠƒG","ƒGƒMƒGƒl","ƒAƒgƒ‰","ƒAƒlƒVƒX","ƒEƒBƒ_>ƒXƒeƒB[ƒ_","ƒ”ƒBƒlƒ“","ƒGƒNƒGƒX","ƒI[ƒƒ","ƒIƒlƒ","ƒIƒŠƒNƒg","ƒIƒ‹ƒPƒVƒX","ƒIƒ‹ƒhƒ‹","ƒJƒoƒŠƒo","ƒLƒjƒIƒ‹","ƒNƒ‰[ƒW","ƒRƒ“ƒZƒ‹‚f","ƒU[ƒJ[|ƒ`ƒFƒCƒT[","ƒVƒJƒŠ","ƒXƒgƒŒƒK","ƒ`ƒFƒj[","ƒfƒB[ƒi","ƒfƒB[ƒ‹","ƒgƒ‹ƒ{ƒ_","ƒjƒXƒ‹","ƒqƒKƒNƒŒ","ƒvƒyƒ“","ƒuƒŒƒI","ƒyƒ‹ƒZ","ƒ}ƒAƒfƒ“","ƒ}ƒ_ƒ‹","ƒˆƒ‹ƒeƒB","ƒ‹ƒfƒIƒX","ƒƒEƒZƒX‚f","â‰e|ãÄ‰e","g¸|g˜O","Õ‚Ì‚ ‚Æ"].sort(function (a, b){return Fulltohalf(b) < Fulltohalf(a) ? 1 : -1})],
-	["Œ}Œ‚í",["ƒ~ƒ…ƒ“ƒ‹‚y","ƒtƒ@ƒ“ƒ‹‚y","ƒVƒƒƒ“ƒ‹‚y","‰Ì–a","ƒEƒ^ƒ“ƒe‚y","ƒtƒ‰ƒ“ƒe‚y","ƒƒŒƒ“ƒe‚y","ƒŠƒJƒ“ƒe‚y","‰Ì‰r","‰‹›Ô‚f|”ê›Ô‚f","ƒJƒ^ƒ“ƒe‚y"].sort(function (a, b){return Fulltohalf(b) < Fulltohalf(a) ? 1 : -1})]
+["çŒŸå›£",["Kirin","Corsage","Comrade","Comrade red ï¼§","Schutz >>Zer","Soldato>Gable","ãƒ†ãƒãƒ¼ãƒ«","ãƒ•ã‚§ãƒª","Mixes","Ledia>Rurudi","ç‹©äºº","çœ¼é¡","çŒŸå›£å“¡"].sort(function (a, b){return Fulltohalf(b) < Fulltohalf(a) ? 1 : -1}),
+	["ç‹©äººç¥­",["Zindol ï¼§","Bita ï¼§","Koreputo ï¼§","Lynx G ","Arumyu G ","Cassius G ","Cariva G ","Core G ","Liebre G ","Rizuvue G ","Pashio ","Vakusu ","Norukku ","Valier ","Eguiene ","Atra ","Aneshisu ","Uida>ã‚¹ãƒ†ã‚£ãƒ¼ãƒ€","Vinen ","Eques ","Oorowa ","Onero ","Orykto ","Orchesis ","Ordre ","Kabariba ","Kinioru","Kuraaji ","Konseru G ","Zaakaa |Chaser","Shikari","Strega ","Cheni ","Diina ","Diru ","Toruboda ","Nisuru ","Higakure","Pupen ","Breo ","Perce ","Maaden ","Madaru ","Yoruti ","Rudeos ","Roses G ","True Shadow|ç¿”å½±","Kosho|ç´…æ¥¼","Post Festivities"].sort(function (a, b){return Fulltohalf(b) < Fulltohalf(a) ? 1 : -1})],
+	["è¿æ’ƒæˆ¦",["ãƒŸãƒ¥ãƒ³ãƒ« ï¼º","ãƒ•ã‚¡ãƒ³ãƒ« ï¼º","Shanru Z ","æ­Œç´¡","Utante Z ","Furante Z ","Merente Z ","Rikante Z ","æ­Œè© ","Burning CliffGX ï¼§|ç·‹å¶½ ï¼§","Katante Z "].sort(function (a, b){return Fulltohalf(b) < Fulltohalf(a) ? 1 : -1})]
 ],
-["ƒCƒxƒ“ƒg",["ƒVƒƒƒ“ƒfƒB","ƒoƒ“ƒPƒbƒg","ƒ^ƒ‹ƒ^","ƒOƒŠƒfƒB‚y","ƒGƒŠƒ…ƒV‚f","ƒVƒtƒjƒB‚y","ƒ‰ƒtƒ@ƒ“‚f","‰ØC‚y","ƒAƒ‹ƒKƒm|ƒSƒ‹ƒKƒm","Œ‰C‚y","ƒtƒHƒ“ƒZ‚f","ƒ{ƒ“ƒl‚f","ƒRƒŠƒjƒB‚y","ƒhƒDƒ“ƒ‹GX","ƒwƒ‹ƒg‚fFƒCƒƒAƒX‚f","‹Sú‚f|“¶ú‚f","ƒ‰[ƒ”ƒF","ƒ}[ƒuƒ‹","ƒLƒ…[ƒ‹","‹S™z‚f|“¶™z‚f","ƒƒzƒbƒN","‚ ‚©‚Ë‚±•","ƒAƒX[ƒ‹‚f","ƒAƒgƒ","ƒEƒiƒyƒ‹ƒg","ƒGƒNƒZƒŒ","ƒIƒgƒm","ƒIƒŒƒEƒ€","ƒJƒCƒIƒ‹","ƒKƒEƒVƒJ","ƒKƒlƒg","ƒJƒ‰ƒCƒX","ƒLƒmƒXŒn","ƒLƒŠƒ“ƒRƒ‹ƒm","ƒNƒIƒCƒY","ƒOƒ‰ƒbƒVƒ…","ƒNƒ‰ƒtƒg","ƒNƒ‰ƒ“ƒg","ƒRƒ‹[ƒf","‚µ‚Ü‚µ‚Ü","ƒVƒFƒ‹ƒJ|ƒ`ƒFƒXƒJ","ƒVƒ‹ƒbƒN","ƒXƒgƒŒƒ“ƒO","ƒTƒ“ƒ^","ƒVƒEƒX‚f","ƒVƒGƒŠ[","ƒWƒFƒX‚f","ƒXƒtƒHƒ‹","ƒ^ƒ“ƒOƒX|ƒRƒoƒ‹ƒ^","ƒ^ƒ“ƒOƒX‚f|ƒRƒoƒ‹ƒ^‚f","ƒ`[ƒ‹‚f","ƒ`ƒƒƒ`ƒƒ","ƒ`ƒƒ[ƒ€Œn","ƒhƒOƒƒA","ƒgƒŠ[ƒg","ƒn[ƒ”ƒFƒXƒg>>ƒRƒsƒAƒC","ƒnƒCƒƒ^‚t","ƒnƒ‹ƒoƒ_[|ƒgƒ‰ƒbƒJ[","ƒoƒŒƒbƒ^","ƒnƒƒLƒ…","ƒsƒAƒX(²ÍŞİÄ)","ƒsƒAƒX(‘•¨)","ƒsƒAƒX(ŠC—¤‹ó)","ƒsƒAƒX(ƒrƒMƒi[)","ƒsƒAƒX(••ˆóÎ)","ƒtƒFƒCƒN","ƒuƒ‰ƒ“","ƒtƒƒKƒ_‚f","ƒ‚ƒXƒJƒo","ƒ†[ƒŠƒX","ƒ†ƒvƒP","ƒ‰[ƒX","ƒ‰ƒ“ƒZ","ƒŠƒAƒ‹ƒI","ƒ‹ƒP[ƒ[","ƒ‹ƒ`ƒƒƒ‹","ƒŒƒCƒŒƒX‚f","ƒŒƒEƒAƒX‚f","ƒƒA[ƒX|ƒ‰ƒC[ƒh","‘“‹ó|‘““V","”[Œ¾|®•”","‹S_|“¶q","‹S“`‚f|“¶“`‚f","ág—t|ãÅŒË‰B","’W÷|÷‰_","•ö–¶|v–¶"].sort(function (a, b){return Fulltohalf(b) < Fulltohalf(a) ? 1 : -1}),
-	["èè‘Ê“V",["‚Ø‚½‚Ø‚½ƒO[ƒN","ƒ^ƒ‹ƒlƒR","ƒ^ƒ“ƒhƒŒƒX"].sort(function (a, b){return Fulltohalf(b) < Fulltohalf(a) ? 1 : -1})]
+["ã‚¤ãƒ™ãƒ³ãƒˆ",["Shandy","Banquet","Taruta","Guridi ï¼º","Elysi G ","Shifunyi Z ","Rapin G ","Kashoku ï¼º","Aruganosu|Goruganosu","Kiyoshi ï¼º","Fonce G ","Bonne G ","Korinyi Z ","Donru GX ","Heruto ï¼§ï¼šIroasu ï¼§","Demonclad ï¼§|Youthclad ï¼§","Rave ","Marble ","Cure ","é¬¼å‡› ï¼§|ç«¥å‡› ï¼§","Rohokku ","Red Cat ãƒ†ã‚¤ãƒ«","Azul G ","ã‚¢ãƒˆãƒ­","ã‚¦ãƒŠãƒšãƒ«ãƒˆ","Excelle ","Otono ","Oleum ","Kaioru","Anteka ","Ganeto","Kalais ","ã‚­ãƒã‚¹ç³»","Kirin Corno","Quoiz ","ã‚°ãƒ©ãƒƒã‚·ãƒ¥","Craft ","Kuranto ","Coord ","Shimashima ","Shell ã‚«","Shirukku ","Strength","Santa ","Shiusu ï¼§","Shieri ","Jess G ","Suforu ","Tangusu|Kobaruta","Tangusu G |ã‚³ãƒãƒ«ã‚¿ ï¼§","Chiru G ","ãƒãƒ£ãƒãƒ£","ãƒãƒ£ãƒ¼ãƒ ç³»","Dogumea ","ãƒˆãƒªãƒ¼ãƒˆ","ãƒãƒ¼ãƒ´ã‚§ã‚¹ãƒˆ>>ã‚³ãƒ”ã‚¢ã‚¤","ãƒã‚¤ãƒ¡ã‚¿ï¼µ","Harubadaa |ãƒˆãƒ©ãƒƒã‚«ãƒ¼","ãƒãƒ¬ãƒƒã‚¿","Harokyu ","ãƒ”ã‚¢ã‚¹(ï½²ï¾ï¾ï¾ï¾„)","ãƒ”ã‚¢ã‚¹(æ›¸ç‰©)","ãƒ”ã‚¢ã‚¹(æµ·é™¸ç©º)","ãƒ”ã‚¢ã‚¹(ãƒ“ã‚®ãƒŠãƒ¼)","ãƒ”ã‚¢ã‚¹(å°å°çŸ³)","ãƒ•ã‚§ã‚¤ã‚¯","Buran ","Furogada G ","ãƒ¢ã‚¹ã‚«ãƒ","ãƒ¦ãƒ¼ãƒªã‚¹","Yupuk ","Lars ","ãƒ©ãƒ³ã‚»","ãƒªã‚¢ãƒ«ã‚ª","Lucchese ","Luchar","Reiresu G ","Reuasu G ","ãƒ­ã‚¢ãƒ¼ã‚¹|ãƒ©ã‚¤ãƒ¼ãƒ‰","Blue Sky|è’¼å¤©","ç´è¨€|å¼éƒ¨","Demon Lord|ç«¥å­","Demon Tale ï¼§|ç«¥ä¼ ï¼§","è‹¥ç´…è‘‰|ç¿¡æˆ¸éš ","Pale Sakura|æ¡œé›²","å´©éœ§|è¿…éœ§"].sort(function (a, b){return Fulltohalf(b) < Fulltohalf(a) ? 1 : -1}),
+	["éŸ‹é§„å¤©",["ãºãŸãºãŸã‚°ãƒ¼ã‚¯","ã‚¿ãƒ«ãƒã‚³","Tandress "].sort(function (a, b){return Fulltohalf(b) < Fulltohalf(a) ? 1 : -1})]
 ],
-["ƒlƒJƒtƒF",["ƒ‹ƒ‹ƒ^","ƒAƒfƒ…ƒX>ƒfƒ…ƒXƒm","ƒAƒ~ƒeƒBƒG>ƒsƒXƒeƒBƒX","ƒGƒ“ƒuƒŒƒCƒX","ƒIƒ‹ƒfƒ“>ƒIƒ‹ƒeƒ‚","ƒJƒCƒ‰","ƒKƒKƒ`ƒ…","ƒLƒ…[ƒ‰[","ƒWƒƒƒ“ƒsƒ“>ƒuƒŠƒ“ƒN","ƒXƒtƒŒ","ƒ\ƒŒ[ƒl","ƒfƒ[[ƒ‹","ƒgƒCƒXƒg","ƒgƒ‰ƒ“ƒX","ƒgƒƒsƒI","ƒ}ƒMƒT>>ƒuƒ‹ƒz|ƒEƒBƒU[>>ƒ}[ƒMƒA","ƒ‰ƒsƒk","ƒŠƒG[ƒU>ƒŠƒT[ƒU","ƒ‹ƒNƒX>ƒ‹ƒLƒX","ƒŒƒMƒX>ƒŒƒMƒ…ƒNƒX","ƒƒOƒl"].sort(function (a, b){return Fulltohalf(b) < Fulltohalf(a) ? 1 : -1}),
-	["ƒCƒxƒ“ƒg",["ƒJƒtƒFƒsƒAƒX"].sort(function (a, b){return Fulltohalf(b) < Fulltohalf(a) ? 1 : -1})]
+["ãƒã‚«ãƒ•ã‚§",["Ruruta ","ã‚¢ãƒ‡ãƒ¥ã‚¹  >ãƒ‡ãƒ¥ã‚¹ãƒ","Amitie>ãƒ”ã‚¹ãƒ†ã‚£ã‚¹","ã‚¨ãƒ³ãƒ–ãƒ¬ã‚¤ã‚¹","Orden>ã‚ªãƒ«ãƒ†ãƒ¢","Kaila ","Gagachu ","Kyuura ","Jumpin'>ãƒ–ãƒªãƒ³ã‚¯","ã‚¹ãƒ•ãƒ¬","Solene ","Desert ","ãƒˆã‚¤ã‚¹ãƒˆ","Trance ","ãƒˆãƒ­ãƒ”ã‚ª","Magisa>>ãƒ–ãƒ«ãƒ›|ã‚¦ã‚£ã‚¶ãƒ¼>>ãƒãƒ¼ã‚®ã‚¢","Lapine ","ãƒªã‚¨ãƒ¼ã‚¶  >ãƒªã‚µãƒ¼ã‚¶","ãƒ«ã‚¯ã‚¹  >ãƒ«ã‚­ã‚¹","Regis>ãƒ¬ã‚®ãƒ¥ã‚¯ã‚¹","Wagune "].sort(function (a, b){return Fulltohalf(b) < Fulltohalf(a) ? 1 : -1}),
+	["ã‚¤ãƒ™ãƒ³ãƒˆ",["ã‚«ãƒ•ã‚§ãƒ”ã‚¢ã‚¹"].sort(function (a, b){return Fulltohalf(b) < Fulltohalf(a) ? 1 : -1})]
 ],
-["ƒKƒ`ƒƒ",
-	["ƒAƒOƒŠƒA>ƒtƒ‰ƒEƒA","ƒE[ƒRƒ“","ƒGƒR[ƒ‹>ƒfƒBƒAƒ“","ƒGƒXEƒNƒFƒ‰>ƒpƒ“ƒfƒEƒ€","ƒI[ƒrƒX","ƒKƒ“ƒY>ƒƒCƒ‹ƒh","ƒLƒ…ƒrƒB","ƒNƒŠƒ…ƒX|ƒNƒH[ƒg","ƒPƒ‚ƒ‹","ƒRƒ“ƒ^ƒI","ƒXƒ^ƒŠƒi","ƒ[[ƒŒ>ƒVƒ…ƒiƒCƒg","ƒ[ƒƒC","ƒeƒB[ƒA>ƒ”ƒBƒ‹ƒg","ƒfƒBƒNƒg>ƒfƒBƒŒƒbƒg","ƒfƒ…[ƒ‹","ƒnƒEƒNƒX","ƒtƒ@ƒ‹ƒR","ƒqƒvƒmƒ‹[ƒ^>ƒKƒ‹[ƒ_","ƒqƒvƒmƒŠƒA>ƒtƒBƒAƒ‰ƒ‹","ƒsƒ‰[ƒ^","ƒtƒH[ƒ”>ƒtƒBƒAƒX","ƒjƒ“ƒoƒX","ƒ~ƒ…[ƒY>ƒeƒ…[ƒ“","ƒ~ƒ‰ƒh","ƒ‰ƒgƒŠƒA","ƒŠ[ƒfƒŒ","ƒŠƒGƒbƒg","ƒ‹[ƒX","ƒ‹ƒ^[ƒŒ","ƒŒƒCƒ‹","ƒƒbƒg","ƒƒoƒXƒg","—¬“]|ù“]","—’“]|’n“]","Œ—z","ŒŒõ"].sort(function (a, b){return Fulltohalf(b) < Fulltohalf(a) ? 1 : -1}),
-	["Œ•m [“¯«”\‚Í‚P˜g‚É‚Ü‚Æ‚ß]",["ƒAƒZƒ‹ƒXFƒEƒ‹ƒoƒk","ƒCƒ“ƒWƒ“FƒNƒŒƒoƒ“","ƒE[ƒYƒBFƒ”ƒFƒ“ƒK","ƒ”ƒ@ƒ“ƒfFƒ”ƒFƒƒV","ƒ”ƒBƒ“FƒNƒ‹ƒVƒbƒh","ƒ”ƒFƒXƒiFƒAƒŒƒX","ƒI[ƒ‹FƒtƒB[ƒuƒ‹","ƒJƒ^ƒtFƒ~[ƒ‹","ƒQƒŒƒIƒ“Fƒ~ƒbƒVƒi","ƒJƒŠƒtFƒ‹ƒ‹ƒX","ƒQƒŒ[ƒ‹FƒrƒŠƒX","ƒNƒŒƒlƒXFƒtƒ@ƒNƒg","ƒPƒbƒNFƒvƒŠ[ƒX","ƒSƒ‰ƒGƒXFƒWƒFƒAƒ€","ƒRƒ“ƒVƒ‰FƒgƒŒƒXƒp","ƒRƒ“ƒZƒgFƒƒT","ƒVƒfƒFƒpƒXƒ}","ƒWƒƒƒbƒOFƒVƒvƒŒƒ‹","ƒXƒCƒtƒhFƒVƒƒƒbƒh","ƒXƒB[ƒjFƒVƒ…ƒƒX","ƒXƒNƒ‰Fƒ}ƒOƒkƒX","ƒXƒfƒBƒuFƒAƒXƒeƒB","ƒXƒ}ƒgƒXFƒ^ƒjƒC","ƒfƒXƒ‚FƒPƒvƒg","ƒmƒbƒgFƒ}ƒVƒƒƒ‹","ƒo[ƒNFƒ”ƒBƒŠƒ„","ƒoƒVƒŠƒXFƒAƒ~ƒ…ƒX","ƒoƒXƒeƒ‹FƒnƒIƒX","ƒoƒ‰ƒoƒ“FƒZƒŠƒ…[","ƒtƒ@ƒLƒ‹Fƒtƒ‰ƒ“ƒg","ƒtƒ@ƒ‹ƒ€Fƒ\ƒŒƒ‹ƒX","ƒtƒBƒuƒ‰FƒAƒKƒgƒ“","ƒtƒFƒT[FƒJƒEƒ“ƒg","ƒtƒHƒ‹ƒgƒDFƒ”ƒFƒ‹ƒX","ƒuƒŠƒKƒ“Fƒ‰ƒvƒ‰ƒ‹","ƒvƒŒƒfƒ^FƒXƒeƒ‰ƒ‹","ƒtƒŠƒQƒgFƒ}ƒhƒjƒJ","ƒtƒ‹ƒCƒgFƒXƒPƒCƒi","ƒvƒƒNƒXFƒtƒBƒfƒ‹","ƒxƒ‰ƒmFƒJƒŠƒm","ƒƒ^ƒFƒ”ƒ@ƒ‰ƒN","ƒƒƒfƒXFƒtƒ…[ƒW","ƒŠƒKƒXFƒ‰ƒ“ƒvƒ","ƒŒ[ƒ‰[FƒMƒG[ƒ‹","ƒŒƒK[ƒFƒXƒvƒŠƒ“","ŒµŠâFƒtƒ‰[ƒg","•s”jFƒi[ƒŒ[","–³‘zFƒwƒCƒc"].sort(function (a, b){return Fulltohalf(b) < Fulltohalf(a) ? 1 : -1})],
-	["ƒKƒ“ [“¯«”\‚Í‚P˜g‚É‚Ü‚Æ‚ß]",["ƒAƒ‹ƒWƒƒFƒlƒEƒƒ“","ƒOƒ‰[ƒXFƒAƒGƒgƒX","ƒVƒAƒ“ƒXFƒtƒ…ƒ‹ƒX","ƒVƒ^[Fƒi[ƒ_","ƒXƒtƒFƒ‰FƒEƒFƒlƒX","ƒfƒBƒ[ƒ‹Fƒpƒ‹ƒtƒF","ƒfƒNƒXƒ^FƒƒeƒƒX","ƒpƒbƒVƒIFƒ~ƒiƒ€","ƒvƒŠƒWƒhFƒnƒLƒ…ƒ‰","ƒwƒ“ƒtƒFƒŒƒLƒgƒŠ","ƒ~[ƒcƒFFƒ\ƒtƒBƒX","ƒ~ƒXƒNFƒnƒEƒbƒg","ƒ‰ƒ\ƒXFƒyƒ“ƒuƒ‹","ƒnƒlƒcƒ@FƒpƒX","ƒvƒ‰ƒ€FƒTƒU[ƒ‹","rŒƒFƒŒ[ƒ“ƒO"].sort(function (a, b){return Fulltohalf(b) < Fulltohalf(a) ? 1 : -1})],
-	["ƒsƒAƒX",["ƒGƒi","ƒWƒI","ƒZƒPƒ“","ƒgƒŠƒA"].sort(function (a, b){return Fulltohalf(b) < Fulltohalf(a) ? 1 : -1})],
-	["¬”»",["ƒAƒŠƒVƒƒ","ƒWƒFƒ€ƒY","—¹‘t","ƒŠƒbƒJ","ƒtƒB[ƒl","ƒtƒB[ƒ‹","ƒtƒBƒjƒX","ƒRƒgƒi","ƒAƒ“ƒu","ƒLƒ“ƒRƒE","ƒŒƒRƒŠƒX","ƒƒDƒŠƒB","ƒAƒŠƒVƒX","ƒƒNƒ‰ƒX","ƒ‰ƒrƒEƒX","ƒAƒŠƒVƒA","ƒtƒ@ƒrƒ‰","ƒŒƒjƒKƒ“","ƒfƒBƒ“ƒX","ƒtƒBƒ“ƒX","ƒfƒXƒgƒ‰G","ƒƒbƒJ","ƒyƒ“ƒŒ","ƒUƒbƒJ","ƒ‰ƒ“ƒ^ƒi","ƒVƒƒƒ‹ƒt","ƒJƒ}ƒ‰","ƒ‹[ƒ`ƒF","ƒŒƒrƒ“","ƒVƒ…ƒC","ƒAƒ‹ƒtƒB","ƒJƒCƒtƒ@","ƒXƒgƒ‰ƒU","ƒTƒCƒl","ƒEƒCƒ“ƒO","ƒsƒ“ƒr","ƒvƒŠƒu","ƒVƒƒƒ‹ƒ‹","ƒfƒBƒ‰ƒ“","ƒ~ƒŠƒAƒ€","ƒJƒTƒ~ƒG","ƒwƒVƒ…ƒ€","ƒpƒ“ƒZ","ƒ€ƒ‹ƒ^","ƒnƒEƒ‰","ƒ}ƒŠƒWƒ…","ƒTƒNƒtƒB","ƒAƒXƒ‚","ƒAƒCƒ‹[|ƒƒ‰ƒ‹[","˜a‘t","ƒA[ƒxƒ“","ƒ”ƒB[ƒ`","ƒTƒ‹ƒ^","ƒVƒGƒ","ƒVƒ‹ƒeƒB","ƒYƒBƒxƒC","ƒZƒCƒ‰[","ƒeƒŠƒ…ƒI","ƒn[ƒ[","ƒuƒƒ“ƒe","ƒxƒ“ƒfƒB","ƒ‹ƒ”ƒiƒ“","˜a‰Ô","ƒPƒ‰ƒ”ƒm","ƒAƒEƒ‰","ƒNƒƒtƒB","ƒ`ƒAƒŠƒ€"].sort(function (a, b){return Fulltohalf(b) < Fulltohalf(a) ? 1 : -1})],
-	["¬”»(‘å“¢”°)",["ƒfƒXƒgƒ‰G","ƒA[ƒrƒ^[G"].sort(function (a, b){return Fulltohalf(b) < Fulltohalf(a) ? 1 : -1})],
-	["FP",["ƒMƒ‹ƒhƒo[ƒh|ƒXƒJƒ‰[","ƒ†ƒNƒ‚","ƒƒ[ƒK|ƒtƒ@ƒ‹ƒƒ‹"].sort(function (a, b){return Fulltohalf(b) < Fulltohalf(a) ? 1 : -1})],
-	["ƒRƒ‰ƒ{",["ƒfƒBƒXƒ^|ƒCƒIƒjƒA","ƒLƒŠ[ƒN|ƒN[ƒi","”’‹â‚Ìb™h|åKåN‚Ì•‘“¥•","\“ñ—Emb™h|•s’å‰B‚µ‚ÌŠ•","‹~‘‚Ì¹—•|—³E‚µ‚Ìb™h","ƒOƒŒƒC|ƒEƒ‹ƒsƒi","ƒmƒGƒ‹|ƒrƒ…[ƒlƒC","ÖÙÊ‹ã†SŒ^|ÖÙÊ“ñ†BŒ^","ƒƒbƒNƒu[ƒP|ƒAƒ‹ƒJƒCƒU[","ƒAƒfƒ‹|ƒNƒ[ƒfƒBƒA","ƒ†ƒLƒl|áƒ~ƒN","‰ë","ƒIƒ‹ƒƒWƒ…|ƒhƒ‹ƒ`ƒF","ƒJƒCƒW|”üS","ƒ‰ƒ‚[ƒ‹|ƒŠƒ…ƒoƒ“","CEƒPƒuƒ‰[|ABƒŒƒCƒ„[","ƒvƒ‰ƒO","‰†‹@|—ë†‹@","‚lark.‚O‚U|‚Q†‹@","ƒŠƒ…ƒE|ƒj[ƒi"].sort(function (a, b){return Fulltohalf(b) < Fulltohalf(a) ? 1 : -1})],
-	["”é“`",["•ĞèŒ•","‘oŒ•","‘åŒ•","‘¾“","ƒ‰ƒ“ƒX","ƒKƒ“ƒ‰ƒ“ƒX","ƒnƒ“ƒ}[","ë—Â“J","ú—´","½×¯¼­±¯¸½","Ï¸ŞÈ¯Ä½Êß²¸","ƒ‰ƒCƒg","ƒwƒrƒB","‹|"]]
+["ã‚¬ãƒãƒ£",
+	["ã‚¢ã‚°ãƒªã‚¢ >ãƒ•ãƒ©ã‚¦ã‚¢","Shoko ","ã‚¨ã‚³ãƒ¼ãƒ« >ãƒ‡ã‚£ã‚¢ãƒ³","Es Quera>ãƒ‘ãƒ³ãƒ‡ã‚¦ãƒ ","Ukon ","Guns>ãƒ¯ã‚¤ãƒ«ãƒ‰","Cubie ","Kruss |ã‚¯ã‚©ãƒ¼ãƒˆ","ã‚±ãƒ¢ãƒ«","ã‚³ãƒ³ã‚¿ã‚ª","ã‚¹ã‚¿ãƒªãƒŠ","ã‚¼ãƒ¼ãƒ¬ >ã‚·ãƒ¥ãƒŠã‚¤ãƒˆ","ã‚¼ãƒ­ã‚¤","ãƒ†ã‚£ãƒ¼ã‚¢ >ãƒ´ã‚£ãƒ«ãƒˆ","ãƒ‡ã‚£ã‚¯ãƒˆ >ãƒ‡ã‚£ãƒ¬ãƒƒãƒˆ","Deyuru ","ãƒã‚¦ã‚¯ã‚¹","Falco ","Hypnoc ãƒ«ãƒ¼ã‚¿>ã‚¬ãƒ«ãƒ¼ãƒ€","ãƒ’ãƒ—ãƒãƒªã‚¢ >ãƒ•ã‚£ã‚¢ãƒ©ãƒ«","Pirata ","Fauve>ãƒ•ã‚£ã‚¢ã‚¹","ãƒ‹ãƒ³ãƒã‚¹","Muse>ãƒ†ãƒ¥ãƒ¼ãƒ³","ãƒŸãƒ©ãƒ‰","Latria ","ãƒªãƒ¼ãƒ‡ãƒ¬","Riot ","Loose ","ãƒ«ã‚¿ãƒ¼ãƒ¬","Rail ","ãƒ­ãƒƒãƒˆ","ãƒ­ãƒã‚¹ãƒˆ","Rolling Flow|æ—‹è»¢","åµè»¢|åœ°è»¢","Moonlight","æ›™å…‰"].sort(function (a, b){return Fulltohalf(b) < Fulltohalf(a) ? 1 : -1}),
+	["å‰£å£« [åŒæ€§èƒ½ã¯ï¼‘æ ã«ã¾ã¨ã‚]",["ã‚¢ã‚»ãƒ«ã‚¹ï¼šã‚¦ãƒ«ãƒãƒŒ","ã‚¤ãƒ³ã‚¸ãƒ³ï¼šã‚¯ãƒ¬ãƒãƒ³","ã‚¦ãƒ¼ã‚ºã‚£ï¼šãƒ´ã‚§ãƒ³ã‚¬","ãƒ´ã‚¡ãƒ³ãƒ‡ï¼šãƒ´ã‚§ãƒ­ã‚·","ãƒ´ã‚£ãƒ³ï¼šã‚¯ãƒ«ã‚·ãƒƒãƒ‰","ãƒ´ã‚§ã‚¹ãƒŠï¼šã‚¢ãƒ¬ã‚¹","ã‚ªãƒ¼ãƒ«ï¼šãƒ•ã‚£ãƒ¼ãƒ–ãƒ«","ã‚«ã‚¿ãƒ•ï¼šãƒŸãƒ¼ãƒ«","ã‚²ãƒ¬ã‚ªãƒ³ï¼šãƒŸãƒƒã‚·ãƒŠ","ã‚«ãƒªãƒ•ï¼šãƒ«ãƒ«ã‚¹","ã‚²ãƒ¬ãƒ¼ãƒ«ï¼šãƒ“ãƒªã‚¹","ã‚¯ãƒ¬ãƒã‚¹ï¼šãƒ•ã‚¡ã‚¯ãƒˆ","ã‚±ãƒƒã‚¯ï¼šãƒ—ãƒªãƒ¼ã‚¹","ã‚´ãƒ©ã‚¨ã‚¹ï¼šã‚¸ã‚§ã‚¢ãƒ ","ã‚³ãƒ³ã‚·ãƒ©ï¼šãƒˆãƒ¬ã‚¹ãƒ‘","ã‚³ãƒ³ã‚»ãƒˆï¼šãƒ­ã‚µ","ã‚·ãƒ‡ãƒ­ï¼šãƒ‘ã‚¹ãƒ","ã‚¸ãƒ£ãƒƒã‚°ï¼šã‚·ãƒ—ãƒ¬ãƒ«","ã‚¹ã‚¤ãƒ•ãƒ‰ï¼šã‚·ãƒ£ãƒƒãƒ‰","ã‚¹ã‚£ãƒ¼ãƒ‹ï¼šã‚·ãƒ¥ãƒ­ã‚¹","ã‚¹ã‚¯ãƒ©ï¼šãƒã‚°ãƒŒã‚¹","ã‚¹ãƒ‡ã‚£ãƒ–ï¼šã‚¢ã‚¹ãƒ†ã‚£","ã‚¹ãƒãƒˆã‚¹ï¼šã‚¿ãƒ‹ã‚¤","ãƒ‡ã‚¹ãƒ¢ï¼šã‚±ãƒ—ãƒˆ","ãƒãƒƒãƒˆï¼šãƒã‚·ãƒ£ãƒ«","ãƒãƒ¼ã‚¯ï¼šãƒ´ã‚£ãƒªãƒ¤","ãƒã‚·ãƒªã‚¹ï¼šã‚¢ãƒŸãƒ¥ã‚¹","ãƒã‚¹ãƒ†ãƒ«ï¼šãƒã‚ªã‚¹","ãƒãƒ©ãƒãƒ³ï¼šã‚»ãƒªãƒ¥ãƒ¼","ãƒ•ã‚¡ã‚­ãƒ«ï¼šãƒ•ãƒ©ãƒ³ãƒˆ","ãƒ•ã‚¡ãƒ«ãƒ ï¼šã‚½ãƒ¬ãƒ«ã‚¹","ãƒ•ã‚£ãƒ–ãƒ©ï¼šã‚¢ã‚¬ãƒˆãƒ³","ãƒ•ã‚§ã‚µãƒ¼ï¼šã‚«ã‚¦ãƒ³ãƒˆ","ãƒ•ã‚©ãƒ«ãƒˆã‚¥ï¼šãƒ´ã‚§ãƒ«ã‚¹","ãƒ–ãƒªã‚¬ãƒ³ï¼šãƒ©ãƒ—ãƒ©ãƒ«","ãƒ—ãƒ¬ãƒ‡ã‚¿ï¼šã‚¹ãƒ†ãƒ©ãƒ«","ãƒ•ãƒªã‚²ãƒˆï¼šãƒãƒ‰ãƒ‹ã‚«","ãƒ•ãƒ«ã‚¤ãƒˆï¼šã‚¹ã‚±ã‚¤ãƒŠ","ãƒ—ãƒ­ã‚¯ã‚¹ï¼šãƒ•ã‚£ãƒ‡ãƒ«","ãƒ™ãƒ©ãƒï¼šã‚«ãƒªãƒ","ãƒ¡ã‚¿ãƒ­ï¼šãƒ´ã‚¡ãƒ©ã‚¯","ãƒ¡ãƒ­ãƒ‡ã‚¹ï¼šãƒ•ãƒ¥ãƒ¼ã‚¸","ãƒªã‚¬ã‚¹ï¼šãƒ©ãƒ³ãƒ—ãƒ­","ãƒ¬ãƒ¼ãƒ©ãƒ¼ï¼šã‚®ã‚¨ãƒ¼ãƒ«","ãƒ¬ã‚¬ãƒ¼ãƒ¡ï¼šã‚¹ãƒ—ãƒªãƒ³","å³å²©ï¼šãƒ•ãƒ©ãƒ¼ãƒˆ","ä¸ç ´ï¼šãƒŠãƒ¼ãƒ¬ãƒ¼","ç„¡æƒ³ï¼šãƒ˜ã‚¤ãƒ„"].sort(function (a, b){return Fulltohalf(b) < Fulltohalf(a) ? 1 : -1})],
+	["ã‚¬ãƒ³ [åŒæ€§èƒ½ã¯ï¼‘æ ã«ã¾ã¨ã‚]",["ã‚¢ãƒ«ã‚¸ãƒ£ï¼šãƒã‚¦ãƒ­ãƒ³","ã‚°ãƒ©ãƒ¼ã‚¹ï¼šã‚¢ã‚¨ãƒˆã‚¹","ã‚·ã‚¢ãƒ³ã‚¹ï¼šãƒ•ãƒ¥ãƒ«ã‚¹","ã‚·ã‚¿ãƒ¼ï¼šãƒŠãƒ¼ãƒ€","ã‚¹ãƒ•ã‚§ãƒ©ï¼šã‚¦ã‚§ãƒã‚¹","ãƒ‡ã‚£ã‚¼ãƒ«ï¼šãƒ‘ãƒ«ãƒ•ã‚§","ãƒ‡ã‚¯ã‚¹ã‚¿ï¼šãƒ¡ãƒ†ãƒ­ã‚¹","ãƒ‘ãƒƒã‚·ã‚ªï¼šãƒŸãƒŠãƒ ","ãƒ—ãƒªã‚¸ãƒ‰ï¼šãƒã‚­ãƒ¥ãƒ©","ãƒ˜ãƒ³ãƒ•ãƒ­ï¼šãƒ¬ã‚­ãƒˆãƒª","ãƒŸãƒ¼ãƒ„ã‚§ï¼šã‚½ãƒ•ã‚£ã‚¹","ãƒŸã‚¹ã‚¯ï¼šãƒã‚¦ãƒƒãƒˆ","ãƒ©ã‚½ã‚¹ï¼šãƒšãƒ³ãƒ–ãƒ«","ãƒãƒãƒ„ã‚¡ï¼šãƒ‘ã‚¹","ãƒ—ãƒ©ãƒ ï¼šã‚µã‚¶ãƒ¼ãƒ«","ä¿Šæ¿€ï¼šãƒ¬ãƒ¼ãƒ³ã‚°"].sort(function (a, b){return Fulltohalf(b) < Fulltohalf(a) ? 1 : -1})],
+	["ãƒ”ã‚¢ã‚¹",["ã‚¨ãƒŠ","ã‚¸ã‚ª","ã‚»ã‚±ãƒ³","ãƒˆãƒªã‚¢"].sort(function (a, b){return Fulltohalf(b) < Fulltohalf(a) ? 1 : -1})],
+	["å°åˆ¤",["ã‚¢ãƒªã‚·ãƒ£","ã‚¸ã‚§ãƒ ã‚º","äº†å¥","ãƒªãƒƒã‚«","ãƒ•ã‚£ãƒ¼ãƒ","ãƒ•ã‚£ãƒ¼ãƒ«","ãƒ•ã‚£ãƒ‹ã‚¹","ã‚³ãƒˆãƒŠ","ã‚¢ãƒ³ãƒ–","ã‚­ãƒ³ã‚³ã‚¦","ãƒ¬ã‚³ãƒªã‚¹","ãƒ­ã‚¥ãƒªã‚£","ã‚¢ãƒªã‚·ã‚¹","ãƒ­ã‚¯ãƒ©ã‚¹","ãƒ©ãƒ“ã‚¦ã‚¹","Alicia ","Favila ","Lenigan ","Dins ","Fins ","ãƒ‡ã‚¹ãƒˆãƒ©G","Rokka ","Penre ","Zakka ","Rantana ","Sharufu ","Kamara ","Ruche ","Levin ","Shui ","Alfi ","Kaifa ","Straza ","Saine ","Wing","Pinbi ","Pribu ","Sharuru ","Dylan ","Miriam ","Kasamie ","Hesyumu ","Panse ","Muruta ","Howla ","Marriage ","Sakufi ","Asumo ","Felyne |Melynx ","Wasou","Arben ","Vichi ","Salta ","Cielo ","Shiruti ","Zuibei ","Sailor ","ãƒ†ãƒªãƒ¥ã‚ª","Harze ","Bronte ","Bendi ","Revenants ","Waka","Keravuno ","Aura ","Kurofi ","Chiarim "].sort(function (a, b){return Fulltohalf(b) < Fulltohalf(a) ? 1 : -1})],
+	["å°åˆ¤(å¤§è¨ä¼)",["ãƒ‡ã‚¹ãƒˆãƒ©G","ã‚¢ãƒ¼ãƒ“ã‚¿ãƒ¼G"].sort(function (a, b){return Fulltohalf(b) < Fulltohalf(a) ? 1 : -1})],
+	["FP",["ã‚®ãƒ«ãƒ‰ãƒãƒ¼ãƒ‰|ã‚¹ã‚«ãƒ©ãƒ¼","ãƒ¦ã‚¯ãƒ¢","ãƒ­ãƒ¯ãƒ¼ã‚¬|ãƒ•ã‚¡ãƒ«ãƒ¡ãƒ«"].sort(function (a, b){return Fulltohalf(b) < Fulltohalf(a) ? 1 : -1})],
+	["ã‚³ãƒ©ãƒœ",["Dista |ã‚¤ã‚ªãƒ‹ã‚¢","Kireek |ã‚¯ãƒ¼ãƒŠ","Silver Armour|è–”è–‡ã®èˆè¸æœ","Twelve Paladins' Armor|ä¸è²éš ã—ã®å…œ","Holy Maiden Armor|ç«œæ®ºã—ã®ç”²å†‘","Gray |ã‚¦ãƒ«ãƒ”ãƒŠ","ãƒã‚¨ãƒ«|ãƒ“ãƒ¥ãƒ¼ãƒã‚¤","YoRHa No.9 Type S |ï¾–ï¾™ï¾ŠäºŒå·Bå‹","Rocbouquet |ã‚¢ãƒ«ã‚«ã‚¤ã‚¶ãƒ¼","Adel |ã‚¯ãƒ­ãƒ¼ãƒ‡ã‚£ã‚¢","Yukine |é›ªãƒŸã‚¯","Elegant ","ã‚ªãƒ«ãƒ­ã‚¸ãƒ¥|ãƒ‰ãƒ«ãƒã‚§","Kaiji |ç¾å¿ƒ","ãƒ©ãƒ¢ãƒ¼ãƒ«|Ruban ","CEã‚±ãƒ–ãƒ©ãƒ¼|ABãƒ¬ã‚¤ãƒ¤ãƒ¼","ãƒ—ãƒ©ã‚°","Unit-01 |é›¶å·æ©Ÿ","Mark.06 |Unit-02 ","Ryu|ãƒ‹ãƒ¼ãƒŠ"].sort(function (a, b){return Fulltohalf(b) < Fulltohalf(a) ? 1 : -1})],
+	["ç§˜ä¼",["ç‰‡æ‰‹å‰£","åŒå‰£","å¤§å‰£","å¤ªåˆ€","ãƒ©ãƒ³ã‚¹","ã‚¬ãƒ³ãƒ©ãƒ³ã‚¹","ãƒãƒ³ãƒãƒ¼","ç‹©çŒŸç¬›","ç©¿é¾æ£","ï½½ï¾—ï½¯ï½¼ï½­ï½±ï½¯ï½¸ï½½","ï¾ï½¸ï¾ï¾ˆï½¯ï¾„ï½½ï¾Šï¾Ÿï½²ï½¸","ãƒ©ã‚¤ãƒˆ","ãƒ˜ãƒ“ã‚£","å¼“"]]
 ],
-["ƒLƒbƒg",["’nƒm•ö–C","–éƒm‹|¹","ªƒm‘„","÷ƒm‰Ì“J","”’ƒmúŒõ","‹óƒmÓ‘„","gƒm‘o¯","ˆ©ƒmt“","‹eƒm—’È","‘“ƒmŒ•—Y","“¡ƒmÊ•€","—zƒm–Ce","•ƒm“VŒ•","ƒƒ“ƒ_ƒŒ","ƒyƒŒƒOƒŠ","ƒO[ƒ_ƒ“","ISŠw‰€","ƒAƒXƒeƒŠ","ƒŠƒAƒ“","ƒLƒƒƒƒ‹","ƒ~ƒN","ÔŒ´—ç‘•,‹Rm‰¤","‰p—Y‰¤,ƒSƒ‹ƒSƒ“","ƒVƒƒƒ‰ƒ“","ƒuƒŒƒCƒY","ƒ‰ƒ“ƒy[ƒW","ƒŒƒCƒW","ƒGƒXƒsƒ}ƒXƒN","ƒAƒIƒmƒR","ƒ}ƒ“ƒhƒ‰","ƒv[ƒM[","ƒKƒEƒX","ƒEƒF[ƒo","ƒMƒ‹ƒo[ƒg","ƒuƒ‰ƒCƒg","ƒWƒ…ƒAƒŠ","ƒeƒBƒ“ƒN","ƒIƒiƒuƒ‹","ƒVƒƒƒeƒ€","ƒwƒ”ƒŠƒA","ƒeƒBƒ‹ƒ‹","ƒfƒBƒiƒg","ƒhƒDƒP","ƒOƒ‰ƒk","ç‘ã","‘“c•X","”’c•X","gc•X","ƒGƒ”ƒHƒ‹"].sort(function (a, b){return Fulltohalf(b) < Fulltohalf(a) ? 1 : -1}),
-	["‹Œ",["ƒA[ƒWƒF","ƒAƒrƒbƒg","ƒAƒ‹ƒ}","ƒAƒŠƒXƒg","ƒCƒNƒX","ƒGƒfƒBƒI","ƒIƒƒbƒg","ƒJ[ƒ}ƒCƒ“|ƒTƒWƒ^ƒŠƒI","ƒJƒEƒ`ƒ…","ƒJƒGƒVƒX","ƒJƒ}ƒŒƒ‰","ƒKƒŠƒgƒX","‚«‚ñ‚Ë‚±•","‚¬‚ñ‚Ë‚±•","ƒNƒŒ[ƒ‹","ƒNƒ[ƒX","ƒOƒƒŠƒA","ƒQƒmƒ€","ƒQƒ‹ƒg","ƒSƒ‹ƒg","ƒVƒGƒi","ƒVƒFƒŠƒt","‚µ‚ë‚Ë‚±•","ƒXƒeƒm","ƒXƒŠ[ƒg","ƒZƒŒƒi","ƒ]ƒfƒbƒN","ƒ_ƒXƒN","ƒ_ƒ“ƒe,ƒŒƒfƒB","ƒfƒBƒ”ƒHƒ‹","ƒeƒNƒXƒg","ƒfƒ‚ƒ“,ƒVƒƒƒhƒE|ƒJƒIƒX,ƒ\ƒEƒ‹","ƒgƒ‰ƒX","ƒi[ƒK","ƒlƒRƒ_ƒ“","ƒmƒ[ƒ‹ƒwƒbƒh","ƒo[ƒj[","ƒsƒNƒX","ƒtƒ@ƒ‰ƒ“","ƒtƒFƒ‹ƒ€","ƒvƒƒ~ƒX>ƒuƒŠƒX","¯Õ|µ—[","ƒzƒƒCƒgƒƒ^ƒ‹>>ƒVƒGƒ‹","ƒ}ƒCƒXƒg","ƒ}ƒSƒX","ƒ}ƒMƒT|ƒEƒBƒU[","ƒ}ƒŠƒ“","ƒƒeƒlƒ‰","ƒƒŒƒeƒB","ƒŠƒuƒŠ[","ƒŠƒQƒŠƒA","ƒ‹ƒtƒŒ","ƒŒƒAƒ‹","ƒŒƒCƒXƒg","¸—´,•S—ô|”g“®,‹CŒ÷","—³Šª,ç—ô|^‹ó,”eR","_—´,ƒLƒƒƒmƒ“|—ô”j,ƒAƒNƒZƒ‹","—–‘É|—–”Ø","ˆê‘M,–Ij|\Ë,‹C’e","‘“—³ƒm‹ï‘«|‘“—³ƒm‰HD","Ô”õƒm‹ï‘«|Ô”õƒm‰HD","’²¸•º’c,ŒP—û•º’c","“V“ú","ƒIƒ†ƒ“"].sort(function (a, b){return Fulltohalf(b) < Fulltohalf(a) ? 1 : -1})],
+["ã‚­ãƒƒãƒˆ",["åœ°ãƒå´©ç ²","å¤œãƒå¼“è–","å®µãƒå‘Šæ§","æ¡œãƒæ­Œç¬›","ç™½ãƒç©¿å…‰","ç©ºãƒç •æ§","ç´…ãƒåŒæ˜Ÿ","èŒœãƒæ˜¥åˆ€","èŠãƒä¹±éš","Sword Hero ","è—¤ãƒå½©æ–§","é™½ãƒç ²éŠƒ","é»’ãƒå¤©å‰£","Wander","Pelegri ","Gudan ","IS Academy","Asteli","Lien","Carrol","Miku ","Akahara,é¨å£«ç‹","Hero King ,ã‚´ãƒ«ã‚´ãƒ³","Shaln","Blaze ","Rampage ","Rage ","ã‚¨ã‚¹ãƒ”ãƒã‚¹ã‚¯","Aonoko ","Mandora ","Poogie ","Gauss ","Weber ","Gilbert ","Bright ","Juari ","Tinku ","Honour","Semu ","Hevria ","Tiuru ","Dinato ","Duque ","Granu ","Chiyo","Blue Ice Emperor ","White Ice Emperor ","Red Ice Emperor ","Evol"].sort(function (a, b){return Fulltohalf(b) < Fulltohalf(a) ? 1 : -1}),
+	["æ—§",["ã‚¢ãƒ¼ã‚¸ã‚§","ã‚¢ãƒ“ãƒƒãƒˆ","Arma","Aristo","Ex","Edio","Omet","Carmine|ã‚µã‚¸ã‚¿ãƒªã‚ª","Cultu","Cayssis","ã‚«ãƒãƒ¬ãƒ©","Galitos","Gold Cat","ãã‚“ã­ã“æœ","Claire","Cloth","Gloria ","Genom","Gelt","Gold","Siena","ã‚·ã‚§ãƒªãƒ•","White Cat ãƒ†ã‚¤ãƒ«","Steno","Suriito","Serena","Zodic","Dusk","Dante,ãƒ¬ãƒ‡ã‚£","Divol","Text","Demon,ã‚·ãƒ£ãƒ‰ã‚¦|ã‚«ã‚ªã‚¹,ã‚½ã‚¦ãƒ«","Truss","Naga","Nekodan ","Noir Head","Bunny Band","Pics","Pharan","Ferme","Promise >ãƒ–ãƒªã‚¹","æ˜Ÿç¥­|ä¸ƒå¤•","White Metal >>ã‚·ã‚¨ãƒ«","Maisto","Magos","Magisa|ã‚¦ã‚£ã‚¶ãƒ¼","Marin","ãƒ¡ãƒ†ãƒãƒ©","Melety","ãƒªãƒ–ãƒªãƒ¼","Regalia ","Reflet","Real","Rast","æ˜‡é¾,ç™¾è£‚|æ³¢å‹•,æ°—åŠŸ","ç«œå·»,åƒè£‚|çœŸç©º,è¦‡å±±","Shinryu,ã‚­ãƒ£ãƒãƒ³|è£‚ç ´,ã‚¢ã‚¯ã‚»ãƒ«","Randa|è˜­è›®","Issen,èœ‚é‡|æ§‹å°„,æ°—å¼¾","Green ç«œãƒ|è’¼ç«œãƒç¾½ç¹”","Red ç«œãƒ|èµ¤å‚™ãƒç¾½ç¹”","Survey Corps ,è¨“ç·´å…µå›£","Tenpi","Oyun"].sort(function (a, b){return Fulltohalf(b) < Fulltohalf(a) ? 1 : -1})],
 ],
-["ƒpƒbƒP[ƒW",["ƒAƒbƒVƒ…","ƒAƒ~ƒXƒ^","ƒKƒjƒA","‹Y‹È","ƒUƒCƒ‰","ƒZƒNƒeƒB","ƒoƒ“ƒf","ƒyƒŠƒt","ƒ‰ƒt‚Ë‚±•","ƒŒƒOƒkƒ€","”ò“V"].sort(function (a, b){return Fulltohalf(b) < Fulltohalf(a) ? 1 : -1}),
-	["PS3/4/WiiU",["ƒƒgƒŠ[FƒAƒ~ƒ"].sort(function (a, b){return Fulltohalf(b) < Fulltohalf(a) ? 1 : -1})]
+["ãƒ‘ãƒƒã‚±ãƒ¼ã‚¸",["Ash","Amistad","Gania","æˆ¯æ›²","Zyra","Secuti","Bande","Perifu","Rough Cat ãƒ†ã‚¤ãƒ«","Regnum","Flight"].sort(function (a, b){return Fulltohalf(b) < Fulltohalf(a) ? 1 : -1}),
+	["PS3/4/WiiU",["ãƒ¡ãƒˆãƒªãƒ¼ï¼šã‚¢ãƒŸãƒ­"].sort(function (a, b){return Fulltohalf(b) < Fulltohalf(a) ? 1 : -1})]
 ],
-["“Á“T",["ƒGƒ~[ƒ‹","ƒAƒƒUƒŠ","ƒ”ƒFƒ‰ƒ“","ƒGƒAƒŠƒAƒ‹","ƒGƒNƒXƒg","ƒLƒƒƒŠƒbƒW","‚­‚ë‚Ë‚±•","ƒOƒŠƒ“ƒf","ƒNƒƒbƒX","ƒSƒVƒbƒN>ƒxƒCƒ‹","ƒXƒ}[ƒg","ƒXƒtƒBƒA","ƒ\ƒ‹ƒtƒŒƒA","ƒfƒ…ƒIŒn","ƒeƒŠƒIƒO","ƒgƒD[ƒ‹ƒ€","ƒmƒƒ‹","ƒnƒZƒ‹ƒ”ƒHƒ‹ƒtƒbƒg","ƒqƒXƒgƒŠƒA","ƒu[ƒgƒAƒbƒv","ƒtƒ@ƒ~’Ê‚sƒVƒƒƒc","ƒtƒBƒfƒB>>ƒ”ƒFƒ‹ƒt","‚Ø‚½‚Ø‚½ƒO[ƒN","ƒ€[ƒX","ƒ‰ƒCƒ_[>ƒ‰ƒCƒWƒ“ƒO","ƒ‰ƒ“ƒfƒO","ƒ‹ƒ[ƒWƒ…","ƒƒWƒEƒFƒA","ƒ†ƒEƒFƒlƒX","ù•—,“V‹ó|”b,“V¸","³Œ,—´¯|Ü”M,ŒÕP","”²“·,’·ª|‰Ô‰Î,—¬¯","—‹n,“V¯|v—‹,”ò‰","‰Ì•P‚c‚h‚u‚`ƒsƒAƒX"].sort(function (a, b){return Fulltohalf(b) < Fulltohalf(a) ? 1 : -1}),
-	["HL",["ƒPƒŠƒX","ƒGƒŠƒX","ƒfƒBƒIƒX","ƒŒƒOƒ‰","ƒJƒŠƒX"].sort(function (a, b){return Fulltohalf(b) < Fulltohalf(a) ? 1 : -1})],
-	["EX",["ƒAƒCƒ‹[‚ÌƒlƒRƒ~ƒ~","ƒGƒNƒXƒgƒ‰","ƒPƒ‹ƒrƒtƒFƒCƒN","ƒ`ƒ…[ƒˆ","ƒtƒFƒƒE"].sort(function (a, b){return Fulltohalf(b) < Fulltohalf(a) ? 1 : -1})],
-	["PS3/WiiU",["ƒmƒ”ƒB[FƒŠƒOƒC","¹‰¤,‰p—Y‰¤"].sort(function (a, b){return Fulltohalf(b) < Fulltohalf(a) ? 1 : -1})]
+["ç‰¹å…¸",["ã‚¨ãƒŸãƒ¼ãƒ«","Amezari ","ãƒ´ã‚§ãƒ©ãƒ³","Aerial ","ã‚¨ã‚¯ã‚¹ãƒˆ","Carriage ","Black Cat ãƒ†ã‚¤ãƒ«","ã‚°ãƒªãƒ³ãƒ‡","Kurossu ","Gothic>ãƒ™ã‚¤ãƒ«","Smart ","Sufia ","Solflare ","ãƒ‡ãƒ¥ã‚ªç³»","ãƒ†ãƒªã‚ªã‚°","Trume ","ãƒãƒ¡ãƒ«","ãƒã‚»ãƒ«ãƒ´ã‚©ãƒ«ãƒ•ãƒƒãƒˆ","Historia ","Boot Up ","ãƒ•ã‚¡ãƒŸé€šï¼´ã‚·ãƒ£ãƒ„","ãƒ•ã‚£ Diablos ãƒ¼ãƒ >>ãƒ´ã‚§ãƒ«ãƒ•","ãºãŸãºãŸã‚°ãƒ¼ã‚¯","ãƒ ãƒ¼ã‚¹","ãƒ©ã‚¤ãƒ€ãƒ¼ >ãƒ©ã‚¤ã‚¸ãƒ³ã‚°","ãƒ©ãƒ³ãƒ‡ã‚°","ãƒ«ãƒ¯ãƒ¼ã‚¸ãƒ¥","Lodge Wear ","Yuenesu ","æ—‹é¢¨,å¤©ç©º|å·´,å¤©æ˜‡","æ­£æ‹³,é¾æ˜Ÿ|ç¼ç†±,è™è¥²","æŠœèƒ´,é•·æ ¹|èŠ±ç«,æµæ˜Ÿ","é›·åˆƒ,å¤©æ˜Ÿ|è¿…é›·,é£›ç‡•","æ­Œå§«ï¼¤ï¼©ï¼¶ï¼¡ãƒ”ã‚¢ã‚¹ "].sort(function (a, b){return Fulltohalf(b) < Fulltohalf(a) ? 1 : -1}),
+	["HL",["ã‚±ãƒªã‚¹","Eris ","Dios ","ãƒ¬ã‚°ãƒ©","Charis "].sort(function (a, b){return Fulltohalf(b) < Fulltohalf(a) ? 1 : -1})],
+	["EX",["ã‚¢ã‚¤ãƒ«ãƒ¼ã®ãƒã‚³ãƒŸãƒŸ","ã‚¨ã‚¯ã‚¹ãƒˆãƒ©","ã‚±ãƒ«ãƒ“ãƒ•ã‚§ã‚¤ã‚¯","ãƒãƒ¥ãƒ¼ãƒ¨","ãƒ•ã‚§ãƒ­ã‚¦"].sort(function (a, b){return Fulltohalf(b) < Fulltohalf(a) ? 1 : -1})],
+	["PS3/WiiU",["ãƒãƒ´ã‚£ãƒ¼ï¼šãƒªã‚°ã‚¤","Holy King ,Hero King "].sort(function (a, b){return Fulltohalf(b) < Fulltohalf(a) ? 1 : -1})]
 ]
 ]);
 SkillForm.setSeries = function (_id,_mei) {
 	if (_mei === "-") return "";
-	var mei = _mei.replace(/‚f/g,"").replace(/‚y/g,"").replace(/GX/g,"");
+	var mei = _mei.replace(/ï¼§/g,"").replace(/ï¼º/g,"").replace(/GX/g,"");
 	var series = {C:"9",low_hr:0,high_hr:0,F1:[mei],F2:[],S:"",R:[]};
 	switch (_id.charAt(0)) {
-	case "0": //ë—Â
+	case "0": //ç‹©çŒŸ
 		series.C = "1-#2m#1c#";
 		switch (_id.substring(1)) {
-		case "2": //ƒ‚ƒ“ƒXƒ^[
-			series.high_hr = 1999;	//HR‚Ü‚Å
+		case "2": //ãƒ¢ãƒ³ã‚¹ã‚¿ãƒ¼
+			series.high_hr = 1999;	//HRã¾ã§
 			break;
-		case "5": //„í
-			series.R = ["‚y","ZY","ZF","ZX"];
+		case "5": //å‰›ç¨®
+			series.R = ["ï¼º","ZY","ZF","ZX"];
 			break;
-		case "7": //‚f‹‰
-			series.low_hr = 2001;	//GR‚©‚ç
-			series.R = ["‚y","ZY","ZF","ZX"];
+		case "7": //ï¼§ç´š
+			series.low_hr = 2001;	//GRã‹ã‚‰
+			series.R = ["ï¼º","ZY","ZF","ZX"];
 			break;
-		case "8": //ë‰qí
+		case "8": //ç‹©è¡›æˆ¦
 			series.C = "1s#";
 			break;
-		case "9": //“V˜L
+		case "9": //å¤©å»Š
 			series.C = "1t#";
 			break;
-		case "11": //’HˆÙ
-			series.low_hr = 2200;	//GR‚©‚ç
-			series.high_hr = 3000;	//GSR‚Ü‚Å
+		case "11": //è¾¿ç•°
+			series.low_hr = 2200;	//GRã‹ã‚‰
+			series.high_hr = 3000;	//GSRã¾ã§
 			break;
 		}
 		break;
-	case "1": //—Â’c
+	case "1": //çŒŸå›£
 		series.C = "2-#2m#2u#";
 		break;
-	case "2": //ƒCƒxƒ“ƒg
+	case "2": //ã‚¤ãƒ™ãƒ³ãƒˆ
 		series.C = "1e#1i#";
 		break;
-	case "3": //ƒlƒJƒtƒF
+	case "3": //ãƒã‚«ãƒ•ã‚§
 		series.C = "3-#3e#";
 		break;
-	case "4": //ƒKƒ`ƒƒ
+	case "4": //ã‚¬ãƒãƒ£
 		series.C = "4g#";
 		break;
-	case "5": //ƒLƒbƒg
+	case "5": //ã‚­ãƒƒãƒˆ
 		series.C = "4k$";
 		break;
-	case "6": //ƒpƒbƒP[ƒW
+	case "6": //ãƒ‘ãƒƒã‚±ãƒ¼ã‚¸
 		series.C = "5p#";
 		break;
-	case "7": //“Á“T
+	case "7": //ç‰¹å…¸
 		series.C = "5-#";
 		break;
 	}
 	switch (mei) {
-	case "ƒxƒ‹ƒg":
-		series.F1 = ["ƒAƒCƒAƒ“","ƒXƒLƒ“ƒ‰ƒCƒg","ƒnƒCƒh"];
+	case "ãƒ™ãƒ«ãƒˆ":
+		series.F1 = ["ã‚¢ã‚¤ã‚¢ãƒ³","ã‚¹ã‚­ãƒ³ãƒ©ã‚¤ãƒˆ","ãƒã‚¤ãƒ‰"];
 		break;
-	case "ƒ`ƒF[ƒ“":
-		series.F1 = ["ƒ`ƒF[ƒ“","‚bE"];
+	case "ãƒã‚§ãƒ¼ãƒ³":
+		series.F1 = ["ãƒã‚§ãƒ¼ãƒ³","ï¼£ãƒ»"];
 		break;
-	case "ƒ‰ƒ“ƒ|ƒX":
-		series.F1 = ["ƒ‰ƒ“ƒ|ƒX","ƒMƒAƒmƒX"];
+	case "ãƒ©ãƒ³ãƒã‚¹":
+		series.F1 = ["ãƒ©ãƒ³ãƒã‚¹","ã‚®ã‚¢ãƒã‚¹"];
 		break;
-	case "ƒŒƒCƒA":
-		if (_id.charAt(1) !== "7") series.F1 = ["ƒŒƒCƒA","ƒŠƒIƒn[ƒg","ƒS[ƒ‹ƒhƒ‹ƒi","‚fEƒ‹ƒi"];
+	case "ãƒ¬ã‚¤ã‚¢":
+		if (_id.charAt(1) !== "7") series.F1 = ["ãƒ¬ã‚¤ã‚¢","ãƒªã‚ªãƒãƒ¼ãƒˆ","ã‚´ãƒ¼ãƒ«ãƒ‰ãƒ«ãƒŠ","ï¼§ãƒ»ãƒ«ãƒŠ"];
 		break;
-	case "ƒŒƒEƒX":
-		if (_id.charAt(1) !== "7") series.F1 = ["ƒŒƒEƒX","ƒŠƒIƒ\ƒEƒ‹","ƒVƒ‹ƒo[ƒ\ƒ‹","‚rEƒ\ƒ‹"];
+	case "ãƒ¬ã‚¦ã‚¹":
+		if (_id.charAt(1) !== "7") series.F1 = ["ãƒ¬ã‚¦ã‚¹","ãƒªã‚ªã‚½ã‚¦ãƒ«","ã‚·ãƒ«ãƒãƒ¼ã‚½ãƒ«","ï¼³ãƒ»ã‚½ãƒ«"];
 		break;
-	case "ƒLƒ“ƒOƒƒuƒXƒ^":
-		series.F1 = ["ƒLƒ“ƒOƒƒuƒXƒ^","‚jE"];
+	case "ã‚­ãƒ³ã‚°ãƒ­ãƒ–ã‚¹ã‚¿":
+		series.F1 = ["ã‚­ãƒ³ã‚°ãƒ­ãƒ–ã‚¹ã‚¿","ï¼«ãƒ»"];
 		break;
-	case "ƒsƒAƒX(²ÍŞİÄ)":
-		series.F1 = ["ƒgƒŠƒrƒ…[ƒgƒsƒAƒX"];
+	case "ãƒ”ã‚¢ã‚¹(ï½²ï¾ï¾ï¾ï¾„)":
+		series.F1 = ["ãƒˆãƒªãƒ“ãƒ¥ãƒ¼ãƒˆãƒ”ã‚¢ã‚¹"];
 		break;
-	case "ƒsƒAƒX(‘•¨)":
-		series.F1 = ["ÕŒ‚‚ÌƒsƒAƒX","Ëè‚ÌƒsƒAƒX","æŒ©‚ÌƒsƒAƒX","Ìg‚ÌƒsƒAƒX","œˆ¤‚ÌƒsƒAƒX"];
+	case "ãƒ”ã‚¢ã‚¹(æ›¸ç‰©)":
+		series.F1 = ["è¡æ’ƒã®ãƒ”ã‚¢ã‚¹","å°„æ‰‹ã®ãƒ”ã‚¢ã‚¹","å…ˆè¦‹ã®ãƒ”ã‚¢ã‚¹","æ¨èº«ã®ãƒ”ã‚¢ã‚¹","æ…ˆæ„›ã®ãƒ”ã‚¢ã‚¹"];
 		break;
-	case "ƒsƒAƒX(ŠC—¤‹ó)":
-		series.F1 = ["ƒ}[ƒŒƒsƒAƒX","ŠC—m‚ÌƒsƒAƒX","ƒXƒJƒCƒsƒAƒX","“V‹ó‚ÌƒsƒAƒX","ƒ‰ƒ“ƒhƒsƒAƒX","‘å’n‚ÌƒsƒAƒX"];
+	case "ãƒ”ã‚¢ã‚¹(æµ·é™¸ç©º)":
+		series.F1 = ["ãƒãƒ¼ãƒ¬ãƒ”ã‚¢ã‚¹","æµ·æ´‹ã®ãƒ”ã‚¢ã‚¹","ã‚¹ã‚«ã‚¤ãƒ”ã‚¢ã‚¹","å¤©ç©ºã®ãƒ”ã‚¢ã‚¹","ãƒ©ãƒ³ãƒ‰ãƒ”ã‚¢ã‚¹","å¤§åœ°ã®ãƒ”ã‚¢ã‚¹"];
 		break;
-	case "ƒsƒAƒX(ƒrƒMƒi[)":
-		series.F1 = ["ƒ‹[ƒtƒXƒsƒAƒX","ƒV[ƒj[ƒsƒAƒX","ƒWƒ‡[ƒkƒsƒAƒX","ƒAƒ‹ƒuƒXƒsƒAƒX","ƒvƒŒ[ƒgƒsƒAƒX"];
+	case "ãƒ”ã‚¢ã‚¹(ãƒ“ã‚®ãƒŠãƒ¼)":
+		series.F1 = ["ãƒ«ãƒ¼ãƒ•ã‚¹ãƒ”ã‚¢ã‚¹","ã‚·ãƒ¼ãƒ‹ãƒ¼ãƒ”ã‚¢ã‚¹","ã‚¸ãƒ§ãƒ¼ãƒŒãƒ”ã‚¢ã‚¹","ã‚¢ãƒ«ãƒ–ã‚¹ãƒ”ã‚¢ã‚¹","ãƒ—ãƒ¬ãƒ¼ãƒˆãƒ”ã‚¢ã‚¹"];
 		break;
-	case "ƒsƒAƒX(••ˆóÎ)":
-		series.F1 = ["ƒ\ƒEƒCƒ‹","ƒAƒ“ƒTƒY","ƒGƒIƒ[","ƒ‰ƒOƒY","ƒQ[ƒ{","ƒeƒCƒƒY","ƒEƒ‹ƒY","ƒGƒCƒƒY"];
+	case "ãƒ”ã‚¢ã‚¹(å°å°çŸ³)":
+		series.F1 = ["ã‚½ã‚¦ã‚¤ãƒ«","ã‚¢ãƒ³ã‚µã‚º","ã‚¨ã‚ªãƒ­ãƒ¼","ãƒ©ã‚°ã‚º","ã‚²ãƒ¼ãƒœ","ãƒ†ã‚¤ãƒ¯ã‚º","ã‚¦ãƒ«ã‚º","ã‚¨ã‚¤ãƒ¯ã‚º"];
 		break;
-	case "ƒJƒtƒFƒsƒAƒX":
+	case "ã‚«ãƒ•ã‚§ãƒ”ã‚¢ã‚¹":
 		series.F1 = [];
 		series.C = "3e#";
-		series.S = "ƒsƒAƒX";
+		series.S = "ãƒ”ã‚¢ã‚¹";
 		break;
-	case "ƒsƒAƒX":
-		series.F1 = ["ƒŒƒbƒhƒsƒAƒX","ƒuƒ‹[ƒsƒAƒX","ƒuƒ‰ƒbƒNƒsƒAƒX","ƒzƒƒCƒgƒsƒAƒX","ƒZƒtƒeƒB"];
+	case "ãƒ”ã‚¢ã‚¹":
+		series.F1 = ["ãƒ¬ãƒƒãƒ‰ãƒ”ã‚¢ã‚¹","ãƒ–ãƒ«ãƒ¼ãƒ”ã‚¢ã‚¹","ãƒ–ãƒ©ãƒƒã‚¯ãƒ”ã‚¢ã‚¹","ãƒ›ãƒ¯ã‚¤ãƒˆãƒ”ã‚¢ã‚¹","ã‚»ãƒ•ãƒ†ã‚£"];
 		break;
-	case "ƒlƒRƒsƒAƒX":
+	case "ãƒã‚³ãƒ”ã‚¢ã‚¹":
 		series.F1 = [];
-		series.S = "ƒlƒR";
+		series.S = "ãƒã‚³";
 		break;
-	case "ƒtƒFƒCƒN":
+	case "ãƒ•ã‚§ã‚¤ã‚¯":
 		series.F1 = [];
 		series.S = mei;
-		series.R = ["ƒ`ƒƒƒ`ƒƒ"];
+		series.R = ["ãƒãƒ£ãƒãƒ£"];
 		break;
-	case "ƒoƒŒƒbƒ^":
-	case "ƒRƒT[ƒWƒ…":
-	case "ƒƒ^ƒ‹":
-	case "‚sƒVƒƒƒc":
-	case "ƒWƒƒ[ƒW[":
-	case "Šá‹¾":
+	case "ãƒãƒ¬ãƒƒã‚¿":
+	case "ã‚³ã‚µãƒ¼ã‚¸ãƒ¥":
+	case "ãƒ¡ã‚¿ãƒ«":
+	case "ï¼´ã‚·ãƒ£ãƒ„":
+	case "ã‚¸ãƒ£ãƒ¼ã‚¸ãƒ¼":
+	case "çœ¼é¡":
 		series.F1 = [];
 		series.S = mei;
 		break;
@@ -251,204 +251,204 @@ SkillForm.setSeries = function (_id,_mei) {
 		series.S = mei;
 		series.C = "9";
 		break;
-	case "ƒ‚ƒmƒuƒƒX":
-		series.F1 = ["ƒ‚ƒmƒuƒ","ƒ‚ƒmƒfƒrƒ‹"];
-		if (_mei === "ƒ‚ƒmƒuƒƒX‚f") series.R = ["ƒ‚ƒmƒfƒrƒ‹"];
+	case "ãƒ¢ãƒãƒ–ãƒ­ã‚¹":
+		series.F1 = ["ãƒ¢ãƒãƒ–ãƒ­","ãƒ¢ãƒãƒ‡ãƒ“ãƒ«"];
+		if (_mei === "ãƒ¢ãƒãƒ–ãƒ­ã‚¹ï¼§") series.R = ["ãƒ¢ãƒãƒ‡ãƒ“ãƒ«"];
 		break;
-	case "ƒhƒ‰ƒSƒ“>ƒ~ƒ‰":
-		series.F1 = ["ƒhƒ‰ƒSƒ“","ƒ~ƒ‰ƒoƒ‹ƒJƒ“","ƒ~ƒ‰ƒ‹[ƒc"];
+	case "ãƒ‰ãƒ©ã‚´ãƒ³>ãƒŸãƒ©":
+		series.F1 = ["ãƒ‰ãƒ©ã‚´ãƒ³","ãƒŸãƒ©ãƒãƒ«ã‚«ãƒ³","ãƒŸãƒ©ãƒ«ãƒ¼ãƒ„"];
 		break;
-	case "ƒRƒ€ƒ‰ƒh":
-		series.F1 = ["ƒRƒ€ƒ‰ƒh","ƒRƒ€ƒ‰ƒ_"];
+	case "ã‚³ãƒ ãƒ©ãƒ‰":
+		series.F1 = ["ã‚³ãƒ ãƒ©ãƒ‰","ã‚³ãƒ ãƒ©ãƒ€"];
 		series.high_hr = 1999;
 		break;
-	case "ƒRƒ€ƒ‰ƒ_":
+	case "ã‚³ãƒ ãƒ©ãƒ€":
 		series.low_hr = 2001;
 		break;
-	case "ƒzƒƒCƒgƒƒ^ƒ‹>>ƒVƒGƒ‹":
-		series.F1 = ["ƒzƒƒCƒgƒƒ^ƒ‹","ƒZƒŒƒXƒg","ƒVƒGƒ‹"];
+	case "ãƒ›ãƒ¯ã‚¤ãƒˆãƒ¡ã‚¿ãƒ«>>ã‚·ã‚¨ãƒ«":
+		series.F1 = ["ãƒ›ãƒ¯ã‚¤ãƒˆãƒ¡ã‚¿ãƒ«","ã‚»ãƒ¬ã‚¹ãƒˆ","ã‚·ã‚¨ãƒ«"];
 		break;
-	case "ƒvƒƒMƒA>>ƒrƒXƒeƒ}":
-		series.F1 = ["ƒvƒƒMƒA","ƒIƒ‰ƒVƒIƒ“","ƒŒƒNƒCƒGƒ€","ƒrƒXƒeƒ}"];
+	case "ãƒ—ãƒ­ã‚®ã‚¢>>ãƒ“ã‚¹ãƒ†ãƒ":
+		series.F1 = ["ãƒ—ãƒ­ã‚®ã‚¢","ã‚ªãƒ©ã‚·ã‚ªãƒ³","ãƒ¬ã‚¯ã‚¤ã‚¨ãƒ ","ãƒ“ã‚¹ãƒ†ãƒ"];
 		break;
-	case "ƒfƒ…ƒIŒn":
-		series.F1 = ["ƒfƒ…ƒI","ƒNƒAƒbƒh","‚b‚‚’‚…"];
+	case "ãƒ‡ãƒ¥ã‚ªç³»":
+		series.F1 = ["ãƒ‡ãƒ¥ã‚ª","ã‚¯ã‚¢ãƒƒãƒ‰","ï¼£ï½ï½’ï½…"];
 		break;
-	case "ƒGƒNƒXƒg":
-		series.R = ["ƒGƒNƒXƒgƒ‰"];
+	case "ã‚¨ã‚¯ã‚¹ãƒˆ":
+		series.R = ["ã‚¨ã‚¯ã‚¹ãƒˆãƒ©"];
 		break;
-	case "ƒ}ƒMƒT|ƒEƒBƒU[":
-		series.F1 = ["ƒ}ƒMƒT","ƒNƒƒEƒŠ[","ƒEƒBƒU[","ƒtƒ@ƒEƒXƒg"];
+	case "ãƒã‚®ã‚µ|ã‚¦ã‚£ã‚¶ãƒ¼":
+		series.F1 = ["ãƒã‚®ã‚µ","ã‚¯ãƒ­ã‚¦ãƒªãƒ¼","ã‚¦ã‚£ã‚¶ãƒ¼","ãƒ•ã‚¡ã‚¦ã‚¹ãƒˆ"];
 		break;
-	case "ƒ}ƒMƒT>>ƒuƒ‹ƒz|ƒEƒBƒU[>>ƒ}[ƒMƒA":
-		series.F1 = ["ƒ}ƒMƒT","ƒNƒƒEƒŠ[","ƒuƒ‹ƒz","ƒEƒBƒU[","ƒtƒ@ƒEƒXƒg","ƒ}[ƒMƒA"];
+	case "ãƒã‚®ã‚µ>>ãƒ–ãƒ«ãƒ›|ã‚¦ã‚£ã‚¶ãƒ¼>>ãƒãƒ¼ã‚®ã‚¢":
+		series.F1 = ["ãƒã‚®ã‚µ","ã‚¯ãƒ­ã‚¦ãƒªãƒ¼","ãƒ–ãƒ«ãƒ›","ã‚¦ã‚£ã‚¶ãƒ¼","ãƒ•ã‚¡ã‚¦ã‚¹ãƒˆ","ãƒãƒ¼ã‚®ã‚¢"];
 		break;
-	case "ƒfƒBƒWƒMƒA>>ƒTƒ‹ƒoƒVƒIƒ“":
-		series.F1 = ["ƒfƒBƒWƒMƒA","ƒvƒŠƒG[ƒ‹","ƒTƒ‹ƒoƒVƒIƒ“"];
+	case "ãƒ‡ã‚£ã‚¸ã‚®ã‚¢>>ã‚µãƒ«ãƒã‚·ã‚ªãƒ³":
+		series.F1 = ["ãƒ‡ã‚£ã‚¸ã‚®ã‚¢","ãƒ—ãƒªã‚¨ãƒ¼ãƒ«","ã‚µãƒ«ãƒã‚·ã‚ªãƒ³"];
 		break;
-	case "ƒK[ƒfƒBƒAƒ“,ƒwƒ‹ƒp[|ƒMƒ‹ƒhƒK[ƒh,ƒq[ƒ‰[":
-		series.F1 = ["ƒK[ƒfƒBƒAƒ“","ƒwƒ‹ƒp[","ƒq[ƒ‰[","ƒMƒ‹ƒhƒK[ƒh","‚fEƒK[ƒh"];
+	case "ã‚¬ãƒ¼ãƒ‡ã‚£ã‚¢ãƒ³,ãƒ˜ãƒ«ãƒ‘ãƒ¼|ã‚®ãƒ«ãƒ‰ã‚¬ãƒ¼ãƒ‰,ãƒ’ãƒ¼ãƒ©ãƒ¼":
+		series.F1 = ["ã‚¬ãƒ¼ãƒ‡ã‚£ã‚¢ãƒ³","ãƒ˜ãƒ«ãƒ‘ãƒ¼","ãƒ’ãƒ¼ãƒ©ãƒ¼","ã‚®ãƒ«ãƒ‰ã‚¬ãƒ¼ãƒ‰","ï¼§ãƒ»ã‚¬ãƒ¼ãƒ‰"];
 		break;
-	case "ƒLƒmƒXŒn":
-		series.F1 = ["ƒLƒmƒX","ƒqƒƒƒX","ƒuƒŒƒVƒX","ƒJƒŠƒGƒ“"];
+	case "ã‚­ãƒã‚¹ç³»":
+		series.F1 = ["ã‚­ãƒã‚¹","ãƒ’ãƒ¡ãƒ­ã‚¹","ãƒ–ãƒ¬ã‚·ã‚¹","ã‚«ãƒªã‚¨ãƒ³"];
 		break;
-	case "ƒLƒŠƒ““ª":
-		series.F1 = ["ƒLƒŠƒ“ƒxƒ‹ƒf","ƒLƒŠƒ“ƒ‹ƒtƒX","ƒLƒŠƒ“ƒAƒsƒŠ"];
+	case "ã‚­ãƒªãƒ³é ­":
+		series.F1 = ["ã‚­ãƒªãƒ³ãƒ™ãƒ«ãƒ‡","ã‚­ãƒªãƒ³ãƒ«ãƒ•ã‚¹","ã‚­ãƒªãƒ³ã‚¢ãƒ”ãƒª"];
 		break;
-	case "ƒGƒXƒsƒi":
-		series.F1 = ["ƒGƒXƒsƒi","ƒ”ƒ@ƒCƒX"];
+	case "ã‚¨ã‚¹ãƒ”ãƒŠ":
+		series.F1 = ["ã‚¨ã‚¹ãƒ”ãƒŠ","ãƒ´ã‚¡ã‚¤ã‚¹"];
 		break;
-	case "ƒVƒ…ƒbƒc>>ƒcƒ”ƒBƒ“ƒK":
-		series.F1 = ["ƒVƒ…ƒbƒc","ƒqƒ‹ƒtƒF","ƒcƒ”ƒBƒ“ƒK"];
+	case "ã‚·ãƒ¥ãƒƒãƒ„>>ãƒ„ãƒ´ã‚£ãƒ³ã‚¬":
+		series.F1 = ["ã‚·ãƒ¥ãƒƒãƒ„","ãƒ’ãƒ«ãƒ•ã‚§","ãƒ„ãƒ´ã‚£ãƒ³ã‚¬"];
 		break;
-	case "ƒGƒXƒsƒ}ƒXƒN":
-		series.F1 = ["ƒGƒXƒs"];
-		series.F2 = ["ƒ}ƒXƒN"];
+	case "ã‚¨ã‚¹ãƒ”ãƒã‚¹ã‚¯":
+		series.F1 = ["ã‚¨ã‚¹ãƒ”"];
+		series.F2 = ["ãƒã‚¹ã‚¯"];
 		break;
-	case "ƒnƒCƒƒ^‚t":
-		series.F1 = ["ƒnƒCƒƒ^‚tƒwƒ‹ƒ€E","ƒnƒCƒƒ^‚qƒwƒ‹ƒ€E"];
+	case "ãƒã‚¤ãƒ¡ã‚¿ï¼µ":
+		series.F1 = ["ãƒã‚¤ãƒ¡ã‚¿ï¼µãƒ˜ãƒ«ãƒ ãƒ»","ãƒã‚¤ãƒ¡ã‚¿ï¼²ãƒ˜ãƒ«ãƒ ãƒ»"];
 		break;
-	case "ƒu[ƒgƒAƒbƒv":
-		series.F1 = ["ƒu[ƒgƒAƒbƒv","ƒu[ƒg‚e"];
+	case "ãƒ–ãƒ¼ãƒˆã‚¢ãƒƒãƒ—":
+		series.F1 = ["ãƒ–ãƒ¼ãƒˆã‚¢ãƒƒãƒ—","ãƒ–ãƒ¼ãƒˆï¼¦"];
 		break;
-	case "ƒtƒBƒfƒB>>ƒ”ƒFƒ‹ƒt":
-		series.F1 = ["ƒtƒBƒfƒB","ƒGƒsƒfƒB","ƒ”ƒFƒ‹ƒtƒB","ƒ”ƒFƒ‹ƒt"];
+	case "ãƒ•ã‚£ãƒ‡ã‚£>>ãƒ´ã‚§ãƒ«ãƒ•":
+		series.F1 = ["ãƒ•ã‚£ãƒ‡ã‚£","ã‚¨ãƒ”ãƒ‡ã‚£","ãƒ´ã‚§ãƒ«ãƒ•ã‚£","ãƒ´ã‚§ãƒ«ãƒ•"];
 		break;
-	case "ƒn[ƒ”ƒFƒXƒg>>ƒRƒsƒAƒC":
-		series.F1 = ["ƒn[ƒ”ƒFƒXƒg","ƒtƒŒƒC","ƒNƒƒmƒX","ƒŒƒA[","ƒn[ƒfƒX","ƒRƒ‹ƒk[","ƒRƒsƒAƒC"];
-		series.R = ["ƒtƒŒƒCƒ€"];
+	case "ãƒãƒ¼ãƒ´ã‚§ã‚¹ãƒˆ>>ã‚³ãƒ”ã‚¢ã‚¤":
+		series.F1 = ["ãƒãƒ¼ãƒ´ã‚§ã‚¹ãƒˆ","ãƒ•ãƒ¬ã‚¤","ã‚¯ãƒ­ãƒã‚¹","ãƒ¬ã‚¢ãƒ¼","ãƒãƒ¼ãƒ‡ã‚¹","ã‚³ãƒ«ãƒŒãƒ¼","ã‚³ãƒ”ã‚¢ã‚¤"];
+		series.R = ["ãƒ•ãƒ¬ã‚¤ãƒ "];
 		break;
-	case "ƒ`ƒƒ[ƒ€Œn":
+	case "ãƒãƒ£ãƒ¼ãƒ ç³»":
 		series.F1 = [];
-		series.S = "ƒ`ƒƒ[ƒ€";
+		series.S = "ãƒãƒ£ãƒ¼ãƒ ";
 		break;
-	case "ƒVƒ‡ƒEƒƒE|ƒ~ƒ^ƒ}":
-		series.F1 = ["ƒVƒ‡ƒEƒƒE","ƒ~ƒ^ƒ}","ƒVƒƒƒ“ƒe"];
+	case "ã‚·ãƒ§ã‚¦ãƒ­ã‚¦|ãƒŸã‚¿ãƒ":
+		series.F1 = ["ã‚·ãƒ§ã‚¦ãƒ­ã‚¦","ãƒŸã‚¿ãƒ","ã‚·ãƒ£ãƒ³ãƒ†"];
 		break;
-	case "ƒfƒBƒAƒuƒ":
-		series.F1 = ["ƒfƒBƒAƒuƒ","ƒfƒBƒA"];
-		if (_mei === "ƒfƒBƒAƒuƒ‚f") series.R = ["ƒfƒBƒA["];
+	case "ãƒ‡ã‚£ã‚¢ãƒ–ãƒ­":
+		series.F1 = ["ãƒ‡ã‚£ã‚¢ãƒ–ãƒ­","ãƒ‡ã‚£ã‚¢"];
+		if (_mei === "ãƒ‡ã‚£ã‚¢ãƒ–ãƒ­ï¼§") series.R = ["ãƒ‡ã‚£ã‚¢ãƒ¼"];
 		break;
-	case "•ĞèŒ•":
-		series.F1 = ["ƒŠƒŠƒI","ƒK[ƒlƒbƒg","ƒ‹ƒxƒ‰ƒCƒg"];
-		series.S = "Œ•¹";
+	case "ç‰‡æ‰‹å‰£":
+		series.F1 = ["ãƒªãƒªã‚ª","ã‚¬ãƒ¼ãƒãƒƒãƒˆ","ãƒ«ãƒ™ãƒ©ã‚¤ãƒˆ"];
+		series.S = "å‰£è–";
 		break;
-	case "‘oŒ•":
-		series.F1 = ["ƒtƒŒƒT","ƒAƒƒWƒXƒg","ƒ‰ƒYƒ‰ƒCƒg"];
-		series.S = "‘o—´";
+	case "åŒå‰£":
+		series.F1 = ["ãƒ•ãƒ¬ã‚µ","ã‚¢ãƒ¡ã‚¸ã‚¹ãƒˆ","ãƒ©ã‚ºãƒ©ã‚¤ãƒˆ"];
+		series.S = "åŒé¾";
 		break;
-	case "‘åŒ•":
-		series.F1 = ["ƒNƒ‰ƒxƒ‹","ƒR[ƒ‰ƒ‹","ƒWƒ‹ƒRƒ“"];
-		series.S = "Œ•‰¤";
+	case "å¤§å‰£":
+		series.F1 = ["ã‚¯ãƒ©ãƒ™ãƒ«","ã‚³ãƒ¼ãƒ©ãƒ«","ã‚¸ãƒ«ã‚³ãƒ³"];
+		series.S = "å‰£ç‹";
 		break;
-	case "‘¾“":
-		series.F1 = ["ƒVƒ‹ƒGƒ‰","ƒNƒH[ƒc","ƒXƒsƒlƒ‹"];
-		series.S = "“_";
+	case "å¤ªåˆ€":
+		series.F1 = ["ã‚·ãƒ«ã‚¨ãƒ©","ã‚¯ã‚©ãƒ¼ãƒ„","ã‚¹ãƒ”ãƒãƒ«"];
+		series.S = "åˆ€ç¥";
 		break;
-	case "ƒ‰ƒ“ƒX":
-		series.F1 = ["ƒZƒŒƒ\","ƒ‹ƒr[","ƒpƒCƒ[ƒu"];
-		series.S = "“V‘„";
+	case "ãƒ©ãƒ³ã‚¹":
+		series.F1 = ["ã‚»ãƒ¬ã‚½","ãƒ«ãƒ“ãƒ¼","ãƒ‘ã‚¤ãƒ­ãƒ¼ãƒ–"];
+		series.S = "å¤©æ§";
 		break;
-	case "ƒKƒ“ƒ‰ƒ“ƒX":
-		series.F1 = ["ƒIƒŠƒo","ƒTƒtƒ@ƒCƒA","ƒAƒCƒIƒ‰"];
-		series.S = "–Cc";
+	case "ã‚¬ãƒ³ãƒ©ãƒ³ã‚¹":
+		series.F1 = ["ã‚ªãƒªãƒ","ã‚µãƒ•ã‚¡ã‚¤ã‚¢","ã‚¢ã‚¤ã‚ªãƒ©"];
+		series.S = "ç ²çš‡";
 		break;
-	case "ƒnƒ“ƒ}[":
-		series.F1 = ["ƒJƒƒŠƒA","ƒGƒƒ‰ƒ‹ƒh","ƒWƒFƒCƒh"];
-		series.S = "“İŠíb";
+	case "ãƒãƒ³ãƒãƒ¼":
+		series.F1 = ["ã‚«ãƒ¡ãƒªã‚¢","ã‚¨ãƒ¡ãƒ©ãƒ«ãƒ‰","ã‚¸ã‚§ã‚¤ãƒ‰"];
+		series.S = "éˆå™¨ç£";
 		break;
-	case "ë—Â“J":
-		series.F1 = ["ƒnƒVƒ“ƒg","ƒp[ƒ‹","ƒAƒQ[ƒg"];
-		series.S = "‘t’é";
+	case "ç‹©çŒŸç¬›":
+		series.F1 = ["ãƒã‚·ãƒ³ãƒˆ","ãƒ‘ãƒ¼ãƒ«","ã‚¢ã‚²ãƒ¼ãƒˆ"];
+		series.S = "å¥å¸";
 		break;
-	case "ú—´":
-		series.F1 = ["ƒqƒXƒC","ƒuƒ‰ƒbƒh"];
-		series.S = "ú™€";
+	case "ç©¿é¾æ£":
+		series.F1 = ["ãƒ’ã‚¹ã‚¤","ãƒ–ãƒ©ãƒƒãƒ‰"];
+		series.S = "ç©¿å‡°";
 		break;
-	case "ƒ‰ƒCƒg":
-		series.F1 = ["ƒ‰ƒEƒŒƒ‹","ƒgƒp[ƒY","ƒVƒgƒŠƒ“"];
-		series.S = "eŒ†";
+	case "ãƒ©ã‚¤ãƒˆ":
+		series.F1 = ["ãƒ©ã‚¦ãƒ¬ãƒ«","ãƒˆãƒ‘ãƒ¼ã‚º","ã‚·ãƒˆãƒªãƒ³"];
+		series.S = "éŠƒå‚‘";
 		break;
-	case "ƒwƒrƒB":
-		series.F1 = ["ƒRƒR","ƒgƒ‹ƒ}ƒŠƒ“","ƒyƒŠƒhƒbƒg"];
-		series.S = "eå";
+	case "ãƒ˜ãƒ“ã‚£":
+		series.F1 = ["ã‚³ã‚³","ãƒˆãƒ«ãƒãƒªãƒ³","ãƒšãƒªãƒ‰ãƒƒãƒˆ"];
+		series.S = "éŠƒä»™";
 		break;
-	case "‹|":
-		series.F1 = ["ƒOƒ‰ƒiƒ_","ƒ‰ƒsƒX","ƒ^[ƒRƒCƒY"];
-		series.S = "‹|‹S";
+	case "å¼“":
+		series.F1 = ["ã‚°ãƒ©ãƒŠãƒ€","ãƒ©ãƒ”ã‚¹","ã‚¿ãƒ¼ã‚³ã‚¤ã‚º"];
+		series.S = "å¼“é¬¼";
 		break;
-	case "½×¯¼­±¯¸½":
-		series.F1 = ["ƒIƒjƒLƒX","ƒ‹ƒ`ƒ‹"];
-		series.S = "a«";
+	case "ï½½ï¾—ï½¯ï½¼ï½­ï½±ï½¯ï½¸ï½½":
+		series.F1 = ["ã‚ªãƒ‹ã‚­ã‚¹","ãƒ«ãƒãƒ«"];
+		series.S = "æ–¬å°†";
 		break;
-	case "Ï¸ŞÈ¯Ä½Êß²¸":
-		series.F1 = ["ƒ^ƒ“ƒUƒi","ƒwƒ}ƒ^ƒCƒg"];
-		series.S = "¥¯";
+	case "ï¾ï½¸ï¾ï¾ˆï½¯ï¾„ï½½ï¾Šï¾Ÿï½²ï½¸":
+		series.F1 = ["ã‚¿ãƒ³ã‚¶ãƒŠ","ãƒ˜ãƒã‚¿ã‚¤ãƒˆ"];
+		series.S = "ç£æ˜Ÿ";
 		break;
-	case "vŒ£Ø":
-		series.F1 = ["ƒRƒ“ƒgƒ‰","ƒWƒ“ƒgƒ‰","ƒAƒ“ƒgƒ‰","ƒrƒ“ƒgƒ‰","ƒ^ƒ“ƒgƒ‰"];
+	case "è²¢çŒ®è¨¼":
+		series.F1 = ["ã‚³ãƒ³ãƒˆãƒ©","ã‚¸ãƒ³ãƒˆãƒ©","ã‚¢ãƒ³ãƒˆãƒ©","ãƒ“ãƒ³ãƒˆãƒ©","ã‚¿ãƒ³ãƒˆãƒ©"];
 		break;
-	case "’²¸•º’c,ŒP—û•º’c":
-		series.F1 = ["’²¸•º’c","ŒP—û•º’c","—§‘Ì‹@“®‘•’u"];
+	case "èª¿æŸ»å…µå›£,è¨“ç·´å…µå›£":
+		series.F1 = ["èª¿æŸ»å…µå›£","è¨“ç·´å…µå›£","ç«‹ä½“æ©Ÿå‹•è£…ç½®"];
 		break;
-	case "ƒtƒ‰ƒ“ƒL[":
-		series.F1 = ["ƒtƒ‰ƒ“"];
+	case "ãƒ•ãƒ©ãƒ³ã‚­ãƒ¼":
+		series.F1 = ["ãƒ•ãƒ©ãƒ³"];
 		break;
-	case "ƒ^ƒ“ƒOƒX|ƒRƒoƒ‹ƒ^":
+	case "ã‚¿ãƒ³ã‚°ã‚¹|ã‚³ãƒãƒ«ã‚¿":
 		series.F1 = mei.split(/[|,]/);
-		if (_mei === "ƒ^ƒ“ƒOƒX‚f|ƒRƒoƒ‹ƒ^‚f") {
+		if (_mei === "ã‚¿ãƒ³ã‚°ã‚¹ï¼§|ã‚³ãƒãƒ«ã‚¿ï¼§") {
 			series.low_hr = 2001;
 		} else {
 			series.high_hr = 1999;
 		}
 		break;
-	case "ƒGƒ“ƒvƒŒƒX":
-		series.F1 = ["ƒGƒ“ƒvƒŒƒX","ƒGƒ“ƒvƒŒ"];
+	case "ã‚¨ãƒ³ãƒ—ãƒ¬ã‚¹":
+		series.F1 = ["ã‚¨ãƒ³ãƒ—ãƒ¬ã‚¹","ã‚¨ãƒ³ãƒ—ãƒ¬"];
 		break;
-	case "ƒŠƒIƒn[ƒg":
-		series.F1 = ["ƒŠƒIƒn[ƒg","ƒn[ƒg"];
+	case "ãƒªã‚ªãƒãƒ¼ãƒˆ":
+		series.F1 = ["ãƒªã‚ªãƒãƒ¼ãƒˆ","ãƒãƒ¼ãƒˆ"];
 		break;
-	case "ƒŠƒIƒ\ƒEƒ‹":
-		series.F1 = ["ƒŠƒIƒ\ƒEƒ‹","ƒ\ƒEƒ‹"];
+	case "ãƒªã‚ªã‚½ã‚¦ãƒ«":
+		series.F1 = ["ãƒªã‚ªã‚½ã‚¦ãƒ«","ã‚½ã‚¦ãƒ«"];
 		break;
-	case "ƒfƒBƒA[ƒX":
-		series.F1 = ["ƒfƒBƒA[ƒX","ƒA[ƒX"];
+	case "ãƒ‡ã‚£ã‚¢ãƒ¼ã‚¹":
+		series.F1 = ["ãƒ‡ã‚£ã‚¢ãƒ¼ã‚¹","ã‚¢ãƒ¼ã‚¹"];
 		break;
-	case "ƒ‚ƒmƒfƒrƒ‹":
-		series.F1 = ["ƒ‚ƒmƒfƒrƒ‹","ƒ‚ƒmƒfƒr"];
+	case "ãƒ¢ãƒãƒ‡ãƒ“ãƒ«":
+		series.F1 = ["ãƒ¢ãƒãƒ‡ãƒ“ãƒ«","ãƒ¢ãƒãƒ‡ãƒ“"];
 		break;
-	case "ƒqƒvƒV[":
-		series.F1 = ["ƒqƒvƒV[","ƒqƒvƒV"];
+	case "ãƒ’ãƒ—ã‚·ãƒ¼":
+		series.F1 = ["ãƒ’ãƒ—ã‚·ãƒ¼","ãƒ’ãƒ—ã‚·"];
 		break;
-	case "ƒ‰ƒ”ƒB":
+	case "ãƒ©ãƒ´ã‚£":
 		series.high_hr = 0;
-		series.R = ["‹¶","–Ò","‹É"];
+		series.R = ["ç‹‚","çŒ›","æ¥µ"];
 		break;
-	case "ƒ‰ƒ”ƒBF‹¶":
+	case "ãƒ©ãƒ´ã‚£ï¼šç‹‚":
 		series.high_hr = 0;
-		series.F1 = ["ƒ‰ƒ”ƒB‹¶"];
-		series.S = "F‹¶";
+		series.F1 = ["ãƒ©ãƒ´ã‚£ç‹‚"];
+		series.S = "ï¼šç‹‚";
 		break;
-	case "ƒ‰ƒ”ƒBF–Ò":
-		series.F1 = ["ƒ‰ƒ”ƒB–Ò"];
-		series.S = "F–Ò";
+	case "ãƒ©ãƒ´ã‚£ï¼šçŒ›":
+		series.F1 = ["ãƒ©ãƒ´ã‚£çŒ›"];
+		series.S = "ï¼šçŒ›";
 		break;
-	case "ƒ‰ƒ”ƒBF‹É":
-		series.F1 = ["ƒ‰ƒ”ƒB‚f‹É"];
-		series.S = "F‹É";
+	case "ãƒ©ãƒ´ã‚£ï¼šæ¥µ":
+		series.F1 = ["ãƒ©ãƒ´ã‚£ï¼§æ¥µ"];
+		series.S = "ï¼šæ¥µ";
 		break;
-	case "ƒJƒoƒŠƒo":
-		series.F1 = ["ƒJƒoƒŠƒo","ƒJƒoƒŠ"];
+	case "ã‚«ãƒãƒªãƒ":
+		series.F1 = ["ã‚«ãƒãƒªãƒ","ã‚«ãƒãƒª"];
 		break;
-	case "ƒgƒ‹ƒ{ƒ_":
-		series.F1 = ["ƒgƒ‹ƒ{ƒ_","ƒgƒ‹ƒ{"];
+	case "ãƒˆãƒ«ãƒœãƒ€":
+		series.F1 = ["ãƒˆãƒ«ãƒœãƒ€","ãƒˆãƒ«ãƒœ"];
 		break;
-	case "ƒAƒCƒ‹[|ƒƒ‰ƒ‹[":
-		series.F1 = ["ƒAƒCƒ‹[","ƒƒ‰ƒ‹[","ƒAƒƒVƒ‡","ƒ`ƒƒƒgƒ‰","ƒ~ƒP","ƒVƒ","ƒ`ƒƒƒVƒ","ƒNƒƒVƒ"];
+	case "ã‚¢ã‚¤ãƒ«ãƒ¼|ãƒ¡ãƒ©ãƒ«ãƒ¼":
+		series.F1 = ["ã‚¢ã‚¤ãƒ«ãƒ¼","ãƒ¡ãƒ©ãƒ«ãƒ¼","ã‚¢ãƒ¡ã‚·ãƒ§","ãƒãƒ£ãƒˆãƒ©","ãƒŸã‚±","ã‚·ãƒ­","ãƒãƒ£ã‚·ãƒ­","ã‚¯ãƒ­ã‚·ãƒ­"];
 		break;
 	default:
-		if (mei.indexOf("F") !== -1) {
-			series.F1 = mei.split("F");
+		if (mei.indexOf("ï¼š") !== -1) {
+			series.F1 = mei.split("ï¼š");
 		} else if (mei.indexOf("|") !== -1) {
 			series.F1 = mei.split(/[|,]/);
 		} else if (mei.indexOf(",") !== -1) {
