@@ -293,8 +293,8 @@ if (MST_Equip.Sozai[item_id]) {
 }
 MST_Equip = setBougu();
 if (MST_Equip.Sozai[item_id]) {
-	var txt = "<table><tr><th style=\"width:4em;\">部位</th><th style=\"width:10em;\">防具名</th><th style=\"width:1.5em;\">LV</th><th style=\"width:2em;\">数</th></tr>";
-	var txts = "<table><tr><th style=\"width:4em;\">装飾品</th><th style=\"width:10em;\">装飾名</th><th style=\"width:2em;\">数</th></tr>";
+	var txt = "<table><tr><th style=\"width:4em;\">Part</th><th style=\"width:10em;\">Armor Name</th><th style=\"width:1.5em;\">LV</th><th style=\"width:2em;\">Num.</th></tr>";
+	var txts = "<table><tr><th style=\"width:4em;\">Deco type</th><th style=\"width:10em;\">Deco Name</th><th style=\"width:2em;\">Num.</th></tr>";
 	for (var i = 0,su_sum = 0,list = MST_Equip.Sozai[item_id].split(","),m = list.length; i < m; i++) {
 		var eq_rui = list[i].charAt(0),
 			eq_id = list[i].substring(1,5),
