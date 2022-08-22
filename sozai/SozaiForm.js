@@ -257,7 +257,7 @@ MST_Item = MST_Quest = MST_Saisyu = MST_Mos = MST_Other =null;
 
 //武器防具
 addEvent(document.getElementById("b_yt"),"click",function () {
-var BouguName = {"h":"Head","b":"Chest","a":"Arm","w":"Waist","l":"Leg","d":"Deco","p":"P Deco","c":"Cuff","t":"Tower Deco","f":"Tower Sigil","k":"Tower Sigil","z":"Ｚ Cuff","s":"Sigil","n":"Cat","H":"ＰHead","B":"ＰChest"},
+var BouguName = {"h":"Head","b":"Chest","a":"Arm","w":"Waist","l":"Leg","d":"Deco","p":"SP Deco","c":"Cuff","t":"Tower Deco","f":"Tower Sigil","k":"Tower Sigil","z":"Ｚ Cuff","s":"Sigil","n":"Cat","H":"ＰHead","B":"ＰChest"},
 	BouguId = {"h":"head","b":"body","a":"arm","w":"wst","l":"leg","d":"deco","c":"decocf","p":"decosp","n":"deconk","t":"decotr","f":"decotf","k":"decotk","z":"decocz","s":"sigil","H":"head_pertnya","B":"body_pertnya"},
 	BukiName = {0:"GS",1:"HBG",2:"Hammer",3:"Lance",4:"SnS",5:"LBG",6:"DS",7:"LS",8:"HH",9:"GL","A":"Bow","B":"Tonfa","C":"SwAxe","D":"MagSpike","a":"ＰGS","c":"ＰHammer"},
 	BukiId = {0:"taiken",1:"heavy",2:"hammer",3:"lance",4:"katate",5:"right",6:"souken",7:"tachi",8:"horn",9:"gunlance","A":"yumi","B":"tonfa","C":"slaxe","D":"magspike","a":"taiken_partnya","c":"hammer_partnya"},
