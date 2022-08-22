@@ -116,12 +116,12 @@ if (treeCK){ //剣士弓
 		};
 	} else {
 		//曲射
-		s.title = "曲射で絞込み";
-		selectSet(s,["曲射","放散","集中","爆裂","切断"]);
+		s.title = "Sort by Shot Arc";
+		selectSet(s,["Arc","Wide","Narrow","Bomb","Slicing"]);
 		dt.appendChild(s.cloneNode(true));
 		var ckIzyo_F = function (e) {
-			return	e === "曲射" ? function(){return true} :
-					e === "無"	? function (cell) {return !(/[散集裂断]/).test(cell./*@if (@_jscript_version < 9) innerText @else@*/ textContent /*@end@*/);}
+			return	e === "Arc" ? function(){return true} :
+					e === "None"	? function (cell) {return !(/[散集裂断]/).test(cell./*@if (@_jscript_version < 9) innerText @else@*/ textContent /*@end@*/);}
 								: function (cell) {return cell./*@if (@_jscript_version < 9) innerText @else@*/ textContent /*@end@*/.lastIndexOf(e) !== -1;};
 		};
 	}
@@ -160,11 +160,11 @@ if (treeCK){ //剣士弓
 		};
 	} else if (location.pathname.indexOf("yumi") !== -1) {
 		//弓
-		s.title = "矢で絞込み";
-		selectSet(s,["矢","1:連射","1:拡散","1:貫通","2:連射","2:拡散","2:貫通","3:連射","3:拡散","3:貫通","4:連射","4:拡散","4:貫通"]);
+		s.title = "Sort by Arrow Type";
+		selectSet(s,["Arrow","1:Rpd","1:Spr","1:Prc","2:Rpd","2:Spr","2:Prc","3:Rpd","3:Spr","3:Prc","4:Rpd","4:Spr","4:Prc"]);
 		col = 5; //位置補正用
 		var ckKobetu_F = function (e) {
-			return e === "矢" ? function(){return true} : function (cell) {return cell./*@if (@_jscript_version < 9) innerText @else@*/ textContent /*@end@*/.lastIndexOf(e) !== -1;};
+			return e === "Arrow" ? function(){return true} : function (cell) {return cell./*@if (@_jscript_version < 9) innerText @else@*/ textContent /*@end@*/.lastIndexOf(e) !== -1;};
 		};
 	} else {
 		s.title = "Sort by Length";
