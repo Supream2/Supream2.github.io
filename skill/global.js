@@ -389,7 +389,7 @@ SkillForm.setSeries = function (_id,_mei) {
 		series.F1 = ["Contra","Jintora","Antora","Bintora","Tantora"];
 		break;
 	case "Survey Corps,Training Corps":
-		series.F1 = ["Survey Corps","Training Corps","VM Equipment"];
+		series.F1 = ["Survey Corps","Training Corps","VM"];
 		break;
 	case "Franky":
 		series.F1 = ["Frank"];
