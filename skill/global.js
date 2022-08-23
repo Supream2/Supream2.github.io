@@ -190,19 +190,19 @@ SkillForm.setSeries = function (_id,_mei) {
 	case "ベルト":
 		series.F1 = ["アイアン","スキンライト","ハイド"];
 		break;
-	case "Chainmail ":
+	case "Chainmail":
 		series.F1 = ["Chainmail","Ｃ・"];
 		break;
-	case "Veloci ":
+	case "Veloci":
 		series.F1 = ["Veloci","Gia"];
 		break;
-	case "Rathian ":
+	case "Rathian":
 		if (_id.charAt(1) !== "7") series.F1 = ["Rathian","Rath Heart","ｺﾞｰﾙﾄﾞﾙﾅ","G・Lune R"];
 		break;
-	case "Rathalos ":
-		if (_id.charAt(1) !== "7") series.F1 = ["Rathalos","Rath ","S・Sol","S・Sol R"];
+	case "Rathalos":
+		if (_id.charAt(1) !== "7") series.F1 = ["Rathalos","Rath","S・Sol","S・Sol R"];
 		break;
-	case "King Lobster ":
+	case "King Lobster":
 		series.F1 = ["King Lobster","Ｋ・"];
 		break;
 	case "Piercings(ｲﾍﾞﾝﾄ)":
@@ -251,7 +251,7 @@ SkillForm.setSeries = function (_id,_mei) {
 		series.S = mei;
 		series.C = "9";
 		break;
-	case "Monoblos ":
+	case "Monoblos":
 		series.F1 = ["モノブロ","Monodevil"];
 		if (_mei === "Monoblos G ") series.R = ["Monodevil"];
 		break;
@@ -274,7 +274,7 @@ SkillForm.setSeries = function (_id,_mei) {
 	case "デュオ系":
 		series.F1 = ["Duo","Quad","Core"];
 		break;
-	case "エクスト ":
+	case "エクスト":
 		series.R = ["エクストラ"];
 		break;
 	case "Magisa|Wizard":
@@ -295,7 +295,7 @@ SkillForm.setSeries = function (_id,_mei) {
 	case "Kirin Verde":
 		series.F1 = ["Kirin Verde","Kirin Rufus","Kirin アピリ"];
 		break;
-	case "Espinas ":
+	case "Espinas":
 		series.F1 = ["Espinas","Weiss"];
 		break;
 	case "Schutz>>Zwinger":
@@ -305,10 +305,10 @@ SkillForm.setSeries = function (_id,_mei) {
 		series.F1 = ["エスピ"];
 		series.F2 = ["マスク"];
 		break;
-	case "High Metal U ":
+	case "High Metal U":
 		series.F1 = ["ハイメタＵヘルム・","ハイメタＲヘルム・"];
 		break;
-	case "Boot Up ":
+	case "Boot Up":
 		series.F1 = ["Boot Up","Buto F"];
 		break;
 	case "フィディ>>ヴェルフ":
@@ -325,7 +325,7 @@ SkillForm.setSeries = function (_id,_mei) {
 	case "ショウロウ|ミタマ":
 		series.F1 = ["ショウロウ","ミタマ","シャンテ"];
 		break;
-	case "Diablos ":
+	case "Diablos":
 		series.F1 = ["Diablos","ディア"];
 		if (_mei === "Diablos G ") series.R = ["ディアー"];
 		break;
@@ -402,25 +402,25 @@ SkillForm.setSeries = function (_id,_mei) {
 			series.high_hr = 1999;
 		}
 		break;
-	case "Empress ":
+	case "Empress":
 		series.F1 = ["Empress","エンプレ"];
 		break;
-	case "Rath Heart ":
+	case "Rath Heart":
 		series.F1 = ["Rath Heart","ハート"];
 		break;
-	case "Rath  ":
+	case "Rath ":
 		series.F1 = ["Rath ","Soul"];
 		break;
 	case "ディアース":
 		series.F1 = ["ディアース","アース"];
 		break;
-	case "Monodevil ":
+	case "Monodevil":
 		series.F1 = ["Monodevil","モノデビ"];
 		break;
 	case "ヒプシー":
 		series.F1 = ["ヒプシー","ヒプシ"];
 		break;
-	case "Raviente ":
+	case "Raviente":
 		series.high_hr = 0;
 		series.R = ["狂","猛","極"];
 		break;
@@ -437,10 +437,10 @@ SkillForm.setSeries = function (_id,_mei) {
 		series.F1 = ["ラヴィＧ極"];
 		series.S = "：極";
 		break;
-	case "Kabariba ":
+	case "Kabariba":
 		series.F1 = ["Kabariba","カバリ"];
 		break;
-	case "Toruboda ":
+	case "Toruboda":
 		series.F1 = ["Toruboda","トルボ"];
 		break;
 	case "アイルー|メラルー":
