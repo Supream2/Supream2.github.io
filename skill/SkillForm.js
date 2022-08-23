@@ -1842,9 +1842,9 @@ if (hs || rs || ss || tzup) {
 }
 if (tr>=2 || hs || rs || ss || Tup) txt += "<div>剛種/覇種/G級ｸｴで武器性能UP[天嵐↑]</div>";
 this.b_effectT.innerHTML =  txt +
-							"<div>" + ["","HCｸｴでｽﾀﾐﾅ150で8秒毎回復","HCｸｴでｽﾀﾐﾅ125で4秒毎回復","HCｸｴでｽﾀﾐﾅ100で2秒毎回復","HCｸｴでｽﾀﾐﾅ75で1.5秒毎回復","HCｸｴでｽﾀﾐﾅ50で1秒毎回復"][hc+sg] + "</div>" +
-							"<div>" + ["","SR100以降ｸｴでﾀﾞﾒｰｼﾞ10%減","SR100以降ｸｴでﾀﾞﾒｰｼﾞ17%減","SR100以降ｸｴでﾀﾞﾒｰｼﾞ24%減","SR100以降ｸｴでﾀﾞﾒｰｼﾞ27%減","SR100以降ｸｴでﾀﾞﾒｰｼﾞ30%減"][sg+tdcut] + "</div>" +
-							"<div>" + ["","HC/覇種/G級ｸｴで防御+20","HC/覇種/G級ｸｴで防御+40","HC/覇種/G級ｸｴで防御+60","HC/覇種/G級ｸｴで防御+80","HC/覇種/G級ｸｴで防御+100"][sg+tbup] + "</div>" +
+							"<div>" + ["","Recovers every 8 seconds with stamina at 150 in HC quest","Recovers every 4 seconds with stamina at 125 in HC quest","Recovers every 2 seconds with stamina at 100 in HC quest","Recovers every 1.5 seconds with stamina at 75 in HC quest","Recovers every 1 second with stamina at 50 in HC quest"][hc+sg] + "</div>" +
+							"<div>" + ["","10% damage reduction in quests after SR100","17% damage reduction in quests after SR100","24% damage reduction in quests after SR100","27% less damage in quests after SR100","30% damage reduction from SR100 onwards"][sg+tdcut] + "</div>" +
+							"<div>" + ["","Defense +20 in HC/Supremacy/G-class quests","Defense +40 in HC/Supremacy/G-class quests","Defense +60 in HC/Supremacy/G-class quests","Defense +80 in HC/Supremacy/G-class quests","Defense +100 in HC/Supremacy/G-class quests"][sg+tbup] + "</div>" +
 							"<div>" + (sp ? "HR100以降ｸｴで防御+100" : "") + "</div>";
 this.b_gousyuB.style.display = gou || tr || hs || rs || ss || Tsup ? "inline" : "none";
 var sup = this.b_gousyuB.value === "ﾗﾝｸUPあり";
