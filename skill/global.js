@@ -105,7 +105,7 @@ SkillForm.setSeriesList([
 	["Festival",["Zindol Ｇ","Bita Ｇ","Koreputo Ｇ","Lynx G","Arumyu G","Cassius G","Cariva G","Core G","Liebre G","Rizuvue G","Pashio","Vakusu","Norukku","Valier","Eguiene","Atra","Aneshisu","Uida>スティーダ","Vinen","Eques","Oorowa","Onero","Orykto","Orchesis","Ordre","Kabariba","Kinioru","Kuraaji","Konseru G","Zaakaa |Chaser","Shikari","Strega","Cheni","Diina","Diru","Toruboda","Nisuru","Higakure","Pupen","Breo","Perce","Maaden","Madaru","Yoruti","Rudeos","Roses G","True Shadow|翔影","Kosho|紅楼","Post Festivities"].sort(function (a, b){return Fulltohalf(b) < Fulltohalf(a) ? 1 : -1})],
 	["Interception",["Myunru Ｚ","Fanru Ｚ","Shanru Z","Utatsumugu","Utante Z","Furante Z","Merente Z","Rikante Z","Utaei","Burning CliffＧ|Crimson CliffＧ","Katante Z"].sort(function (a, b){return Fulltohalf(b) < Fulltohalf(a) ? 1 : -1})]
 ],
-["Events",["Shandy","Banquet","Taruta","Guridi Ｚ","Elysi G","Shifunyi Z","Rapin G","Kashoku Ｚ","Aruganosu|Goruganosu","Kiyoshi Ｚ","Fonce G","Bonne G","Korinyi Z","DonruGX","Heruto Ｇ：Iroasu Ｇ","Demonclad Ｇ|Youthclad Ｇ","Rave","Marble","Cure","鬼凛 Ｇ|童凛 Ｇ","Rohokku","Red Cat テイル","Azul G","アトロ","ウナペルト","Excelle","Otono","Oleum","Kaioru","Anteka","Ganeto","Kalais","キノス系","Kirin Corno","Quoiz","グラッシュ","Craft","Kuranto","Coord","Shimashima","Shell カ","Shirukku","Strength","Santa","Shiusu Ｇ","Shieri","Jess G","Suforu","Tangusu|Kobaruta","Tangusu G |Kobaruta Ｇ","Chiru G","チャチャ","チャーム系","Dogumea","トリート","Harvest>Freyja","フレイ>>コピアイ","High Metal Ｕ","Harubadaa |Tracker","Beretta","Harokyu","Piercings(ｲﾍﾞﾝﾄ)","Piercings(書物)","Piercings(海陸空)","Piercings(ビギナー)","Piercings(封印石)","Mask","Buran","Furogada G","Moss Cover","Yurisu","Yupuk","Lars","Rance","Riaruo","Lucchese","Luchar","Reiresu G","Reuasu G","ロ Black Blos|ライード","Blue Sky|Welkin","Valued Word|式部","Demon Lord|童子","Demon Tale Ｇ|童伝 Ｇ","若紅葉|翡戸隠","Pale Sakura|Sakura Cloud","Crushing Fog|Fog"].sort(function (a, b){return Fulltohalf(b) < Fulltohalf(a) ? 1 : -1}),
+["Events",["Shandy","Banquet","Taruta","Guridi Ｚ","Elysi G","Shifunyi Z","Rapin G","Kashoku Ｚ","Aruganosu|Goruganosu","Kiyoshi Ｚ","Fonce G","Bonne G","Korinyi Z","DonruGX","Heruto Ｇ：Iroasu Ｇ","Demonclad Ｇ|Youthclad Ｇ","Rave","Marble","Cure","鬼凛 Ｇ|童凛 Ｇ","Rohokku","Red Cat テイル","Azul G","アトロ","ウナペルト","Excelle","Otono","Oleum","Kaioru","Anteka","Ganeto","Kalais","キノス系","Kirin Corno","Quoiz","グラッシュ","Craft","Kuranto","Coord","Shimashima","Shell カ","Shirukku","Strength","Santa","Shiusu Ｇ","Shieri","Jess G","Suforu","Tangusu|Kobaruta","Tangusu G |Kobaruta Ｇ","Chiru G","チャチャ","チャーム系","Dogumea","トリート","Harvest>>コピアイ","High Metal Ｕ","Harubadaa |Tracker","Beretta","Harokyu","Piercings(ｲﾍﾞﾝﾄ)","Piercings(書物)","Piercings(海陸空)","Piercings(ビギナー)","Piercings(封印石)","Mask","Buran","Furogada G","Moss Cover","Yurisu","Yupuk","Lars","Rance","Riaruo","Lucchese","Luchar","Reiresu G","Reuasu G","ロ Black Blos|ライード","Blue Sky|Welkin","Valued Word|式部","Demon Lord|童子","Demon Tale Ｇ|童伝 Ｇ","若紅葉|翡戸隠","Pale Sakura|Sakura Cloud","Crushing Fog|Fog"].sort(function (a, b){return Fulltohalf(b) < Fulltohalf(a) ? 1 : -1}),
 	["Prize",["Patapatagook","Barrel Cat","Tandress"].sort(function (a, b){return Fulltohalf(b) < Fulltohalf(a) ? 1 : -1})]
 ],
 ["NetCafe",["Ruruta","アデュス>デュスノ","Amitie>Pistis","Embrace","Orden>Orutemo","Kaila","Gagachu","Kyuura","Jumpin'>Blink","スフレ","Solene","Desert","トイスト","Trance","トロピオ","Magisa>>Buruho|Wizard>>マー Gear","Lapine","リエーザ>Risaaza","ルクス>Lucis","Regis>Regyukusu","Wagune"].sort(function (a, b){return Fulltohalf(b) < Fulltohalf(a) ? 1 : -1}),
@@ -116,7 +116,7 @@ SkillForm.setSeriesList([
 	["Blademaster [同性能は１枠にまとめ]",["アセルス：ウルバヌ","インジン：Clevan","ウーズィ：ヴェンガ","ヴァンデ：ヴェロシ","ヴィン：クルシッド","ヴェスナ：アレス","オール：フィーブル","カタフ：Miru","ゲレオン：ミッシナ","カリフ：ルルス","ゲレール：ビリス","Kurenesu：ファクト","ケック：プリース","ゴラエス：Jeamu","コンシラ：Toresupa","コンセト：Rosa","シデロ：Pasu マ","ジャッグ：Shipureru","Suifudo：シャッド","Suini：シュロス","スクラ：マグヌス","スディブ：アスティ","Sumatosu：タニイ","デスモ：ケプト","ノット：マシャル","バーク：ヴィリヤ","バシリス：Amyusu","バステル：Haosu","Baraban：Serieux","Fakiru：Franc","ファルム：ソレルス","フィブラ：アガトン","フェサー：カウント","Forutu：ヴェルス","ブリガン：ラプラル","Predator：Suteraru","フリゲト：マドニカ","フルイト：スケ Ina","Purokusu：フィデル","ベラノ：カリノ","メタロ：ヴァラク","Merodesu：フュージ","リガス：ランプロ","レーラー：ギエール","レガーメ：スプリン","厳岩：フラート","不破：ナーレー","無想：ヘイツ"].sort(function (a, b){return Fulltohalf(b) < Fulltohalf(a) ? 1 : -1})],
 	["Gunner [同性能は１枠にまとめ]",["アルジャ：ネウロン","Guraasu：アエトス","シアンス：フュルス","シター：Nada","Sufera：ウェネス","Diesel：パルフェ","Dexter：Meterosu","Passhio：ミナム","プリジド：Hakyura","ヘンフロ：レキトリ","ミーツェ：ソフィス","ミスク：ハウット","ラソス：ペンブル","ハネツァ：Pasu","プラム：サザール","俊激：レーング"].sort(function (a, b){return Fulltohalf(b) < Fulltohalf(a) ? 1 : -1})],
 	["Piercings",["Ena","ジオ","セケン","トリア"].sort(function (a, b){return Fulltohalf(b) < Fulltohalf(a) ? 1 : -1})],
-	["Coin",["Alisha","Gems","Ryoso","Ricca","Fine","Firl","Finis","Kotona","Anbu","Kinkou","Recolis","Loli","Alisys","Rocras","Rabius","Alicia","Favila","Lenigan","Dins","Fins","Desutora G","Rokka","Penre","Zakka","Rantana","Sharufu","Kamara","Ruche","Levin","Shui","Alfi","Kaifa","Straza","Saine","Wing","Pinbi","Pribu","Sharuru","Dylan","Miriam","Kasamie","Hesyumu","Panse","Muruta","Howla","Marriage","Sakufi","Asumo","Felyne |Melynx","Wasou","Arben","Vichi","Salta","Cielo","Shiruti","Zuibei","Sailor","テリュオ","Harze","Bronte","Bendi","Revenants","Waka","Keravuno","Aura","Kurofi","Chiarim"].sort(function (a, b){return Fulltohalf(b) < Fulltohalf(a) ? 1 : -1})],
+	["Coin",["Alisha","Gems","Ryoso","Ricca","Fine","Firl","Finis","Kotona","Anbu","Kinkou","Recolis","Loli","Alisys","Rocras","Rabius","Alicia","Favila","Lenigan","Dins","Fins","Desutora G","Rokka","Penre","Zakka","Rantana","Sharufu","Kamara","Ruche","Levin","Shui","Alfi","Kaifa","Straza","Saine","Wing","Pinbi","Pribu","Sharuru","Dylan","Miriam","Kasamie","Hesyumu","Panse","Muruta","Howla","Marriage","Sakufi","Asumo","Felyne|Melynx","Wasou","Arben","Vichi","Salta","Cielo","Shiruti","Zuibei","Sailor","テリュオ","Harze","Bronte","Bendi","Revenants","Waka","Keravuno","Aura","Kurofi","Chiarim"].sort(function (a, b){return Fulltohalf(b) < Fulltohalf(a) ? 1 : -1})],
 	["Coin(Wholesale)",["デストラ G","Arbiter G"].sort(function (a, b){return Fulltohalf(b) < Fulltohalf(a) ? 1 : -1})],
 	["FP",["Guild Bard|Scholar","Yukumo Kasa","Aelucanth|Rhopessa"].sort(function (a, b){return Fulltohalf(b) < Fulltohalf(a) ? 1 : -1})],
 	["Collab",["Dista|Ionia","Kireek|Quna","Silver Armour|Rose Ball Gown","Twelve Paladins' Armor|Rebellion Armour","Holy Maiden Armor|Dragon Slayer Armor","Gray|Urpina","Noel|Bune","YoRHa No.9 Type S|YoRHa No.2 Type B","Rocbouquet|Alkaiser","Adel|Claudia","Yukine|Snow Miku","Elegant","Orloj|Dolce","Kaiji|Mikoko","L'Amore|Ruban","CE Kevlar|AB Layer","Plug","Unit-01|Unit-00","Mark.06|Unit-02","Ryu|Nina"].sort(function (a, b){return Fulltohalf(b) < Fulltohalf(a) ? 1 : -1})],
@@ -197,16 +197,16 @@ SkillForm.setSeries = function (_id,_mei) {
 		series.F1 = ["Veloci","Gia"];
 		break;
 	case "Rathian":
-		if (_id.charAt(1) !== "7") series.F1 = ["Rathian","Rath Heart","ｺﾞｰﾙﾄﾞﾙﾅ","G・Lune R"];
+		if (_id.charAt(1) !== "7") series.F1 = ["Rathian","Rath Heart","ゴールド","G・Lune R"];
 		break;
 	case "Rathalos":
-		if (_id.charAt(1) !== "7") series.F1 = ["Rathalos","Rath","S・Sol","S・Sol R"];
+		if (_id.charAt(1) !== "7") series.F1 = ["Rathalos","Rath","Silver Sol","S・Sol R"];
 		break;
 	case "King Lobster":
 		series.F1 = ["King Lobster","Ｋ・"];
 		break;
 	case "Piercings(ｲﾍﾞﾝﾄ)":
-		series.F1 = ["トリビュートピアス"];
+		series.F1 = ["Tribute Piercings"];
 		break;
 	case "Piercings(書物)":
 		series.F1 = ["衝撃のピアス","射手のピアス","先見のピアス","捨身のピアス","慈愛のピアス"];
@@ -226,7 +226,7 @@ SkillForm.setSeries = function (_id,_mei) {
 		series.S = "Piercings";
 		break;
 	case "Piercings":
-		series.F1 = ["Red Piercings","Blue Piercings","Black Piercings","White Piercings","セフティ"];
+		series.F1 = ["Red Piercings","Blue Piercings","Black Piercings","White Piercings","Safety"];
 		break;
 	case "ネコピアス":
 		series.F1 = [];
@@ -238,10 +238,10 @@ SkillForm.setSeries = function (_id,_mei) {
 		series.R = ["チャチャ"];
 		break;
 	case "バレッタ":
-	case "コサージュ":
-	case "メタル":
+	case "Corsage":
+	case "Metal":
 	case "Ｔシャツ":
-	case "ジャージー":
+	case "Jersey":
 	case "眼鏡":
 		series.F1 = [];
 		series.S = mei;
@@ -255,7 +255,7 @@ SkillForm.setSeries = function (_id,_mei) {
 		series.F1 = ["モノブロ","Monodevil"];
 		if (_mei === "Monoblos G ") series.R = ["Monodevil"];
 		break;
-	case "ドラゴン>ミラ":
+	case "Dragon>ミラ":
 		series.F1 = ["Dragon","ミラ Vulcan","White Fatalis"];
 		break;
 	case "Comrade":
@@ -265,13 +265,13 @@ SkillForm.setSeries = function (_id,_mei) {
 	case "Comrade red":
 		series.low_hr = 2001;
 		break;
-	case "ホワイトメタル>>シエル":
+	case "White Metal>>Ciel":
 		series.F1 = ["White Metal","Celeste","Ciel"];
 		break;
 	case "Purogia>>ビステマ":
 		series.F1 = ["Purogia","Oracion","Requiem","ビステマ"];
 		break;
-	case "デュオ系":
+	case "Duo":
 		series.F1 = ["Duo","Quad","Core"];
 		break;
 	case "エクスト":
@@ -280,11 +280,11 @@ SkillForm.setSeries = function (_id,_mei) {
 	case "Magisa|Wizard":
 		series.F1 = ["Magisa","Crowley","Wizard","Faust"];
 		break;
-	case "Magisa>>MagisaB|Wizard>>WizardB":
-		series.F1 = ["Magisa","Crowley","MagisaB","Wizard","Faust","WizardB"];
+	case "Magisa>>Buruho|Wizard>>マー Gear":
+		series.F1 = ["Magisa","Crowley","Buruho","Wizard","Faust","マー Gear"];
 		break;
-	case "ディジギア>>サルバシオン":
-		series.F1 = ["ディジギア","Priere","Salvacion"];
+	case "ディジ Gear>>Salvacion":
+		series.F1 = ["ディジ Gear","Priere","Salvacion"];
 		break;
 	case "Ian,Helper|Guild Guard,Healer":
 		series.F1 = ["ian","Helper","Healer","Guild Guard","Ｇ・Guard"];
@@ -301,33 +301,33 @@ SkillForm.setSeries = function (_id,_mei) {
 	case "Schutz>>Zwinger":
 		series.F1 = ["Schutz","Hilfe","Zwinger"];
 		break;
-	case "エスピマスク":
-		series.F1 = ["エスピ"];
-		series.F2 = ["マスク"];
+	case "Espi・":
+		series.F1 = ["Espi"];
+		series.F2 = ["Mask"];
 		break;
 	case "High Metal U":
-		series.F1 = ["ハイメタＵヘルム・","ハイメタＲヘルム・"];
+		series.F1 = ["High Metal U Helm","High Metal R Helm"];
 		break;
 	case "Boot Up":
 		series.F1 = ["Boot Up","Buto F"];
 		break;
-	case "フィディ>>ヴェルフ":
+	case "フィ Diablos ーム>>ヴェルフ":
 		series.F1 = ["フィ Diablos ーム","エピ Diablos ーム","ヴェルフィ","ヴェルフ"];
 		break;
-	case "ハーヴェスト>>コピアイ":
-		series.F1 = ["ハーヴェスト","フレイ","クロノス","レアー","ハーデス","コルヌー","コピアイ"];
+	case "Harvest>>コピアイ":
+		series.F1 = ["Harvest","Freyja","フレイ","クロノス","レアー","ハーデス","コルヌー","コピアイ"];
 		series.R = ["Flame"];
 		break;
 	case "チャーム系":
 		series.F1 = [];
 		series.S = "チャーム";
 		break;
-	case "ショウロウ|ミタマ":
-		series.F1 = ["ショウロウ","ミタマ","シャンテ"];
+	case "Shourou|Mitama":
+		series.F1 = ["Shourou","Mitama","Shantien"];
 		break;
 	case "Diablos":
-		series.F1 = ["Diablos","ディア"];
-		if (_mei === "Diablos G ") series.R = ["ディアー"];
+		series.F1 = ["Diablos","Diablos"];
+		if (_mei === "Diablos G ") series.R = ["Diablos"];
 		break;
 	case "片手剣":
 		series.F1 = ["リリオ","Garnet","Rubellite"];
@@ -388,37 +388,37 @@ SkillForm.setSeries = function (_id,_mei) {
 	case "貢献証":
 		series.F1 = ["Contra","Jintora","Antora","Bintora","Tantora"];
 		break;
-	case "調査兵団,訓練兵団":
-		series.F1 = ["Survey Corps","Training Corps","立体機動装置"];
+	case "Survey Corps,Training Corps":
+		series.F1 = ["Survey Corps","Training Corps","VM Equipment"];
 		break;
-	case "フランキー":
-		series.F1 = ["フラン"];
+	case "Franky":
+		series.F1 = ["Frank"];
 		break;
-	case "タングス|コバルタ":
+	case "Tangusu|Kobaruta":
 		series.F1 = mei.split(/[|,]/);
-		if (_mei === "タングスＧ|コバルタＧ") {
+		if (_mei === "Tangusu Ｇ|Kobaruta Ｇ") {
 			series.low_hr = 2001;
 		} else {
 			series.high_hr = 1999;
 		}
 		break;
 	case "Empress":
-		series.F1 = ["Empress","エンプレ"];
+		series.F1 = ["Empress","Lunastra"];
 		break;
 	case "Rath Heart":
-		series.F1 = ["Rath Heart","ハート"];
+		series.F1 = ["Rath Heart","Heart"];
 		break;
-	case "Rath ":
+	case "Rath":
 		series.F1 = ["Rath ","Soul"];
 		break;
-	case "ディアース":
-		series.F1 = ["ディアース","アース"];
+	case "Black Diablos":
+		series.F1 = ["Black Diablos","Blk Diablos"];
 		break;
 	case "Monodevil":
-		series.F1 = ["Monodevil","モノデビ"];
+		series.F1 = ["Monodevil","Wht Mono"];
 		break;
-	case "ヒプシー":
-		series.F1 = ["ヒプシー","ヒプシ"];
+	case "White Hypnoc":
+		series.F1 = ["White Hypnoc","White Hypnoc"];
 		break;
 	case "Raviente":
 		series.high_hr = 0;
@@ -438,12 +438,12 @@ SkillForm.setSeries = function (_id,_mei) {
 		series.S = "：極";
 		break;
 	case "Kabariba":
-		series.F1 = ["Kabariba","カバリ"];
+		series.F1 = ["Kabariba","Kabari"];
 		break;
 	case "Toruboda":
-		series.F1 = ["Toruboda","トルボ"];
+		series.F1 = ["Toruboda","Torubo"];
 		break;
-	case "アイルー|メラルー":
+	case "Felyne|Melynx":
 		series.F1 = ["Felyne","Melynx","Tabby","Brown","Calico","Monotone","Chashiro","Two-tone"];
 		break;
 	default:
