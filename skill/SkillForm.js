@@ -1828,7 +1828,7 @@ for (var j = 1; j < 4; j++) {
 		if (eq[I_bTeni]) teni_point[eq[I_bTeni]] += 1 //辿異
 	}
 }
-var txt = "<div>" + (g>2 ? "G級ｸｴで武器倍率+30" : "") + "</div>";
+var txt = "<div>" + (g>2 ? "Weapon multiplier in G-rank quest+30" : "") + "</div>";
 if (hs*33+tr*6 >= 100 || rs || ss || Tsup) {
 	txt += "<div>常時ｽｷﾙﾗﾝｸUP</div>";
 } else if (gou || tr || hs) {
