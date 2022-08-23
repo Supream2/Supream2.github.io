@@ -1696,7 +1696,7 @@ tag.options[tag.selectedIndex].value = w.join(",");
 if (buttonid.lastIndexOf("buki") !== -1 || buttonid.lastIndexOf("cuff") !== -1) {
 	if (w[I_sS1].length <= 1 && w[I_sS2].length <= 1 &&w[I_sS3].length <= 1) {
 		//データなし
-		tag.options[tag.selectedIndex].text = "セット";
+		tag.options[tag.selectedIndex].text = "Set";
 		if (tag.selectedIndex !== tag.length-1) { //最終行か
 			//行削除
 			tag.options[tag.selectedIndex].text = "-"; //消すためにセット以外の名称に変更
