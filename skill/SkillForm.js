@@ -771,7 +771,7 @@ this.sub_WinBody.scrollTop = this.sub_Win_scroll[0] === this.sub_Win_id ? this.s
 this.sub_Win_Style.display = "none";
 this.c_skill1.value = this.c_skill2.value = this.c_skill3.value = "-";
 this.c_teni.value ="";
-var i = prompt("防具名を入力してください。先頭一致で検索します。","");
+var i = prompt("Please enter the name of the armor. Searches by first match.","");
 if (i) {
 	this.c_series.value = i;
 	this.c_series_data = "9";
