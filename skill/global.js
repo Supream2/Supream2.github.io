@@ -197,7 +197,7 @@ SkillForm.setSeries = function (_id,_mei) {
 		series.F1 = ["Veloci","Gia"];
 		break;
 	case "Rathian ":
-		if (_id.charAt(1) !== "7") series.F1 = ["Rathian","Rath Heart","ゴールドルナ","Ｇ・Lune R"];
+		if (_id.charAt(1) !== "7") series.F1 = ["Rathian","Rath Heart","ｺﾞｰﾙﾄﾞﾙﾅ","G・Lune R"];
 		break;
 	case "Rathalos ":
 		if (_id.charAt(1) !== "7") series.F1 = ["Rathalos","Rath ","S・Sol","S・Sol R"];
