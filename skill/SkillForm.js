@@ -2283,12 +2283,12 @@ function (evt) {
 		SkillForm.closeSubWin();
 		break;
 	case "b_defimg":
-		if (t.value === "防御耐性"){
-			t.value = "画像";
+		if (t.value === "Defense Res"){
+			t.value = "Image";
 			SkillForm.d_MF.style.display = SkillForm.d_MB.style.display = SkillForm.d_FF.style.display = SkillForm.d_FB.style.display = "none";
 			SkillForm.def_Box.style.display = "";
 		} else {
-			t.value = "防御耐性";
+			t.value = "Defense Res";
 			SkillForm.def_Box.style.display = "none";
 			SkillForm.d_MF.style.display = SkillForm.d_MB.style.display = SkillForm.d_FF.style.display = SkillForm.d_FB.style.display = "inline";
 		}
