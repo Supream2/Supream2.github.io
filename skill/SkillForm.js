@@ -1149,7 +1149,7 @@ for (var i = 0; i < 6; i++) {
 				  ) && 
 			    (ck_sex === "0" || eq[I_bSEX] === "0" || ck_sex === eq[I_bSEX]) &&
 			    (ck_type === "3" || eq[I_bTYPE] === "0" || ck_type === eq[I_bTYPE]) &&
-			    (eq[I_bDEC] === "" || eq[I_bDEC] === "1") &&
+			    (eq[I_bDEC] === "" || eq[I_bDEC] !== -1) &&
 			    (ck_rep.indexOf(eq[I_bCRE]) !== -1) && 
 			    (f_rui(eq[I_bCLASS])) && 
 			    (+eq[I_bRARE] <= lm_rare && eq[I_bGR] <= ck_gr) && 
