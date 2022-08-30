@@ -358,12 +358,7 @@ function (evt) {
 	if (t.tagName === "SPAN" && t.id !== ""){
 		if (location.pathname.indexOf("_partnya.") === -1) {
 			switch (t.id) {
-			case "t3": //SP
-				if (location.pathname.indexOf("_sp.") === -1) {
-					var w = location.pathname.split(".")[0].split("_")[0];
-					location.href = w + "_sp.htm#" + t.id;
-				}
-				break;
+			
 			case "t5": //進化
 				if (location.pathname.indexOf("_s.") === -1) {
 					var w = location.pathname.split(".")[0].split("_")[0];
