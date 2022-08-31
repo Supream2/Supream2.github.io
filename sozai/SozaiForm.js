@@ -132,7 +132,7 @@ creQueLink(MST_Quest.Sugo[item_id],document.getElementById("que_sugo"));
 creQueLink(MST_Quest.G[item_id],document.getElementById("que_g"));
 //------------------------------------店売り----------
 if (MST_Other.Shop[item_id]) {
-	var ShopName = ["総合（基本）","総合（書籍）","総合（弾ビン）","総合（道具）","総合（大闘技会）","総合（雑貨）","Gen. Store (GCP Exchange)","食材屋","調合屋","射的","猟団ショップ","マイトレ雑貨屋","ネットカフェショップ","狩人祭","気球内","特殊アイテム屋","猟団受付","大討伐気球内","天廊内","歌姫(交換）","歌姫(限定交換）","総合(きんぴか)","狩煉道内","狩煉道(交換)","ハリセンネコ","猟団迎撃戦","メゼフェス"];
+	var ShopName = ["総合（基本）","総合（書籍）","総合（弾ビン）","総合（道具）","総合（大闘技会）","総合（雑貨）","Gen. Store (GCP Exchange)","食材屋","調合屋","射的","猟団ショップ","マイトレ雑貨屋","ネットカフェショップ","狩人祭","気球内","特殊アイテム屋","猟団受付","大討伐気球内","天廊内","歌姫(交換）","歌姫(限定交換）","総合(きんぴか)","狩煉道内","狩煉道(交換)","ハリセンネコ","猟団迎撃戦","MezFes"];
 	for (var i = 0,list = MST_Other.Shop[item_id].split(","),m = list.length,txt = ""; i < m; txt += ShopName[+list[i].substring(0,2)] + list[i++].substring(2) + "で販売<br>");
 	document.getElementById("shop").innerHTML = txt;
 }
