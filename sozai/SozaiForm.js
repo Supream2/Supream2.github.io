@@ -148,8 +148,8 @@ if (MST_Other.Cyougo[item_id]) {
 		BoukenName = ["Lv1 寒い湖畔","Lv1 足の裏が暑い砂漠の平地","Lv1 霧の掛かった湿地","Lv1 緑が生い茂った平地","Lv2 きれいな湖岸","Lv2 遺跡が見える場所","Lv2 危険な毒の沼地","Lv2 巨木のある深緑の平地","Lv2 溶岩流れる洞窟","Lv3 遺跡となった場所","Lv3 襲撃されやすい場所","Lv3 吹雪いた山頂","Lv3 伝説が生まれそうな場所","Lv3 熱すぎる火口付近","(稀)ジメっとして生臭い場所","(稀)ランゴスタの巣","(稀)何かの巣","(稀)大闘技場付近","(稀)秘密の抜け穴","LV3 落雷、落石注意の平地","Lv3 風が強い赤土の谷","Lv3 潮の香りがする水辺","(SR稀) 長く険しい道","GR 身を焦がす灼地","GR 緑豊かな水辺","GR 輝く壁面の洞穴","GR 地面が凍る場所","GR(稀) 甘い香りのする草原","GR600 花弁が舞い散る平地","GR600 驟雨の降る丘","GR600 氷雪吹き巻く頂","GR600 光が射す場所","GR600(稀) 危険植物の洞窟","GR600(稀) 草木の生えない荒地"],
 		BoukenRank = [" で最大 ","★1 で最大 ","★2 で最大 ","★3(HR31) で最大 ","HR1～10 で最大 ","HR11～20 で最大 ","HR21～30 で最大 ","HR31～ で最大 ","HR100～ で最大 ","HR1～ で ","HR1～16 で ","HR1～30 で ","HR1～99 で ","HR17～ で ","HR17～30 で ","HR17～99 で ","HR31～ で ","HR31～99 で ","HR51～ で ","HR100～ で ","GR600～ で "],
 		BoukenDan = ["(上段) ","(下段) "],
-		MakaTubo = [" を5分未満漬ける(白色)"," を5分以上漬ける(紫色)"," を10分以上漬ける(青色)"," を15分以上漬ける(緑色)"," を20分以上漬ける(黄色)"," を30分以上漬ける(赤色)"],
-		NyakaTubo = ["を入れて 0:白 まで漬ければ ","を入れて 1:紫 まで漬ければ ","を入れて 2:青 まで漬ければ ","を入れて 3:緑 まで漬ければ ","を入れて 4:黄 まで漬ければ ","を入れて 5～:赤 まで漬ければ ","を入れて 6～:虹 まで漬ければ "];
+		MakaTubo = [" Soak for less than 5 minutes (white)"," Soak for more than 5 minutes (purple)"," Soak for more than 10 minutes (blue)"," Soak for at least 15 minutes (green)"," Soak for more than 20 minutes (yellow)"," Soak for 30 minutes or more (red)"],
+		NyakaTubo = ["Pickle to 0:White ","Pickle Until 1:Purple  ","Pickle Until 2:Blue ","Pickle Until 3:Green ","Pickle Until 4:Yellow ","Pickle Until 5:Red ","Pickle Until 6:Rainbow "];
 	for (var i = 0,list = MST_Other.Cyougo[item_id].split(","),m = list.length,txt = ""; i < m; i++) {
 		txt += CyougoType[list[i].charAt(0)];
 		switch (list[i].charAt(0)) {
