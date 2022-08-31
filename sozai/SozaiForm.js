@@ -141,7 +141,7 @@ var CyougoType = ["","","Pickling・","Mocha Pot:","My Garden:","","MyTore Adven
 	CyougoName = ["Combo:","MyTore Combo:LV","CP Combo:","GCP Combo:","Special Combo:","秘伝珠交換:","魂綬勲交換:","秘伝カフ素材交換:"],
 	JijiMei = ["Jungle/Great Forest Elder:","Forest and Hills Elder:","Swamp Elder:","Desert Elder:","Snowy Mountain Elder:","Gorge Elder:","Highlands Elder:","Tide Island Elder:","Polar Sea Elder:","Bamboo Forest Elder:","Elder:"];
 if (MST_Other.Cyougo[item_id]) {
-	var JijiMeiKoukan = [" と交換「トッテオキ」で高確率"," と交換「オタカラ」で高確率"," と交換 どちらでも高確率"," と交換 どちらでも低確率"," と交換"],
+	var JijiMeiKoukan = [" Exchange with "トッテオキ" with high probability"," Exchange with "オタカラ" with high probability"," High chance of exchange"," Low chance of exchange"," Exchange with"],
 		GalleryName = ["ギャラリー大会:","ギャラリー大会Ｇ:"],
 		GalleryPont =["1999ポイント以下の賞品 ","2000ポイント以上の賞品 ","10000ポイント以上の賞品 ","20000ポイント以上の賞品 ","40000ポイント以上の賞品 ","60000ポイント以上の賞品 ","60000ポイント以上の賞品 ","80000ポイント以上の賞品 ","90000ポイント以上の賞品 ","100000ポイント以上の賞品 "],
 		GardenName = ["水撒き","掃除","肉焼き","採掘","虫の世話","掘り出し物","落し物ネコ"],
