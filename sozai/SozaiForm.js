@@ -138,8 +138,8 @@ if (MST_Other.Shop[item_id]) {
 }
 //------------------------------------調合----------
 var CyougoType = ["","","Pickling・","Mocha Pot:","My Garden:","","MyTore Adventurer:",""],
-	CyougoName = ["調合:","マイトレ調合:LV","CP調合:","貢献P調合:","特別調合:","秘伝珠交換:","魂綬勲交換:","秘伝カフ素材交換:"],
-	JijiMei = ["密林/樹海爺:","森丘爺:","沼地爺:","砂漠爺:","雪山爺:","峡谷爺:","高地爺:","潮島爺:","極海爺:","竹林奥部爺:","爺:"];
+	CyougoName = ["Combo:","MyTore Combo:LV","CP Combo:","GCP Combo:","Special Combo:","秘伝珠交換:","魂綬勲交換:","秘伝カフ素材交換:"],
+	JijiMei = ["Jungle/Great Forest Elder:","Forest and Hills Elder:","Swamp Elder:","Desert Elder:","Snowy Mountain Elder:","Gorge Elder:","Highlands Elder:","Tide Island Elder:","Polar Sea Elder:","Bamboo Forest Elder:","Elder:"];
 if (MST_Other.Cyougo[item_id]) {
 	var JijiMeiKoukan = [" と交換「トッテオキ」で高確率"," と交換「オタカラ」で高確率"," と交換 どちらでも高確率"," と交換 どちらでも低確率"," と交換"],
 		GalleryName = ["ギャラリー大会:","ギャラリー大会Ｇ:"],
