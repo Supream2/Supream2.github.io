@@ -137,7 +137,7 @@ if (MST_Other.Shop[item_id]) {
 	document.getElementById("shop").innerHTML = txt;
 }
 //------------------------------------調合----------
-var CyougoType = ["","","マカ漬けの壷・","ニャカ漬けの壷:","マイガーデン:","","マイトレ冒険屋:",""],
+var CyougoType = ["","","Pickling・","Mocha Pot:","My Garden:","","MyTore Adventurer:",""],
 	CyougoName = ["調合:","マイトレ調合:LV","CP調合:","貢献P調合:","特別調合:","秘伝珠交換:","魂綬勲交換:","秘伝カフ素材交換:"],
 	JijiMei = ["密林/樹海爺:","森丘爺:","沼地爺:","砂漠爺:","雪山爺:","峡谷爺:","高地爺:","潮島爺:","極海爺:","竹林奥部爺:","爺:"];
 if (MST_Other.Cyougo[item_id]) {
