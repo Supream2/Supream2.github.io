@@ -142,8 +142,8 @@ var CyougoType = ["","","Pickling・","Mocha Pot:","My Garden:","","MyTore Adven
 	JijiMei = ["Jungle/Great Forest Elder:","Forest and Hills Elder:","Swamp Elder:","Desert Elder:","Snowy Mountain Elder:","Gorge Elder:","Highlands Elder:","Tide Island Elder:","Polar Sea Elder:","Bamboo Forest Elder:","Elder:"];
 if (MST_Other.Cyougo[item_id]) {
 	var JijiMeiKoukan = [" Exchange with 「トッテオキ」 with high probability"," Exchange with 「オタカラ」 with high probability"," Exchange with High chance"," Exchange with Low chance"," Exchange with"],
-		GalleryName = ["ギャラリー大会:","ギャラリー大会Ｇ:"],
-		GalleryPont =["1999ポイント以下の賞品 ","2000ポイント以上の賞品 ","10000ポイント以上の賞品 ","20000ポイント以上の賞品 ","40000ポイント以上の賞品 ","60000ポイント以上の賞品 ","60000ポイント以上の賞品 ","80000ポイント以上の賞品 ","90000ポイント以上の賞品 ","100000ポイント以上の賞品 "],
+		GalleryName = ["Gallery Competition:","Gallery CompetitionＧ:"],
+		GalleryPont =["Prizes under 1999 points ","Prizes of 2000 points or more ","Prizes of 10000 points or more ","Prizes of 20000 points or more ","Prizes of 40000 points or more ","Prizes of 60000 points or more ","Prizes of 60000 points or more ","Prizes of 80000 points or more ","Prizes of 90000 points or more ","Prizes of 100000 points or more "],
 		GardenName = ["Watering","Cleaning","Cooking","Mining","Catching","Bargains","Lost and Found Cat"],
 		BoukenName = ["Lv1 寒い湖畔","Lv1 足の裏が暑い砂漠の平地","Lv1 霧の掛かった湿地","Lv1 緑が生い茂った平地","Lv2 きれいな湖岸","Lv2 遺跡が見える場所","Lv2 危険な毒の沼地","Lv2 巨木のある深緑の平地","Lv2 溶岩流れる洞窟","Lv3 遺跡となった場所","Lv3 襲撃されやすい場所","Lv3 吹雪いた山頂","Lv3 伝説が生まれそうな場所","Lv3 熱すぎる火口付近","(稀)ジメっとして生臭い場所","(稀)ランゴスタの巣","(稀)何かの巣","(稀)大闘技場付近","(稀)秘密の抜け穴","LV3 落雷、落石注意の平地","Lv3 風が強い赤土の谷","Lv3 潮の香りがする水辺","(SR稀) 長く険しい道","GR 身を焦がす灼地","GR 緑豊かな水辺","GR 輝く壁面の洞穴","GR 地面が凍る場所","GR(稀) 甘い香りのする草原","GR600 花弁が舞い散る平地","GR600 驟雨の降る丘","GR600 氷雪吹き巻く頂","GR600 光が射す場所","GR600(稀) 危険植物の洞窟","GR600(稀) 草木の生えない荒地"],
 		BoukenRank = [" で最大 ","★1 で最大 ","★2 で最大 ","★3(HR31) で最大 ","HR1～10 で最大 ","HR11～20 で最大 ","HR21～30 で最大 ","HR31～ で最大 ","HR100～ で最大 ","HR1～ で ","HR1～16 で ","HR1～30 で ","HR1～99 で ","HR17～ で ","HR17～30 で ","HR17～99 で ","HR31～ で ","HR31～99 で ","HR51～ で ","HR100～ で ","GR600～ で "],
