@@ -132,7 +132,7 @@ creQueLink(MST_Quest.Sugo[item_id],document.getElementById("que_sugo"));
 creQueLink(MST_Quest.G[item_id],document.getElementById("que_g"));
 //------------------------------------店売り----------
 if (MST_Other.Shop[item_id]) {
-	var ShopName = ["Gen. (basic)","Gen. (books)","Gen. (Ammo)","Gen. (Tools)","Gen. (PVP)","Gen. (Special)","Gen. Store (GCP Exchange)","Grocery Store","Combiner","Shot","Guild Shop","MyTore Gen. Store","NetCafe Shop","Hunter Festival","On Balloon","Special Item Shop","Guild Reception","On Ravi Balloon","Sky Corridor","Diva(Exchange)","Diva (Limited)","Gen. (Lottery)","Hunting Season","Road (Exchange)","Harisen Cat","Guild Interception","MezFes"];
+	var ShopName = ["Gen. (basic)","Gen. (books)","Gen. (Ammo)","Gen. (Tools)","Gen. (Dojo)","Gen. (Special)","Gen. Store (GCP Exchange)","Grocery Store","Combiner","Shot","Guild Shop","MyTore Gen. Store","NetCafe Shop","Hunter Festival","On Balloon","Special Item Shop","Guild Reception","On Ravi Balloon","Sky Corridor","Diva(Exchange)","Diva (Limited)","Gen. (Lottery)","Hunting Season","Road (Exchange)","Harisen Cat","Guild Interception","MezFes"];
 	for (var i = 0,list = MST_Other.Shop[item_id].split(","),m = list.length,txt = ""; i < m; txt += ShopName[+list[i].substring(0,2)] + list[i++].substring(2) + "<br>");
 	document.getElementById("shop").innerHTML = txt;
 }
