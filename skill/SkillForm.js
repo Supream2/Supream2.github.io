@@ -1756,7 +1756,7 @@ for (var i = 0; i < 5; i++) { //部位別
 		if (CLASSTYPE.Sisyu.indexOf(eq[I_bCLASS]) >= 0) ss++;
 		if (eq[I_bCLASS] === "O") { //遷悠
 			if (eq[I_bNAME].indexOf("G") >= 0) g++;
-			var sen_skill_name = eq[I_bDOC].split("≪Exotic Armor：")[1].split("≫")[0].replace("属性攻撃【","属性攻撃強化【");
+			var sen_skill_name = eq[I_bDOC].split("≪Exotic Armor：")[1].split("≫");
 			S : for (var k = 0, m=MST_Skill.length; k < m; k++) {
 				for (var j = 5,n = MST_Skill[k].length; j < n; j+=2) {
 					if (MST_Skill_Exe[MST_Skill[k][j]] == sen_skill_name) {
