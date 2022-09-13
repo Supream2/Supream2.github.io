@@ -48,7 +48,7 @@ var ckTtarget_F = function (e) {
 	if (e === "Target") {
 		return function(){return true};
 	} else {
-		var reg = new RegExp(">([a-zA-Z]+)"+e+"\s[０-９]");
+		var reg = new RegExp(>([a-zA-Z]+)\s"+e+"\s[０-９]);
 		return function (cell) {return reg.test(">"+cell.innerHTML.join(""));};
 	}
 };
