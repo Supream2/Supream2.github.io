@@ -37,7 +37,7 @@ i.style.marginRight = i.style.marginLeft = s.style.marginRight = "auto";
 
 //場所
 s.title = "場所で絞り込み";
-selectSet(s,["場所","密林","砂漠","沼地","雪山","火山","樹海","森丘","塔","峡谷","高地","潮島","極海","花畑","竹林","砦","拠点","城","闘技場","決戦場","絶島"]);
+selectSet(s,["Map","Jungle","Desert","Swamp","Snowy Mountains","Volcano","Great Forest","Forest and Hills","Tower","Gorge","Highlands","Tide Island","Polar Sea","Flower Fields","Bamboo Forest","Fort","Interceptor Base","Schrade","Arena","Battlefield","Solitude Island"]);
 s.selectedIndex = 0;
 tH.cells[2].appendChild(s.cloneNode(true));
 //ターゲット
