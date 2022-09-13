@@ -46,7 +46,7 @@ i {font-style:normal;display:block;font-size:80%;} /*期間*/
 #lt .h {display:none;}
 
 /*明細*/
-.mei {clear:left;width:70em;}
+.mei {clear:left;width:90em;}
 .mei .c1 {width:5em;}
 .mei .c2 {width:15em;}
 .mei .c3 {width:8em;}
@@ -55,7 +55,7 @@ i {font-style:normal;display:block;font-size:80%;} /*期間*/
 .mei .c7 {width:3em;}
 .mei .c8 {width:15em;}
 .mei .ca {width:5em;}
-.mei .cb {width:3.5em;}
+.mei .cb {width:4.5em;}
 
 .s,.S,.sa {width:9.3em;float:left;margin-right:1px;margin-bottom:1em;}
 .s th,.S th,.sa th {background-color:aquamarine;}
