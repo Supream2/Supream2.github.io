@@ -48,7 +48,7 @@ var ckTtarget_F = function (e) {
 	if (e === "Target") {
 		return function(){return true};
 	} else {
-		var reg = new RegExp(">[a-zA-Z]+ "e+" \d");
+		var reg = new RegExp(">([a-zA-Z]+)"+e+"\s[０-９]|>"+e+"の");
 		return function (cell) {return reg.test(">"+cell.innerHTML.replace("アクラ・ジェビア奇種","アクラ・ジェビア").replace("ヒプノック奇種","ヒプノック繁殖期").split("奇種").join("亜種").split("変種").join(""));};
 	}
 };
