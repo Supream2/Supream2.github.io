@@ -63,7 +63,7 @@ s.title = "HRで絞り込み";
 if (location.pathname.indexOf("_g") !== -1 && location.pathname.indexOf("_go") === -1) {
 	selectSet(s,["GR","1+"]);
 } else {
-	selectSet(s,["HR","100+","91+","81+","71+","61+","51+","41+","31+","22+","17+","15+","11+","8以上","5以上","3以上","2","1"]);
+	selectSet(s,["HR","100+","91+","81+","71+","61+","51+","41+","31+","22+","17+","15+","11+","8+","5+","3+","2","1"]);
 }
 tH.cells[7].appendChild(s.cloneNode(true));
 var ckHr_F = function (e) {
@@ -77,9 +77,9 @@ var ckHr_F = function (e) {
 			var wk = cell.firstChild.nodeValue.replace("-","");
 
 			if (wk.indexOf("+") !== -1) {
-				return parseInt(wk.substring(1))  <= e;
-			} else if (wk.indexOf("-") !== -1) {
-				return parseInt(wk.substring(1))  >= e;
+				return parseInt(wk.substring(2))  <= e;
+			} else if (wk.indexOf("Under") !== -1) {
+				return parseInt(wk.substring(2))  >= e;
 			} else {
 				var hantei = wk.substring(2).split("～");
 				return hantei[0] <= e && hantei[1] >= e;
