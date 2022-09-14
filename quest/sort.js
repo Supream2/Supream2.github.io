@@ -49,7 +49,7 @@ var ckTtarget_F = function (e) {
 		return function(){return true};
 	} else {
 		var reg = new RegExp(">([a-zA-z]+)."+e+".[0-9]");
-		return function (cell) {return reg.test(">"+cell.innerHTML.replace("アクラ・ジェビア奇種","アクラ・ジェビア").replace("ヒプノック奇種","ヒプノック繁殖期").split("奇種").join("亜種").split("変種").join(""));};
+		return function (cell) {return reg.test(">([a-zA-z]+)."+cell.innerHTML.replace("アクラ・ジェビア奇種","アクラ・ジェビア").replace("ヒプノック奇種","ヒプノック繁殖期").split("奇種").join("亜種").split("変種").join(""));};
 	}
 };
 /*こっちは亜種も引っかかるので没
