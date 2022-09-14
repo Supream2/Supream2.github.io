@@ -49,7 +49,7 @@ var ckTtarget_F = function (e) {
 		return function(){return true};
 	} else {
 		var reg = new RegExp(">([a-zA-z]+)."+e+".[0-9]");
-		return function (cell) {return reg.test(">([a-zA-z]+)."+cell.innerHTML.join(" "));};
+		return function (cell) {return reg.test(">"+cell.innerHTML.join(" "));};
 	}
 };
 /*こっちは亜種も引っかかるので没
