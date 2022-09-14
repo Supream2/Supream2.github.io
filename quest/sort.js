@@ -76,10 +76,10 @@ var ckHr_F = function (e) {
 
 			var wk = cell.firstChild.nodeValue.replace("-","");
 
-			if (wk.indexOf("以上") !== -1) {
-				return parseInt(wk.substring(2))  <= e;
-			} else if (wk.indexOf("以下") !== -1) {
-				return parseInt(wk.substring(2))  >= e;
+			if (wk.indexOf("+") !== -1) {
+				return parseInt(wk.substring(1))  <= e;
+			} else if (wk.indexOf("-") !== -1) {
+				return parseInt(wk.substring(1))  >= e;
 			} else {
 				var hantei = wk.substring(2).split("～");
 				return hantei[0] <= e && hantei[1] >= e;
