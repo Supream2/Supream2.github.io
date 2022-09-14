@@ -48,7 +48,7 @@ tH.cells[6].appendChild(s.cloneNode(true));
 	if (e === "Target") {
 		return function(){return true};
 	} else {
-		var reg = new RegExp(">[\w]+\s"+e+"\s[0-9]+");
+		var reg = new RegExp(">"+e+".");
 		return function (cell) {return reg.test(cell.innerHTML);};
 	}
 };
