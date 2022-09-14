@@ -76,9 +76,9 @@ var ckHr_F = function (e) {
 
 			var wk = cell.firstChild.nodeValue.replace("-","");
 
-			if (wk.indexOf(" +") !== -1) {
+			if (wk.indexOf("+") !== -1) {
 				return parseInt(wk.substring(2))  <= e;
-			} else if (wk.indexOf(" -") !== -1) {
+			} else if (wk.indexOf("-") !== -1) {
 				return parseInt(wk.substring(2))  >= e;
 			} else {
 				var hantei = wk.substring(2).split("～");
