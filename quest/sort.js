@@ -41,7 +41,7 @@ selectSet(s,["Map","Jungle","Desert","Swamp","Snowy Mountains","Volcano","Great 
 s.selectedIndex = 0;
 tH.cells[2].appendChild(s.cloneNode(true));
 	var ckTtarget_F = function (e) {
-	if (e === "Target") {
+	if (e === "Map") {
 		return function(){return true};
 	}
 };
