@@ -48,8 +48,8 @@ tH.cells[6].appendChild(s.cloneNode(true));
 	if (e === "Target") {
 		return function(){return true};
 	} else {
-		var reg = new RegExp(">[\w]+\s"+e+"\s[0-9]+");
-		return function (cell) {return reg.test(">[\w]+\s"+cell.innerHTML.replace("アクラ・ジェビア奇種","アクラ・ジェビア").replace("ヒプノック奇種","ヒプノック繁殖期").split("奇種").join("亜種").split("変種").join(""));};
+		var reg = new RegExp(">[\w]+\s"+e+"\s[0-9]+<");
+		return function (cell) {return reg.test(">"+cell.innerHTML.join(""));};
 	}
 };
 /*こっちは亜種も引っかかるので没
