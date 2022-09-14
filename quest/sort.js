@@ -61,13 +61,13 @@ var ckTtarget = function (cell,s) {
 //HR
 s.title = "HRで絞り込み";
 if (location.pathname.indexOf("_g") !== -1 && location.pathname.indexOf("_go") === -1) {
-	selectSet(s,["ＧＲ","1以上"]);
+	selectSet(s,["GR","1+"]);
 } else {
-	selectSet(s,["ＨＲ","100以上","91以上","81以上","71以上","61以上","51以上","41以上","31以上","22以上","17以上","15以上","11以上","8以上","5以上","3以上","2","1"]);
+	selectSet(s,["HR","100+","91+","81+","71+","61+","51+","41+","31+","22+","17+","15+","11+","8以上","5以上","3以上","2","1"]);
 }
 tH.cells[7].appendChild(s.cloneNode(true));
 var ckHr_F = function (e) {
-	if (e === "ＨＲ" || e === "ＧＲ") {
+	if (e === "HR" || e === "GR") {
 		return function(){return true};
 	} else {
 		e = parseInt(e);
@@ -76,9 +76,9 @@ var ckHr_F = function (e) {
 
 			var wk = cell.firstChild.nodeValue.replace("-","");
 
-			if (wk.indexOf("以上") !== -1) {
+			if (wk.indexOf(" +") !== -1) {
 				return parseInt(wk.substring(2))  <= e;
-			} else if (wk.indexOf("以下") !== -1) {
+			} else if (wk.indexOf(" -") !== -1) {
 				return parseInt(wk.substring(2))  >= e;
 			} else {
 				var hantei = wk.substring(2).split("～");
