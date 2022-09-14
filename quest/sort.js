@@ -212,11 +212,11 @@ function (evt) {
 				return parseInt(cell.firstChild.nodeValue) + parseInt(cell.childNodes[2].nodeValue) + parseInt(cell.childNodes[4].nodeValue);
 			}
 		switch (t.title) {
-		case "金額順にソート":
+		case "Sort by Amount":
 			var col = 4;
 			marker.id = "Z"+tB.id.charAt(0);
 			break;
-		case "ﾎﾟｲﾝﾄ順にソート":
+		case "Sort by HRP":
 			var col = 5;
 			marker.id = "H"+tB.id.charAt(0);
 			break;
