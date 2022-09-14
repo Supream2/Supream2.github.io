@@ -42,7 +42,10 @@ s.selectedIndex = 0;
 tH.cells[2].appendChild(s.cloneNode(true));
 	var ckTtarget_F = function (e) {
 	if (e === "Map") {
-		return function(){return true};
+		return function(){return true} :
+			e === "Jungle"	? function (cell) {return !(/[火水雷龍氷炎光天熾焔奏闇紅風響]/).test(cell./*@if (@_jscript_version < 9) innerText @else@*/ textContent /*@end@*/);} :
+			e === "Volcano"	? function (cell) {return cell./*@if (@_jscript_version < 9) innerText @else@*/ textContent /*@end@*/.lastIndexOf("雷極") === -1 && cell./*@if (@_jscript_version < 9) innerText @else@*/ textContent /*@end@*/.lastIndexOf(e) !== -1;}
+						: function (cell) {return cell./*@if (@_jscript_version < 9) innerText @else@*/ textContent /*@end@*/.lastIndexOf(e) !== -1;};
 	}
 };
 //ターゲット
