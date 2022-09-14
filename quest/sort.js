@@ -59,7 +59,7 @@ var ckTtarget = function (cell,s) {
 */
 
 //HR
-s.title = "HRで絞り込み";
+s.title = "Filter by HR";
 if (location.pathname.indexOf("_g") !== -1 && location.pathname.indexOf("_go") === -1) {
 	selectSet(s,["GR","1+"]);
 } else {
@@ -89,16 +89,16 @@ var ckHr_F = function (e) {
 };
 
 //季節
-s.title = "季節で絞り込み";
-selectSet(s,["季節","温暖期","寒冷期","繁殖期"]);
+s.title = "Filter by Season";
+selectSet(s,["Season","Warm","Cold","Breed"]);
 s.style.position = "relative",s.style.top = "0",s.style.right = "-150px";
 tH.cells[1].appendChild(s.cloneNode(true));
 var ckField_F = function (e1,e2) {
-	if (e1 === "場所" && e2 === "季節") {
+	if (e1 === "Map" && e2 === "Season") {
 		return function(){return true};
-	} else if (e1 !== "場所" && e2 !== "季節") {
+	} else if (e1 !== "Map" && e2 !== "Season") {
 		return function (cell) {return cell.firstChild.nodeValue.indexOf(e1) !== -1 && cell.childNodes[2].nodeValue === e2;};
-	} else if (e1 !== "場所") {
+	} else if (e1 !== "Map") {
 		return function (cell) {return cell.firstChild.nodeValue.indexOf(e1) !== -1;};
 	} else {
 		return function (cell) {return cell.childNodes[2].nodeValue === e2;};
@@ -106,11 +106,11 @@ var ckField_F = function (e1,e2) {
 };
 
 //金額ソート
-i.value = "金額",i.title = "金額順にソート";
+i.value = "Amt",i.title = "Sort by Amount";
 tH.cells[4].appendChild(i.cloneNode(false));
 
 //HRPソート
-i.value = "ﾎﾟｲﾝﾄ",i.title = "ﾎﾟｲﾝﾄ順にソート";
+i.value = "Point",i.title = "Sort by HRP";
 tH.cells[5].appendChild(i.cloneNode(false));
 
 tH=i=s=null;
