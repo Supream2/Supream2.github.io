@@ -47,10 +47,6 @@ tH.cells[6].appendChild(s.cloneNode(true));
 	var ckTtarget_F = function (e) {
 	if (e === "Target") {
 		return function(){return true};
-	} else {
-		var reg = new RegExp(">[\w]+\s"+e+"\s[0-9]+");
-		return function (cell) {return reg.test(cell.innerHTML);};
-	}
 };
 /*こっちは亜種も引っかかるので没
 var ckTtarget = function (cell,s) {
