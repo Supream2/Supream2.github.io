@@ -40,16 +40,8 @@ s.title = "場所で絞り込み";
 selectSet(s,["Map","Jungle","Desert","Swamp","Snowy Mountains","Volcano","Great Forest","Forest and Hills","Tower","Gorge","Highlands","Tide Island","Polar Sea","Flower Fields","Bamboo Forest","Fort","Interceptor Base","Schrade","Arena","Battlefield","Solitude Island"]);
 s.selectedIndex = 0;
 tH.cells[2].appendChild(s.cloneNode(true));
-	var ckTtarget_F = function (e) {
-	if (e === "Map") {
-		return function(){return true} :
-			e === "Jungle"	? function (cell) {return !(/[火水雷龍氷炎光天熾焔奏闇紅風響]/).test(cell./*@if (@_jscript_version < 9) innerText @else@*/ textContent /*@end@*/);} :
-			e === "Volcano"	? function (cell) {return cell./*@if (@_jscript_version < 9) innerText @else@*/ textContent /*@end@*/.lastIndexOf("雷極") === -1 && cell./*@if (@_jscript_version < 9) innerText @else@*/ textContent /*@end@*/.lastIndexOf(e) !== -1;}
-						: function (cell) {return cell./*@if (@_jscript_version < 9) innerText @else@*/ textContent /*@end@*/.lastIndexOf(e) !== -1;};
-	}
-};
 //ターゲット
-/*s.title = "Filter by Target";
+s.title = "Filter by Target";
 selectSet(s,["Target","Felyne","Akantor","Akura Vashimu","Akura Jebia","Anorupatisu","Abiorugu","Apceros","Aptonoth","Amatsu","Aruganosu","Unknown","Ioprey","Inagami","Deviljho","イビルジョー蝕","Yian Garuga","Yian Kut-Ku","Blue Yian Kut-Ku","Varusaburosu","Voljang","Volganos","Red Volganos","Uragaan","Uruki","Egyurasu","Espinas","Orange Espinas","White Espinas","Elzelion","Erupe","Chameleos","Odibatorasu","Anteka","Gasurabazura","Plesioth","Green Plesioth","Remobra","Hermitaur","Kamu Orugaron","Garuba Daora","Cephalos","Hornetaur","Giaorugu","Giaprey","Kirin","Kuarusepusu","Guanzorumu","Kushala Daora","Kusubami","Gravios","Black Gravios","Gureadomosu","Gurenzeburu","Keoaruboru","Genprey","Gypceros","Purple Gypceros","Kelbi","Gore Magala","Gougarf","Kokomoa","Gogomoa","Goruganosu","Conga","Shen Gaoren","Shagaru Magala","Shantien","Shogun Ceanataur","Zinogre","Stygian Zinogre","Zenaserisu","Zerureusu","Seregios","Taikun Zamuza","Daimyo Hermitaur","Great Thunderbug","Shakalaka","Diablos","Black Diablos","Diorex","Tigrex","Disufiroa","Teostra","Dyuragaua","Toa Tesukatora","Duremudira","Iodrome","Cephadrome","Gendrome","Bulldrome","Velocidrome","Blangonga","Doragyurosu","Toridcless","Lunastra","Nargacuga","Nono Orugaron","Basarios","Congalala","Pariapuria","Harudomerugu","Baruragaru","Hypnocatrice","White Hypnocatrice","Bright Hypnocatrice","Hyujikiki","Farunokku","Forokururu","Brachydios","Blango","Burukku","Bullfango","Khezu","Red Khezu","Barioth","Berukyurosu","Pokara","Pokaradon","Popo","Bogabadorumu","Poborubarumu","Mi Ru","Midogaron","Fatalis","Crimson Fatalis","White Fatalis","Meraginasu","Melynx","Mosswine","Monoblos","White Monoblos","Ceanataur","Yama Kurai","Yama Tsukami","Rajang","Raviente","Berserk Raviente","Lao-Shan Lung","Ashen Lao-Shan Lung","Vespoid","Velociprey","Rathian","Pink Rathian","Gold Rathian","Rathalos","Azure Rathalos","Silver Rathalos","Rukodiora","Rebidiora"]);
 tH.cells[6].appendChild(s.cloneNode(true));
 	var ckTtarget_F = function (e) {
@@ -59,7 +51,7 @@ tH.cells[6].appendChild(s.cloneNode(true));
 		var reg = new RegExp(">[\w]+\s"+e+"\s[0-9]+");
 		return function (cell) {return reg.test(cell.innerHTML);};
 	}
-};*/
+};
 /*こっちは亜種も引っかかるので没
 var ckTtarget = function (cell,s) {
 		return s === "-" ? true : (cell.innerHTML.indexOf(s) === 0 || cell.innerHTML.indexOf(">"+s) >= 1);
