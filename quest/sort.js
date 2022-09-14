@@ -40,7 +40,10 @@ s.title = "場所で絞り込み";
 selectSet(s,["Map","Jungle","Desert","Swamp","Snowy Mountains","Volcano","Great Forest","Forest and Hills","Tower","Gorge","Highlands","Tide Island","Polar Sea","Flower Fields","Bamboo Forest","Fort","Interceptor Base","Schrade","Arena","Battlefield","Solitude Island"]);
 s.selectedIndex = 0;
 tH.cells[2].appendChild(s.cloneNode(true));
-	
+	var ckTtarget_F = function (e) {
+	if (e === "Target") {
+		return function(){return true};
+	}
 };
 //ターゲット
 /*s.title = "Filter by Target";
