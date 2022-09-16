@@ -7,61 +7,61 @@
 </head>
 <body>
 <table border=2 style="width:55em"><tr>
- <td style="width:4em;" class=t>対戦相手</td>
+ <td style="width:4em;" class=t>Opponent</td>
  <td>
 	<select id="m_class">
-	<option value="0" selected>通常
-	<option value="1">凄腕
-	<option value="2">Ｇ級
-	<option value="3">天廊
-	<option value="4">辿異
+	<option value="0" selected>General
+	<option value="1">HR5
+	<option value="2">G Rank
+	<option value="3">Sky Corridor
+	<option value="4">Zenith
 	</select>
 	<select id="m_enemy" style="width:13em;"></select>
 	<select id="m_status">
-	<option value="0" selected>通常
+	<option value="0" selected>General
 	</select>
-	怒り<select id="m_ang">
-	<option value="100" selected>通常:1.00
+	Rage<select id="m_ang">
+	<option value="100" selected>General:1.00
 	</select>
 	HC<select id="m_hc">
 	<option value="100,100" selected>なし
 	</select>
-	防御率<select id="m_def">
-	<option value="100" selected>なし:1.00
+	ERA<select id="m_def">
+	<option value="100" selected>None:1.00
 	</select>
-	<span class=box>防御率</span> <span id="d_def">&nbsp;</span>
+	<span class=box>ERA</span> <span id="d_def">&nbsp;</span>
  </td>
 </tr></table>
 <table border=2 style="width:50.5em;">
 <tr>
- <td style="width:4em;" class=t>武器条件</td>
+ <td style="width:4em;" class=t>Weapon Reqs</td>
  <td colspan=9>
 	<select id="s_rui">
-	<option value="" selected>種類
-	<option value="0">大剣
-	<option value="7">太刀
-	<option value="4">片手剣
-	<option value="6">双剣
-	<option value="2">ハンマー
-	<option value="8">狩猟笛
-	<option value="3">ランス
-	<option value="9">ガンランス
-	<option value="11">穿龍棍
-	<option value="12">スラッシュアックス
-	<option value="13">マグネットスパイク
-	<option value="5">ライトボウガン
-	<option value="1">ヘビィボウガン
-	<option value="10">弓
+	<option value="" selected>Type
+	<option value="0">Great Sword
+	<option value="7">Long Sword
+	<option value="4">Sword and Shield
+	<option value="6">Dual Sword
+	<option value="2">Hammer
+	<option value="8">Hunting Horn
+	<option value="3">Lance
+	<option value="9">Gunlance
+	<option value="11">Tonfa
+	<option value="12">Switch Axe
+	<option value="13">Magnet Spike
+	<option value="5">Light Bowgun
+	<option value="1">Heavy Bowgun
+	<option value="10">Bow
 	</select>
 	<select id="s_srt">
-	<option value="0" selected>名前
-	<option value="1">攻撃
-	<option value="2">会心
-	<option value="3">属性
-	<option value="4">状態
-	<option value="5">弾数
-	</select><small>順</small>
-	ﾚｱ：<select id="s_rare">
+	<option value="0" selected>Name
+	<option value="1">Attack
+	<option value="2">Affinity
+	<option value="3">Attribute
+	<option value="4">Status
+	<option value="5">Bullets
+	</select><small>Order</small>
+	Rare：<select id="s_rare">
 	<option value="99" selected>-
 	<option value="12">12
 	<option value="11">11
@@ -75,14 +75,14 @@
 	<option value="3">3
 	<option value="2">2
 	<option value="1">1
-	</select><small>まで</small>
-	ｽﾛｯﾄ：<select id="s_slot">
+	</select><small>to</small>
+	Slot：<select id="s_slot">
 	<option value="" selected>-
 	<option value="1">1
 	<option value="2">2
 	<option value="3">3
-	</select><small>以上</small>
-	ﾗﾝｸ：<select id="s_hr">
+	</select><small>+</small>
+	Rank：<select id="s_hr">
 	<option value="5000" selected>-
 	<option value="3001">SGR1
 	<option value="2002">GR1
@@ -105,197 +105,197 @@
 	<option value="8">HR8
 	<option value="5">HR5
 	<option value="3">HR3
-	</select><small>以下</small><br>
+	</select><small>Under</small><br>
 	<div style="float:left"><span id="s_ken_G"><select id="s_zoku_ken">
-	<option value="-" selected>属性
-	<option value="0">無
-	<option value="1">火
-	<option value="2">水
-	<option value="3">雷
-	<option value="4">龍
-	<option value="5">氷
-	<option value="6">炎
-	<option value="7">光
-	<option value="8">雷極
-	<option value="9">天翔
-	<option value="10">熾凍
-	<option value="11">黒焔
-	<option value="12">奏
-	<option value="13">闇
-	<option value="14">紅魔
-	<option value="15">風
-	<option value="16">響
+	<option value="-" selected>Attribute
+	<option value="0">None
+	<option value="1">Fire
+	<option value="2">Water
+	<option value="3">Thunder
+	<option value="4">Dragon
+	<option value="5">Ice
+	<option value="6">Blaze
+	<option value="7">Light
+	<option value="8">Thunder Pole
+	<option value="9">Tenshou
+	<option value="10">Okiko
+	<option value="11">Black Flame
+	<option value="12">Music
+	<option value="13">Darkness
+	<option value="14">Crimson Demon
+	<option value="15">Wind
+	<option value="16">Sound
 	</select>
 	<select id="s_zyoutai">
-	<option value="-" selected>状態
-	<option value="0">無
-	<option value="1">毒
-	<option value="2">麻痺
-	<option value="3">睡眠
-	<option value="4">爆破
+	<option value="-" selected>Status
+	<option value="0">None
+	<option value="1">Poison
+	<option value="2">Para
+	<option value="3">Sleep
+	<option value="4">Blast
 	</select>
 	<span id="s_reach">
-	<small>リーチ</small><input type="button" id="c_reach0" class=chkB value="特"><input type="button" id="c_reach1" class=chkB value="極短"><input type="button" id="c_reach2" class=chkB value="短"><input type="button" id="c_reach3" class=chkB value="中"><input type="button" id="c_reach4" class=chkB value="長"><input type="button" id="c_reach5" class=chkB value="極長">
+	<small>Length</small><input type="button" id="c_reach0" class=chkB value="Special"><input type="button" id="c_reach1" class=chkB value="Very Short"><input type="button" id="c_reach2" class=chkB value="Short"><input type="button" id="c_reach3" class=chkB value="Medium"><input type="button" id="c_reach4" class=chkB value="Long"><input type="button" id="c_reach5" class=chkB value="Very Long">
 	</span><select id="s_guns">
-	<option value="" selected>砲撃
-	<option value="通常型">通常型
-	<option value="放射型">放射型
-	<option value="拡散型">拡散型
+	<option value="" selected>Shot
+	<option value="Normal">Normal
+	<option value="Long">Long
+	<option value="Spread">Spread
 	</select><select id="s_fue">
-	<option value="" selected>旋律
-	<option value="621">紫黄赤
-	<option value="627">紫黄空
-	<option value="641">紫青赤
-	<option value="642">紫青黄
-	<option value="651">紫緑赤
-	<option value="652">紫緑黄
-	<option value="654">紫緑青
-	<option value="657">紫緑空
-	<option value="671">紫空赤
-	<option value="674">紫空青
-	<option value="321">白黄赤
-	<option value="327">白黄空
-	<option value="341">白青赤
-	<option value="342">白青黄
-	<option value="351">白緑赤
-	<option value="352">白緑黄
-	<option value="354">白緑青
-	<option value="357">白緑空
-	<option value="371">白空赤
-	<option value="374">白空青
+	<option value="" selected>Melody
+	<option value="621">purple|yellow|red
+	<option value="627">purple|yellow|l.Blue
+	<option value="641">purple|d.blue|red
+	<option value="642">purple|d.blue|yellow
+	<option value="651">purple|green|red
+	<option value="652">purple|green|yellow
+	<option value="654">purple|green|d.Blue
+	<option value="657">purple|green|l.blue
+	<option value="671">purple|sky|red
+	<option value="674">purple|l.blue|d.blue
+	<option value="321">white|yellow|red
+	<option value="327">white|yellow|l.blue
+	<option value="341">white|d.blue|red
+	<option value="342">white|d.blue|yellow
+	<option value="351">white|green|red
+	<option value="352">white|green|yellow
+	<option value="354">white|green|d.blue
+	<option value="357">white|green|l.blue
+	<option value="371">white|l.blue|red
+	<option value="374">white|l.blue|d.blue
 	</select></span><span id="s_yumi_G"><select id="s_zoku_yumi">
-	<option value="-" selected>属性
-	<option value="0">無
-	<option value="1">火
-	<option value="2">水
-	<option value="3">雷
-	<option value="4">龍
-	<option value="5">氷
-	<option value="6">炎
-	<option value="7">光
-	<option value="8">雷極
-	<option value="9">天翔
-	<option value="10">熾凍
-	<option value="11">黒焔
-	<option value="12">奏
-	<option value="13">闇
-	<option value="14">紅魔
-	<option value="15">風
-	<option value="16">響
+	<option value="-" selected>Attribute
+	<option value="0">None
+	<option value="1">Fire
+	<option value="2">Water
+	<option value="3">Thunder
+	<option value="4">Dragon
+	<option value="5">Ice
+	<option value="6">Blaze
+	<option value="7">Light
+	<option value="8">Thunder Pole
+	<option value="9">Tenshou
+	<option value="10">Okiko
+	<option value="11">Black Flame
+	<option value="12">Music
+	<option value="13">Darkness
+	<option value="14">Crimson Demon
+	<option value="15">Wind
+	<option value="16">Sound
 	</select>
 	<select id="s_tame">
-	<option value="1">タメ１
-	<option value="2">タメ２
-	<option value="3" selected>タメ３
-	<option value="4">タメ４
+	<option value="1">Peer１
+	<option value="2">Peer２
+	<option value="3" selected>Peer３
+	<option value="4">Peer４
 	</select><select id="s_ya">
-	<option value="" selected>矢
-	<option value="連射">連射
-	<option value="拡散">拡散
-	<option value="貫通">貫通
+	<option value="" selected>Arrow
+	<option value="Rpd">Rpd
+	<option value="Spr">Spr
+	<option value="Prc">Prc
 	</select>
 	<select id="s_kyoku">
-	<option value="" selected>曲射
-	<option value="0">放散
-	<option value="1">集中
-	<option value="2">爆裂
-	<option value="3">切断
+	<option value="" selected>Arc
+	<option value="0">Wide
+	<option value="1">Narrow
+	<option value="2">Bomb
+	<option value="3">Slicing
 	</select>
 	<select id="s_bin">
-	<option value="" selected>ビン
-	<option value="強">強撃
-	<option value="毒">毒
-	<option value="麻">麻痺
-	<option value="睡">睡眠
-	<option value="爆">爆撃
-	<option value="打">打撃
+	<option value="" selected>Coating
+	<option value="Power">Power
+	<option value="Poison">Poison
+	<option value="Para">Para
+	<option value="Sleep">Sleep
+	<option value="Explosive">Explosive
+	<option value="Impact">Impact
 	</select></span><span id="s_gun_G"><select id="s_tama1">
-	<option value="" selected>弾
-	<option value=0>通常1
-	<option value=1>通常2
-	<option value=2>通常3
-	<option value=3>貫通1
-	<option value=4>貫通2
-	<option value=5>貫通3
-	<option value=6>散1
-	<option value=7>散2
-	<option value=8>散3
-	<option value=9>徹甲1
-	<option value=10>徹甲2
-	<option value=11>徹甲3
-	<option value=12>拡散1
-	<option value=13>拡散2
-	<option value=14>拡散3
-	<option value=17>毒1
-	<option value=18>毒2
-	<option value=19>麻痺1
-	<option value=20>麻痺2
-	<option value=21>睡眠1
-	<option value=22>睡眠2
-	<option value=23>火炎
-	<option value=24>水冷
-	<option value=25>電撃
-	<option value=26>氷結
-	<option value=27>滅龍
+	<option value="" selected>Shot
+	<option value=0>Norm 1
+	<option value=1>Norm 2
+	<option value=2>Norm 3
+	<option value=3>Pierc1
+	<option value=4>Pierc2
+	<option value=5>Pierc3
+	<option value=6>Pelet1
+	<option value=7>Pelet2
+	<option value=8>Pelet3
+	<option value=9>Crag 1
+	<option value=10>Crag 2
+	<option value=11>Crag 3
+	<option value=12>Clust1
+	<option value=13>Clust2
+	<option value=14>Clust3
+	<option value=17>Psn  1
+	<option value=18>Psn  2
+	<option value=19>Para 1
+	<option value=20>Para 2
+	<option value=21>Slp  1
+	<option value=22>Slp  2
+	<option value=23>Flame
+	<option value=24>Water
+	<option value=25>Thund
+	<option value=26>Freez
+	<option value=27>Dragn
 	</select><select id="s_tama2">
-	<option value="" selected>弾
-	<option value=0>通常1
-	<option value=1>通常2
-	<option value=2>通常3
-	<option value=3>貫通1
-	<option value=4>貫通2
-	<option value=5>貫通3
-	<option value=6>散1
-	<option value=7>散2
-	<option value=8>散3
-	<option value=9>徹甲1
-	<option value=10>徹甲2
-	<option value=11>徹甲3
-	<option value=12>拡散1
-	<option value=13>拡散2
-	<option value=14>拡散3
-	<option value=17>毒1
-	<option value=18>毒2
-	<option value=19>麻痺1
-	<option value=20>麻痺2
-	<option value=21>睡眠1
-	<option value=22>睡眠2
-	<option value=23>火炎
-	<option value=24>水冷
-	<option value=25>電撃
-	<option value=26>氷結
-	<option value=27>滅龍
+	<option value="" selected>Shot
+	<option value=0>Norm 1
+	<option value=1>Norm 2
+	<option value=2>Norm 3
+	<option value=3>Pierc1
+	<option value=4>Pierc2
+	<option value=5>Pierc3
+	<option value=6>Pelet1
+	<option value=7>Pelet2
+	<option value=8>Pelet3
+	<option value=9>Crag 1
+	<option value=10>Crag 2
+	<option value=11>Crag 3
+	<option value=12>Clust1
+	<option value=13>Clust2
+	<option value=14>Clust3
+	<option value=17>Psn  1
+	<option value=18>Psn  2
+	<option value=19>Para 1
+	<option value=20>Para 2
+	<option value=21>Slp  1
+	<option value=22>Slp  2
+	<option value=23>Flame
+	<option value=24>Water
+	<option value=25>Thund
+	<option value=26>Freez
+	<option value=27>Dragn
 	</select>
 	<select id="s_reload">
-	<option value="" selected>装填
-	<option value="">遅い
-	<option value=1>やや遅い
-	<option value=2>普通
-	<option value=3>やや速い
-	<option value=4>速い
+	<option value="" selected>Reload
+	<option value="">Very Slow
+	<option value=1>Slow
+	<option value=2>Normal
+	<option value=3>Fast
+	<option value=4>Very Fast
 	</select>
 	<select id="s_kick">
-	<option value="" selected>反動
-	<option value="">最大
-	<option value=2>中
-	<option value=3>やや小
-	<option value=4>小
+	<option value="" selected>Recoil
+	<option value="">Very Large
+	<option value=2>Medium
+	<option value=3>Small
+	<option value=4>Smaller
 	</select>
 	<select id="s_speed">
-	<option value="" selected>弾速
-	<option value=0>遅い
-	<option value=1>やや遅い
-	<option value=2>やや速い
-	<option value=3>速い
+	<option value="" selected>Bullet Speed
+	<option value=0>Very Slow
+	<option value=1>Slow
+	<option value=2>Fast
+	<option value=3>Very Fast
 	</select></span></div>
-	<div style="text-align:right;"><input type="button" id="c_rep2" class=chkB value="猟団"><input type="button" id="c_repm" class=chkB value=" 祭 "><input type="button" id="c_reps" class=chkB value="狩衛戦"><input type="button" id="c_repc" class=chkB value="ﾊﾟﾛｰﾈ"><input type="button" id="c_repi" class=chkB value="韋駄天"><input type="button" id="c_repe" class=chkB value="ｲﾍﾞﾝﾄ"><input type="button" id="c_rep3" class=chkB value="ｶﾌｪ"><input type="button" id="c_repg" class=chkB value="ｶﾞﾁｬ"><input type="button" id="c_repk" class=chkB value="ｷｯﾄ"><input type="button" id="c_repp" class=chkB value="ﾊﾟｯｹ"><input type="button" id="c_rep5" class=chkB value="特典"></div>
+	<div style="text-align:right;"><input type="button" id="c_rep2" class=chkB value="Guild"><input type="button" id="c_repm" class=chkB value=" Festival "><input type="button" id="c_reps" class=chkB value="Diva Battle"><input type="button" id="c_repc" class=chkB value="Caravan"><input type="button" id="c_repi" class=chkB value="Prize"><input type="button" id="c_repe" class=chkB value="Event"><input type="button" id="c_rep3" class=chkB value="NetCafe"><input type="button" id="c_repg" class=chkB value="Gacha"><input type="button" id="c_repk" class=chkB value="Premium"><input type="button" id="c_repp" class=chkB value="Bundle"><input type="button" id="c_rep5" class=chkB value="Sub"></div>
 	</td>
 </tr>
 <tr>
- <td style="width:4em;" class=t rowspan=3>武器選択<br><input type="button" id="d_sozai" value="素材" title="強化素材表示"></td>
+ <td style="width:4em;" class=t rowspan=3>Weapon<br><input type="button" id="d_sozai" value="Material" title="Upgrade Material Display"></td>
  <td style="width:11em;">
 	<select id="s_wp">
-	<option value="" selected>－－武器－－
+	<option value="" selected>－－Weapon－－
 	</select>
  </td>
  <td style="width:2em;" class=t>攻撃</td>
