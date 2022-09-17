@@ -138,9 +138,9 @@
 	<small>Length</small><input type="button" id="c_reach0" class=chkB value="Special"><input type="button" id="c_reach1" class=chkB value="Very Short"><input type="button" id="c_reach2" class=chkB value="Short"><input type="button" id="c_reach3" class=chkB value="Medium"><input type="button" id="c_reach4" class=chkB value="Long"><input type="button" id="c_reach5" class=chkB value="Very Long">
 	</span><select id="s_guns">
 	<option value="" selected>Shot
-	<option value="Normal">Normal
-	<option value="Long">Long
-	<option value="Spread">Spread
+	<option value="通常型">Normal
+	<option value="放射型">Long
+	<option value="拡散型">Spread
 	</select><select id="s_fue">
 	<option value="" selected>Melody
 	<option value="621">purple|yellow|red
@@ -184,15 +184,15 @@
 	<option value="16">Sound
 	</select>
 	<select id="s_tame">
-	<option value="1">タメ１
-	<option value="2">タメ２
-	<option value="3" selected>タメ３
-	<option value="4">タメ４
+	<option value="1">Peer１
+	<option value="2">Peer２
+	<option value="3" selected>Peer３
+	<option value="4">Peer４
 	</select><select id="s_ya">
 	<option value="" selected>Arrow
-	<option value="Rpd">Rpd
-	<option value="Spr">Spr
-	<option value="Prc">Prc
+	<option value="連射">Rpd
+	<option value="拡散">Spr
+	<option value="貫通">Prc
 	</select>
 	<select id="s_kyoku">
 	<option value="" selected>Arc
@@ -203,12 +203,12 @@
 	</select>
 	<select id="s_bin">
 	<option value="" selected>Coating
-	<option value="Power">Power
-	<option value="Poison">Poison
-	<option value="Para">Para
-	<option value="Sleep">Sleep
-	<option value="Explosive">Explosive
-	<option value="Impact">Impact
+	<option value="強">Power
+	<option value="毒">Poison
+	<option value="麻">Para
+	<option value="睡">Sleep
+	<option value="爆">Explosive
+	<option value="打">Impact
 	</select></span><span id="s_gun_G"><select id="s_tama1">
 	<option value="" selected>Shot
 	<option value=0>Norm 1
@@ -320,9 +320,9 @@
  <td style="width:4em;" class=t>Conditions</td>
  <td style="width:4.5em;">
 	<select id="c_style">
-	<option value="Earth" selected>Earth Style
-	<option value="Heaven">Heaven Style
-	<option value="Storm">Storm Style
+	<option value="地" selected>Earth Style
+	<option value="天">Heaven Style
+	<option value="嵐">Storm Style
 	</select>
  <td style="width:27.5em;"><span id="c_ken_G">
 	Sharpness： <select id="c_sharp">
@@ -392,7 +392,7 @@
 	<label for="c_tamaAdd"><input type=checkbox name="c_tamaAdd" id="c_tamaAdd" value=1>Num UP</label>
 	<select id="c_shot">
 	</select></span><span  id="c_yumi_G">
-	タメ： <select id="c_tame" style="width:12em;">
+	Peer： <select id="c_tame" style="width:12em;">
 	<option value="Proximity" selected>Proximity
 	<select id="c_ya"></select>
 	<select id="c_bin">
@@ -964,10 +964,10 @@
 	<label for="c_sizilMotCng"><input type=checkbox name="c_sizilMotCng" id="c_sizilMotCng" value=1>Technique Change</label>
 	<label for="c_sizilReachUp"><input type=checkbox name="c_sizilReachUp" id="c_sizilReachUp" value=1>Length UP</label>
 	<select id="c_sizilgunscng">
-	<option value="" selected>Gun Change
-	<option value="通常型">通常
-	<option value="放射型">放射
-	<option value="拡散型">拡散
+	<option value="" selected>GL Change
+	<option value="通常型">Normal
+	<option value="放射型">Long
+	<option value="拡散型">Spread
 	</select>
 	<select id="c_sizilgunsup">
 	<option value="" selected>Shot Lvl
@@ -976,42 +976,42 @@
 	<option value=3>3個
 	</select><select id="c_sizilkyoku">
 	<option value="" selected>Arc
-	<option value="0">放散
-	<option value="1">集中
-	<option value="2">爆裂
-	<option value="3">切断
+	<option value="0">Wide
+	<option value="1">Narrow
+	<option value="2">Bomb
+	<option value="3">Slicing
 	</select></span>
 	<span id="g_Neko" style="display:none;">
-	攻撃:<input id="i_att" style="width:2.5em;" value=0>　<span id="i_zoku_disp">無</span>:<input id="i_zoku" style="width:1.6em;" value=0>　会心<input id="i_cri" style="width:2em;" value=0>
+	Attack:<input id="i_att" style="width:2.5em;" value=0>　<span id="i_zoku_disp">None</span>:<input id="i_zoku" style="width:1.6em;" value=0>　Affinity<input id="i_cri" style="width:2em;" value=0>
 	<input type="button" value="セット" id="i_set_B" style="height:1.5em;">
 		<span id="i_yumi">
-		ﾀﾒ1<select id="i_ya1"><option value="連射">連射<option value="拡散">拡散<option value="貫通">貫通</select><select id="i_yaLv1"><option value=1>1<option value=2>2<option value=3>3<option value=4>4</select>
-		ﾀﾒ2<select id="i_ya2"><option value="連射">連射<option value="拡散">拡散<option value="貫通">貫通</select><select id="i_yaLv2"><option value=1>1<option value=2>2<option value=3>3<option value=4>4</select>
-		ﾀﾒ3<select id="i_ya3"><option value="連射">連射<option value="拡散">拡散<option value="貫通">貫通</select><select id="i_yaLv3"><option value=1>1<option value=2>2<option value=3>3<option value=4>4</select>
-		ﾀﾒ4<select id="i_ya4"><option value="連射">連射<option value="拡散">拡散<option value="貫通">貫通</select><select id="i_yaLv4"><option value=1>1<option value=2>2<option value=3>3<option value=4>4</select>
+		ﾀﾒ1<select id="i_ya1"><option value="連射">Rpd<option value="拡散">Spr<option value="貫通">Prc</select><select id="i_yaLv1"><option value=1>1<option value=2>2<option value=3>3<option value=4>4</select>
+		ﾀﾒ2<select id="i_ya2"><option value="連射">Rpd<option value="拡散">Spr<option value="貫通">Prc</select><select id="i_yaLv2"><option value=1>1<option value=2>2<option value=3>3<option value=4>4</select>
+		ﾀﾒ3<select id="i_ya3"><option value="連射">Rpd<option value="拡散">Spr<option value="貫通">Prc</select><select id="i_yaLv3"><option value=1>1<option value=2>2<option value=3>3<option value=4>4</select>
+		ﾀﾒ4<select id="i_ya4"><option value="連射">Rpd<option value="拡散">Spr<option value="貫通">Prc</select><select id="i_yaLv4"><option value=1>1<option value=2>2<option value=3>3<option value=4>4</select>
 		</span>
 	</span>
 	<span id="g_tenrou" style="display:none;">
-	攻撃強化<select id="c_tenrouAtt">
+	Attack Up<select id="c_tenrouAtt">
 	</select>
-	会心強化<select id="c_tenrouCri">
+	Affinity Up<select id="c_tenrouCri">
 	</select>
-	<span id="c_tenrouZoku_G">属性強化<select id="c_tenrouZoku">
-	<option value="0" selected>無
-	<option value="1">火
-	<option value="2">水
-	<option value="3">雷
-	<option value="4">龍
-	<option value="5">氷
+	<span id="c_tenrouZoku_G">Attribute Up<select id="c_tenrouZoku">
+	<option value="0" selected>None
+	<option value="1">Fire
+	<option value="2">Water
+	<option value="3">Thunder
+	<option value="4">Dragon
+	<option value="5">Ice
 	</select>
 	</select><select id="c_tenrouZokuAtt">
 	</select></span>
-	<span id="c_tenrouGauge_G">切れ味強化<select id="c_tenrouGauge">
+	<span id="c_tenrouGauge_G">Enhanced Sharpness<select id="c_tenrouGauge">
 	</select></span>
-	<span id="c_tenrouGuns_G">砲撃<select id="c_tenrouGuns">
-	<option value="通常型" selected>通常型
-	<option value="放射型">放射型
-	<option value="拡散型">拡散型
+	<span id="c_tenrouGuns_G">Shelling<select id="c_tenrouGuns">
+	<option value="通常型" selected>Normal
+	<option value="放射型">Long
+	<option value="拡散型">Spread
 	</select>
 	<select id="c_tenrouGunsLv">
 	<option value="LV1" selected>LV1
@@ -1025,37 +1025,37 @@
 	<option value="LV9">LV9
 	</select></span>
 	<span id="c_tenrouYumi">
-		ﾀﾒ1<select id="c_tenrouYumiya1"><option value="連射" selected>連射<option value="拡散">拡散<option value="貫通">貫通</select><select id="c_tenrouYumiyaLv1"><option value=1 selected>1<option value=2>2<option value=3>3<option value=4>4</select>
-		ﾀﾒ2<select id="c_tenrouYumiya2"><option value="連射" selected>連射<option value="拡散">拡散<option value="貫通">貫通</select><select id="c_tenrouYumiyaLv2"><option value=1 selected>1<option value=2>2<option value=3>3<option value=4>4</select>
-		ﾀﾒ3<select id="c_tenrouYumiya3"><option value="連射" selected>連射<option value="拡散">拡散<option value="貫通">貫通</select><select id="c_tenrouYumiyaLv3"><option value=1 selected>1<option value=2>2<option value=3>3<option value=4>4</select>
-		ﾀﾒ4<select id="c_tenrouYumiya4"><option value="連射" selected>連射<option value="拡散">拡散<option value="貫通">貫通</select><select id="c_tenrouYumiyaLv4"><option value=1 selected>1<option value=2>2<option value=3>3<option value=4>4</select>
-		曲射<select id="c_tenrouYumiKyoku">
-		<option value="0" selected>放散
-		<option value="1">集中
-		<option value="2">爆裂
-		<option value="3">切断
+		ﾀﾒ1<select id="c_tenrouYumiya1"><option value="連射" selected>Rpd<option value="拡散">Spr<option value="貫通">Prc</select><select id="c_tenrouYumiyaLv1"><option value=1 selected>1<option value=2>2<option value=3>3<option value=4>4</select>
+		ﾀﾒ2<select id="c_tenrouYumiya2"><option value="連射" selected>Rpd<option value="拡散">Spr<option value="貫通">Prc</select><select id="c_tenrouYumiyaLv2"><option value=1 selected>1<option value=2>2<option value=3>3<option value=4>4</select>
+		ﾀﾒ3<select id="c_tenrouYumiya3"><option value="連射" selected>Rpd<option value="拡散">Spr<option value="貫通">Prc</select><select id="c_tenrouYumiyaLv3"><option value=1 selected>1<option value=2>2<option value=3>3<option value=4>4</select>
+		ﾀﾒ4<select id="c_tenrouYumiya4"><option value="連射" selected>Rpd<option value="拡散">Spr<option value="貫通">Prc</select><select id="c_tenrouYumiyaLv4"><option value=1 selected>1<option value=2>2<option value=3>3<option value=4>4</select>
+		Arc<select id="c_tenrouYumiKyoku">
+		<option value="0" selected>Wide
+		<option value="1">Narrow
+		<option value="2">Bomb
+		<option value="3">Slicing
 		</select>
 	</span>
 	</span>
 </td>
 </tr></table>
 <table border=1 style="width:55em;"><tr class=ac>
- <td style="width:5em;" class=t>表示攻撃力<br>(武器倍率)</td><td style="width:3em;"><div id="g_att">&nbsp;</div><div id="g_attB">&nbsp;</div></td>
- <td style="width:2em;" class=t>表示<br>属性</td><td style="width:4em;" id="g_zoku">&nbsp;</td>
- <td style="width:2em;" class=t>表示<br>会心<td style="width:2em;" id="g_cri">&nbsp;</td>
- <td style="width:4em;" class=fss>攻撃値<br>(内部)</td><td style="width:4em;" class=fss id="g_attN">&nbsp;</td>
- <td style="width:4em;" class=fss>属性値<br>(内部)</td><td style="width:4em;" class=fss id="g_zokuN">&nbsp;</td>
- <td style="width:2em;" class=t>会心</td>
- <td><select id="k_cri"><option value="">なし<option value=1>あり<option value=2 selected>平均</select></td>
- <td style="width:3em;" class=t>ﾓｰｼｮﾝ</td>
- <td><select id="k_motion"><option value="1" selected>合計<option value="">分離</select></td>
- <td style="width:2em;" class=t>属性</td>
- <td><select id="k_gou"><option value="" selected>合計<option value="1">分離</select></td>
+ <td style="width:5em;" class=t>Display Atk Power<br>(Wpn Multiplier)</td><td style="width:3em;"><div id="g_att">&nbsp;</div><div id="g_attB">&nbsp;</div></td>
+ <td style="width:2em;" class=t>Display<br>Attribute</td><td style="width:4em;" id="g_zoku">&nbsp;</td>
+ <td style="width:2em;" class=t>Display<br>Affinity<td style="width:2em;" id="g_cri">&nbsp;</td>
+ <td style="width:4em;" class=fss>Atk Value<br>(Internal)</td><td style="width:4em;" class=fss id="g_attN">&nbsp;</td>
+ <td style="width:4em;" class=fss>Atrb Value<br>(Internal)</td><td style="width:4em;" class=fss id="g_zokuN">&nbsp;</td>
+ <td style="width:2em;" class=t>Affinity</td>
+ <td><select id="k_cri"><option value="">None<option value=1>Can<option value=2 selected>Average</select></td>
+ <td style="width:3em;" class=t>Motion</td>
+ <td><select id="k_motion"><option value="1" selected>Total<option value="">Separate</select></td>
+ <td style="width:2em;" class=t>Attribute</td>
+ <td><select id="k_gou"><option value="" selected>Total<option value="1">Separate</select></td>
 </tr></table>
 <table width1="100%" border=2 cellspacing=1 id="damage">
 <col style="width:5em;" class=dai><col span=25 style="width:5em;">
 <thead>
-<tr><th colspan=21>ダメージ(<span class="fs"><i>複数回Hit</i>の攻撃は単発分</span>)</th></tr>
+<tr><th colspan=21>Damage(<span class="fs"><i>Multiple Hits</i>Single Attack</span>)</th></tr>
 <tr style="height:30px;"><th>&nbsp;</th><th>&nbsp;</th><th>&nbsp;</th><th>&nbsp;</th><th>&nbsp;</th><th>&nbsp;</th><th>&nbsp;</th><th>&nbsp;</th><th>&nbsp;</th><th>&nbsp;</th><th>&nbsp;</th><th>&nbsp;</th><th>&nbsp;</th><th>&nbsp;</th><th>&nbsp;</th><th>&nbsp;</th><th>&nbsp;</th><th>&nbsp;</th><th>&nbsp;</th><th>&nbsp;</th><th>&nbsp;</th></tr>
 </thead><tbody>
 <tr style="height:1.5em;"><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
@@ -1070,8 +1070,8 @@
 <table border=1 cellspacing=0 id="niku" style="width:20em;table-layout:fixed;">
 <col style="width:5em;" class=dai><col span=8 class=suu>
 <thead>
-<tr><th colspan=9>肉質</th></tr>
-<tr><th>部位</th><th>斬</th><th>打</th><th>弾</th><th>火</th><th>水</th><th>雷</th><th>龍</th><th>氷</th></tr>
+<tr><th colspan=9>Part Values</th></tr>
+<tr><th>Site</th><th>Cut</th><th>Impact</th><th>Shot</th><th>Fire</th><th>Water</th><th>Thunder</th><th>Dragon</th><th>Ice</th></tr>
 </thead><tbody>
 <tr><td id=m00 style="height:1em;">&nbsp;</td><td id=m10>&nbsp;</td><td id=m20>&nbsp;</td><td id=m30>&nbsp;</td><td id=m40>&nbsp;</td><td id=m50>&nbsp;</td><td id=m60>&nbsp;</td><td id=m70>&nbsp;</td><td id=m80>&nbsp;</td></tr>
 <tr><td id=m01 style="height:1em;">&nbsp;</td><td id=m11>&nbsp;</td><td id=m21>&nbsp;</td><td id=m31>&nbsp;</td><td id=m41>&nbsp;</td><td id=m51>&nbsp;</td><td id=m61>&nbsp;</td><td id=m71>&nbsp;</td><td id=m81>&nbsp;</td></tr>
@@ -1083,24 +1083,24 @@
 </tbody></table>Version:<span id="version">20190401</span>
 </td><td style="font-size:65%">
 <pre>
-<strong>計算式：</strong>基本武器倍率＝攻撃力÷（大剣/太刀：4.8　片手剣/双剣：1.4　ハンマー/狩猟笛：5.2　ランス/ガンランス：2.3　ボウガン/弓：1.2）
-　　　　武器倍率＝[[[（[基本武器倍率×武器術]＋力の護符＋力の爪＋食事・鬼人薬＋鬼人笛・怪力種＋攻撃力UPｽｷﾙ＋SR補正＋シジル＋SP補正）
-　　　　　　　　　×旋律効果]×底力]×秘伝]＋絆＋天覧/覇種/G級防具補正
-　　　　属性値＝[（武器属性値＋シジル）×○属性強化×属性攻撃×覇種防具補正]×本気飲料
-　　　　状態異常値＝武器状態異常値×状態異常強化×覇種防具補正
-　　　　会心率＝（武器会心＋会心UPスキル＋SR補正＋シジル）<small>※ここまででプラスなら</small>＋斬れ味ボーナス
-　　　　　　　　　＋SP補正＋HCガン補正＋餓狼＋本気＋会心砥石
-<strong>①斬・打</strong>
-　　　　物理ダメージ ＝ 武器倍率×モーション値×斬れ味倍率×斬り方×武器補正×肉質×会心補正
-　　　　属性ダメージ ＝ 属性値×斬れ味倍率×肉質×属性旋律
-<strong>②弾</strong>
-　　　　物理ダメージ ＝ 武器倍率×弾×距離修正×威力UPスキル×武器補正×肉質×会心補正
-　　　　属性ダメージ ＝ 属性値×肉質×属性旋律
-　　　　　弓の威力には溜め段階補正も入ります
-<strong>合計</strong>
-　　　　最終ダメージ ＝（物理ダメージ＋属性ダメージ）×全体防御率×怒り倍率×HC補正×HC怒り補正
-　　　　　　　　　　　　※物理ダメージは最低１は入ります
-　　　　表記　灰色:弾かれ　緑色:ﾋｯﾄｽﾄｯﾌﾟ小　青色:ﾋｯﾄｽﾄｯﾌﾟ大
+<strong>Calculation formula:</strong>Basic weapon multiplier = attack power ÷ (Great Sword/Long Sword: 4.8, SnS/dual sword: 1.4, hammer/hunting horn: 5.2, lance/gunlance: 2.3, bowgun/bow: 1.2)
+Weapon Magnification = [[[ ([Basic Weapon Magnification x Weapon Technique] + Powercharm + Powertalon + Meal/Demon Medicine + Demon Flute/Strength Class + Attack Power Up Skill + SR Correction + Sigil + SP Correction)
+　　　　　　　　　　×Melody Effect]×Real Power]×Secret] + Bonds + Tenran/Supremacy/G-class Armor Correction
+　　　　Attribute value = [(weapon attribute value + sigil) x ○ attribute enhancement x attribute attack x supremacy armor correction] x serious drink
+　　　　 Abnormal status value = Abnormal weapon status value x Abnormal status enhancement x Supreme armor correction
+Affinity rate = (weapon criticality + criticality UP skill + SR correction + sigil) <small> *if positive up to this point</small> + sharpness bonus
++ SP Correction + HC Gun Correction + Fatal Fury + Serious + Critical Whetstone
+<strong>①Slash/Strike</strong>
+Physical Damage = Weapon Magnification x Motion Value x Sharpness Magnification x Cutting Method x Weapon Modification x Flesh Quality x Critical Hit Modification
+Attribute damage = attribute value x sharpness multiplier x meat quality x attribute melody
+<strong>② Shots</strong>
+　Physical Damage = Weapon Magnification x Ammo x Distance Modification x Power UP Skill x Weapon Modification x Flesh Quality x Critical Hit Modification
+Attribute damage = attribute value x flesh quality x attribute melody
+　　　　　　The power of the bow will also be corrected by charging
+<strong>Total</strong>
+Final damage = (physical damage + elemental damage) x total defense rate x anger multiplier x HC correction x HC anger correction
+　　　　　　　　　　　　　※A minimum of 1 physical damage is included
+Notation Gray: Bounced, Green: small hitstop, Blue: large hitstop
 </pre></td>
 </tr></table>
 <div id="sub_Win" style="position:absolute; top:7.2em; left:5em; width:50%; border:solid 2px black; background-color:snow; display:none;">
