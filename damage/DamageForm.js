@@ -2026,7 +2026,7 @@ default: //剣用
 		var e = this.s_reach.getElementsByTagName("input");
 		for (var i = 0,m = e.length; i < m;i++) {
 			if (e[i].style.backgroundColor) { //除外
-				if (e[i].value === "Medium") {
+				if (e[i].value === "中") {
 					t += (t ? " && " : "") + "e_sub";
 				} else {
 					t += (t ? " && " : "") + "e_sub !== \"" + e[i].value + "\"";
