@@ -11,7 +11,7 @@ var wkData = location.search.substring(1);
 if (wkData.length == 0) wkData = 2;
 
 document.write("<frameset cols=\"*");
-for (var i=1;i<wkData;i++) document.write("*");
+for (var i=1;i<wkData;i++) document.write(",*");
 document.write("\">\n");
 
 for (var i=0;i<wkData;i++) document.write("<frame src=\"damageK.htm\" name=\"damage" + (i+1) + "\">");
