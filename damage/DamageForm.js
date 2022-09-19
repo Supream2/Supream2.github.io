@@ -42,20 +42,20 @@ var CK_FULL = location.pathname.indexOf("damageT") !== -1,
 	WP_Rui = "",WP_Info = {},WP_Motion = [],
 	debug = false,time=0;
 	INFO = [
-			{Id:"taiken",	Name:"大剣",		Ritu:48,	Type:1,Hosei:100,Hiden:"剣王",ZokuKen:[50,70,90,130,150,210],IzyoKen:[[20,25,30]/*毒*/,[18,23,28]/*麻痺*/,[15,20,25]/*睡眠*/],BakuKen:[140,160,180]},
+			{Id:"taiken",	Name:"大剣",		Ritu:48,	Type:1,Hosei:100,Hiden:"剣王",ZokuKen:[50,70,90,130,150,210],IzyoKen:[[20,25,30]/*Poison*/,[18,23,28]/*麻痺*/,[15,20,25]/*睡眠*/],BakuKen:[140,160,180]},
 			{Id:"heavy",	Name:"ヘビィボウガン",Ritu:12,	Type:3,Hosei:100,Hiden:"銃仙"},
-			{Id:"hammer",	Name:"ハンマー",	Ritu:52,	Type:2,Hosei:100,Hiden:"鈍器",ZokuKen:[35,55,75,130,150,210],IzyoKen:[[15,20,25]/*毒*/,[13,18,23]/*麻痺*/,[13,18,23]/*睡眠*/],BakuKen:[120,140,160]},
-			{Id:"lance",	Name:"ランス",		Ritu:23,	Type:1,Hosei:100,Hiden:"天槍",ZokuKen:[35,55,75,130,150,210],IzyoKen:[[15,20,25]/*毒*/,[13,18,23]/*麻痺*/,[13,18,23]/*睡眠*/],BakuKen:[130,150,170]},
-			{Id:"katate",	Name:"片手剣",		Ritu:14,	Type:1,Hosei:125,Hiden:"剣聖",ZokuKen:[35,55,75,130,150,210],IzyoKen:[[17,22,27]/*毒*/,[17,22,27]/*麻痺*/,[15,20,25]/*睡眠*/],BakuKen:[220,260,300]},
+			{Id:"hammer",	Name:"ハンマー",	Ritu:52,	Type:2,Hosei:100,Hiden:"鈍器",ZokuKen:[35,55,75,130,150,210],IzyoKen:[[15,20,25]/*Poison*/,[13,18,23]/*麻痺*/,[13,18,23]/*睡眠*/],BakuKen:[120,140,160]},
+			{Id:"lance",	Name:"ランス",		Ritu:23,	Type:1,Hosei:100,Hiden:"天槍",ZokuKen:[35,55,75,130,150,210],IzyoKen:[[15,20,25]/*Poison*/,[13,18,23]/*麻痺*/,[13,18,23]/*睡眠*/],BakuKen:[130,150,170]},
+			{Id:"katate",	Name:"片手剣",		Ritu:14,	Type:1,Hosei:125,Hiden:"剣聖",ZokuKen:[35,55,75,130,150,210],IzyoKen:[[17,22,27]/*Poison*/,[17,22,27]/*麻痺*/,[15,20,25]/*睡眠*/],BakuKen:[220,260,300]},
 			{Id:"right",	Name:"ライトボウガン",Ritu:12,	Type:3,Hosei:100,Hiden:"銃傑"},
-			{Id:"souken",	Name:"双剣",		Ritu:14,	Type:1,Hosei:100,Hiden:"双龍",ZokuKen:[30,40,50,130,150,210],IzyoKen:[[5,8,10]/*毒*/,[5,8,10]/*麻痺*/,[1,2,3]/*睡眠*/],BakuKen:[200,240,290],BakuKen_Kijin:[150,180,220]},
-			{Id:"tachi",	Name:"太刀",		Ritu:48,	Type:1,Hosei:100,Hiden:"刀神",ZokuKen:[35,55,75,130,150,210],IzyoKen:[[15,20,25]/*毒*/,[13,18,23]/*麻痺*/,[13,18,23]/*睡眠*/],BakuKen:[140,160,180]},
-			{Id:"horn",		Name:"狩猟笛",		Ritu:52,	Type:2,Hosei:100,Hiden:"奏帝",ZokuKen:[35,55,75,130,150,210],IzyoKen:[[15,20,25]/*毒*/,[13,18,23]/*麻痺*/,[13,18,23]/*睡眠*/],BakuKen:[120,140,160]},
-			{Id:"gunlance",	Name:"ガンランス",	Ritu:23,	Type:1,Hosei:100,Hiden:"砲皇",ZokuKen:[35,55,75,130,150,210],IzyoKen:[[15,20,25]/*毒*/,[13,18,23]/*麻痺*/,[13,18,23]/*睡眠*/],BakuKen:[130,150,170]},
+			{Id:"souken",	Name:"双剣",		Ritu:14,	Type:1,Hosei:100,Hiden:"双龍",ZokuKen:[30,40,50,130,150,210],IzyoKen:[[5,8,10]/*Poison*/,[5,8,10]/*麻痺*/,[1,2,3]/*睡眠*/],BakuKen:[200,240,290],BakuKen_Kijin:[150,180,220]},
+			{Id:"tachi",	Name:"太刀",		Ritu:48,	Type:1,Hosei:100,Hiden:"刀神",ZokuKen:[35,55,75,130,150,210],IzyoKen:[[15,20,25]/*Poison*/,[13,18,23]/*麻痺*/,[13,18,23]/*睡眠*/],BakuKen:[140,160,180]},
+			{Id:"horn",		Name:"狩猟笛",		Ritu:52,	Type:2,Hosei:100,Hiden:"奏帝",ZokuKen:[35,55,75,130,150,210],IzyoKen:[[15,20,25]/*Poison*/,[13,18,23]/*麻痺*/,[13,18,23]/*睡眠*/],BakuKen:[120,140,160]},
+			{Id:"gunlance",	Name:"ガンランス",	Ritu:23,	Type:1,Hosei:100,Hiden:"砲皇",ZokuKen:[35,55,75,130,150,210],IzyoKen:[[15,20,25]/*Poison*/,[13,18,23]/*麻痺*/,[13,18,23]/*睡眠*/],BakuKen:[130,150,170]},
 			{Id:"yumi",		Name:"弓",			Ritu:12,	Type:3,Hosei:100,Hiden:"弓鬼"},
-			{Id:"tonfa",	Name:"穿龍棍",		Ritu:18,	Type:2,Hosei:100,Hiden:"穿凰",ZokuKen:[30,40,50,130,150,210],IzyoKen:[[5,8,10]/*毒*/,[5,8,10]/*麻痺*/,[1,2,3]/*睡眠*/],BakuKen:[200,240,290]},
-			{Id:"slaxe",	Name:"スラッシュアックス",		Ritu:54,	Type:1,Hosei:100,Hiden:"斬将",ZokuKen:[35,55,75,130,150,210],IzyoKen:[[15,20,25]/*毒*/,[8,12,16]/*麻痺*/,[1,2,3]/*睡眠*/],BakuKen:[200,240,290]},
-			{Id:"magspike",	Name:"マグネットスパイク",		Ritu:54,	Type:1,Hosei:100,Hiden:"磁星",ZokuKen:[35,55,75,130,150,210],IzyoKen:[[15,20,25]/*毒*/,[8,12,16]/*麻痺*/,[1,2,3]/*睡眠*/],BakuKen:[200,240,290]}
+			{Id:"tonfa",	Name:"穿龍棍",		Ritu:18,	Type:2,Hosei:100,Hiden:"穿凰",ZokuKen:[30,40,50,130,150,210],IzyoKen:[[5,8,10]/*Poison*/,[5,8,10]/*麻痺*/,[1,2,3]/*睡眠*/],BakuKen:[200,240,290]},
+			{Id:"slaxe",	Name:"スラッシュアックス",		Ritu:54,	Type:1,Hosei:100,Hiden:"斬将",ZokuKen:[35,55,75,130,150,210],IzyoKen:[[15,20,25]/*Poison*/,[8,12,16]/*麻痺*/,[1,2,3]/*睡眠*/],BakuKen:[200,240,290]},
+			{Id:"magspike",	Name:"マグネットスパイク",		Ritu:54,	Type:1,Hosei:100,Hiden:"磁星",ZokuKen:[35,55,75,130,150,210],IzyoKen:[[15,20,25]/*Poison*/,[8,12,16]/*麻痺*/,[1,2,3]/*睡眠*/],BakuKen:[200,240,290]}
 			];
 //N:モーション名,P:値,C:コメント,c:合算備考,T:個別タイプ,H:個別補正,S:固定切れ味,ZH:属性補正,M:無属性,X:掛け算,K:スタン,E:非表示条件,R*:特殊補正(2:ハンマー：瞬撃外,3:ランス:秘伝上昇対象,4:片手：会心外,7太刀：剣術外,6:双剣:G級減算,11:棍:天嵐時1.25倍)
 //flg[S:スタイル,P:技強化,C:技変更]
@@ -1172,13 +1172,13 @@ case 10: //弓
 		//ビン
 		var bin = eq[I_aBIN],b = (CK_FULL ? "ビン" : ""),df = document.createDocumentFragment(),o = document.createElement("option");
 		if (bin.indexOf("強") !== -1) o.setAttribute("value", "KG"),df.appendChild(o.cloneNode(false)),df.lastChild.appendChild(document.createTextNode("強撃"+b));
-		o.setAttribute("value", "11" + (bin.indexOf("毒+") !== -1 ? bin.charAt(bin.indexOf("毒+") + 2) : 0)),df.appendChild(o.cloneNode(false)),df.lastChild.appendChild(document.createTextNode("毒"+b));
-		if (bin.indexOf("毒") === -1) df.lastChild.style.backgroundColor = "lightpink";
-		o.setAttribute("value", "12" + (bin.indexOf("麻+") !== -1 ? bin.charAt(bin.indexOf("麻+") + 2) : 0)),df.appendChild(o.cloneNode(false)),df.lastChild.appendChild(document.createTextNode("麻痺"+b));
-		if (bin.indexOf("麻") === -1) df.lastChild.style.backgroundColor = "lightpink";
-		o.setAttribute("value", "13" + (bin.indexOf("睡+") !== -1 ? bin.charAt(bin.indexOf("睡+") + 2) : 0)),df.appendChild(o.cloneNode(false)),df.lastChild.appendChild(document.createTextNode("睡眠"+b));
-		if (bin.indexOf("睡") === -1) df.lastChild.style.backgroundColor = "lightpink";
-		if (bin.indexOf("爆") !== -1) o.setAttribute("value", "BA"),df.appendChild(o.cloneNode(false)),df.lastChild.appendChild(document.createTextNode("爆撃"+b));
+		o.setAttribute("value", "11" + (bin.indexOf("Poison+") !== -1 ? bin.charAt(bin.indexOf("Poison+") + 2) : 0)),df.appendChild(o.cloneNode(false)),df.lastChild.appendChild(document.createTextNode("Poison"+b));
+		if (bin.indexOf("Poison") === -1) df.lastChild.style.backgroundColor = "lightpink";
+		o.setAttribute("value", "12" + (bin.indexOf("Para+") !== -1 ? bin.charAt(bin.indexOf("Para+") + 2) : 0)),df.appendChild(o.cloneNode(false)),df.lastChild.appendChild(document.createTextNode("麻痺"+b));
+		if (bin.indexOf("Para") === -1) df.lastChild.style.backgroundColor = "lightpink";
+		o.setAttribute("value", "13" + (bin.indexOf("Sleep+") !== -1 ? bin.charAt(bin.indexOf("Sleep+") + 2) : 0)),df.appendChild(o.cloneNode(false)),df.lastChild.appendChild(document.createTextNode("睡眠"+b));
+		if (bin.indexOf("Sleep") === -1) df.lastChild.style.backgroundColor = "lightpink";
+		if (bin.indexOf("Bomb") !== -1) o.setAttribute("value", "BA"),df.appendChild(o.cloneNode(false)),df.lastChild.appendChild(document.createTextNode("爆撃"+b));
 		if (bin.indexOf("打") !== -1) o.setAttribute("value", "DA"),df.appendChild(o.cloneNode(false)),df.lastChild.appendChild(document.createTextNode("打撃"+b));
 		this.c_bin.length = 1,this.c_bin.appendChild(df);
 
@@ -1574,7 +1574,7 @@ case 9: //ガンランス
 		switch (this.c_style.value) {
 		case "地":
 			WP_Motion = WP_Motion.concat([{N:hougeki.N,T:-1,M:hougeki.M,ZT:1,ZP:hougeki.FZ,C:"<br>x<i>5回</i>",E:"this.c_sharp.value === '0'"}]); //竜激砲
-			hougeki = WP_Info.Bullet["爆"+hougekiType];
+			hougeki = WP_Info.Bullet["Bomb"+hougekiType];
 			WP_Motion = WP_Motion.concat([{N:hougeki.N,T:-1,M:hougeki.M,ZT:1,ZP:hougeki.FZ,C:"<br>x<i>2回</i>",E:"this.c_sharp.value === '0'"}]); //爆竜轟砲
 			WP_Motion = WP_Motion.concat([{N:"加算",T:-1,M:hougeki.MA,ZT:1,ZP:hougeki.FZA,C:"<br>1装填分",E:"this.c_sharp.value === '0'"}]); //爆竜轟砲
 			break;
@@ -1851,7 +1851,7 @@ case 10: //弓
 				break;
 			default: //状態異常ビン
 				if (typeof binPoint === "object") {
-					if (this.c_bin.value.charAt(1) === "1") { //毒
+					if (this.c_bin.value.charAt(1) === "1") { //Poison
 						WP_Motion[i].C = (WP_Motion[i].C || "") + izyoName + (binPoint[binPlus][yaLv] * (this.c_izyou.checked ? 1125 : 1000)/1000 * [5,10,15,15,10,11][this.c_tame.selectedIndex-1]/10 * (this.c_style.value === "嵐" && this.c_kobetu2.selectedIndex ? [12,13,14,15,10,10][this.c_tame.selectedIndex-1] : 10)/10|0);
 					} else {
 						WP_Motion[i].C = (WP_Motion[i].C || "") + izyoName + (binPoint[binPlus][yaLv] * (this.c_izyou.checked ? 1125 : 1000)/1000 * [5,10,10,10,10,11][this.c_tame.selectedIndex-1]/10 * (this.c_style.value === "嵐" && this.c_kobetu2.selectedIndex ? [12,13,14,15,10,10][this.c_tame.selectedIndex-1] : 10)/10|0);
@@ -1896,7 +1896,7 @@ for (var i = 0,j = 0,t = ""; i < maxMot; i++) {
 		break;
 	case -1: //他
 		if (WP_Motion[i].M) { //無属性+属性
-			t = "爆" + WP_Motion[i].M + (WP_Motion[i].ZT ? "+" + ZOKUNAME[WP_Motion[i].ZT] + WP_Motion[i].ZP : "");
+			t = "Bomb" + WP_Motion[i].M + (WP_Motion[i].ZT ? "+" + ZOKUNAME[WP_Motion[i].ZT] + WP_Motion[i].ZP : "");
 		} else if (WP_Motion[i].ZB) { //武器属性依存
 			t = "<small>属性</small>x" + (WP_Motion[i].ZB/100).toFixed(2);
 		} else { //属性のみ
@@ -3052,7 +3052,7 @@ case 10: //弓
 default:
 	switch (this.c_kensyo.value.substring(0,2)) {
 	case "": break;
-	case "11": //毒剣晶
+	case "11": //Poison剣晶
 	case "12": //麻痺剣晶
 	case "13": //睡眠剣晶
 		eqZyouType = +this.c_kensyo.value.charAt(1);
