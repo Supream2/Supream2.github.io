@@ -34,7 +34,7 @@ var CK_FULL = location.pathname.indexOf("damageT") !== -1,
 	KICKNAME = ["反動:最大","反動:大","反動:中","反動:やや小","反動:小"],
 	SPEEDNAME = ["弾速:遅い","弾速:やや遅い","弾速:やや速い","弾速:速い","弾速:凄く速い","弾速:凄く遅い"],
 	ONPUCOLOR = [0,"<span class=fr>♪</span>","<span class=fy>♪</span>","<span class=fw>♪</span>","<span class=fb>♪</span>","<span class=fg>♪</span>","<span class=fp>♪</span>","<span class=fa>♪</span>"],
-	KYOKUNAME = ["放散型","集中型","爆裂型","切断型"],
+	KYOKUNAME = ["放散型","集中型","Bomb","切断型"],
 	MAKENAME = {"":"",1:"",2:"猟団",3:"カフェ",4:"課金",5:"特典","-":"",e:"イベ",es:"イベ/狩衛戦",ms:"狩人祭/狩衛戦",m:"狩人祭",c:"パローネ",g:"ガチャ",k:"キット",i:"韋駄天",t:"天廊",p:"パッケ",s:"狩衛戦"},
 	CLASSTYPE = {"":" ",A:"ＳＰ",B:"親方",C:"ＨＣ",D:"剛種",E:"剛猫",F:"進化",G:"天嵐",H:"覇種",I:"G覇",J:"烈種",K:"準Ｇ",L:"Ｇ級",M:"Ｇ技",N:"天廊",O:"始種",P:"遷悠",Q:"Ｇ進",R:"準技",S:"祈歌",T:"辿異",
 					SP:"A",Sinka:"FQ",HC:"C",Neko:"E",Gosyu:"DEGHIJO",Tenran:"GHIJ",GSizil:"KLMOPQRT",GClass:"KLMR",Resyu:"JO",Sisyu:"O",Tenrou:"N",Senyu:"P",Teni:"T"},
@@ -659,7 +659,7 @@ INFO[10].Bullet = {
 			"貫薙5":{N:"Drilling LV5",P:[47],C:"|47x6"},
 			"放散型":{N:"Wide",P:18,K:3,C:"|18x7回"},
 			"集中型":{N:"Narrow",P:16,K:2,C:"|16x5回"},
-			"爆裂型":{N:"Bomb",P:15,K:30,C:"|15"},
+			"Bomb":{N:"Bomb",P:15,K:30,C:"|15"},
 			"切断型":{N:"Slicing",P:12,C:"|12x7回"}
 			};
 INFO[10].IzyoBin = {"近接":2,
@@ -1772,7 +1772,7 @@ case 10: //弓
 			WP_Motion[0].C = WP_Motion[0].C.substring(3);	//余計なのが入るので消し
 			WP_Motion[0].ZH = 70;	//曲射は属性0.7倍
 			WP_Motion = WP_Motion.concat([{N:"-",P:10,C:"倍"}]);
-			if (this.c_tame.value === "爆裂型") {	//爆裂の無属性
+			if (this.c_tame.value === "Bomb") {	//爆裂の無属性
 				WP_Motion = WP_Motion.concat({N:"無属性",T:-1,M:19});
 				WP_Motion[0].ZH = 20;	//爆裂は0.2倍
 			}
@@ -1838,7 +1838,7 @@ case 10: //弓
 					} else {
 						WP_Motion[i].M = binPoint[yaLv];
 					}
-					if (i === 2 && this.c_tame.value === "爆裂型") WP_Motion[2].M = WP_Info.BakuBin["爆裂追加"];
+					if (i === 2 && this.c_tame.value === "Bomb") WP_Motion[2].M = WP_Info.BakuBin["爆裂追加"];
 				} else { //近接
 						WP_Motion[i].M = binPoint[this.c_style.value === "地" ? "Normal" : "TenRan"];
 				}
@@ -3426,7 +3426,7 @@ for (var cntBui = 0,maxBui = bui.length; cntBui < maxBui; cntBui++){
 			}
 			var dmg_M_No = dmg_M_Cr;
 			//爆裂型の無属性ダメージを計算
-			if (WP_Rui === 10 && this.c_tame.value === "爆裂型") {
+			if (WP_Rui === 10 && this.c_tame.value === "Bomb") {
 				if (this.c_bin.value === "BA") {
 					//爆撃ビン
 					var dmg_M_Cr = bakuAt * 2; //通常
