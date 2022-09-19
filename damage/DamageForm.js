@@ -662,21 +662,21 @@ INFO[10].Bullet = {
 			"爆裂型":{N:"爆裂",P:15,K:30,C:"|15"},
 			"切断型":{N:"切断",P:12,C:"|12x7回"}
 			};
-INFO[10].IzyoBin = {"近接":2,
+INFO[10].IzyoBin = {"Proximity":2,
 					//ノーマル,+1,+2,+3
-					"連射":[[13,7,5,4],[14,8,5,4],[17,9,6,5],[19,10,7,6]],
-					"拡散":[[5,6,5,5],[5,6,5,5],[6,7,6,6],[7,9,7,7]],
-					"貫通":[[5,4,4,4],[5,4,4,4],[6,5,5,5],[7,6,6,6]],
+					"Rpd":[[13,7,5,4],[14,8,5,4],[17,9,6,5],[19,10,7,6]],
+					"Spr":[[5,6,5,5],[5,6,5,5],[6,7,6,6],[7,9,7,7]],
+					"Prc":[[5,4,4,4],[5,4,4,4],[6,5,5,5],[7,6,6,6]],
 					"ｵｰ":25,"貫薙":19,"放散":2,"集中":6,"爆裂":0,"切断":2};
-INFO[10].BakuBin = {"近接":{Normal:2,TenRan:10},
-					"連射":[70,40,32,28],
-					"拡散":[26,32,22,24],
-					"貫通":[28,28,28,28],
+INFO[10].BakuBin = {"Proximity":{Normal:2,TenRan:10},
+					"Rpd":[70,40,32,28],
+					"Spr":[26,32,22,24],
+					"Prc":[28,28,28,28],
 					"ｵｰ":37,"貫薙":0,"ｵｰ火事場":55,"放散":26,"集中":28,"爆裂":50,"爆裂追加":100,"切断":24};
-INFO[10].DaBin = {"近接":0,
-					"連射":4,
-					"拡散":4,
-					"貫通":4,
+INFO[10].DaBin = {"Proximity":0,
+					"Rpd":4,
+					"Spr":4,
+					"Prc":4,
 					"ｵｰ":20,"貫薙":0,"放散":4,"集中":4,"爆裂":4,"切断":4};
 var createGauge = function (w){
 	var MaxSharp = +w.substring(3,6);
@@ -1190,7 +1190,7 @@ case 10: //弓
 		if (debug) this.debug.innerText += "cngTame:\n";
 		//矢セット
 		var df = document.createDocumentFragment(),o = document.createElement("option");
-		if (this.c_tame.selectedIndex <= 1) { //近接、曲射
+		if (this.c_tame.selectedIndex <= 1) { //Proximity、曲射
 			df.appendChild(o.cloneNode(false)),df.lastChild.appendChild(document.createTextNode("-----"));
 		} else {
 			for (var i = 0,w = WP_Info.Bullet[this.c_tame.value].P,max = w.length; i < max ; i++) {
@@ -1839,7 +1839,7 @@ case 10: //弓
 						WP_Motion[i].M = binPoint[yaLv];
 					}
 					if (i === 2 && this.c_tame.value === "爆裂型") WP_Motion[2].M = WP_Info.BakuBin["爆裂追加"];
-				} else { //近接
+				} else { //Proximity
 						WP_Motion[i].M = binPoint[this.c_style.value === "地" ? "Normal" : "TenRan"];
 				}
 				break;
@@ -1856,7 +1856,7 @@ case 10: //弓
 					} else {
 						WP_Motion[i].C = (WP_Motion[i].C || "") + izyoName + (binPoint[binPlus][yaLv] * (this.c_izyou.checked ? 1125 : 1000)/1000 * [5,10,10,10,10,11][this.c_tame.selectedIndex-1]/10 * (this.c_style.value === "嵐" && this.c_kobetu2.selectedIndex ? [12,13,14,15,10,10][this.c_tame.selectedIndex-1] : 10)/10|0);
 					}
-				} else { //近接
+				} else { //Proximity
 						WP_Motion[i].C = (WP_Motion[i].C || "") + izyoName + binPoint;
 				}
 				break;
