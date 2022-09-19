@@ -7,7 +7,7 @@ var CK_FULL = location.pathname.indexOf("damageT") !== -1,
 	CK_OPERA = /*@if (@_jscript_version >= 9) true @else@*/ !!window.opera || /chrome/i.test(navigator.userAgent) /*@end@*/,
 	I_aNAME = 0,I_aAT = 1,I_aZOKU = 2,I_aZOKUAT = 3,I_aZYOU = 4,I_aZYOUAT = 5,I_aCRI = 6,I_aRARE = 7,I_aGR = 8,I_aSLOT = 9,I_aDEF = 10,I_aHR = 11,I_aCRE = 12,I_aCLASS = 13,I_aSINKAGR = 14,I_aDOC = 15,I_aGAUGE = 16,I_aREACH = 17,I_aKYOKUSYA = 5,I_aYA = 16,I_aBIN = 17,I_aSPEED = 4,I_aSOKUSYA = 16,I_aKICK = 17,I_aRELO = 18,I_aGUN = 19,
 	I_sREF1 = 0 ,I_sREF2 = 1, I_sZENY = 2, I_sCRE = 3, I_sREP = 4,
-	BUKITYPE = ["","Cut","Imp","Shot"],
+	BUKITYPE = ["","斬","打","弾"],
 	ZOKUNAME = ["","Fire","Water","Thunder","Dragon","Ice","Blaze","Light","Thunder Pole","Tenshou","Okiko","Black Flame","Music","Darkness","Crimson Demon","Wind","Sound","Burning Zero","Emperors Roar"],
 	ZOKUPOINT = [	[0,0,0,0,0,0,0],/*無*/
 					[0,100,0,0,0,0],/*火*/
@@ -29,12 +29,12 @@ var CK_FULL = location.pathname.indexOf("damageT") !== -1,
 					[0,125,0,0,0,125], /*灼零*/
 					[0,0,0,150,50,0] /*皇鳴*/
 				],
-	IZYONAME = ["","Poison","Para","Sleep","Blast"],
-	RELOADNAME = ["Reload:Very Slow","Reload:Slow","Reload:Normal","Reload:Fast","Reload:Very Fast"],
-	KICKNAME = ["Recoil:Very Large","Recoil:Large","Recoil:Medium","Recoil:Small","Recoil:Very Small"],
-	SPEEDNAME = ["Bullet Speed:Very Slow","Bullet Speed:Slow","Bullet Speed:Fast","Bullet Speed:Very Fast","Bullet Speed:Very Fast","Bullet Speed:Very Slow"],
+	IZYONAME = ["","毒","麻痺","睡眠","爆破"],
+	RELOADNAME = ["装填:遅い","装填:やや遅い","装填:普通","装填:やや速い","装填:速い"],
+	KICKNAME = ["反動:最大","反動:大","反動:中","反動:やや小","反動:小"],
+	SPEEDNAME = ["弾速:遅い","弾速:やや遅い","弾速:やや速い","弾速:速い","弾速:凄く速い","弾速:凄く遅い"],
 	ONPUCOLOR = [0,"<span class=fr>♪</span>","<span class=fy>♪</span>","<span class=fw>♪</span>","<span class=fb>♪</span>","<span class=fg>♪</span>","<span class=fp>♪</span>","<span class=fa>♪</span>"],
-	KYOKUNAME = ["Wide","Narrow","Bomb","Slicing"],
+	KYOKUNAME = ["放散型","集中型","爆裂型","切断型"],
 	MAKENAME = {"":"",1:"",2:"猟団",3:"カフェ",4:"課金",5:"特典","-":"",e:"イベ",es:"イベ/狩衛戦",ms:"狩人祭/狩衛戦",m:"狩人祭",c:"パローネ",g:"ガチャ",k:"キット",i:"韋駄天",t:"天廊",p:"パッケ",s:"狩衛戦"},
 	CLASSTYPE = {"":" ",A:"ＳＰ",B:"親方",C:"ＨＣ",D:"剛種",E:"剛猫",F:"進化",G:"天嵐",H:"覇種",I:"G覇",J:"烈種",K:"準Ｇ",L:"Ｇ級",M:"Ｇ技",N:"天廊",O:"始種",P:"遷悠",Q:"Ｇ進",R:"準技",S:"祈歌",T:"辿異",
 					SP:"A",Sinka:"FQ",HC:"C",Neko:"E",Gosyu:"DEGHIJO",Tenran:"GHIJ",GSizil:"KLMOPQRT",GClass:"KLMR",Resyu:"JO",Sisyu:"O",Tenrou:"N",Senyu:"P",Teni:"T"},
@@ -42,25 +42,25 @@ var CK_FULL = location.pathname.indexOf("damageT") !== -1,
 	WP_Rui = "",WP_Info = {},WP_Motion = [],
 	debug = false,time=0;
 	INFO = [
-			{Id:"taiken",	Name:"大剣",		Ritu:48,	Type:1,Hosei:100,Hiden:"剣王",ZokuKen:[50,70,90,130,150,210],IzyoKen:[[20,25,30]/*Poison*/,[18,23,28]/*麻痺*/,[15,20,25]/*睡眠*/],BakuKen:[140,160,180]},
+			{Id:"taiken",	Name:"大剣",		Ritu:48,	Type:1,Hosei:100,Hiden:"剣王",ZokuKen:[50,70,90,130,150,210],IzyoKen:[[20,25,30]/*毒*/,[18,23,28]/*麻痺*/,[15,20,25]/*睡眠*/],BakuKen:[140,160,180]},
 			{Id:"heavy",	Name:"ヘビィボウガン",Ritu:12,	Type:3,Hosei:100,Hiden:"銃仙"},
-			{Id:"hammer",	Name:"ハンマー",	Ritu:52,	Type:2,Hosei:100,Hiden:"鈍器",ZokuKen:[35,55,75,130,150,210],IzyoKen:[[15,20,25]/*Poison*/,[13,18,23]/*麻痺*/,[13,18,23]/*睡眠*/],BakuKen:[120,140,160]},
-			{Id:"lance",	Name:"ランス",		Ritu:23,	Type:1,Hosei:100,Hiden:"天槍",ZokuKen:[35,55,75,130,150,210],IzyoKen:[[15,20,25]/*Poison*/,[13,18,23]/*麻痺*/,[13,18,23]/*睡眠*/],BakuKen:[130,150,170]},
-			{Id:"katate",	Name:"片手剣",		Ritu:14,	Type:1,Hosei:125,Hiden:"剣聖",ZokuKen:[35,55,75,130,150,210],IzyoKen:[[17,22,27]/*Poison*/,[17,22,27]/*麻痺*/,[15,20,25]/*睡眠*/],BakuKen:[220,260,300]},
+			{Id:"hammer",	Name:"ハンマー",	Ritu:52,	Type:2,Hosei:100,Hiden:"鈍器",ZokuKen:[35,55,75,130,150,210],IzyoKen:[[15,20,25]/*毒*/,[13,18,23]/*麻痺*/,[13,18,23]/*睡眠*/],BakuKen:[120,140,160]},
+			{Id:"lance",	Name:"ランス",		Ritu:23,	Type:1,Hosei:100,Hiden:"天槍",ZokuKen:[35,55,75,130,150,210],IzyoKen:[[15,20,25]/*毒*/,[13,18,23]/*麻痺*/,[13,18,23]/*睡眠*/],BakuKen:[130,150,170]},
+			{Id:"katate",	Name:"片手剣",		Ritu:14,	Type:1,Hosei:125,Hiden:"剣聖",ZokuKen:[35,55,75,130,150,210],IzyoKen:[[17,22,27]/*毒*/,[17,22,27]/*麻痺*/,[15,20,25]/*睡眠*/],BakuKen:[220,260,300]},
 			{Id:"right",	Name:"ライトボウガン",Ritu:12,	Type:3,Hosei:100,Hiden:"銃傑"},
-			{Id:"souken",	Name:"双剣",		Ritu:14,	Type:1,Hosei:100,Hiden:"双龍",ZokuKen:[30,40,50,130,150,210],IzyoKen:[[5,8,10]/*Poison*/,[5,8,10]/*麻痺*/,[1,2,3]/*睡眠*/],BakuKen:[200,240,290],BakuKen_Kijin:[150,180,220]},
-			{Id:"tachi",	Name:"太刀",		Ritu:48,	Type:1,Hosei:100,Hiden:"刀神",ZokuKen:[35,55,75,130,150,210],IzyoKen:[[15,20,25]/*Poison*/,[13,18,23]/*麻痺*/,[13,18,23]/*睡眠*/],BakuKen:[140,160,180]},
-			{Id:"horn",		Name:"狩猟笛",		Ritu:52,	Type:2,Hosei:100,Hiden:"奏帝",ZokuKen:[35,55,75,130,150,210],IzyoKen:[[15,20,25]/*Poison*/,[13,18,23]/*麻痺*/,[13,18,23]/*睡眠*/],BakuKen:[120,140,160]},
-			{Id:"gunlance",	Name:"ガンランス",	Ritu:23,	Type:1,Hosei:100,Hiden:"砲皇",ZokuKen:[35,55,75,130,150,210],IzyoKen:[[15,20,25]/*Poison*/,[13,18,23]/*麻痺*/,[13,18,23]/*睡眠*/],BakuKen:[130,150,170]},
+			{Id:"souken",	Name:"双剣",		Ritu:14,	Type:1,Hosei:100,Hiden:"双龍",ZokuKen:[30,40,50,130,150,210],IzyoKen:[[5,8,10]/*毒*/,[5,8,10]/*麻痺*/,[1,2,3]/*睡眠*/],BakuKen:[200,240,290],BakuKen_Kijin:[150,180,220]},
+			{Id:"tachi",	Name:"太刀",		Ritu:48,	Type:1,Hosei:100,Hiden:"刀神",ZokuKen:[35,55,75,130,150,210],IzyoKen:[[15,20,25]/*毒*/,[13,18,23]/*麻痺*/,[13,18,23]/*睡眠*/],BakuKen:[140,160,180]},
+			{Id:"horn",		Name:"狩猟笛",		Ritu:52,	Type:2,Hosei:100,Hiden:"奏帝",ZokuKen:[35,55,75,130,150,210],IzyoKen:[[15,20,25]/*毒*/,[13,18,23]/*麻痺*/,[13,18,23]/*睡眠*/],BakuKen:[120,140,160]},
+			{Id:"gunlance",	Name:"ガンランス",	Ritu:23,	Type:1,Hosei:100,Hiden:"砲皇",ZokuKen:[35,55,75,130,150,210],IzyoKen:[[15,20,25]/*毒*/,[13,18,23]/*麻痺*/,[13,18,23]/*睡眠*/],BakuKen:[130,150,170]},
 			{Id:"yumi",		Name:"弓",			Ritu:12,	Type:3,Hosei:100,Hiden:"弓鬼"},
-			{Id:"tonfa",	Name:"穿龍棍",		Ritu:18,	Type:2,Hosei:100,Hiden:"穿凰",ZokuKen:[30,40,50,130,150,210],IzyoKen:[[5,8,10]/*Poison*/,[5,8,10]/*麻痺*/,[1,2,3]/*睡眠*/],BakuKen:[200,240,290]},
-			{Id:"slaxe",	Name:"スラッシュアックス",		Ritu:54,	Type:1,Hosei:100,Hiden:"斬将",ZokuKen:[35,55,75,130,150,210],IzyoKen:[[15,20,25]/*Poison*/,[8,12,16]/*麻痺*/,[1,2,3]/*睡眠*/],BakuKen:[200,240,290]},
-			{Id:"magspike",	Name:"マグネットスパイク",		Ritu:54,	Type:1,Hosei:100,Hiden:"磁星",ZokuKen:[35,55,75,130,150,210],IzyoKen:[[15,20,25]/*Poison*/,[8,12,16]/*麻痺*/,[1,2,3]/*睡眠*/],BakuKen:[200,240,290]}
+			{Id:"tonfa",	Name:"穿龍棍",		Ritu:18,	Type:2,Hosei:100,Hiden:"穿凰",ZokuKen:[30,40,50,130,150,210],IzyoKen:[[5,8,10]/*毒*/,[5,8,10]/*麻痺*/,[1,2,3]/*睡眠*/],BakuKen:[200,240,290]},
+			{Id:"slaxe",	Name:"スラッシュアックス",		Ritu:54,	Type:1,Hosei:100,Hiden:"斬将",ZokuKen:[35,55,75,130,150,210],IzyoKen:[[15,20,25]/*毒*/,[8,12,16]/*麻痺*/,[1,2,3]/*睡眠*/],BakuKen:[200,240,290]},
+			{Id:"magspike",	Name:"マグネットスパイク",		Ritu:54,	Type:1,Hosei:100,Hiden:"磁星",ZokuKen:[35,55,75,130,150,210],IzyoKen:[[15,20,25]/*毒*/,[8,12,16]/*麻痺*/,[1,2,3]/*睡眠*/],BakuKen:[200,240,290]}
 			];
 //N:モーション名,P:値,C:コメント,c:合算備考,T:個別タイプ,H:個別補正,S:固定切れ味,ZH:属性補正,M:無属性,X:掛け算,K:スタン,E:非表示条件,R*:特殊補正(2:ハンマー：瞬撃外,3:ランス:秘伝上昇対象,4:片手：会心外,7太刀：剣術外,6:双剣:G級減算,11:棍:天嵐時1.25倍)
 //flg[S:スタイル,P:技強化,C:技変更]
 INFO[12].Motion = [
-			{flg:{S:"111",P:"11",C:"11"},N:"Dummy",P:28}
+			{flg:{S:"111",P:"11",C:"11"},N:"ダミー",P:28}
 			];
 INFO[11].Motion = [
 			{flg:{S:"111",P:"11",C:"11",R:"11"},N:"抜刀攻撃",P:28,K:12,R11:1},
@@ -419,225 +419,225 @@ INFO[10].Motion = [
 INFO[1].Bullet = {
 //N:弾名,P:威力,ZT:属性タイプ,ZB:属性倍率,ZP:属性値,IT:異常タイプ,IP:異常値,C:コメント,K:気絶値,S:速射,M:無属性,BN:爆破名,BM:爆破無属性,BFZ:爆破火属性,BC:爆破コメント
 			//通常
-			0:{N:"LV1 Norm S",P:6},
-			1:{N:"LV2 Norm S",P:12},
-			2:{N:"LV3 Norm S",P:12,C:"x<i>n回</i>"},
-			3:{N:"LV1 Pierc S",P:10,C:"x<i>3回</i>"},
-			4:{N:"LV2 Pierc S",P:9,C:"x<i>4回</i>"},
-			5:{N:"LV3 Pierc S",P:7,C:"x<i>6回</i>"},
-			6:{N:"LV1 Pelet S",P:5,ZT:2,ZP:5,C:"<br>x<i>3回</i>"},
-			7:{N:"LV2 Pelet S",P:5,ZT:2,ZP:4,C:"<br>x<i>4回</i>"},
-			8:{N:"LV3 Pelet S",P:5,ZT:2,ZP:4,C:"<br>x<i>5回</i>"},
-			12:{N:"LV1 Clust S",P:6,BN:"(子拡散)",BM:32,BFZ:2,BC:"<br>x<i>3個</i>"},
-			13:{N:"LV2 Clust S",P:6,BN:"(子拡散)",BM:32,BFZ:2,BC:"<br>x<i>4個</i>"},
-			14:{N:"LV3 Clust S",P:6,BN:"(子拡散)",BM:32,BFZ:2,BC:"<br>x<i>5個</i>"},
-			15:{N:"LV1 Recov S",P:0,C:"<br>回復30"},
-			16:{N:"LV2 Recov S",P:0,C:"<br>回復50"},
-			17:{N:"LV1 Psn S",P:10,IT:1,IP:25},
-			18:{N:"LV2 Psn S",P:15,IT:1,IP:50},
-			19:{N:"LV1 Para S",P:10,IT:2,IP:25},
-			20:{N:"LV2 Para S",P:15,IT:2,IP:50},
-			21:{N:"LV1 Sleep S",P:0,IT:3,IP:25},
-			22:{N:"LV2 Sleep S",P:0,IT:3,IP:50},
+			0:{N:"LV1通常弾",P:6},
+			1:{N:"LV2通常弾",P:12},
+			2:{N:"LV3通常弾",P:12,C:"x<i>n回</i>"},
+			3:{N:"LV1貫通弾",P:10,C:"x<i>3回</i>"},
+			4:{N:"LV2貫通弾",P:9,C:"x<i>4回</i>"},
+			5:{N:"LV3貫通弾",P:7,C:"x<i>6回</i>"},
+			6:{N:"LV1散弾",P:5,ZT:2,ZP:5,C:"<br>x<i>3回</i>"},
+			7:{N:"LV2散弾",P:5,ZT:2,ZP:4,C:"<br>x<i>4回</i>"},
+			8:{N:"LV3散弾",P:5,ZT:2,ZP:4,C:"<br>x<i>5回</i>"},
+			12:{N:"LV1拡散弾",P:6,BN:"(子拡散)",BM:32,BFZ:2,BC:"<br>x<i>3個</i>"},
+			13:{N:"LV2拡散弾",P:6,BN:"(子拡散)",BM:32,BFZ:2,BC:"<br>x<i>4個</i>"},
+			14:{N:"LV3拡散弾",P:6,BN:"(子拡散)",BM:32,BFZ:2,BC:"<br>x<i>5個</i>"},
+			15:{N:"LV1回復弾",P:0,C:"<br>回復30"},
+			16:{N:"LV2回復弾",P:0,C:"<br>回復50"},
+			17:{N:"LV1毒弾",P:10,IT:1,IP:25},
+			18:{N:"LV2毒弾",P:15,IT:1,IP:50},
+			19:{N:"LV1麻痺弾",P:10,IT:2,IP:25},
+			20:{N:"LV2麻痺弾",P:15,IT:2,IP:50},
+			21:{N:"LV1睡眠弾",P:0,IT:3,IP:25},
+			22:{N:"LV2睡眠弾",P:0,IT:3,IP:50},
 
-			9:{N:"LV1 Crag S",P:3,BN:"(爆破)",BM:30,BFZ:40,BC:"<br>気絶10"},
-			10:{N:"LV2 Crag S",P:3,BN:"(爆破)",BM:40,BFZ:60,BC:"<br>気絶10"},
-			11:{N:"LV3 Crag S",P:3,BN:"(爆破)",BM:50,BFZ:80,BC:"<br>気絶10"},
-			23:{N:"Flame S",P:1,ZT:1,ZB:500},
-			24:{N:"Water S",P:1,ZT:2,ZB:250,C:"<br>x<i>3回</i>"},
-			25:{N:"Thund S",P:1,ZT:3,ZB:270,C:"<br>x<i>3回</i>"},
-			26:{N:"Freez S",P:1,ZT:5,ZB:250,C:"<br>x<i>3回</i>"},
-			27:{N:"Dragn S",P:1,ZT:4,ZP:90,C:"<br>x<i>6回</i>"},
-			28:{N:"Exhst S",T:-1,ZT:1,ZP:22,M:22},
-			29:{N:"Bomb S",T:-1,M:30,C:"+LV/2",BN:"(持続)",BM:15,BC:"+LV/4<br>x<i>15回</i>"},
-			30:{N:"Bomb S:然",T:-1,M:36,C:"+LV/2",BN:"(持続)",BM:18,BC:"+LV/4<br>x<i>15回</i>"},
-			31:{N:"Drgn B S",T:-1,M:20,ZT:4,ZP:60,C:"+LV",BN:"(持続)",BM:0,BFZ:120,BC:"LV/4<br>x<i>15回</i>"},
+			9:{N:"LV1徹甲榴弾",P:3,BN:"(爆破)",BM:30,BFZ:40,BC:"<br>気絶10"},
+			10:{N:"LV2徹甲榴弾",P:3,BN:"(爆破)",BM:40,BFZ:60,BC:"<br>気絶10"},
+			11:{N:"LV3徹甲榴弾",P:3,BN:"(爆破)",BM:50,BFZ:80,BC:"<br>気絶10"},
+			23:{N:"火炎弾",P:1,ZT:1,ZB:500},
+			24:{N:"水冷弾",P:1,ZT:2,ZB:250,C:"<br>x<i>3回</i>"},
+			25:{N:"電撃弾",P:1,ZT:3,ZB:270,C:"<br>x<i>3回</i>"},
+			26:{N:"氷結弾",P:1,ZT:5,ZB:250,C:"<br>x<i>3回</i>"},
+			27:{N:"滅龍弾",P:1,ZT:4,ZP:90,C:"<br>x<i>6回</i>"},
+			28:{N:"排熱弾",T:-1,ZT:1,ZP:22,M:22},
+			29:{N:"爆撃弾",T:-1,M:30,C:"+LV/2",BN:"(持続)",BM:15,BC:"+LV/4<br>x<i>15回</i>"},
+			30:{N:"爆撃弾:然",T:-1,M:36,C:"+LV/2",BN:"(持続)",BM:18,BC:"+LV/4<br>x<i>15回</i>"},
+			31:{N:"龍爆撃弾",T:-1,M:20,ZT:4,ZP:60,C:"+LV",BN:"(持続)",BM:0,BFZ:120,BC:"LV/4<br>x<i>15回</i>"},
 
 			//圧縮 CN:着弾名,CM:着弾無属性
-			C0:{N:"LV1 Norm S",P:19,K:3,CN:"(着弾)",CM:10},
-			C1:{N:"LV2 Norm S",P:48,K:5,CN:"(着弾)",CM:20},
-			C2:{N:"LV3 Norm S",P:48,C:"x<i>n回</i>",K:7,CN:"(着弾)",CM:10},
-			C3:{N:"LV1 Pierc S",P:50,C:"x<i>3回</i>",K:7,CN:"(着弾)",CM:20},
-			C4:{N:"LV2 Pierc S",P:45,C:"x<i>4回</i>",K:7,CN:"(着弾)",CM:20},
-			C5:{N:"LV3 Pierc S",P:35,C:"x<i>6回</i>",K:14,CN:"(着弾)",CM:20},
-			C6:{N:"LV1 Pelet S",P:30,ZT:2,ZP:25,C:"<br>x<i>3回</i>",K:6,CN:"(着弾)",CM:5},
-			C7:{N:"LV2 Pelet S",P:30,ZT:2,ZP:20,C:"<br>x<i>4回</i>",K:6,CN:"(着弾)",CM:5},
-			C8:{N:"LV3 Pelet S",P:30,ZT:2,ZP:20,C:"<br>x<i>5回</i>",K:6,CN:"(着弾)",CM:5},
-			C12:{N:"LV1 Clust S",P:-1},
-			C13:{N:"LV2 Clust S",P:-1},
-			C14:{N:"LV3 Clust S",P:-1},
-			C15:{N:"LV1 Recov S",P:0,C:"<br>回復30"},
-			C16:{N:"LV2 Recov S",P:0,C:"<br>回復50"},
-			C17:{N:"LV1 Psn S",P:60,IT:1,IP:20,K:25},
-			C18:{N:"LV2 Psn S",P:90,IT:1,IP:40,K:25},
-			C19:{N:"LV1 Para S",P:60,IT:2,IP:20,K:25},
-			C20:{N:"LV2 Para S",P:90,IT:2,IP:40,K:25},
-			C21:{N:"LV1 Sleep S",P:0,IT:3,IP:20,K:25},
-			C22:{N:"LV2 Sleep S",P:0,IT:3,IP:40,K:25},
+			C0:{N:"LV1通常弾",P:19,K:3,CN:"(着弾)",CM:10},
+			C1:{N:"LV2通常弾",P:48,K:5,CN:"(着弾)",CM:20},
+			C2:{N:"LV3通常弾",P:48,C:"x<i>n回</i>",K:7,CN:"(着弾)",CM:10},
+			C3:{N:"LV1貫通弾",P:50,C:"x<i>3回</i>",K:7,CN:"(着弾)",CM:20},
+			C4:{N:"LV2貫通弾",P:45,C:"x<i>4回</i>",K:7,CN:"(着弾)",CM:20},
+			C5:{N:"LV3貫通弾",P:35,C:"x<i>6回</i>",K:14,CN:"(着弾)",CM:20},
+			C6:{N:"LV1散弾",P:30,ZT:2,ZP:25,C:"<br>x<i>3回</i>",K:6,CN:"(着弾)",CM:5},
+			C7:{N:"LV2散弾",P:30,ZT:2,ZP:20,C:"<br>x<i>4回</i>",K:6,CN:"(着弾)",CM:5},
+			C8:{N:"LV3散弾",P:30,ZT:2,ZP:20,C:"<br>x<i>5回</i>",K:6,CN:"(着弾)",CM:5},
+			C12:{N:"LV1拡散弾",P:-1},
+			C13:{N:"LV2拡散弾",P:-1},
+			C14:{N:"LV3拡散弾",P:-1},
+			C15:{N:"LV1回復弾",P:0,C:"<br>回復30"},
+			C16:{N:"LV2回復弾",P:0,C:"<br>回復50"},
+			C17:{N:"LV1毒弾",P:60,IT:1,IP:20,K:25},
+			C18:{N:"LV2毒弾",P:90,IT:1,IP:40,K:25},
+			C19:{N:"LV1麻痺弾",P:60,IT:2,IP:20,K:25},
+			C20:{N:"LV2麻痺弾",P:90,IT:2,IP:40,K:25},
+			C21:{N:"LV1睡眠弾",P:0,IT:3,IP:20,K:25},
+			C22:{N:"LV2睡眠弾",P:0,IT:3,IP:40,K:25},
 
-			C9:{N:"LV1 Crag S",P:20,K:25,BN:"(爆破)",BM:24,BFZ:20,BC:"<br>気絶10",CN:"(着弾)",CM:20},
-			C10:{N:"LV2 Crag S",P:20,K:25,BN:"(爆破)",BM:32,BFZ:30,BC:"<br>気絶10",CN:"(着弾)",CM:20},
-			C11:{N:"LV3 Crag S",P:20,K:25,BN:"(爆破)",BM:40,BFZ:40,BC:"<br>気絶10",CN:"(着弾)",CM:20},
-			C23:{N:"Flame S",P:5,ZT:1,ZB:300,K:20,CN:"(着弾)",CM:20},
-			C24:{N:"Water S",P:5,ZT:2,ZB:150,C:"<br>x<i>3回</i>",K:17,CN:"(着弾)",CM:20},
-			C25:{N:"Thund S",P:5,ZT:3,ZB:170,C:"<br>x<i>3回</i>",K:17,CN:"(着弾)",CM:20},
-			C26:{N:"Freez S",P:5,ZT:5,ZB:150,C:"<br>x<i>3回</i>",K:17,CN:"(着弾)",CM:20},
-			C27:{N:"Dragn S",P:5,ZT:4,ZP:720,C:"<br>x<i>6回</i>",K:100,CN:"(着弾)",CM:20},
-			C28:{N:"Exhst S",P:-1},
-			C29:{N:"Bomb S",P:-1},
-			C30:{N:"Bomb S:然",P:-1},
-			C31:{N:"Drgn B S",P:-1},
+			C9:{N:"LV1徹甲榴弾",P:20,K:25,BN:"(爆破)",BM:24,BFZ:20,BC:"<br>気絶10",CN:"(着弾)",CM:20},
+			C10:{N:"LV2徹甲榴弾",P:20,K:25,BN:"(爆破)",BM:32,BFZ:30,BC:"<br>気絶10",CN:"(着弾)",CM:20},
+			C11:{N:"LV3徹甲榴弾",P:20,K:25,BN:"(爆破)",BM:40,BFZ:40,BC:"<br>気絶10",CN:"(着弾)",CM:20},
+			C23:{N:"火炎弾",P:5,ZT:1,ZB:300,K:20,CN:"(着弾)",CM:20},
+			C24:{N:"水冷弾",P:5,ZT:2,ZB:150,C:"<br>x<i>3回</i>",K:17,CN:"(着弾)",CM:20},
+			C25:{N:"電撃弾",P:5,ZT:3,ZB:170,C:"<br>x<i>3回</i>",K:17,CN:"(着弾)",CM:20},
+			C26:{N:"氷結弾",P:5,ZT:5,ZB:150,C:"<br>x<i>3回</i>",K:17,CN:"(着弾)",CM:20},
+			C27:{N:"滅龍弾",P:5,ZT:4,ZP:720,C:"<br>x<i>6回</i>",K:100,CN:"(着弾)",CM:20},
+			C28:{N:"排熱弾",P:-1},
+			C29:{N:"爆撃弾",P:-1},
+			C30:{N:"爆撃弾:然",P:-1},
+			C31:{N:"龍爆撃弾",P:-1},
 
 			//パーフェクト圧縮
-			P0:{N:"LV1 Norm S",P:31,K:3,CN:"(着弾)",CM:10},
-			P1:{N:"LV2 Norm S",P:73,K:5,CN:"(着弾)",CM:20},
-			P2:{N:"LV3 Norm S",P:72,C:"x<i>n回</i>",K:7,CN:"(着弾)",CM:10},
-			P3:{N:"LV1 Pierc S",P:70,C:"x<i>3回</i>",K:7,CN:"(着弾)",CM:20},
-			P4:{N:"LV2 Pierc S",P:62,C:"x<i>4回</i>",K:7,CN:"(着弾)",CM:20},
-			P5:{N:"LV3 Pierc S",P:49,C:"x<i>6回</i>",K:14,CN:"(着弾)",CM:20},
-			P6:{N:"LV1 Pelet S",P:40,ZT:2,ZP:35,C:"<br>x<i>3回</i>",K:6,CN:"(着弾)",CM:5},
-			P7:{N:"LV2 Pelet S",P:40,ZT:2,ZP:25,C:"<br>x<i>4回</i>",K:6,CN:"(着弾)",CM:5},
-			P8:{N:"LV3 Pelet S",P:40,ZT:2,ZP:25,C:"<br>x<i>5回</i>",K:6,CN:"(着弾)",CM:5},
-			P12:{N:"LV1 Clust S",P:-1},
-			P13:{N:"LV2 Clust S",P:-1},
-			P14:{N:"LV3 Clust S",P:-1},
-			P15:{N:"LV1 Recov S",P:0,C:"<br>回復30"},
-			P16:{N:"LV2 Recov S",P:0,C:"<br>回復50"},
-			P17:{N:"LV1 Psn S",P:80,IT:1,IP:25,K:25},
-			P18:{N:"LV2 Psn S",P:110,IT:1,IP:50,K:25},
-			P19:{N:"LV1 Para S",P:80,IT:2,IP:25,K:25},
-			P20:{N:"LV2 Para S",P:110,IT:2,IP:50,K:25},
-			P21:{N:"LV1 Sleep S",P:0,IT:3,IP:25,K:25},
-			P22:{N:"LV2 Sleep S",P:0,IT:3,IP:50,K:25},
+			P0:{N:"LV1通常弾",P:31,K:3,CN:"(着弾)",CM:10},
+			P1:{N:"LV2通常弾",P:73,K:5,CN:"(着弾)",CM:20},
+			P2:{N:"LV3通常弾",P:72,C:"x<i>n回</i>",K:7,CN:"(着弾)",CM:10},
+			P3:{N:"LV1貫通弾",P:70,C:"x<i>3回</i>",K:7,CN:"(着弾)",CM:20},
+			P4:{N:"LV2貫通弾",P:62,C:"x<i>4回</i>",K:7,CN:"(着弾)",CM:20},
+			P5:{N:"LV3貫通弾",P:49,C:"x<i>6回</i>",K:14,CN:"(着弾)",CM:20},
+			P6:{N:"LV1散弾",P:40,ZT:2,ZP:35,C:"<br>x<i>3回</i>",K:6,CN:"(着弾)",CM:5},
+			P7:{N:"LV2散弾",P:40,ZT:2,ZP:25,C:"<br>x<i>4回</i>",K:6,CN:"(着弾)",CM:5},
+			P8:{N:"LV3散弾",P:40,ZT:2,ZP:25,C:"<br>x<i>5回</i>",K:6,CN:"(着弾)",CM:5},
+			P12:{N:"LV1拡散弾",P:-1},
+			P13:{N:"LV2拡散弾",P:-1},
+			P14:{N:"LV3拡散弾",P:-1},
+			P15:{N:"LV1回復弾",P:0,C:"<br>回復30"},
+			P16:{N:"LV2回復弾",P:0,C:"<br>回復50"},
+			P17:{N:"LV1毒弾",P:80,IT:1,IP:25,K:25},
+			P18:{N:"LV2毒弾",P:110,IT:1,IP:50,K:25},
+			P19:{N:"LV1麻痺弾",P:80,IT:2,IP:25,K:25},
+			P20:{N:"LV2麻痺弾",P:110,IT:2,IP:50,K:25},
+			P21:{N:"LV1睡眠弾",P:0,IT:3,IP:25,K:25},
+			P22:{N:"LV2睡眠弾",P:0,IT:3,IP:50,K:25},
 
-			P9:{N:"LV1 Crag S",P:20,K:25,BN:"(爆破)",BM:30,BFZ:20,BC:"<br>気絶10",CN:"(着弾)",CM:20},
-			P10:{N:"LV2 Crag S",P:20,K:25,BN:"(爆破)",BM:40,BFZ:30,BC:"<br>気絶10",CN:"(着弾)",CM:20},
-			P11:{N:"LV3 Crag S",P:20,K:25,BN:"(爆破)",BM:50,BFZ:40,BC:"<br>気絶10",CN:"(着弾)",CM:20},
-			P23:{N:"Flame S",P:8,ZT:1,ZB:400,K:20,CN:"(着弾)",CM:20},
-			P24:{N:"Water S",P:8,ZT:2,ZB:200,C:"<br>x<i>3回</i>",K:17,CN:"(着弾)",CM:20},
-			P25:{N:"Thund S",P:8,ZT:3,ZB:215,C:"<br>x<i>3回</i>",K:17,CN:"(着弾)",CM:20},
-			P26:{N:"Freez S",P:8,ZT:5,ZB:200,C:"<br>x<i>3回</i>",K:17,CN:"(着弾)",CM:20},
-			P27:{N:"Dragn S",P:5,ZT:4,ZP:905,C:"<br>x<i>6回</i>",K:100,CN:"(着弾)",CM:20},
-			P28:{N:"Exhst S",P:-1},
-			P29:{N:"Bomb S",P:-1},
-			P30:{N:"Bomb S:然",P:-1},
-			P31:{N:"Drgn B S",P:-1}
+			P9:{N:"LV1徹甲榴弾",P:20,K:25,BN:"(爆破)",BM:30,BFZ:20,BC:"<br>気絶10",CN:"(着弾)",CM:20},
+			P10:{N:"LV2徹甲榴弾",P:20,K:25,BN:"(爆破)",BM:40,BFZ:30,BC:"<br>気絶10",CN:"(着弾)",CM:20},
+			P11:{N:"LV3徹甲榴弾",P:20,K:25,BN:"(爆破)",BM:50,BFZ:40,BC:"<br>気絶10",CN:"(着弾)",CM:20},
+			P23:{N:"火炎弾",P:8,ZT:1,ZB:400,K:20,CN:"(着弾)",CM:20},
+			P24:{N:"水冷弾",P:8,ZT:2,ZB:200,C:"<br>x<i>3回</i>",K:17,CN:"(着弾)",CM:20},
+			P25:{N:"電撃弾",P:8,ZT:3,ZB:215,C:"<br>x<i>3回</i>",K:17,CN:"(着弾)",CM:20},
+			P26:{N:"氷結弾",P:8,ZT:5,ZB:200,C:"<br>x<i>3回</i>",K:17,CN:"(着弾)",CM:20},
+			P27:{N:"滅龍弾",P:5,ZT:4,ZP:905,C:"<br>x<i>6回</i>",K:100,CN:"(着弾)",CM:20},
+			P28:{N:"排熱弾",P:-1},
+			P29:{N:"爆撃弾",P:-1},
+			P30:{N:"爆撃弾:然",P:-1},
+			P31:{N:"龍爆撃弾",P:-1}
 			};
 INFO[5].Bullet = {
 //N:弾名,P:威力,ZT:属性タイプ,ZB:属性倍率,ZP:属性値,IT:異常タイプ,IP:異常値,C:コメント,K:気絶値,S:速射,M:無属性,BN:爆破名,BM:爆破無属性,BFZ:爆破火属性,BC:爆破コメント
-			0:{N:"LV1 Norm S",P:6,S:"5発速射"},
-			1:{N:"LV2 Norm S",P:12,S:"5発速射"},
-			2:{N:"LV3 Norm S",P:12,C:"x<i>n回</i>"},
-			3:{N:"LV1 Pierc S",P:10,C:"x<i>3回</i>",S:"3発速射"},
-			4:{N:"LV2 Pierc S",P:9,C:"x<i>4回</i>"},
-			5:{N:"LV3 Pierc S",P:7,C:"x<i>6回</i>"},
-			6:{N:"LV1 Pelet S",P:5,ZT:2,ZP:5,C:"<br>x<i>3回</i>",S:"3発速射"},
-			7:{N:"LV2 Pelet S",P:5,ZT:2,ZP:4,C:"<br>x<i>4回</i>",S:"3発速射"},
-			8:{N:"LV3 Pelet S",P:5,ZT:2,ZP:4,C:"<br>x<i>5回</i>",S:"3発速射"},
-			12:{N:"LV1 Clust S",P:6,BN:"(子拡散)",BM:32,BFZ:2,BC:"<br>x<i>3個</i>"},
-			13:{N:"LV2 Clust S",P:6,BN:"(子拡散)",BM:32,BFZ:2,BC:"<br>x<i>4個</i>"},
-			14:{N:"LV3 Clust S",P:6,BN:"(子拡散)",BM:32,BFZ:2,BC:"<br>x<i>5個</i>"},
-			15:{N:"LV1 Recov S",P:0,C:"<br>回復30"},
-			16:{N:"LV2 Recov S",P:0,C:"<br>回復50"},
-			17:{N:"LV1 Psn S",P:10,IT:1,IP:25},
-			18:{N:"LV2 Psn S",P:15,IT:1,IP:50},
-			19:{N:"LV1 Para S",P:10,IT:2,IP:25},
-			20:{N:"LV2 Para S",P:15,IT:2,IP:50},
-			21:{N:"LV1 Sleep S",P:0,IT:3,IP:25},
-			22:{N:"LV2 Sleep S",P:0,IT:3,IP:50},
+			0:{N:"LV1通常弾",P:6,S:"5発速射"},
+			1:{N:"LV2通常弾",P:12,S:"5発速射"},
+			2:{N:"LV3通常弾",P:12,C:"x<i>n回</i>"},
+			3:{N:"LV1貫通弾",P:10,C:"x<i>3回</i>",S:"3発速射"},
+			4:{N:"LV2貫通弾",P:9,C:"x<i>4回</i>"},
+			5:{N:"LV3貫通弾",P:7,C:"x<i>6回</i>"},
+			6:{N:"LV1散弾",P:5,ZT:2,ZP:5,C:"<br>x<i>3回</i>",S:"3発速射"},
+			7:{N:"LV2散弾",P:5,ZT:2,ZP:4,C:"<br>x<i>4回</i>",S:"3発速射"},
+			8:{N:"LV3散弾",P:5,ZT:2,ZP:4,C:"<br>x<i>5回</i>",S:"3発速射"},
+			12:{N:"LV1拡散弾",P:6,BN:"(子拡散)",BM:32,BFZ:2,BC:"<br>x<i>3個</i>"},
+			13:{N:"LV2拡散弾",P:6,BN:"(子拡散)",BM:32,BFZ:2,BC:"<br>x<i>4個</i>"},
+			14:{N:"LV3拡散弾",P:6,BN:"(子拡散)",BM:32,BFZ:2,BC:"<br>x<i>5個</i>"},
+			15:{N:"LV1回復弾",P:0,C:"<br>回復30"},
+			16:{N:"LV2回復弾",P:0,C:"<br>回復50"},
+			17:{N:"LV1毒弾",P:10,IT:1,IP:25},
+			18:{N:"LV2毒弾",P:15,IT:1,IP:50},
+			19:{N:"LV1麻痺弾",P:10,IT:2,IP:25},
+			20:{N:"LV2麻痺弾",P:15,IT:2,IP:50},
+			21:{N:"LV1睡眠弾",P:0,IT:3,IP:25},
+			22:{N:"LV2睡眠弾",P:0,IT:3,IP:50},
 
-			9:{N:"LV1 Crag S",P:3,S:"2発速射",BN:"(爆破)",BM:30,BFZ:40,BC:"<br>気絶5"},
-			10:{N:"LV2 Crag S",P:3,BN:"(爆破)",BM:40,BFZ:60,BC:"<br>気絶5"},
-			11:{N:"LV3 Crag S",P:3,BN:"(爆破)",BM:50,BFZ:80,BC:"<br>気絶5"},
-			23:{N:"Flame S",P:1,ZT:1,ZB:400				,S:"5発速射"},
-			24:{N:"Water S",P:1,ZT:2,ZB:200,C:"<br>x<i>3回</i>",S:"3発速射"},
-			25:{N:"Thund S",P:1,ZT:3,ZB:200,C:"<br>x<i>3回</i>",S:"3発速射"},
-			26:{N:"Freez S",P:1,ZT:5,ZB:200,C:"<br>x<i>3回</i>",S:"3発速射"},
-			27:{N:"Dragn S",P:1,ZT:4,ZP:75,C:"<br>x<i>6回</i>"}
+			9:{N:"LV1徹甲榴弾",P:3,S:"2発速射",BN:"(爆破)",BM:30,BFZ:40,BC:"<br>気絶5"},
+			10:{N:"LV2徹甲榴弾",P:3,BN:"(爆破)",BM:40,BFZ:60,BC:"<br>気絶5"},
+			11:{N:"LV3徹甲榴弾",P:3,BN:"(爆破)",BM:50,BFZ:80,BC:"<br>気絶5"},
+			23:{N:"火炎弾",P:1,ZT:1,ZB:400				,S:"5発速射"},
+			24:{N:"水冷弾",P:1,ZT:2,ZB:200,C:"<br>x<i>3回</i>",S:"3発速射"},
+			25:{N:"電撃弾",P:1,ZT:3,ZB:200,C:"<br>x<i>3回</i>",S:"3発速射"},
+			26:{N:"氷結弾",P:1,ZT:5,ZB:200,C:"<br>x<i>3回</i>",S:"3発速射"},
+			27:{N:"滅龍弾",P:1,ZT:4,ZP:75,C:"<br>x<i>6回</i>"}
 			};
 INFO[9].Bullet = {
 //N:名前,M:無属性,FZ:火属性値,ZB:属性砲倍率,K:気絶値,MA:無属性(加算),FZA:火属性値(加算)
-			"通常型砲撃LV1":{N:"通常型 LV1",M:16,FZ:5,ZB:300,K:3},
-			"通常型砲撃LV2":{N:"通常型 LV2",M:23,FZ:8,ZB:313,K:4},
-			"通常型砲撃LV3":{N:"通常型 LV3",M:30,FZ:10,ZB:326,K:5},
-			"通常型砲撃LV4":{N:"通常型 LV4",M:35,FZ:12,ZB:339,K:6},
-			"通常型砲撃LV5":{N:"通常型 LV5",M:40,FZ:14,ZB:352,K:7},
-			"通常型砲撃LV6":{N:"通常型 LV6",M:65,FZ:16,ZB:365,K:8},
-			"通常型砲撃LV7":{N:"通常型 LV7",M:75,FZ:18,ZB:379,K:9},
-			"通常型砲撃LV8":{N:"通常型 LV8",M:85,FZ:20,ZB:392,K:10},
-			"通常型砲撃LV9":{N:"通常型 LV9",M:99,FZ:22,ZB:405,K:11},
-			"拡散型砲撃LV1":{N:"拡散型 LV1",M:31,FZ:10,ZB:550,K:6},
-			"拡散型砲撃LV2":{N:"拡散型 LV2",M:44,FZ:20,ZB:563,K:7},
-			"拡散型砲撃LV3":{N:"拡散型 LV3",M:57,FZ:24,ZB:576,K:8},
-			"拡散型砲撃LV4":{N:"拡散型 LV4",M:63,FZ:29,ZB:589,K:9},
-			"拡散型砲撃LV5":{N:"拡散型 LV5",M:68,FZ:34,ZB:602,K:10},
-			"拡散型砲撃LV6":{N:"拡散型 LV6",M:107,FZ:39,ZB:615,K:11},
-			"拡散型砲撃LV7":{N:"拡散型 LV7",M:119,FZ:43,ZB:629,K:12},
-			"拡散型砲撃LV8":{N:"拡散型 LV8",M:133,FZ:47,ZB:642,K:13},
-			"拡散型砲撃LV9":{N:"拡散型 LV9",M:153,FZ:51,ZB:655,K:14},
-			"放射型砲撃LV1":{N:"放射型 LV1",M:24,FZ:11,ZB:500,K:5},
-			"放射型砲撃LV2":{N:"放射型 LV2",M:33,FZ:16,ZB:513,K:6},
-			"放射型砲撃LV3":{N:"放射型 LV3",M:42,FZ:20,ZB:526,K:7},
-			"放射型砲撃LV4":{N:"放射型 LV4",M:48,FZ:22,ZB:539,K:8},
-			"放射型砲撃LV5":{N:"放射型 LV5",M:53,FZ:24,ZB:552,K:9},
-			"放射型砲撃LV6":{N:"放射型 LV6",M:84,FZ:27,ZB:565,K:10},
-			"放射型砲撃LV7":{N:"放射型 LV7",M:95,FZ:30,ZB:579,K:11},
-			"放射型砲撃LV8":{N:"放射型 LV8",M:106,FZ:33,ZB:592,K:12},
-			"放射型砲撃LV9":{N:"放射型 LV9",M:122,FZ:36,ZB:605,K:13},
-			"竜通常型砲撃LV1":{N:"竜撃砲 LV1",M:40,FZ:12},
-			"竜通常型砲撃LV2":{N:"竜撃砲 LV2",M:50,FZ:16},
-			"竜通常型砲撃LV3":{N:"竜撃砲 LV3",M:62,FZ:18},
-			"竜通常型砲撃LV4":{N:"竜撃砲 LV4",M:69,FZ:21},
-			"竜通常型砲撃LV5":{N:"竜撃砲 LV5",M:76,FZ:23},
-			"竜通常型砲撃LV6":{N:"竜撃砲 LV6",M:120,FZ:25},
-			"竜通常型砲撃LV7":{N:"竜撃砲 LV7",M:132,FZ:28},
-			"竜通常型砲撃LV8":{N:"竜撃砲 LV8",M:153,FZ:30},
-			"竜通常型砲撃LV9":{N:"竜撃砲 LV9",M:172,FZ:33},
-			"竜拡散型砲撃LV1":{N:"竜撃砲 LV1",M:29,FZ:17},
-			"竜拡散型砲撃LV2":{N:"竜撃砲 LV2",M:43,FZ:16},
-			"竜拡散型砲撃LV3":{N:"竜撃砲 LV3",M:55,FZ:18},
-			"竜拡散型砲撃LV4":{N:"竜撃砲 LV4",M:62,FZ:21},
-			"竜拡散型砲撃LV5":{N:"竜撃砲 LV5",M:69,FZ:23},
-			"竜拡散型砲撃LV6":{N:"竜撃砲 LV6",M:109,FZ:25},
-			"竜拡散型砲撃LV7":{N:"竜撃砲 LV7",M:122,FZ:28},
-			"竜拡散型砲撃LV8":{N:"竜撃砲 LV8",M:142,FZ:30},
-			"竜拡散型砲撃LV9":{N:"竜撃砲 LV9",M:159,FZ:33},
-			"竜放射型砲撃LV1":{N:"竜撃砲 LV1",M:45,FZ:15},
-			"竜放射型砲撃LV2":{N:"竜撃砲 LV2",M:55,FZ:18},
-			"竜放射型砲撃LV3":{N:"竜撃砲 LV3",M:67,FZ:21},
-			"竜放射型砲撃LV4":{N:"竜撃砲 LV4",M:74,FZ:23},
-			"竜放射型砲撃LV5":{N:"竜撃砲 LV5",M:81,FZ:25},
-			"竜放射型砲撃LV6":{N:"竜撃砲 LV6",M:139,FZ:28},
-			"竜放射型砲撃LV7":{N:"竜撃砲 LV7",M:153,FZ:30},
-			"竜放射型砲撃LV8":{N:"竜撃砲 LV8",M:178,FZ:33},
-			"竜放射型砲撃LV9":{N:"竜撃砲 LV9",M:198,FZ:35},
-			"爆通常型砲撃LV1":{N:"爆竜轟砲 LV1",M:120,FZ:36,MA:10,FZA:3},
-			"爆通常型砲撃LV2":{N:"爆竜轟砲 LV2",M:150,FZ:48,MA:12,FZA:4},
-			"爆通常型砲撃LV3":{N:"爆竜轟砲 LV3",M:186,FZ:54,MA:15,FZA:4},
-			"爆通常型砲撃LV4":{N:"爆竜轟砲 LV4",M:207,FZ:63,MA:17,FZA:5},
-			"爆通常型砲撃LV5":{N:"爆竜轟砲 LV5",M:228,FZ:69,MA:19,FZA:5},
-			"爆通常型砲撃LV6":{N:"爆竜轟砲 LV6",M:378,FZ:75,MA:30,FZA:6},
-			"爆通常型砲撃LV7":{N:"爆竜轟砲 LV7",M:415,FZ:88,MA:33,FZA:7},
-			"爆通常型砲撃LV8":{N:"爆竜轟砲 LV8",M:481,FZ:94,MA:39,FZA:8},
-			"爆通常型砲撃LV9":{N:"爆竜轟砲 LV9",M:541,FZ:103,MA:43,FZA:9},
-			"爆拡散型砲撃LV1":{N:"爆竜轟砲 LV1",M:99,FZ:33,MA:33,FZA:12},
-			"爆拡散型砲撃LV2":{N:"爆竜轟砲 LV2",M:129,FZ:43,MA:43,FZA:16},
-			"爆拡散型砲撃LV3":{N:"爆竜轟砲 LV3",M:165,FZ:54,MA:55,FZA:18},
-			"爆拡散型砲撃LV4":{N:"爆竜轟砲 LV4",M:186,FZ:63,MA:62,FZA:21},
-			"爆拡散型砲撃LV5":{N:"爆竜轟砲 LV5",M:207,FZ:69,MA:69,FZA:23},
-			"爆拡散型砲撃LV6":{N:"爆竜轟砲 LV6",M:343,FZ:75,MA:109,FZA:25},
-			"爆拡散型砲撃LV7":{N:"爆竜轟砲 LV7",M:384,FZ:88,MA:122,FZA:28},
-			"爆拡散型砲撃LV8":{N:"爆竜轟砲 LV8",M:447,FZ:94,MA:142,FZA:30},
-			"爆拡散型砲撃LV9":{N:"爆竜轟砲 LV9",M:500,FZ:103,MA:159,FZA:33},
-			"爆放射型砲撃LV1":{N:"爆竜轟砲 LV1",M:150,FZ:30,MA:22,FZA:6},
-			"爆放射型砲撃LV2":{N:"爆竜轟砲 LV2",M:165,FZ:54,MA:27,FZA:7},
-			"爆放射型砲撃LV3":{N:"爆竜轟砲 LV3",M:201,FZ:63,MA:33,FZA:9},
-			"爆放射型砲撃LV4":{N:"爆竜轟砲 LV4",M:202,FZ:69,MA:37,FZA:10},
-			"爆放射型砲撃LV5":{N:"爆竜轟砲 LV5",M:243,FZ:75,MA:40,FZA:12},
-			"爆放射型砲撃LV6":{N:"爆竜轟砲 LV6",M:444,FZ:84,MA:70,FZA:14},
-			"爆放射型砲撃LV7":{N:"爆竜轟砲 LV7",M:489,FZ:96,MA:77,FZA:15},
-			"爆放射型砲撃LV8":{N:"爆竜轟砲 LV8",M:569,FZ:105,MA:89,FZA:17},
-			"爆放射型砲撃LV9":{N:"爆竜轟砲 LV9",M:633,FZ:112,MA:99,FZA:17}
+			"通常型砲撃LV1":{N:"通常型LV1",M:16,FZ:5,ZB:300,K:3},
+			"通常型砲撃LV2":{N:"通常型LV2",M:23,FZ:8,ZB:313,K:4},
+			"通常型砲撃LV3":{N:"通常型LV3",M:30,FZ:10,ZB:326,K:5},
+			"通常型砲撃LV4":{N:"通常型LV4",M:35,FZ:12,ZB:339,K:6},
+			"通常型砲撃LV5":{N:"通常型LV5",M:40,FZ:14,ZB:352,K:7},
+			"通常型砲撃LV6":{N:"通常型LV6",M:65,FZ:16,ZB:365,K:8},
+			"通常型砲撃LV7":{N:"通常型LV7",M:75,FZ:18,ZB:379,K:9},
+			"通常型砲撃LV8":{N:"通常型LV8",M:85,FZ:20,ZB:392,K:10},
+			"通常型砲撃LV9":{N:"通常型LV9",M:99,FZ:22,ZB:405,K:11},
+			"拡散型砲撃LV1":{N:"拡散型LV1",M:31,FZ:10,ZB:550,K:6},
+			"拡散型砲撃LV2":{N:"拡散型LV2",M:44,FZ:20,ZB:563,K:7},
+			"拡散型砲撃LV3":{N:"拡散型LV3",M:57,FZ:24,ZB:576,K:8},
+			"拡散型砲撃LV4":{N:"拡散型LV4",M:63,FZ:29,ZB:589,K:9},
+			"拡散型砲撃LV5":{N:"拡散型LV5",M:68,FZ:34,ZB:602,K:10},
+			"拡散型砲撃LV6":{N:"拡散型LV6",M:107,FZ:39,ZB:615,K:11},
+			"拡散型砲撃LV7":{N:"拡散型LV7",M:119,FZ:43,ZB:629,K:12},
+			"拡散型砲撃LV8":{N:"拡散型LV8",M:133,FZ:47,ZB:642,K:13},
+			"拡散型砲撃LV9":{N:"拡散型LV9",M:153,FZ:51,ZB:655,K:14},
+			"放射型砲撃LV1":{N:"放射型LV1",M:24,FZ:11,ZB:500,K:5},
+			"放射型砲撃LV2":{N:"放射型LV2",M:33,FZ:16,ZB:513,K:6},
+			"放射型砲撃LV3":{N:"放射型LV3",M:42,FZ:20,ZB:526,K:7},
+			"放射型砲撃LV4":{N:"放射型LV4",M:48,FZ:22,ZB:539,K:8},
+			"放射型砲撃LV5":{N:"放射型LV5",M:53,FZ:24,ZB:552,K:9},
+			"放射型砲撃LV6":{N:"放射型LV6",M:84,FZ:27,ZB:565,K:10},
+			"放射型砲撃LV7":{N:"放射型LV7",M:95,FZ:30,ZB:579,K:11},
+			"放射型砲撃LV8":{N:"放射型LV8",M:106,FZ:33,ZB:592,K:12},
+			"放射型砲撃LV9":{N:"放射型LV9",M:122,FZ:36,ZB:605,K:13},
+			"竜通常型砲撃LV1":{N:"竜撃砲LV1",M:40,FZ:12},
+			"竜通常型砲撃LV2":{N:"竜撃砲LV2",M:50,FZ:16},
+			"竜通常型砲撃LV3":{N:"竜撃砲LV3",M:62,FZ:18},
+			"竜通常型砲撃LV4":{N:"竜撃砲LV4",M:69,FZ:21},
+			"竜通常型砲撃LV5":{N:"竜撃砲LV5",M:76,FZ:23},
+			"竜通常型砲撃LV6":{N:"竜撃砲LV6",M:120,FZ:25},
+			"竜通常型砲撃LV7":{N:"竜撃砲LV7",M:132,FZ:28},
+			"竜通常型砲撃LV8":{N:"竜撃砲LV8",M:153,FZ:30},
+			"竜通常型砲撃LV9":{N:"竜撃砲LV9",M:172,FZ:33},
+			"竜拡散型砲撃LV1":{N:"竜撃砲LV1",M:29,FZ:17},
+			"竜拡散型砲撃LV2":{N:"竜撃砲LV2",M:43,FZ:16},
+			"竜拡散型砲撃LV3":{N:"竜撃砲LV3",M:55,FZ:18},
+			"竜拡散型砲撃LV4":{N:"竜撃砲LV4",M:62,FZ:21},
+			"竜拡散型砲撃LV5":{N:"竜撃砲LV5",M:69,FZ:23},
+			"竜拡散型砲撃LV6":{N:"竜撃砲LV6",M:109,FZ:25},
+			"竜拡散型砲撃LV7":{N:"竜撃砲LV7",M:122,FZ:28},
+			"竜拡散型砲撃LV8":{N:"竜撃砲LV8",M:142,FZ:30},
+			"竜拡散型砲撃LV9":{N:"竜撃砲LV9",M:159,FZ:33},
+			"竜放射型砲撃LV1":{N:"竜撃砲LV1",M:45,FZ:15},
+			"竜放射型砲撃LV2":{N:"竜撃砲LV2",M:55,FZ:18},
+			"竜放射型砲撃LV3":{N:"竜撃砲LV3",M:67,FZ:21},
+			"竜放射型砲撃LV4":{N:"竜撃砲LV4",M:74,FZ:23},
+			"竜放射型砲撃LV5":{N:"竜撃砲LV5",M:81,FZ:25},
+			"竜放射型砲撃LV6":{N:"竜撃砲LV6",M:139,FZ:28},
+			"竜放射型砲撃LV7":{N:"竜撃砲LV7",M:153,FZ:30},
+			"竜放射型砲撃LV8":{N:"竜撃砲LV8",M:178,FZ:33},
+			"竜放射型砲撃LV9":{N:"竜撃砲LV9",M:198,FZ:35},
+			"爆通常型砲撃LV1":{N:"爆竜轟砲LV1",M:120,FZ:36,MA:10,FZA:3},
+			"爆通常型砲撃LV2":{N:"爆竜轟砲LV2",M:150,FZ:48,MA:12,FZA:4},
+			"爆通常型砲撃LV3":{N:"爆竜轟砲LV3",M:186,FZ:54,MA:15,FZA:4},
+			"爆通常型砲撃LV4":{N:"爆竜轟砲LV4",M:207,FZ:63,MA:17,FZA:5},
+			"爆通常型砲撃LV5":{N:"爆竜轟砲LV5",M:228,FZ:69,MA:19,FZA:5},
+			"爆通常型砲撃LV6":{N:"爆竜轟砲LV6",M:378,FZ:75,MA:30,FZA:6},
+			"爆通常型砲撃LV7":{N:"爆竜轟砲LV7",M:415,FZ:88,MA:33,FZA:7},
+			"爆通常型砲撃LV8":{N:"爆竜轟砲LV8",M:481,FZ:94,MA:39,FZA:8},
+			"爆通常型砲撃LV9":{N:"爆竜轟砲LV9",M:541,FZ:103,MA:43,FZA:9},
+			"爆拡散型砲撃LV1":{N:"爆竜轟砲LV1",M:99,FZ:33,MA:33,FZA:12},
+			"爆拡散型砲撃LV2":{N:"爆竜轟砲LV2",M:129,FZ:43,MA:43,FZA:16},
+			"爆拡散型砲撃LV3":{N:"爆竜轟砲LV3",M:165,FZ:54,MA:55,FZA:18},
+			"爆拡散型砲撃LV4":{N:"爆竜轟砲LV4",M:186,FZ:63,MA:62,FZA:21},
+			"爆拡散型砲撃LV5":{N:"爆竜轟砲LV5",M:207,FZ:69,MA:69,FZA:23},
+			"爆拡散型砲撃LV6":{N:"爆竜轟砲LV6",M:343,FZ:75,MA:109,FZA:25},
+			"爆拡散型砲撃LV7":{N:"爆竜轟砲LV7",M:384,FZ:88,MA:122,FZA:28},
+			"爆拡散型砲撃LV8":{N:"爆竜轟砲LV8",M:447,FZ:94,MA:142,FZA:30},
+			"爆拡散型砲撃LV9":{N:"爆竜轟砲LV9",M:500,FZ:103,MA:159,FZA:33},
+			"爆放射型砲撃LV1":{N:"爆竜轟砲LV1",M:150,FZ:30,MA:22,FZA:6},
+			"爆放射型砲撃LV2":{N:"爆竜轟砲LV2",M:165,FZ:54,MA:27,FZA:7},
+			"爆放射型砲撃LV3":{N:"爆竜轟砲LV3",M:201,FZ:63,MA:33,FZA:9},
+			"爆放射型砲撃LV4":{N:"爆竜轟砲LV4",M:202,FZ:69,MA:37,FZA:10},
+			"爆放射型砲撃LV5":{N:"爆竜轟砲LV5",M:243,FZ:75,MA:40,FZA:12},
+			"爆放射型砲撃LV6":{N:"爆竜轟砲LV6",M:444,FZ:84,MA:70,FZA:14},
+			"爆放射型砲撃LV7":{N:"爆竜轟砲LV7",M:489,FZ:96,MA:77,FZA:15},
+			"爆放射型砲撃LV8":{N:"爆竜轟砲LV8",M:569,FZ:105,MA:89,FZA:17},
+			"爆放射型砲撃LV9":{N:"爆竜轟砲LV9",M:633,FZ:112,MA:99,FZA:17}
 			};
 INFO[10].Bullet = {
 //N:名前,P:威力,C:コメント
@@ -662,18 +662,18 @@ INFO[10].Bullet = {
 			"爆裂型":{N:"爆裂",P:15,K:30,C:"|15"},
 			"切断型":{N:"切断",P:12,C:"|12x7回"}
 			};
-INFO[10].IzyoBin = {"Proximity":2,
+INFO[10].IzyoBin = {"近接":2,
 					//ノーマル,+1,+2,+3
 					"連射":[[13,7,5,4],[14,8,5,4],[17,9,6,5],[19,10,7,6]],
 					"拡散":[[5,6,5,5],[5,6,5,5],[6,7,6,6],[7,9,7,7]],
 					"貫通":[[5,4,4,4],[5,4,4,4],[6,5,5,5],[7,6,6,6]],
 					"ｵｰ":25,"貫薙":19,"放散":2,"集中":6,"爆裂":0,"切断":2};
-INFO[10].BakuBin = {"Proximity":{Normal:2,TenRan:10},
+INFO[10].BakuBin = {"近接":{Normal:2,TenRan:10},
 					"連射":[70,40,32,28],
 					"拡散":[26,32,22,24],
 					"貫通":[28,28,28,28],
 					"ｵｰ":37,"貫薙":0,"ｵｰ火事場":55,"放散":26,"集中":28,"爆裂":50,"爆裂追加":100,"切断":24};
-INFO[10].DaBin = {"Proximity":0,
+INFO[10].DaBin = {"近接":0,
 					"連射":4,
 					"拡散":4,
 					"貫通":4,
@@ -1082,22 +1082,22 @@ case 5: //ライトボウガン
 			this.c_kobetu1_Text.nodeValue = this.wp_gousyu ? "ヘビィB" : "パワーB";
 			//剛武器・進化の設定
 			if (this.wp_gousyu) {
-				o.setAttribute("value", 28),df.appendChild(o.cloneNode(false)),df.lastChild.appendChild(document.createTextNode("Exhst S"));
+				o.setAttribute("value", 28),df.appendChild(o.cloneNode(false)),df.lastChild.appendChild(document.createTextNode("排熱弾"));
 			} else if (this.wp_sinka) {
 				switch (eq[I_aSINKAGR]) {
 				case "1": //【燦然】
 				case "4": //【燦然】
 				case "5": //【燦然】
-					o.setAttribute("value", 30),df.appendChild(o.cloneNode(false)),df.lastChild.appendChild(document.createTextNode("Bomb S")); //派生後
+					o.setAttribute("value", 30),df.appendChild(o.cloneNode(false)),df.lastChild.appendChild(document.createTextNode("爆撃弾")); //派生後
 					break;
 				case "2": //【絢爛】
 				case "6": //【絢爛】
-					o.setAttribute("value", 31),df.appendChild(o.cloneNode(false)),df.lastChild.appendChild(document.createTextNode("Drgn B S"));
+					o.setAttribute("value", 31),df.appendChild(o.cloneNode(false)),df.lastChild.appendChild(document.createTextNode("龍爆撃弾"));
 					break;
 				case "3": //【煌然】
 				case "7": //【煌然】
-					o.setAttribute("value", 30),df.appendChild(o.cloneNode(false)),df.lastChild.appendChild(document.createTextNode("Bomb S")); //派生後
-					o.setAttribute("value", 31),df.appendChild(o.cloneNode(false)),df.lastChild.appendChild(document.createTextNode("Drgn B S"));
+					o.setAttribute("value", 30),df.appendChild(o.cloneNode(false)),df.lastChild.appendChild(document.createTextNode("爆撃弾")); //派生後
+					o.setAttribute("value", 31),df.appendChild(o.cloneNode(false)),df.lastChild.appendChild(document.createTextNode("龍爆撃弾"));
 					break;
 				}
 			}
@@ -1171,14 +1171,14 @@ case 10: //弓
 
 		//ビン
 		var bin = eq[I_aBIN],b = (CK_FULL ? "ビン" : ""),df = document.createDocumentFragment(),o = document.createElement("option");
-		if (bin.indexOf("Power") !== -1) o.setAttribute("value", "KG"),df.appendChild(o.cloneNode(false)),df.lastChild.appendChild(document.createTextNode("強撃"+b));
-		o.setAttribute("value", "11" + (bin.indexOf("Poison+") !== -1 ? bin.charAt(bin.indexOf("Poison+") + 2) : 0)),df.appendChild(o.cloneNode(false)),df.lastChild.appendChild(document.createTextNode("Poison"+b));
-		if (bin.indexOf("Poison") === -1) df.lastChild.style.backgroundColor = "lightpink";
-		o.setAttribute("value", "12" + (bin.indexOf("Para+") !== -1 ? bin.charAt(bin.indexOf("Para+") + 2) : 0)),df.appendChild(o.cloneNode(false)),df.lastChild.appendChild(document.createTextNode("麻痺"+b));
-		if (bin.indexOf("Para") === -1) df.lastChild.style.backgroundColor = "lightpink";
-		o.setAttribute("value", "13" + (bin.indexOf("Sleep+") !== -1 ? bin.charAt(bin.indexOf("Sleep+") + 2) : 0)),df.appendChild(o.cloneNode(false)),df.lastChild.appendChild(document.createTextNode("睡眠"+b));
-		if (bin.indexOf("Sleep") === -1) df.lastChild.style.backgroundColor = "lightpink";
-		if (bin.indexOf("Bomb") !== -1) o.setAttribute("value", "BA"),df.appendChild(o.cloneNode(false)),df.lastChild.appendChild(document.createTextNode("爆撃"+b));
+		if (bin.indexOf("強") !== -1) o.setAttribute("value", "KG"),df.appendChild(o.cloneNode(false)),df.lastChild.appendChild(document.createTextNode("強撃"+b));
+		o.setAttribute("value", "11" + (bin.indexOf("毒+") !== -1 ? bin.charAt(bin.indexOf("毒+") + 2) : 0)),df.appendChild(o.cloneNode(false)),df.lastChild.appendChild(document.createTextNode("毒"+b));
+		if (bin.indexOf("毒") === -1) df.lastChild.style.backgroundColor = "lightpink";
+		o.setAttribute("value", "12" + (bin.indexOf("麻+") !== -1 ? bin.charAt(bin.indexOf("麻+") + 2) : 0)),df.appendChild(o.cloneNode(false)),df.lastChild.appendChild(document.createTextNode("麻痺"+b));
+		if (bin.indexOf("麻") === -1) df.lastChild.style.backgroundColor = "lightpink";
+		o.setAttribute("value", "13" + (bin.indexOf("睡+") !== -1 ? bin.charAt(bin.indexOf("睡+") + 2) : 0)),df.appendChild(o.cloneNode(false)),df.lastChild.appendChild(document.createTextNode("睡眠"+b));
+		if (bin.indexOf("睡") === -1) df.lastChild.style.backgroundColor = "lightpink";
+		if (bin.indexOf("爆") !== -1) o.setAttribute("value", "BA"),df.appendChild(o.cloneNode(false)),df.lastChild.appendChild(document.createTextNode("爆撃"+b));
 		if (bin.indexOf("打") !== -1) o.setAttribute("value", "DA"),df.appendChild(o.cloneNode(false)),df.lastChild.appendChild(document.createTextNode("打撃"+b));
 		this.c_bin.length = 1,this.c_bin.appendChild(df);
 
@@ -1190,7 +1190,7 @@ case 10: //弓
 		if (debug) this.debug.innerText += "cngTame:\n";
 		//矢セット
 		var df = document.createDocumentFragment(),o = document.createElement("option");
-		if (this.c_tame.selectedIndex <= 1) { //Proximity、曲射
+		if (this.c_tame.selectedIndex <= 1) { //近接、曲射
 			df.appendChild(o.cloneNode(false)),df.lastChild.appendChild(document.createTextNode("-----"));
 		} else {
 			for (var i = 0,w = WP_Info.Bullet[this.c_tame.value].P,max = w.length; i < max ; i++) {
@@ -1413,7 +1413,7 @@ var wp_motion_set = function (motion){
 					WP_Motion[m][e] = motion[i][e];
 				}
 			}
-			if (motionPow && !+motion[i].flg.P.charAt(0)) WP_Motion[m].N += "<small>Power</small>";
+			if (motionPow && !+motion[i].flg.P.charAt(0)) WP_Motion[m].N += "<small>強</small>";
 			//なんか間延びするがやってみるか剣術
 			if (kenzyutuCk && !motion[i].R7) {
 				WP_Motion[++m] = {};
@@ -1574,7 +1574,7 @@ case 9: //ガンランス
 		switch (this.c_style.value) {
 		case "地":
 			WP_Motion = WP_Motion.concat([{N:hougeki.N,T:-1,M:hougeki.M,ZT:1,ZP:hougeki.FZ,C:"<br>x<i>5回</i>",E:"this.c_sharp.value === '0'"}]); //竜激砲
-			hougeki = WP_Info.Bullet["Bomb"+hougekiType];
+			hougeki = WP_Info.Bullet["爆"+hougekiType];
 			WP_Motion = WP_Motion.concat([{N:hougeki.N,T:-1,M:hougeki.M,ZT:1,ZP:hougeki.FZ,C:"<br>x<i>2回</i>",E:"this.c_sharp.value === '0'"}]); //爆竜轟砲
 			WP_Motion = WP_Motion.concat([{N:"加算",T:-1,M:hougeki.MA,ZT:1,ZP:hougeki.FZA,C:"<br>1装填分",E:"this.c_sharp.value === '0'"}]); //爆竜轟砲
 			break;
@@ -1642,7 +1642,7 @@ case 5: //ライト
 		WP_Motion = [(function (e){var F = function(){};F.prototype = e;return new F;})(tama)];
 		//距離
 		switch (tama.N) {
-		case "LV1 Norm S":case "LV2 Norm S":case "LV3 Norm S":
+		case "LV1通常弾":case "LV2通常弾":case "LV3通常弾":
 			if (WP_Rui === 1){ //ヘビィ
 					WP_Motion = WP_Motion.concat([{N:"近距離",P:criPoint,C:"倍"},{N:"中距離１",P:criPoint,C:"倍"},{N:"中距離２",P:criPoint,C:"倍"},{N:"遠距離１",P:criPoint,C:"倍"},{N:"遠距離２",P:10,C:"倍"},{N:"遠距離３",P:8,C:"倍"},{N:"遠距離４",P:5,C:"倍"}/*,{N:"遠距離５",P:0,C:"倍"}*/]);
 			} else { //ライト
@@ -1661,7 +1661,7 @@ case 5: //ライト
 				}
 			}
 			break;
-		case "LV1 Pierc S":case "LV2 Pierc S":case "LV3 Pierc S":
+		case "LV1貫通弾":case "LV2貫通弾":case "LV3貫通弾":
 			if (WP_Rui === 1){ //ヘビィ
 					WP_Motion = WP_Motion.concat([{N:"近距離",P:10,C:"倍"},{N:"中距離１",P:criPoint,C:"倍"},{N:"中距離２",P:criPoint,C:"倍"},{N:"遠距離１",P:criPoint,C:"倍"},{N:"遠距離２",P:criPoint,C:"倍"},{N:"遠距離３",P:10,C:"倍"},{N:"遠距離４",P:8,C:"倍"},{N:"遠距離５",P:5,C:"倍"}]);
 			} else { //ライト
@@ -1680,7 +1680,7 @@ case 5: //ライト
 				}
 			}
 			break;
-		case "LV1 Crag S":case "LV2 Crag S":case "LV3 Crag S":
+		case "LV1徹甲榴弾":case "LV2徹甲榴弾":case "LV3徹甲榴弾":
 			WP_Motion[0].N = WP_Motion[0].N.substring(0,6);
 			if (WP_Rui === 1){ //ヘビィ
 					WP_Motion = WP_Motion.concat([{N:"近距離",P:10,C:"倍"},{N:"中距離１",P:criPoint,C:"倍"},{N:"中距離２",P:criPoint,C:"倍"},{N:"遠距離１",P:10,C:"倍"},{N:"遠距離２",P:8,C:"倍"},{N:"遠距離３",P:5,C:"倍"},{N:"遠距離４",P:5,C:"倍"}/*,{N:"遠距離５",P:0,C:"倍"}*/]);
@@ -1700,28 +1700,28 @@ case 5: //ライト
 				}
 			}
 			break;
-		case "LV1 Pelet S":case "LV2 Pelet S":case "LV3 Pelet S":case "LV1 Recov S":case "LV2 Recov S":
+		case "LV1散弾":case "LV2散弾":case "LV3散弾":case "LV1回復弾":case "LV2回復弾":
 			if (WP_Rui === 5 && this.c_style.value === "嵐" && this.c_kobetu2.selectedIndex) { //ライトのステップ打ちの時
 				WP_Motion = WP_Motion.concat([{N:"近距離",P:10,C:"倍"}/*,{N:"中距離１",P:0,C:"倍"},{N:"中距離２",P:0,C:"倍"},{N:"遠距離１",P:0,C:"倍"},{N:"遠距離２",P:0,C:"倍"},{N:"遠距離３",P:0,C:"倍"},{N:"遠距離４",P:0,C:"倍"},{N:"遠距離５",P:0,C:"倍"}*/]);
 			} else {
 				WP_Motion = WP_Motion.concat([{N:"近距離",P:10,C:"倍"},{N:"中距離１",P:10,C:"倍"},{N:"中距離２",P:10,C:"倍"}/*,{N:"遠距離１",P:0,C:"倍"},{N:"遠距離２",P:0,C:"倍"},{N:"遠距離３",P:0,C:"倍"},{N:"遠距離４",P:0,C:"倍"},{N:"遠距離５",P:0,C:"倍"}*/]);
 			}
 			break;
-		case "LV1 Clust S":case "LV2 Clust S":case "LV3 Clust S":case "LV1 Psn S":case "LV2 Psn S":case "LV1 Para S":case "LV2 Para S":case "LV1 Sleep S":case "LV2 Sleep S":
+		case "LV1拡散弾":case "LV2拡散弾":case "LV3拡散弾":case "LV1毒弾":case "LV2毒弾":case "LV1麻痺弾":case "LV2麻痺弾":case "LV1睡眠弾":case "LV2睡眠弾":
 			if (WP_Rui === 5 && this.c_style.value === "嵐" && this.c_kobetu2.selectedIndex) { //ライトのステップ打ちの時
 				WP_Motion = WP_Motion.concat([{N:"近距離",P:10,C:"倍"},{N:"中距離１",P:10,C:"倍"},{N:"中距離２",P:10,C:"倍"}/*,{N:"遠距離１",P:0,C:"倍"},{N:"遠距離２",P:0,C:"倍"},{N:"遠距離３",P:0,C:"倍"},{N:"遠距離４",P:0,C:"倍"},{N:"遠距離５",P:0,C:"倍"}*/]);
 			} else {
 				WP_Motion = WP_Motion.concat([{N:"近距離",P:10,C:"倍"},{N:"中距離１",P:10,C:"倍"},{N:"中距離２",P:10,C:"倍"},{N:"遠距離１",P:10,C:"倍"},{N:"遠距離２",P:10,C:"倍"},{N:"遠距離３",P:10,C:"倍"},{N:"遠距離４",P:10,C:"倍"},{N:"遠距離５",P:10,C:"倍"}]);
 			}
 			break;
-		case "Flame S":case "Water S":case "Thund S":case "Freez S":case "Dragn S":
+		case "火炎弾":case "水冷弾":case "電撃弾":case "氷結弾":case "滅龍弾":
 			if (WP_Rui === 5 && this.c_style.value === "嵐" && this.c_kobetu2.selectedIndex) { //ライトのステップ打ちの時
 				WP_Motion = WP_Motion.concat([{N:"近距離",P:10,C:"倍"}/*,{N:"中距離１",P:0,C:"倍"},{N:"中距離２",P:0,C:"倍"},{N:"遠距離１",P:0,C:"倍"},{N:"遠距離２",P:0,C:"倍"},{N:"遠距離３",P:0,C:"倍"},{N:"遠距離４",P:0,C:"倍"},{N:"遠距離５",P:0,C:"倍"}*/]);
 			} else {
 				WP_Motion = WP_Motion.concat([{N:"近距離",P:10,C:"倍"},{N:"中距離１",P:10,C:"倍"},{N:"中距離２",P:10,C:"倍"}/*,{N:"遠距離１",P:0,C:"倍"},{N:"遠距離２",P:0,C:"倍"},{N:"遠距離３",P:0,C:"倍"},{N:"遠距離４",P:0,C:"倍"},{N:"遠距離５",P:0,C:"倍"}*/]);
 			}
 			break;
-		case "Bomb S":case "Bomb S:然":case "Drgn B S":
+		case "爆撃弾":case "爆撃弾:然":case "龍爆撃弾":
 			WP_Motion = WP_Motion.concat({N:tama.BN,T:-1,M:tama.BM,ZT:tama.ZT,ZP:tama.BFZ,C:tama.BC});
 			tama.BN = "";
 			break;
@@ -1839,7 +1839,7 @@ case 10: //弓
 						WP_Motion[i].M = binPoint[yaLv];
 					}
 					if (i === 2 && this.c_tame.value === "爆裂型") WP_Motion[2].M = WP_Info.BakuBin["爆裂追加"];
-				} else { //Proximity
+				} else { //近接
 						WP_Motion[i].M = binPoint[this.c_style.value === "地" ? "Normal" : "TenRan"];
 				}
 				break;
@@ -1851,12 +1851,12 @@ case 10: //弓
 				break;
 			default: //状態異常ビン
 				if (typeof binPoint === "object") {
-					if (this.c_bin.value.charAt(1) === "1") { //Poison
+					if (this.c_bin.value.charAt(1) === "1") { //毒
 						WP_Motion[i].C = (WP_Motion[i].C || "") + izyoName + (binPoint[binPlus][yaLv] * (this.c_izyou.checked ? 1125 : 1000)/1000 * [5,10,15,15,10,11][this.c_tame.selectedIndex-1]/10 * (this.c_style.value === "嵐" && this.c_kobetu2.selectedIndex ? [12,13,14,15,10,10][this.c_tame.selectedIndex-1] : 10)/10|0);
 					} else {
 						WP_Motion[i].C = (WP_Motion[i].C || "") + izyoName + (binPoint[binPlus][yaLv] * (this.c_izyou.checked ? 1125 : 1000)/1000 * [5,10,10,10,10,11][this.c_tame.selectedIndex-1]/10 * (this.c_style.value === "嵐" && this.c_kobetu2.selectedIndex ? [12,13,14,15,10,10][this.c_tame.selectedIndex-1] : 10)/10|0);
 					}
-				} else { //Proximity
+				} else { //近接
 						WP_Motion[i].C = (WP_Motion[i].C || "") + izyoName + binPoint;
 				}
 				break;
@@ -1896,7 +1896,7 @@ for (var i = 0,j = 0,t = ""; i < maxMot; i++) {
 		break;
 	case -1: //他
 		if (WP_Motion[i].M) { //無属性+属性
-			t = "Bomb" + WP_Motion[i].M + (WP_Motion[i].ZT ? "+" + ZOKUNAME[WP_Motion[i].ZT] + WP_Motion[i].ZP : "");
+			t = "爆" + WP_Motion[i].M + (WP_Motion[i].ZT ? "+" + ZOKUNAME[WP_Motion[i].ZT] + WP_Motion[i].ZP : "");
 		} else if (WP_Motion[i].ZB) { //武器属性依存
 			t = "<small>属性</small>x" + (WP_Motion[i].ZB/100).toFixed(2);
 		} else { //属性のみ
@@ -2164,7 +2164,7 @@ if (eq[I_aCLASS] === CLASSTYPE.Neko) {
 this.d_att.firstChild.nodeValue = eq[I_aAT] * WP_Info.Ritu / 10|0;
 var t = "";
 if (WP_Rui === 1 || WP_Rui === 5){
-	t = this.wp_Gclass || eq[I_aCLASS] === CLASSTYPE.Tenrou || eq[I_aGR] && eq[I_aCLASS] === CLASSTYPE.Senyu || this.wp_sinka || eq[I_aCLASS] === CLASSTYPE.Teni ? "" : "LV5 Upgrdble";
+	t = this.wp_Gclass || eq[I_aCLASS] === CLASSTYPE.Tenrou || eq[I_aGR] && eq[I_aCLASS] === CLASSTYPE.Senyu || this.wp_sinka || eq[I_aCLASS] === CLASSTYPE.Teni ? "" : "LV5強化";
 } else if (WP_Rui === 10){
 	t = KYOKUNAME[eq[I_aKYOKUSYA]]; //曲射
 	if (eq[I_aZOKUAT]) t += (t ? "<br>" : "") + ZOKUNAME[eq[I_aZOKU]] + "：" + eq[I_aZOKUAT] + "0"; //属性
@@ -2196,7 +2196,7 @@ case 1: //ヘビィボウガン
 case 5: //ライトボウガン
 	t = RELOADNAME[eq[I_aRELO]] + " " + KICKNAME[eq[I_aKICK]] + " " + SPEEDNAME[eq[I_aSPEED]];
 	if (eq[I_aSOKUSYA] && WP_Rui === 5) {
-		t += (this.wp_gousyu ? "<br>Super Rapid Fire:" : "<br>Rapid Fire:") + eq[I_aSOKUSYA];
+		t += (this.wp_gousyu ? "<br>超速射:" : "<br>速射:") + eq[I_aSOKUSYA];
 	}
 	break;
 case 10: //弓
@@ -2337,7 +2337,7 @@ var eq = this.eq,eqSinka = MST_Equip_Sinka[WP_Info.Id][eq[I_aSINKAGR]][this.c_si
 //画面表示
 this.d_att.firstChild.nodeValue = eqSinka[0] * WP_Info.Ritu / 10|0;
 if (WP_Rui === 1 || WP_Rui === 5){
-	t = this.wp_Gclass || eq[I_aCLASS] === CLASSTYPE.Tenrou || eq[I_aCLASS] === CLASSTYPE.Senyu || this.wp_sinka || eq[I_aCLASS] === CLASSTYPE.Teni ? "" : "LV5 Upgrdble";
+	t = this.wp_Gclass || eq[I_aCLASS] === CLASSTYPE.Tenrou || eq[I_aCLASS] === CLASSTYPE.Senyu || this.wp_sinka || eq[I_aCLASS] === CLASSTYPE.Teni ? "" : "LV5強化";
 } else if (WP_Rui === 10){
 	t = KYOKUNAME[eq[I_aKYOKUSYA]]; //曲射
 	if (eq[I_aZOKUAT]) t += (t ? "<br>" : "") + ZOKUNAME[eq[I_aZOKU]] + "：" + eqSinka[1] + "0"; //属性
@@ -2390,10 +2390,10 @@ case 5: //ライトボウガン
 	} else {
 		eq[I_aSPEED] = 4;
 	}
-	//Reload,Recoil,Bullet Speed
+	//装填,反動,弾速
 	this.d_spec.innerHTML = RELOADNAME[eq[I_aRELO]] + " " + KICKNAME[eq[I_aKICK]] + " " + SPEEDNAME[eq[I_aSPEED]];
 	if (eq[I_aSOKUSYA] && WP_Rui === 5) {
-		this.d_spec.innerHTML += (this.wp_gousyu ? "<br>Super Rapid Fire:" : "<br>Rapid Fire:") + eq[I_aSOKUSYA];
+		this.d_spec.innerHTML += (this.wp_gousyu ? "<br>超速射:" : "<br>速射:") + eq[I_aSOKUSYA];
 	}
 	break;
 }
@@ -2413,7 +2413,7 @@ this.d_att.firstChild.nodeValue = eqG[0] * WP_Info.Ritu / 10|0;
 
 var t = "";
 if (WP_Rui === 1 || WP_Rui === 5){
-	t = this.wp_Gclass || eq[I_aCLASS] === CLASSTYPE.Tenrou || eq[I_aCLASS] === CLASSTYPE.Senyu ? "" : "LV5 Upgrdble";
+	t = this.wp_Gclass || eq[I_aCLASS] === CLASSTYPE.Tenrou || eq[I_aCLASS] === CLASSTYPE.Senyu ? "" : "LV5強化";
 } else if (WP_Rui === 10){
 	t = KYOKUNAME[eq[I_aKYOKUSYA]]; //曲射
 	if (eq[I_aZOKUAT]) t += (t ? "<br>" : "") + ZOKUNAME[eq[I_aZOKU]] + "：" + eq[I_aZOKUAT] + "0"; //属性
@@ -2465,7 +2465,7 @@ this.d_att.firstChild.nodeValue = this.c_tenrouAtt.value * WP_Info.Ritu / 10|0;
 
 var t = "";
 if (WP_Rui === 1 || WP_Rui === 5){
-	t = this.wp_Gclass || eq[I_aCLASS] === CLASSTYPE.Tenrou || eq[I_aCLASS] === CLASSTYPE.Senyu ? "" : "LV5 Upgrdble";
+	t = this.wp_Gclass || eq[I_aCLASS] === CLASSTYPE.Tenrou || eq[I_aCLASS] === CLASSTYPE.Senyu ? "" : "LV5強化";
 } else if (WP_Rui === 10){
 	if (this.c_tenrouZoku.value-0) t = ZOKUNAME[this.c_tenrouZoku.value] + "：" + this.c_tenrouZokuAtt.value + "0"; //属性
 	t += "<br>" + KYOKUNAME[this.c_tenrouYumiKyoku.value]; //曲射
@@ -2481,7 +2481,7 @@ case 1: //ヘビィボウガン
 case 5: //ライトボウガン
 	t = RELOADNAME[eq[I_aRELO]] + " " + KICKNAME[eq[I_aKICK]] + " " + SPEEDNAME[eq[I_aSPEED]];
 	if (eq[I_aSOKUSYA] && WP_Rui === 5) {
-		t += (this.wp_gousyu ? "<br>Super Rapid Fire:" : "<br>Rapid Fire:") + eq[I_aSOKUSYA];
+		t += (this.wp_gousyu ? "<br>超速射:" : "<br>速射:") + eq[I_aSOKUSYA];
 	}
 	break;
 case 10: //弓
@@ -2876,20 +2876,20 @@ case 1: //ヘビィボウガン
 	if (this.c_kobetu1.selectedIndex) eqAt += this.wp_gousyu ? 40 : 20; //ヘビィのバレル
 	if (this.c_tamaAtUp.checked) { //弾強化
 		switch (tama_N) {
-		case "LV1 Norm S":case "LV2 Norm S":case "LV3 Norm S":
-		case "LV1 Pierc S":case "LV2 Pierc S":case "LV3 Pierc S":
+		case "LV1通常弾":case "LV2通常弾":case "LV3通常弾":
+		case "LV1貫通弾":case "LV2貫通弾":case "LV3貫通弾":
 			hosei_Skill = 11;break;
-		case "LV1 Pelet S":case "LV2 Pelet S":case "LV3 Pelet S":
+		case "LV1散弾":case "LV2散弾":case "LV3散弾":
 			hosei_Skill = 13;break;
 		}
 	}
 	switch (tama_N) {
-	case "Bomb S":
-	case "Bomb S:然":
+	case "爆撃弾":
+	case "爆撃弾:然":
 		WP_Motion[0].M = +WP_Info.Bullet[this.c_tama.value].M + this.c_sinkaLv.value/2|0;
 		WP_Motion[1].M = +WP_Info.Bullet[this.c_tama.value].BM + this.c_sinkaLv.value/4|0;
 		break;
-	case "Drgn B S":
+	case "龍爆撃弾":
 		WP_Motion[0].ZP = +WP_Info.Bullet[this.c_tama.value].ZP + this.c_sinkaLv.value/1|0;
 		WP_Motion[1].ZP = +WP_Info.Bullet[this.c_tama.value].BFZ + this.c_sinkaLv.value/4|0;
 		break;
@@ -2901,10 +2901,10 @@ case 5: //ライトボウガン
 	var tama_N = WP_Info.Bullet[this.c_tama.value].N;
 	if (this.c_tamaAtUp.checked) { //弾強化
 		switch (tama_N) {
-		case "LV1 Norm S":case "LV2 Norm S":case "LV3 Norm S":
-		case "LV1 Pierc S":case "LV2 Pierc S":case "LV3 Pierc S":
+		case "LV1通常弾":case "LV2通常弾":case "LV3通常弾":
+		case "LV1貫通弾":case "LV2貫通弾":case "LV3貫通弾":
 			hosei_Skill = 11;break;
-		case "LV1 Pelet S":case "LV2 Pelet S":case "LV3 Pelet S":
+		case "LV1散弾":case "LV2散弾":case "LV3散弾":
 			hosei_Skill = 13;break;
 		}
 	}
@@ -3052,7 +3052,7 @@ case 10: //弓
 default:
 	switch (this.c_kensyo.value.substring(0,2)) {
 	case "": break;
-	case "11": //Poison剣晶
+	case "11": //毒剣晶
 	case "12": //麻痺剣晶
 	case "13": //睡眠剣晶
 		eqZyouType = +this.c_kensyo.value.charAt(1);
@@ -3380,11 +3380,11 @@ for (var cntBui = 0,maxBui = bui.length; cntBui < maxBui; cntBui++){
 			switch (WP_Rui) {
 			case 1: //ヘビィボウガン
 				switch (tama_N) {
-				case "LV1 Crag S":case "LV2 Crag S":case "LV3 Crag S":
+				case "LV1徹甲榴弾":case "LV2徹甲榴弾":case "LV3徹甲榴弾":
 					if (this.c_houzyutu.selectedIndex) hosei_Hou_M = 150;
 					hosei_Hou_Zoku = [100,150,160,170][this.c_houzyutu.selectedIndex];
 					break;
-				case "Exhst S":
+				case "排熱弾":
 					hosei_Hou_M = [100,110,120,130][this.c_houzyutu.selectedIndex];
 					if (this.c_hiden.value >= 12){ //重銃技【銃仙】は1.2倍
 						hosei_Hou_M *= 12/10;
@@ -3394,7 +3394,7 @@ for (var cntBui = 0,maxBui = bui.length; cntBui < maxBui; cntBui++){
 				break;
 			case 5: //ライトボウガン
 				switch (tama_N) {
-				case "LV1 Crag S":case "LV2 Crag S":case "LV3 Crag S":
+				case "LV1徹甲榴弾":case "LV2徹甲榴弾":case "LV3徹甲榴弾":
 					if (this.c_houzyutu.selectedIndex) hosei_Hou_M = 150;
 					hosei_Hou_Zoku = [100,150,160,170][this.c_houzyutu.selectedIndex];
 					break;
