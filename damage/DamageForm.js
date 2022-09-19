@@ -7,8 +7,8 @@ var CK_FULL = location.pathname.indexOf("damageT") !== -1,
 	CK_OPERA = /*@if (@_jscript_version >= 9) true @else@*/ !!window.opera || /chrome/i.test(navigator.userAgent) /*@end@*/,
 	I_aNAME = 0,I_aAT = 1,I_aZOKU = 2,I_aZOKUAT = 3,I_aZYOU = 4,I_aZYOUAT = 5,I_aCRI = 6,I_aRARE = 7,I_aGR = 8,I_aSLOT = 9,I_aDEF = 10,I_aHR = 11,I_aCRE = 12,I_aCLASS = 13,I_aSINKAGR = 14,I_aDOC = 15,I_aGAUGE = 16,I_aREACH = 17,I_aKYOKUSYA = 5,I_aYA = 16,I_aBIN = 17,I_aSPEED = 4,I_aSOKUSYA = 16,I_aKICK = 17,I_aRELO = 18,I_aGUN = 19,
 	I_sREF1 = 0 ,I_sREF2 = 1, I_sZENY = 2, I_sCRE = 3, I_sREP = 4,
-	BUKITYPE = ["","斬","打","弾"],
-	ZOKUNAME = ["","火","水","雷","龍","氷","炎","光","雷極","天翔","熾凍","黒焔","奏","闇","紅魔","風","響","灼零","皇鳴"],
+	BUKITYPE = ["","Cut","Imp","Shot"],
+	ZOKUNAME = ["","Fire","Water","Thunder","Dragon","Ice","Blaze","Light","Thunder Pole","Tenshou","Okiko","Black Flame","Music","Darkness","Crimson Demon","Wind","Sound","Burning Zero","Emperors Roar"],
 	ZOKUPOINT = [	[0,0,0,0,0,0,0],/*無*/
 					[0,100,0,0,0,0],/*火*/
 					[0,0,100,0,0,0],/*水*/
@@ -30,11 +30,11 @@ var CK_FULL = location.pathname.indexOf("damageT") !== -1,
 					[0,0,0,150,50,0] /*皇鳴*/
 				],
 	IZYONAME = ["","毒","麻痺","睡眠","爆破"],
-	RELOADNAME = ["装填:遅い","装填:やや遅い","装填:普通","装填:やや速い","装填:速い"],
-	KICKNAME = ["反動:最大","反動:大","反動:中","反動:やや小","反動:小"],
-	SPEEDNAME = ["弾速:遅い","弾速:やや遅い","弾速:やや速い","弾速:速い","弾速:凄く速い","弾速:凄く遅い"],
+	RELOADNAME = ["Reload:Very Slow","Reload:Slow","Reload:Normal","Reload:Fast","Reload:Very Fast"],
+	KICKNAME = ["Recoil:Very Large","Recoil:Large","Recoil:Medium","Recoil:Small","Recoil:Very Small"],
+	SPEEDNAME = ["Bullet Speed:Very Slow","Bullet Speed:Slow","Bullet Speed:Fast","Bullet Speed:Very Fast","Bullet Speed:Very Fast","Bullet Speed:Very Slow"],
 	ONPUCOLOR = [0,"<span class=fr>♪</span>","<span class=fy>♪</span>","<span class=fw>♪</span>","<span class=fb>♪</span>","<span class=fg>♪</span>","<span class=fp>♪</span>","<span class=fa>♪</span>"],
-	KYOKUNAME = ["放散型","集中型","爆裂型","切断型"],
+	KYOKUNAME = ["Wide","Narrow","Bomb","Slicing"],
 	MAKENAME = {"":"",1:"",2:"猟団",3:"カフェ",4:"課金",5:"特典","-":"",e:"イベ",es:"イベ/狩衛戦",ms:"狩人祭/狩衛戦",m:"狩人祭",c:"パローネ",g:"ガチャ",k:"キット",i:"韋駄天",t:"天廊",p:"パッケ",s:"狩衛戦"},
 	CLASSTYPE = {"":" ",A:"ＳＰ",B:"親方",C:"ＨＣ",D:"剛種",E:"剛猫",F:"進化",G:"天嵐",H:"覇種",I:"G覇",J:"烈種",K:"準Ｇ",L:"Ｇ級",M:"Ｇ技",N:"天廊",O:"始種",P:"遷悠",Q:"Ｇ進",R:"準技",S:"祈歌",T:"辿異",
 					SP:"A",Sinka:"FQ",HC:"C",Neko:"E",Gosyu:"DEGHIJO",Tenran:"GHIJ",GSizil:"KLMOPQRT",GClass:"KLMR",Resyu:"JO",Sisyu:"O",Tenrou:"N",Senyu:"P",Teni:"T"},
@@ -2390,7 +2390,7 @@ case 5: //ライトボウガン
 	} else {
 		eq[I_aSPEED] = 4;
 	}
-	//装填,反動,弾速
+	//Reload,Recoil,Bullet Speed
 	this.d_spec.innerHTML = RELOADNAME[eq[I_aRELO]] + " " + KICKNAME[eq[I_aKICK]] + " " + SPEEDNAME[eq[I_aSPEED]];
 	if (eq[I_aSOKUSYA] && WP_Rui === 5) {
 		this.d_spec.innerHTML += (this.wp_gousyu ? "<br>超速射:" : "<br>速射:") + eq[I_aSOKUSYA];
