@@ -657,27 +657,27 @@ INFO[10].Bullet = {
 			"ｵｰﾗ5":{N:"ｵｰﾗ LV5",P:[12],C:"|12"},
 			"貫薙4":{N:"貫薙 LV4",P:[47],C:"|47x6"},
 			"貫薙5":{N:"貫薙 LV5",P:[47],C:"|47x6"},
-			"放散型":{N:"放散",P:18,K:3,C:"|18x7回"},
-			"集中型":{N:"集中",P:16,K:2,C:"|16x5回"},
-			"爆裂型":{N:"爆裂",P:15,K:30,C:"|15"},
-			"切断型":{N:"切断",P:12,C:"|12x7回"}
+			"Wide":{N:"Wide",P:18,K:3,C:"|18x7回"},
+			"Narrow":{N:"Narrow",P:16,K:2,C:"|16x5回"},
+			"Bomb":{N:"Bomb",P:15,K:30,C:"|15"},
+			"Slicing":{N:"Slicing",P:12,C:"|12x7回"}
 			};
 INFO[10].IzyoBin = {"近接":2,
 					//ノーマル,+1,+2,+3
 					"連射":[[13,7,5,4],[14,8,5,4],[17,9,6,5],[19,10,7,6]],
 					"拡散":[[5,6,5,5],[5,6,5,5],[6,7,6,6],[7,9,7,7]],
 					"貫通":[[5,4,4,4],[5,4,4,4],[6,5,5,5],[7,6,6,6]],
-					"ｵｰ":25,"貫薙":19,"放散":2,"集中":6,"爆裂":0,"切断":2};
+					"ｵｰ":25,"貫薙":19,"Wide":2,"Narrow":6,"Bomb":0,"Slicing":2};
 INFO[10].BakuBin = {"近接":{Normal:2,TenRan:10},
 					"連射":[70,40,32,28],
 					"拡散":[26,32,22,24],
 					"貫通":[28,28,28,28],
-					"ｵｰ":37,"貫薙":0,"ｵｰ火事場":55,"放散":26,"集中":28,"爆裂":50,"爆裂追加":100,"切断":24};
+					"ｵｰ":37,"貫薙":0,"ｵｰ火事場":55,"Wide":26,"Narrow":28,"Bomb":50,"爆裂追加":100,"Slicing":24};
 INFO[10].DaBin = {"近接":0,
 					"連射":4,
 					"拡散":4,
 					"貫通":4,
-					"ｵｰ":20,"貫薙":0,"放散":4,"集中":4,"爆裂":4,"切断":4};
+					"ｵｰ":20,"貫薙":0,"Wide":4,"Narrow":4,"Bomb":4,"Slicing":4};
 var createGauge = function (w){
 	var MaxSharp = +w.substring(3,6);
 	//通常
@@ -2157,7 +2157,7 @@ if (eq[I_aCLASS] === CLASSTYPE.Neko) {
 	this.g_Neko.style.display = this.g_tenrou.style.display = "none";
 	this.g_sizil.style.display = "";
 } else {
-	this.d_bukibetu.firstChild.nodeValue = "個別";
+	this.d_bukibetu.firstChild.nodeValue = "Personal";
 	this.g_tenrou.style.display = this.g_sizil.style.display = this.g_Neko.style.display = "none";
 }
 //表示
@@ -3666,10 +3666,10 @@ do {
 } while (sozai_pool);
 }
 this.sub_WinBody.innerHTML = "<table border=1 cellspacing=0 cellpadding=2>" +
-						"<tr><td>名称</td><td>" + this.s_wp.options[this.s_wp.selectedIndex].text + "</td></tr>" +
-						"<tr><td>費用</td>" + tzeny + "</tr>" +
-						"<tr class=rep><td class=rep_n>強化</td>" + tupg +"</tr>" +
-						"<tr class=sozai><td>素材</td>" + tsozai + "</tr>";
+						"<tr><td>Name</td><td>" + this.s_wp.options[this.s_wp.selectedIndex].text + "</td></tr>" +
+						"<tr><td>Cost</td>" + tzeny + "</tr>" +
+						"<tr class=rep><td class=rep_n>Upgd</td>" + tupg +"</tr>" +
+						"<tr class=sozai><td>Mats</td>" + tsozai + "</tr>";
 						"</table>";
 
 this.sub_Win.style.display = "block";
