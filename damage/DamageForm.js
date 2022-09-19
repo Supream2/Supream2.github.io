@@ -2943,7 +2943,7 @@ case 9: //ガンランス
 	break;
 case 10: //弓
 	if (this.c_tamaAtUp.checked) { //弾強化
-		switch (this.c_tame.value.substring(0,2)) {
+		switch (this.c_tame.value.substring(0,3)) {
 		case "連射":
 		case "貫通":
 			hosei_Skill = 11;break;
