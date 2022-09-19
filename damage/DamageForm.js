@@ -657,10 +657,10 @@ INFO[10].Bullet = {
 			"ｵｰﾗ5":{N:"ｵｰﾗ LV5",P:[12],C:"|12"},
 			"貫薙4":{N:"貫薙 LV4",P:[47],C:"|47x6"},
 			"貫薙5":{N:"貫薙 LV5",P:[47],C:"|47x6"},
-			"Wide":{N:"Wide",P:18,K:3,C:"|18x7回"},
-			"Narrow":{N:"Narrow",P:16,K:2,C:"|16x5回"},
-			"Bomb":{N:"Bomb",P:15,K:30,C:"|15"},
-			"Slicing":{N:"Slicing",P:12,C:"|12x7回"}
+			"Wide":{N:"放散",P:18,K:3,C:"|18x7回"},
+			"Narrow":{N:"集中",P:16,K:2,C:"|16x5回"},
+			"Bomb":{N:"爆裂",P:15,K:30,C:"|15"},
+			"Slicing":{N:"切断",P:12,C:"|12x7回"}
 			};
 INFO[10].IzyoBin = {"近接":2,
 					//ノーマル,+1,+2,+3
@@ -1154,11 +1154,11 @@ case 10: //弓
 	//武器を選ぶ度に実行
 	this.cngWpSub = function(eq){
 		if (debug) var time = new Date().getTime();
-		//溜め(曲射)
+		//溜め(Arc)
 		var kyoku_name = KYOKUNAME[eq[I_aKYOKUSYA]],df = document.createDocumentFragment(),o = document.createElement("option");
 		if (eq[I_aGR] && this.c_sizilkyoku.value) kyoku_name =  KYOKUNAME[this.c_sizilkyoku.value];
 		if (eq[I_aCLASS] === CLASSTYPE.Tenrou) kyoku_name =  KYOKUNAME[this.c_tenrouYumiKyoku.value];
-		o.setAttribute("value", kyoku_name),df.appendChild(o.cloneNode(false)),df.lastChild.appendChild(document.createTextNode("曲射:" + WP_Info.Bullet[kyoku_name].N + (CK_FULL ? WP_Info.Bullet[kyoku_name].C : "")));
+		o.setAttribute("value", kyoku_name),df.appendChild(o.cloneNode(false)),df.lastChild.appendChild(document.createTextNode("Arc:" + WP_Info.Bullet[kyoku_name].N + (CK_FULL ? WP_Info.Bullet[kyoku_name].C : "")));
 		//溜め(矢)
 		var ya_G = eq[I_aYA].split(":");
 		if (eq[I_aCLASS] === CLASSTYPE.Tenrou) ya_G =  (this.c_tenrouYumiya1.value + this.c_tenrouYumiyaLv1.value + ":" + this.c_tenrouYumiya2.value + this.c_tenrouYumiyaLv2.value + ":" + this.c_tenrouYumiya3.value + this.c_tenrouYumiyaLv3.value + ":" + this.c_tenrouYumiya4.value + this.c_tenrouYumiyaLv4.value).split(":");;
@@ -1190,7 +1190,7 @@ case 10: //弓
 		if (debug) this.debug.innerText += "cngTame:\n";
 		//矢セット
 		var df = document.createDocumentFragment(),o = document.createElement("option");
-		if (this.c_tame.selectedIndex <= 1) { //近接、曲射
+		if (this.c_tame.selectedIndex <= 1) { //近接、Arc
 			df.appendChild(o.cloneNode(false)),df.lastChild.appendChild(document.createTextNode("-----"));
 		} else {
 			for (var i = 0,w = WP_Info.Bullet[this.c_tame.value].P,max = w.length; i < max ; i++) {
@@ -1767,7 +1767,7 @@ case 10: //弓
 	} else if (this.s_wp.value) {
 		WP_Info.Type = 3;
 		if (this.c_tame.selectedIndex === 1) {
-			//曲射
+			//Arc
 			WP_Motion = [(function (e){var F = function(){};F.prototype = e;return new F;})(WP_Info.Bullet[this.c_tame.value])];
 			WP_Motion[0].C = WP_Motion[0].C.substring(3);	//余計なのが入るので消し
 			WP_Motion[0].ZH = 70;	//曲射は属性0.7倍
@@ -2166,7 +2166,7 @@ var t = "";
 if (WP_Rui === 1 || WP_Rui === 5){
 	t = this.wp_Gclass || eq[I_aCLASS] === CLASSTYPE.Tenrou || eq[I_aGR] && eq[I_aCLASS] === CLASSTYPE.Senyu || this.wp_sinka || eq[I_aCLASS] === CLASSTYPE.Teni ? "" : "LV5強化";
 } else if (WP_Rui === 10){
-	t = KYOKUNAME[eq[I_aKYOKUSYA]]; //曲射
+	t = KYOKUNAME[eq[I_aKYOKUSYA]]; //Arc
 	if (eq[I_aZOKUAT]) t += (t ? "<br>" : "") + ZOKUNAME[eq[I_aZOKU]] + "：" + eq[I_aZOKUAT] + "0"; //属性
 } else {
 	if (eq[I_aZOKUAT]) t = ZOKUNAME[eq[I_aZOKU]] + "：" + eq[I_aZOKUAT] + "0"; //属性
@@ -2339,7 +2339,7 @@ this.d_att.firstChild.nodeValue = eqSinka[0] * WP_Info.Ritu / 10|0;
 if (WP_Rui === 1 || WP_Rui === 5){
 	t = this.wp_Gclass || eq[I_aCLASS] === CLASSTYPE.Tenrou || eq[I_aCLASS] === CLASSTYPE.Senyu || this.wp_sinka || eq[I_aCLASS] === CLASSTYPE.Teni ? "" : "LV5強化";
 } else if (WP_Rui === 10){
-	t = KYOKUNAME[eq[I_aKYOKUSYA]]; //曲射
+	t = KYOKUNAME[eq[I_aKYOKUSYA]]; //Arc
 	if (eq[I_aZOKUAT]) t += (t ? "<br>" : "") + ZOKUNAME[eq[I_aZOKU]] + "：" + eqSinka[1] + "0"; //属性
 } else {
 	if (eq[I_aZOKUAT]) t = ZOKUNAME[eq[I_aZOKU]] + "：" + eqSinka[1] + "0"; //属性
@@ -2415,7 +2415,7 @@ var t = "";
 if (WP_Rui === 1 || WP_Rui === 5){
 	t = this.wp_Gclass || eq[I_aCLASS] === CLASSTYPE.Tenrou || eq[I_aCLASS] === CLASSTYPE.Senyu ? "" : "LV5強化";
 } else if (WP_Rui === 10){
-	t = KYOKUNAME[eq[I_aKYOKUSYA]]; //曲射
+	t = KYOKUNAME[eq[I_aKYOKUSYA]]; //Arc
 	if (eq[I_aZOKUAT]) t += (t ? "<br>" : "") + ZOKUNAME[eq[I_aZOKU]] + "：" + eq[I_aZOKUAT] + "0"; //属性
 } else {
 	if (eq[I_aZOKUAT]) t = ZOKUNAME[eq[I_aZOKU]] + "：" + eqG[1] + "0"; //属性
@@ -2468,7 +2468,7 @@ if (WP_Rui === 1 || WP_Rui === 5){
 	t = this.wp_Gclass || eq[I_aCLASS] === CLASSTYPE.Tenrou || eq[I_aCLASS] === CLASSTYPE.Senyu ? "" : "LV5強化";
 } else if (WP_Rui === 10){
 	if (this.c_tenrouZoku.value-0) t = ZOKUNAME[this.c_tenrouZoku.value] + "：" + this.c_tenrouZokuAtt.value + "0"; //属性
-	t += "<br>" + KYOKUNAME[this.c_tenrouYumiKyoku.value]; //曲射
+	t += "<br>" + KYOKUNAME[this.c_tenrouYumiKyoku.value]; //Arc
 } else {
 	if (this.c_tenrouZoku.value-0) t = ZOKUNAME[this.c_tenrouZoku.value] + "：" + this.c_tenrouZokuAtt.value + "0"; //属性
 }
