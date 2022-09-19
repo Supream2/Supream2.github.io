@@ -1171,7 +1171,7 @@ case 10: //弓
 
 		//ビン
 		var bin = eq[I_aBIN],b = (CK_FULL ? "ビン" : ""),df = document.createDocumentFragment(),o = document.createElement("option");
-		if (bin.indexOf("強") !== -1) o.setAttribute("value", "KG"),df.appendChild(o.cloneNode(false)),df.lastChild.appendChild(document.createTextNode("強撃"+b));
+		if (bin.indexOf("Power") !== -1) o.setAttribute("value", "KG"),df.appendChild(o.cloneNode(false)),df.lastChild.appendChild(document.createTextNode("強撃"+b));
 		o.setAttribute("value", "11" + (bin.indexOf("Poison+") !== -1 ? bin.charAt(bin.indexOf("Poison+") + 2) : 0)),df.appendChild(o.cloneNode(false)),df.lastChild.appendChild(document.createTextNode("Poison"+b));
 		if (bin.indexOf("Poison") === -1) df.lastChild.style.backgroundColor = "lightpink";
 		o.setAttribute("value", "12" + (bin.indexOf("Para+") !== -1 ? bin.charAt(bin.indexOf("Para+") + 2) : 0)),df.appendChild(o.cloneNode(false)),df.lastChild.appendChild(document.createTextNode("麻痺"+b));
@@ -1413,7 +1413,7 @@ var wp_motion_set = function (motion){
 					WP_Motion[m][e] = motion[i][e];
 				}
 			}
-			if (motionPow && !+motion[i].flg.P.charAt(0)) WP_Motion[m].N += "<small>強</small>";
+			if (motionPow && !+motion[i].flg.P.charAt(0)) WP_Motion[m].N += "<small>Power</small>";
 			//なんか間延びするがやってみるか剣術
 			if (kenzyutuCk && !motion[i].R7) {
 				WP_Motion[++m] = {};
@@ -2164,7 +2164,7 @@ if (eq[I_aCLASS] === CLASSTYPE.Neko) {
 this.d_att.firstChild.nodeValue = eq[I_aAT] * WP_Info.Ritu / 10|0;
 var t = "";
 if (WP_Rui === 1 || WP_Rui === 5){
-	t = this.wp_Gclass || eq[I_aCLASS] === CLASSTYPE.Tenrou || eq[I_aGR] && eq[I_aCLASS] === CLASSTYPE.Senyu || this.wp_sinka || eq[I_aCLASS] === CLASSTYPE.Teni ? "" : "LV5強化";
+	t = this.wp_Gclass || eq[I_aCLASS] === CLASSTYPE.Tenrou || eq[I_aGR] && eq[I_aCLASS] === CLASSTYPE.Senyu || this.wp_sinka || eq[I_aCLASS] === CLASSTYPE.Teni ? "" : "LV5 Upgrdble";
 } else if (WP_Rui === 10){
 	t = KYOKUNAME[eq[I_aKYOKUSYA]]; //曲射
 	if (eq[I_aZOKUAT]) t += (t ? "<br>" : "") + ZOKUNAME[eq[I_aZOKU]] + "：" + eq[I_aZOKUAT] + "0"; //属性
@@ -2196,7 +2196,7 @@ case 1: //ヘビィボウガン
 case 5: //ライトボウガン
 	t = RELOADNAME[eq[I_aRELO]] + " " + KICKNAME[eq[I_aKICK]] + " " + SPEEDNAME[eq[I_aSPEED]];
 	if (eq[I_aSOKUSYA] && WP_Rui === 5) {
-		t += (this.wp_gousyu ? "<br>超速射:" : "<br>速射:") + eq[I_aSOKUSYA];
+		t += (this.wp_gousyu ? "<br>Super Rapid Fire:" : "<br>Rapid Fire:") + eq[I_aSOKUSYA];
 	}
 	break;
 case 10: //弓
@@ -2337,7 +2337,7 @@ var eq = this.eq,eqSinka = MST_Equip_Sinka[WP_Info.Id][eq[I_aSINKAGR]][this.c_si
 //画面表示
 this.d_att.firstChild.nodeValue = eqSinka[0] * WP_Info.Ritu / 10|0;
 if (WP_Rui === 1 || WP_Rui === 5){
-	t = this.wp_Gclass || eq[I_aCLASS] === CLASSTYPE.Tenrou || eq[I_aCLASS] === CLASSTYPE.Senyu || this.wp_sinka || eq[I_aCLASS] === CLASSTYPE.Teni ? "" : "LV5強化";
+	t = this.wp_Gclass || eq[I_aCLASS] === CLASSTYPE.Tenrou || eq[I_aCLASS] === CLASSTYPE.Senyu || this.wp_sinka || eq[I_aCLASS] === CLASSTYPE.Teni ? "" : "LV5 Upgrdble";
 } else if (WP_Rui === 10){
 	t = KYOKUNAME[eq[I_aKYOKUSYA]]; //曲射
 	if (eq[I_aZOKUAT]) t += (t ? "<br>" : "") + ZOKUNAME[eq[I_aZOKU]] + "：" + eqSinka[1] + "0"; //属性
@@ -2393,7 +2393,7 @@ case 5: //ライトボウガン
 	//Reload,Recoil,Bullet Speed
 	this.d_spec.innerHTML = RELOADNAME[eq[I_aRELO]] + " " + KICKNAME[eq[I_aKICK]] + " " + SPEEDNAME[eq[I_aSPEED]];
 	if (eq[I_aSOKUSYA] && WP_Rui === 5) {
-		this.d_spec.innerHTML += (this.wp_gousyu ? "<br>超速射:" : "<br>速射:") + eq[I_aSOKUSYA];
+		this.d_spec.innerHTML += (this.wp_gousyu ? "<br>Super Rapid Fire:" : "<br>Rapid Fire:") + eq[I_aSOKUSYA];
 	}
 	break;
 }
@@ -2413,7 +2413,7 @@ this.d_att.firstChild.nodeValue = eqG[0] * WP_Info.Ritu / 10|0;
 
 var t = "";
 if (WP_Rui === 1 || WP_Rui === 5){
-	t = this.wp_Gclass || eq[I_aCLASS] === CLASSTYPE.Tenrou || eq[I_aCLASS] === CLASSTYPE.Senyu ? "" : "LV5強化";
+	t = this.wp_Gclass || eq[I_aCLASS] === CLASSTYPE.Tenrou || eq[I_aCLASS] === CLASSTYPE.Senyu ? "" : "LV5 Upgrdble";
 } else if (WP_Rui === 10){
 	t = KYOKUNAME[eq[I_aKYOKUSYA]]; //曲射
 	if (eq[I_aZOKUAT]) t += (t ? "<br>" : "") + ZOKUNAME[eq[I_aZOKU]] + "：" + eq[I_aZOKUAT] + "0"; //属性
@@ -2465,7 +2465,7 @@ this.d_att.firstChild.nodeValue = this.c_tenrouAtt.value * WP_Info.Ritu / 10|0;
 
 var t = "";
 if (WP_Rui === 1 || WP_Rui === 5){
-	t = this.wp_Gclass || eq[I_aCLASS] === CLASSTYPE.Tenrou || eq[I_aCLASS] === CLASSTYPE.Senyu ? "" : "LV5強化";
+	t = this.wp_Gclass || eq[I_aCLASS] === CLASSTYPE.Tenrou || eq[I_aCLASS] === CLASSTYPE.Senyu ? "" : "LV5 Upgrdble";
 } else if (WP_Rui === 10){
 	if (this.c_tenrouZoku.value-0) t = ZOKUNAME[this.c_tenrouZoku.value] + "：" + this.c_tenrouZokuAtt.value + "0"; //属性
 	t += "<br>" + KYOKUNAME[this.c_tenrouYumiKyoku.value]; //曲射
@@ -2481,7 +2481,7 @@ case 1: //ヘビィボウガン
 case 5: //ライトボウガン
 	t = RELOADNAME[eq[I_aRELO]] + " " + KICKNAME[eq[I_aKICK]] + " " + SPEEDNAME[eq[I_aSPEED]];
 	if (eq[I_aSOKUSYA] && WP_Rui === 5) {
-		t += (this.wp_gousyu ? "<br>超速射:" : "<br>速射:") + eq[I_aSOKUSYA];
+		t += (this.wp_gousyu ? "<br>Super Rapid Fire:" : "<br>Rapid Fire:") + eq[I_aSOKUSYA];
 	}
 	break;
 case 10: //弓
