@@ -2944,10 +2944,10 @@ case 9: //ガンランス
 case 10: //弓
 	if (this.c_tamaAtUp.checked) { //弾強化
 		switch (this.c_tame.value.substring(0,3)) {
-		case "連射":
-		case "貫通":
+		case "Rpd":
+		case "Prc":
 			hosei_Skill = 11;break;
-		case "拡散":
+		case "Spr":
 			hosei_Skill = 13;break;
 		}
 	}
