@@ -7,8 +7,8 @@
 
 <script type="text/javascript">
 <!--
-var wkData = location.search.substring(0);
-if (wkData.length == 0) wkData = 1;
+var wkData = location.search.substring(1);
+if (wkData.length == 0) wkData = 2;
 
 document.write("<frameset cols=\"*");
 for (var i=1;i<wkData;i++) document.write(",*");
