@@ -664,19 +664,19 @@ INFO[10].Bullet = {
 			};
 INFO[10].IzyoBin = {"近接":2,
 					//ノーマル,+1,+2,+3
-					"連射":[[13,7,5,4],[14,8,5,4],[17,9,6,5],[19,10,7,6]],
-					"拡散":[[5,6,5,5],[5,6,5,5],[6,7,6,6],[7,9,7,7]],
-					"貫通":[[5,4,4,4],[5,4,4,4],[6,5,5,5],[7,6,6,6]],
+					"Rpd":[[13,7,5,4],[14,8,5,4],[17,9,6,5],[19,10,7,6]],
+					"Spr":[[5,6,5,5],[5,6,5,5],[6,7,6,6],[7,9,7,7]],
+					"Prc":[[5,4,4,4],[5,4,4,4],[6,5,5,5],[7,6,6,6]],
 					"ｵｰ":25,"Drilling":19,"Wide":2,"Narrow":6,"Bomb":0,"Slicing":2};
 INFO[10].BakuBin = {"近接":{Normal:2,TenRan:10},
-					"連射":[70,40,32,28],
-					"拡散":[26,32,22,24],
-					"貫通":[28,28,28,28],
+					"Rpd":[70,40,32,28],
+					"Spr":[26,32,22,24],
+					"Prc":[28,28,28,28],
 					"ｵｰ":37,"Drilling":0,"ｵｰ火事場":55,"Wide":26,"Narrow":28,"Bomb":50,"爆裂追加":100,"Slicing":24};
 INFO[10].DaBin = {"近接":0,
-					"連射":4,
-					"拡散":4,
-					"貫通":4,
+					"Rpd":4,
+					"Spr":4,
+					"Prc":4,
 					"ｵｰ":20,"Drilling":0,"Wide":4,"Narrow":4,"Bomb":4,"Slicing":4};
 var createGauge = function (w){
 	var MaxSharp = +w.substring(3,6);
@@ -1792,11 +1792,11 @@ case 10: //弓
 			WP_Motion = [{N:tama.N,P:tama.P[this.c_ya.value],H:tameAt,ZH:tameZoku,C:"<br>" + (tameAt/100) +"倍"}];
 			//距離
 			switch (this.c_tame.value.substring(0,2)) {
-			case "連射":
+			case "Rpd":
 				WP_Motion = WP_Motion.concat([{N:"近距離",P:10,C:"倍"},{N:"中距離１",P:criPoint,C:"倍"},{N:"中距離２",P:criPoint,C:"倍"},{N:"遠距離１",P:10,C:"倍"},{N:"遠距離２",P:8,C:"倍"},{N:"遠距離３",P:8,C:"倍"},{N:"遠距離４",P:5,C:"倍"}]);break;
-			case "拡散":
+			case "Spr":
 				WP_Motion = WP_Motion.concat([{N:"近距離",P:10,C:"倍"},{N:"中距離１",P:criPoint,C:"倍"},{N:"中距離２",P:10,C:"倍"},{N:"遠距離１",P:8,C:"倍"},{N:"遠距離２",P:8,C:"倍"},{N:"遠距離３",P:5,C:"倍"}/*,{N:"遠距離４",P:0,C:"倍"}*/]);break;
-			case "貫通":
+			case "Prc":
 				WP_Motion = WP_Motion.concat([{N:"近距離",P:10,C:"倍"},{N:"中距離１",P:criPoint,C:"倍"},{N:"中距離２",P:criPoint,C:"倍"},{N:"遠距離１",P:criPoint,C:"倍"},{N:"遠距離２",P:10,C:"倍"},{N:"遠距離３",P:8,C:"倍"},{N:"遠距離４",P:5,C:"倍"}]);break;
 			case "ｵｰ":
 				WP_Motion[0].X = 5; //オーラアローはダメージ５倍
