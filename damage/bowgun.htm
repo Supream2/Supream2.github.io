@@ -195,6 +195,9 @@ if (name === "right" || name === "heavy") MST_Equip[name]=data;
 }
 ,setSozai : function (data){
 }
+,setGauge : function (data){
+MST_Gauge=data;
+}
 //------------------------------------武器セット----------
 ,setWeapon : function(id){
 var s_wp = document.getElementById("s_wp"),c = 1,eqlist = MST_Equip[id];
