@@ -182,7 +182,7 @@ var RELOADNAME = ["Very Slow","Slow","Normal","Fast","Very Fast"],
 	SPEEDNAME = ["Very Slow","Slow","Fast","Very Fast"],
 	CLASSTYPE = {"":" ",A:"ＳＰ",B:"親方",C:"ＨＣ",D:"剛種",E:"剛猫",F:"進化",G:"天嵐",H:"覇種",I:"G覇",J:"烈種",K:"準Ｇ",L:"Ｇ級",M:"Ｇ技",N:"天廊",
 					SP:"A",Sinka:"F",HC:"C",Neko:"E",Gosyu:"DEGHIJ",Tenran:"GHIJ",GClass:"KLM",Resyu:"J"},
-	MST_Equip = {},WP_Rui = 1;
+	MST_Equip = {},WP_Rui = 0;
 var global = {
 //------------------------------------初期化----------
 init : function(){
@@ -199,7 +199,7 @@ if (name === "right" || name === "heavy") MST_Equip[name]=data;
 ,setWeapon : function(id){
 var s_wp = document.getElementById("s_wp"),c = 1,eqlist = MST_Equip[id];
 s_wp.length = 1;
-s_wp.options[0].text = "－" + (id === "right" ? "ライトボウガン" : "ヘビィボウガン") + "－";
+s_wp.options[0].text = "－" + (id === "right" ? "Light Bowgun" : "Heavy Bowgun") + "－";
 WP_Rui = id;
 if (window.opera){
 	var wkList = [],i=0;
