@@ -591,7 +591,7 @@ Cyougo : {
 ,"2ECE":"7G8 Premium Early Package Special Offers and get 1 Tickets(2015/07/22~2015/08/26)"
 ,"071D":"72Anniversary Package Purchase Benefits and get 1 Tickets<br>Shaln kit and get 1 Tickets"
 ,"376C":"7Monster Hunter: World Special Offers and get 5 Tickets(~2019/1/31)"
-,"3D9C":"7On the 12th anniversary 5 Tickets(~2019/8/21),7Valid HL course, Gook flute and sleep 5 Pieces(2019/04/27~2019/05/15),7Spring Welcome Back Benefit(2019/03/15~2019/04/10)"
+,"3D9C":"7On the 12th anniversary 5 Tickets(~2019/8/21),7Valid HL course Gook flute and sleep 5 Pieces(2019/04/27~2019/05/15),7Spring Welcome Back Benefit(2019/03/15~2019/04/10)"
 ,"227E":"7Buy Carrol Kit and get 1 Tickets"
 ,"00C4":"00【Alchemy】|00B8+|00C7=1 Pieces95%,10|013D0,16|0DE40,3|00C413 Pieces,3|00C425 Pieces,40003 Pieces30%,40013 Pieces40%,40023 Pieces40%,40033 Pieces40%,46115 Pieces,60602 Pieces"
 ,"260B":"7Obtained as a reward for individual achievement in the Diva Battle."
