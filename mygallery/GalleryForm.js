@@ -253,7 +253,7 @@ for (var i = 0,c = 0,wkRank = -1,m = wkList.length; i < m; i++) {
 	}
 	this.S_kagu_list.options[c++] = new Option("[" + color_type_name[wkList[i][gColor1]] + (wkList[i][gColor1] == wkList[i][gColor2] ? "" : "/"+color_type_name[wkList[i][gColor2]]) + "]" + wkList[i][gName],wkList[i][gId]);
 }
-if (c == 0) this.S_kagu_list.options[0] = new Option("対象なし","");
+if (c == 0) this.S_kagu_list.options[0] = new Option("None","");
 this.S_kagu_list.selectedIndex = 0;
 this.kagu_disp(this.S_kagu_list.value);
 
