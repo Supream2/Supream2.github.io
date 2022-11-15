@@ -282,7 +282,7 @@ for (var row=1;row<=MAX_KAGU_LIST;row++){
 //---家具削除----------------------------------------------------------
 GalleryForm.prototype.kagu_del = function(wkId){
 if (!this[wkId]) return;
-if (!window.confirm("削除しますか？")) {
+if (!window.confirm("Miraculous?")) {
 	this[wkId+"Suu"].selectedIndex = this[wkId+"Suu"].options.length-2;
 	return;
 }
