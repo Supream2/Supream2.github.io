@@ -641,25 +641,25 @@ this.G_cool_point.innerHTML = cool_point_sum;
 GalleryForm.prototype.cre_text = function (){
 var html = "";
 //運勢
-if (this.L_type.value > 0) html += "　家具タイプ：" + kagu_type_name[this.L_type.value];
-if (this.L_color.value > 0) html += "　家具色：" + color_type_name[this.L_color.value];
-if (this.L_lv.value > 0) html += "　配置運：" + luck_type_name[this.L_lv.value];
-if (html != "") html = "運勢" + html+"\n";
+if (this.L_type.value > 0) html += "　Furniture Type：" + kagu_type_name[this.L_type.value];
+if (this.L_color.value > 0) html += "　Furniture Color：" + color_type_name[this.L_color.value];
+if (this.L_lv.value > 0) html += "　Placement Luck：" + luck_type_name[this.L_lv.value];
+if (html != "") html = "Luck" + html+"\n";
 //狩人珠
-if (this.L_skill.value > 0) html += "狩人珠：" + skill_name[this.L_skill.value]+"\n";
+if (this.L_skill.value > 0) html += "Hunter Jewel：" + skill_name[this.L_skill.value]+"\n";
 
 for (var row = 1; row <= MAX_KAGU_LIST; row++) {
 	if (this["G_kagu"+row] == "") continue;
 	if (this["G_kagu"+row+"Suu"].value == 0) continue;
-	html += this["G_kagu"+row+"Name"].innerHTML + "x"+this["G_kagu"+row+"Suu"].value + (this["G_kagu"+row+"Zeny"].style.backgroundColor == "" ? " (ゼニー)" : " (素材)") + "\n";
+	html += this["G_kagu"+row+"Name"].innerHTML + "x"+this["G_kagu"+row+"Suu"].value + (this["G_kagu"+row+"Zeny"].style.backgroundColor == "" ? " (Zenny)" : " (Mats)") + "\n";
 }
-html += "\n必要ゼニー:" + this.G_kaguZeny_Sum.innerHTML+"\n";
-html += "必要素材:" + this.G_kaguSozai_Sum.innerHTML+"\n";
+html += "\nZenny Required:" + this.G_kaguZeny_Sum.innerHTML+"\n";
+html += "Mats Required:" + this.G_kaguSozai_Sum.innerHTML+"\n";
 
-html += "\n総合評価\n";
-html += "評価ポイント:" + this.G_all_point.innerHTML+"\n";
-html += "かわいい:" + this.G_cute_point.innerHTML+"\n";
-html += "かっこいい:" + this.G_cool_point.innerHTML+"\n";
+html += "\nComprehensive evaluation\n";
+html += "Evaluation point:" + this.G_all_point.innerHTML+"\n";
+html += "Cute:" + this.G_cute_point.innerHTML+"\n";
+html += "Cool:" + this.G_cool_point.innerHTML+"\n";
 
 return html;
 }
