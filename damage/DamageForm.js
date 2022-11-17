@@ -1505,7 +1505,7 @@ case 9: //ガンランス
 
 		//N:名前,M:無属性,FZ:火属性値,ZB:属性砲倍率,K:気絶値,MA:無属性(加算),FZA:火属性値(加算)
 		var hougekiType = eq[I_aREACH];
-		if (eq[I_aGR] && this.c_sizilgunscng.value) hougekiType = this.c_sizilgunscng.value + hougekiType.substring(7);
+		if (eq[I_aGR] && this.c_sizilgunscng.value) hougekiType = this.c_sizilgunscng.value + hougekiType.substring(3);
 		if (eq[I_aGR] && this.c_sizilgunsup.value) hougekiType = hougekiType.substring(0,7) + (+hougekiType.substring(7) + +this.c_sizilgunsup.value);
 		if (eq[I_aCLASS] === CLASSTYPE.Tenrou) hougekiType = this.c_tenrouGuns.value + "Shelling" + this.c_tenrouGunsLv.value;
 		var hougeki = WP_Info.Bullet[ hougekiType ],rengekiP = 0;
