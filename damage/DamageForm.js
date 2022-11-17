@@ -1642,7 +1642,7 @@ case 5: //ライト
 		WP_Motion = [(function (e){var F = function(){};F.prototype = e;return new F;})(tama)];
 		//距離
 		switch (tama.N) {
-		case "LV1 Normal S":case "LV2 Normal S":case "LV3 Normal S":
+		case "LV1通常弾":case "LV2通常弾":case "LV3通常弾":
 			if (WP_Rui === 1){ //ヘビィ
 					WP_Motion = WP_Motion.concat([{N:"近距離",P:criPoint,C:"倍"},{N:"中距離１",P:criPoint,C:"倍"},{N:"中距離２",P:criPoint,C:"倍"},{N:"遠距離１",P:criPoint,C:"倍"},{N:"遠距離２",P:10,C:"倍"},{N:"遠距離３",P:8,C:"倍"},{N:"遠距離４",P:5,C:"倍"}/*,{N:"遠距離５",P:0,C:"倍"}*/]);
 			} else { //ライト
@@ -2876,7 +2876,7 @@ case 1: //ヘビィボウガン
 	if (this.c_kobetu1.selectedIndex) eqAt += this.wp_gousyu ? 40 : 20; //ヘビィのバレル
 	if (this.c_tamaAtUp.checked) { //弾強化
 		switch (tama_N) {
-		case "LV1 Normal S":case "LV2 Normal S":case "LV3 Normal S":
+		case "LV1通常弾":case "LV2通常弾":case "LV3通常弾":
 		case "LV1 Pierce S":case "LV2 Pierce S":case "LV3 Pierce S":
 			hosei_Skill = 11;break;
 		case "LV1 Pellet S":case "LV2 Pellet S":case "LV3 Pellet S":
@@ -2901,7 +2901,7 @@ case 5: //ライトボウガン
 	var tama_N = WP_Info.Bullet[this.c_tama.value].N;
 	if (this.c_tamaAtUp.checked) { //弾強化
 		switch (tama_N) {
-		case "LV1 Normal S":case "LV2 Normal S":case "LV3 Normal S":
+		case "LV1通常弾":case "LV2通常弾":case "LV3通常弾":
 		case "LV1 Pierce S":case "LV2 Pierce S":case "LV3 Pierce S":
 			hosei_Skill = 11;break;
 		case "LV1 Pellet S":case "LV2 Pellet S":case "LV3 Pellet S":
