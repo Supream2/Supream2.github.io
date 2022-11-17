@@ -417,7 +417,7 @@ INFO[10].Motion = [
 			{flg:{S:" 11",P:" 1",C:"11"},N:"Shoryuken",T:1,P:15,S:-1,ZH:50}
 			];
 INFO[1].Bullet = {
-//N:弾名,P:威力,ZT:属性タイプ,ZB:属性倍率,ZP:属性値,IT:異常タイプ,IP:異常値,C:コメント,K:気絶値,S:速射,M:無属性,BN:爆破名,BM:爆破無属性,BFZ:爆破火属性,BC:爆破コメント
+//N:弾名,P:威力,ZT:属性タイプ,ZB:属性倍率,ZP:属性値,IT:異常タイプ,IP:異常値,C:コメント,K:気絶値,S:Rpd Fire,M:無属性,BN:爆破名,BM:爆破無属性,BFZ:爆破火属性,BC:爆破コメント
 			//通常
 			0:{N:"LV1 Normal S",P:6},
 			1:{N:"LV2 Normal S",P:12},
@@ -524,7 +524,7 @@ INFO[1].Bullet = {
 			P31:{N:"Dragon Blast S",P:-1}
 			};
 INFO[5].Bullet = {
-//N:弾名,P:威力,ZT:属性タイプ,ZB:属性倍率,ZP:属性値,IT:異常タイプ,IP:異常値,C:コメント,K:気絶値,S:速射,M:無属性,BN:爆破名,BM:爆破無属性,BFZ:爆破火属性,BC:爆破コメント
+//N:弾名,P:威力,ZT:属性タイプ,ZB:属性倍率,ZP:属性値,IT:異常タイプ,IP:異常値,C:コメント,K:気絶値,S:Rpd Fire,M:無属性,BN:爆破名,BM:爆破無属性,BFZ:爆破火属性,BC:爆破コメント
 			0:{N:"LV1 Normal S",P:6,S:"5Rpd Fire"},
 			1:{N:"LV2 Normal S",P:12,S:"5Rpd Fire"},
 			2:{N:"LV3 Normal S",P:12,C:"x<i>n</i>"},
@@ -1738,7 +1738,7 @@ case 5: //ライト
 				WP_Motion[0].ZH = 150;
 				WP_Motion = WP_Motion.concat([{N:"密着爆風",T:-1,M:30,ZT:1,ZP:12}]);
 			}
-			//武器別(速射)
+			//武器別(Rpd Fire)
 			var eq = this.eq;
 			if (eq[I_aSOKUSYA].indexOf(tama.N) !== -1) {
 				//速射はダメージ半分
@@ -2196,7 +2196,7 @@ case 1: //ヘビィボウガン
 case 5: //ライトボウガン
 	t = RELOADNAME[eq[I_aRELO]] + " " + KICKNAME[eq[I_aKICK]] + " " + SPEEDNAME[eq[I_aSPEED]];
 	if (eq[I_aSOKUSYA] && WP_Rui === 5) {
-		t += (this.wp_gousyu ? "<br>超速射:" : "<br>速射:") + eq[I_aSOKUSYA];
+		t += (this.wp_gousyu ? "<br>Super Rpd Fire:" : "<br>Rpd Fire:") + eq[I_aSOKUSYA];
 	}
 	break;
 case 10: //弓
@@ -2393,7 +2393,7 @@ case 5: //ライトボウガン
 	//Reload,Recoil,Bullet Speed
 	this.d_spec.innerHTML = RELOADNAME[eq[I_aRELO]] + " " + KICKNAME[eq[I_aKICK]] + " " + SPEEDNAME[eq[I_aSPEED]];
 	if (eq[I_aSOKUSYA] && WP_Rui === 5) {
-		this.d_spec.innerHTML += (this.wp_gousyu ? "<br>超速射:" : "<br>速射:") + eq[I_aSOKUSYA];
+		this.d_spec.innerHTML += (this.wp_gousyu ? "<br>Super Rpd Fire:" : "<br>Rpd Fire:") + eq[I_aSOKUSYA];
 	}
 	break;
 }
@@ -2481,7 +2481,7 @@ case 1: //ヘビィボウガン
 case 5: //ライトボウガン
 	t = RELOADNAME[eq[I_aRELO]] + " " + KICKNAME[eq[I_aKICK]] + " " + SPEEDNAME[eq[I_aSPEED]];
 	if (eq[I_aSOKUSYA] && WP_Rui === 5) {
-		t += (this.wp_gousyu ? "<br>超速射:" : "<br>速射:") + eq[I_aSOKUSYA];
+		t += (this.wp_gousyu ? "<br>Super Rpd Fire:" : "<br>Rpd Fire:") + eq[I_aSOKUSYA];
 	}
 	break;
 case 10: //弓
