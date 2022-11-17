@@ -3423,7 +3423,7 @@ for (var cntBui = 0,maxBui = bui.length; cntBui < maxBui; cntBui++){
 			}
 			var dmg_M_No = dmg_M_Cr;
 			//爆裂型の無属性ダメージを計算
-			if (WP_Rui === 10 && this.c_tame.value === "爆裂型") {
+			if (WP_Rui === 10 && this.c_tame.value === "Explosive Shot") {
 				if (this.c_bin.value === "BA") {
 					//爆撃ビン
 					var dmg_M_Cr = bakuAt * 2; //通常
@@ -3443,7 +3443,7 @@ for (var cntBui = 0,maxBui = bui.length; cntBui < maxBui; cntBui++){
 			WP_Motion[cntMot].Hit = "";
 			break;
 		default:
-			alert("設定ミス" + (WP_Motion[cntMot].T === -1 ? -1 : bakuFlg || WP_Motion[cntMot].T))
+			alert("Settings Error" + (WP_Motion[cntMot].T === -1 ? -1 : bakuFlg || WP_Motion[cntMot].T))
 		}
 		WP_Motion[cntMot].DamZoku = ~~(dmg_Zoku * mos_Def/100);
 		switch (this.k_cri.value) {
