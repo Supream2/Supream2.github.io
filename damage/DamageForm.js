@@ -2494,7 +2494,7 @@ default:
 	if (WP_Rui === 8) { //狩猟笛
 		t += "<a class=f href='gakufu.htm?"+eq[I_aREACH]+"' target=_blank>"+ONPUCOLOR[eq[I_aREACH].charAt(0)]+ONPUCOLOR[eq[I_aREACH].charAt(1)]+ONPUCOLOR[eq[I_aREACH].charAt(2)]+"</a>";
 	} else if (WP_Rui === 9) { //ガンランス
-		t += "<small>" + this.c_tenrouGuns.value + "砲撃" + this.c_tenrouGunsLv.value + "</small>";
+		t += "<small>" + this.c_tenrouGuns.value + "Shelling" + this.c_tenrouGunsLv.value + "</small>";
 	} else if (eq[I_aREACH]) {
 		t += "<small>リーチ：" + eq[I_aREACH] + "</small>";
 	}
@@ -3401,7 +3401,7 @@ for (var cntBui = 0,maxBui = bui.length; cntBui < maxBui; cntBui++){
 				}
 				break;
 			case 9: //ガンランス砲撃
-				if (WP_Motion[cntMot].N.indexOf("型") !== -1) {
+				if (WP_Motion[cntMot].N.indexOf("Shot") !== -1) {
 					//砲撃
 					hosei_Hou_M = [100,110,120,130][this.c_houzyutu.selectedIndex];
 				} else {
