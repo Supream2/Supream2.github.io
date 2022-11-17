@@ -1524,7 +1524,7 @@ case 9: //ガンランス
 				WP_Motion = WP_Motion.concat([{N:hougeki.N,T:-1,M:hougeki.M,ZT:1,ZP:hougeki.FZ * 3,E:"this.c_sharp.value === '0'"}]); //砲撃(天は3倍)
 
 				WP_Motion = WP_Motion.concat([{N:"クイック",T:-1,M:hougeki.M * 15/10|0,ZT:1,ZP:hougeki.FZ * 3 * 15/10|0,E:"this.c_sharp.value === '0'"}]); //砲撃クイックリロード
-				WP_Motion = WP_Motion.concat([{N:"連撃砲",T:-1,M:hougeki.M * rengekiP/10|0,ZT:1,ZP:hougeki.FZ * 3 * rengekiP/10|0,E:"this.c_sharp.value === '0'"}]); //砲撃連撃
+				WP_Motion = WP_Motion.concat([{N:"Backhop Slash",T:-1,M:hougeki.M * rengekiP/10|0,ZT:1,ZP:hougeki.FZ * 3 * rengekiP/10|0,E:"this.c_sharp.value === '0'"}]); //砲撃連撃
 				break;
 			}
 		case "Storm":
