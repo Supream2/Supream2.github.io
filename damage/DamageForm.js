@@ -1572,17 +1572,17 @@ case 9: //ガンランス
 		}
 		hougeki = WP_Info.Bullet["Dragon"+hougekiType];
 		switch (this.c_style.value) {
-		case "地":
+		case "Earth":
 			WP_Motion = WP_Motion.concat([{N:hougeki.N,T:-1,M:hougeki.M,ZT:1,ZP:hougeki.FZ,C:"<br>x<i>5回</i>",E:"this.c_sharp.value === '0'"}]); //竜激砲
 			hougeki = WP_Info.Bullet["Explosive"+hougekiType];
 			WP_Motion = WP_Motion.concat([{N:hougeki.N,T:-1,M:hougeki.M,ZT:1,ZP:hougeki.FZ,C:"<br>x<i>2回</i>",E:"this.c_sharp.value === '0'"}]); //爆竜轟砲
 			WP_Motion = WP_Motion.concat([{N:"加算",T:-1,M:hougeki.MA,ZT:1,ZP:hougeki.FZA,C:"<br>1装填分",E:"this.c_sharp.value === '0'"}]); //爆竜轟砲
 			break;
-		case "嵐":
+		case "Storm":
 			if (this.c_kobetu2.selectedIndex) {
 				WP_Motion = WP_Motion.concat([{N:"Overhead Smash",P:21,E:"this.c_sharp.value === '0'"}]); //赤ゲージは使用不可
 			}
-		case "天":
+		case "Heaven":
 			if (this.c_kobetu2.selectedIndex) {
 				WP_Motion = WP_Motion.concat([{N:"HB先端",P:5,ZT:1,ZP:hougeki.FZ * 0.85|0,E:"this.c_sharp.value === '0'"},{N:"HB叩きつけ",P:62,E:"this.c_sharp.value === '0'"}]);
 			}
