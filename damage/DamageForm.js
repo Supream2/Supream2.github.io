@@ -1510,11 +1510,11 @@ case 9: //ガンランス
 		if (eq[I_aCLASS] === CLASSTYPE.Tenrou) hougekiType = this.c_tenrouGuns.value + "砲撃" + this.c_tenrouGunsLv.value;
 		var hougeki = WP_Info.Bullet[ hougekiType ],rengekiP = 0;
 		switch (hougeki.N.substring(0,3)) {
-		case "通常型":
+		case "Normal":
 			rengekiP = 9;break;
-		case "放射型":
+		case "Long  ":
 			rengekiP = 7;break;
-		case "拡散型":
+		case "Spread":
 			rengekiP = 8;break;
 		}
 		//赤ゲージでは砲撃、HB使用不可、龍撃砲可
@@ -1524,7 +1524,7 @@ case 9: //ガンランス
 				WP_Motion = WP_Motion.concat([{N:hougeki.N,T:-1,M:hougeki.M,ZT:1,ZP:hougeki.FZ * 3,E:"this.c_sharp.value === '0'"}]); //砲撃(天は3倍)
 
 				WP_Motion = WP_Motion.concat([{N:"クイック",T:-1,M:hougeki.M * 15/10|0,ZT:1,ZP:hougeki.FZ * 3 * 15/10|0,E:"this.c_sharp.value === '0'"}]); //砲撃クイックリロード
-				WP_Motion = WP_Motion.concat([{N:"連撃砲",T:-1,M:hougeki.M * rengekiP/10|0,ZT:1,ZP:hougeki.FZ * 3 * rengekiP/10|0,E:"this.c_sharp.value === '0'"}]); //砲撃連撃
+				WP_Motion = WP_Motion.concat([{N:"Backhop Slash",T:-1,M:hougeki.M * rengekiP/10|0,ZT:1,ZP:hougeki.FZ * 3 * rengekiP/10|0,E:"this.c_sharp.value === '0'"}]); //砲撃連撃
 				break;
 			}
 		case "嵐":
@@ -1534,7 +1534,7 @@ case 9: //ガンランス
 					WP_Motion = WP_Motion.concat([{N:hougeki.N.replace("型LV","属性"),T:-1,M:hougeki.M * 12/10|0,E:"this.c_sharp.value === '0'"}]); //砲撃（属性分）
 
 					motion1 = {N:"クイック",T:-1,T:-1,M:hougeki.M * 12/10 * 15/10|0,E:"this.c_sharp.value === '0'"}; //砲撃クイックリロード
-					motion2 = {N:"連撃砲",T:-1,M:hougeki.M * 12/10 * rengekiP/10|0,E:"this.c_sharp.value === '0'"}; //砲撃連撃
+					motion2 = {N:"Backhop Slash",T:-1,M:hougeki.M * 12/10 * rengekiP/10|0,E:"this.c_sharp.value === '0'"}; //砲撃連撃
 				} else {
 					switch (this.c_kensyo.value.substring(0,2)) {
 					case "01":case "02":case "03":case "04":case "05":
@@ -1547,12 +1547,12 @@ case 9: //ガンランス
 						WP_Motion = WP_Motion.concat([{N:hougeki.N.replace("型LV","属性"),T:-1,M:0,ZT:zokuType,ZB:hougeki.ZB,E:"this.c_sharp.value === '0'"}]); //砲撃（属性分）
 
 						motion1 = {N:"クイック",T:-1,M:0,ZT:zokuType,ZB:hougeki.ZB * 15/10|0,E:"this.c_sharp.value === '0'"}; //砲撃クイックリロード
-						motion2 = {N:"連撃砲",T:-1,M:0,ZT:zokuType,ZB:hougeki.ZB * rengekiP/10|0,E:"this.c_sharp.value === '0'"}; //砲撃連撃
+						motion2 = {N:"Backhop Slash",T:-1,M:0,ZT:zokuType,ZB:hougeki.ZB * rengekiP/10|0,E:"this.c_sharp.value === '0'"}; //砲撃連撃
 					} else { //打撃砲撃
 						WP_Motion = WP_Motion.concat([{N:hougeki.N.replace("型LV","属性"),T:-1,M:hougeki.M * 9/10 + 1|0,C:"<small>気絶</small>:"+hougeki.K,E:"this.c_sharp.value === '0'"}]); //砲撃（属性分）
 
 						motion1 = {N:"クイック",T:-1,M:hougeki.M * 9/10 * 15/10 + 1|0,C:"<small>気絶</small>:"+hougeki.K,E:"this.c_sharp.value === '0'"}; //砲撃クイックリロード
-						motion2 = {N:"連撃砲",T:-1,M:hougeki.M * 9/10 * rengekiP/10 + 1|0,C:"<small>気絶</small>:"+hougeki.K,E:"this.c_sharp.value === '0'"}; //砲撃連撃
+						motion2 = {N:"Backhop Slash",T:-1,M:hougeki.M * 9/10 * rengekiP/10 + 1|0,C:"<small>気絶</small>:"+hougeki.K,E:"this.c_sharp.value === '0'"}; //砲撃連撃
 					}
 				}
 				WP_Motion = WP_Motion.concat([{N:hougeki.N.replace("型LV","属性"),T:-1,M:hougeki.M * 6/10|0,E:"this.c_sharp.value === '0'"}]); //砲撃（無属性分）
@@ -1560,14 +1560,14 @@ case 9: //ガンランス
 				WP_Motion = WP_Motion.concat([motion1]); //砲撃クイックリロード
 				WP_Motion = WP_Motion.concat([{N:"クイック",T:-1,M:hougeki.M * 6/10 * 15/10|0,E:"this.c_sharp.value === '0'"}]); //砲撃クイックリロード
 				WP_Motion = WP_Motion.concat([motion2]); //砲撃連撃
-				WP_Motion = WP_Motion.concat([{N:"連撃砲",T:-1,M:hougeki.M * 6/10 * rengekiP/10|0,E:"this.c_sharp.value === '0'"}]); //砲撃連撃
+				WP_Motion = WP_Motion.concat([{N:"Backhop Slash",T:-1,M:hougeki.M * 6/10 * rengekiP/10|0,E:"this.c_sharp.value === '0'"}]); //砲撃連撃
 				break;
 			}
 		case "地":
 			WP_Motion = WP_Motion.concat([{N:hougeki.N,T:-1,M:hougeki.M,ZT:1,ZP:hougeki.FZ,E:"this.c_sharp.value === '0'"}]); //砲撃
 
 			WP_Motion = WP_Motion.concat([{N:"クイック",T:-1,M:hougeki.M * 15/10|0,ZT:1,ZP:hougeki.FZ * 15/10|0,E:"this.c_sharp.value === '0'"}]); //砲撃クイックリロード
-			WP_Motion = WP_Motion.concat([{N:"連撃砲",T:-1,M:hougeki.M * rengekiP/10|0,ZT:1,ZP:hougeki.FZ * rengekiP/10|0,E:"this.c_sharp.value === '0'"}]); //砲撃連撃
+			WP_Motion = WP_Motion.concat([{N:"Backhop Slash",T:-1,M:hougeki.M * rengekiP/10|0,ZT:1,ZP:hougeki.FZ * rengekiP/10|0,E:"this.c_sharp.value === '0'"}]); //砲撃連撃
 			break;
 		}
 		hougeki = WP_Info.Bullet["竜"+hougekiType];
