@@ -1519,7 +1519,7 @@ case 9: //ガンランス
 		}
 		//赤ゲージでは砲撃、HB使用不可、龍撃砲可
 		switch (this.c_style.value) {
-		case "天":
+		case "Heaven":
 			if (this.c_kobetu2.selectedIndex) {
 				WP_Motion = WP_Motion.concat([{N:hougeki.N,T:-1,M:hougeki.M,ZT:1,ZP:hougeki.FZ * 3,E:"this.c_sharp.value === '0'"}]); //砲撃(天は3倍)
 
@@ -1527,7 +1527,7 @@ case 9: //ガンランス
 				WP_Motion = WP_Motion.concat([{N:"Backhop Slash",T:-1,M:hougeki.M * rengekiP/10|0,ZT:1,ZP:hougeki.FZ * 3 * rengekiP/10|0,E:"this.c_sharp.value === '0'"}]); //砲撃連撃
 				break;
 			}
-		case "嵐":
+		case "Storm":
 			if (this.c_kobetu2.selectedIndex) {
 				var motion1 = "", motion2 = "";
 				if (this.c_kensyo.value.substring(0,2) === "BA") { //爆撃剣晶
@@ -1563,18 +1563,18 @@ case 9: //ガンランス
 				WP_Motion = WP_Motion.concat([{N:"Backhop Slash",T:-1,M:hougeki.M * 6/10 * rengekiP/10|0,E:"this.c_sharp.value === '0'"}]); //砲撃連撃
 				break;
 			}
-		case "地":
+		case "Earth":
 			WP_Motion = WP_Motion.concat([{N:hougeki.N,T:-1,M:hougeki.M,ZT:1,ZP:hougeki.FZ,E:"this.c_sharp.value === '0'"}]); //砲撃
 
 			WP_Motion = WP_Motion.concat([{N:"クイック",T:-1,M:hougeki.M * 15/10|0,ZT:1,ZP:hougeki.FZ * 15/10|0,E:"this.c_sharp.value === '0'"}]); //砲撃クイックリロード
 			WP_Motion = WP_Motion.concat([{N:"Backhop Slash",T:-1,M:hougeki.M * rengekiP/10|0,ZT:1,ZP:hougeki.FZ * rengekiP/10|0,E:"this.c_sharp.value === '0'"}]); //砲撃連撃
 			break;
 		}
-		hougeki = WP_Info.Bullet["竜"+hougekiType];
+		hougeki = WP_Info.Bullet["Dragon"+hougekiType];
 		switch (this.c_style.value) {
 		case "地":
 			WP_Motion = WP_Motion.concat([{N:hougeki.N,T:-1,M:hougeki.M,ZT:1,ZP:hougeki.FZ,C:"<br>x<i>5回</i>",E:"this.c_sharp.value === '0'"}]); //竜激砲
-			hougeki = WP_Info.Bullet["爆"+hougekiType];
+			hougeki = WP_Info.Bullet["Explosive"+hougekiType];
 			WP_Motion = WP_Motion.concat([{N:hougeki.N,T:-1,M:hougeki.M,ZT:1,ZP:hougeki.FZ,C:"<br>x<i>2回</i>",E:"this.c_sharp.value === '0'"}]); //爆竜轟砲
 			WP_Motion = WP_Motion.concat([{N:"加算",T:-1,M:hougeki.MA,ZT:1,ZP:hougeki.FZA,C:"<br>1装填分",E:"this.c_sharp.value === '0'"}]); //爆竜轟砲
 			break;
