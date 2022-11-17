@@ -1507,14 +1507,14 @@ case 9: //ガンランス
 		var hougekiType = eq[I_aREACH];
 		if (eq[I_aGR] && this.c_sizilgunscng.value) hougekiType = this.c_sizilgunscng.value + hougekiType.substring(3);
 		if (eq[I_aGR] && this.c_sizilgunsup.value) hougekiType = hougekiType.substring(0,7) + (+hougekiType.substring(7) + +this.c_sizilgunsup.value);
-		if (eq[I_aCLASS] === CLASSTYPE.Tenrou) hougekiType = this.c_tenrouGuns.value + "砲撃" + this.c_tenrouGunsLv.value;
+		if (eq[I_aCLASS] === CLASSTYPE.Tenrou) hougekiType = this.c_tenrouGuns.value + "Shelling" + this.c_tenrouGunsLv.value;
 		var hougeki = WP_Info.Bullet[ hougekiType ],rengekiP = 0;
-		switch (hougeki.N.substring(0,3)) {
-		case "通常型":
+		switch (hougeki.N.substring(0,6)) {
+		case "Normal":
 			rengekiP = 9;break;
-		case "放射型":
+		case "Long  ":
 			rengekiP = 7;break;
-		case "拡散型":
+		case "Spread":
 			rengekiP = 8;break;
 		}
 		//赤ゲージでは砲撃、HB使用不可、龍撃砲可
