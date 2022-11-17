@@ -1507,7 +1507,7 @@ case 9: //ガンランス
 		var hougekiType = eq[I_aREACH];
 		if (eq[I_aGR] && this.c_sizilgunscng.value) hougekiType = this.c_sizilgunscng.value + hougekiType.substring(3);
 		if (eq[I_aGR] && this.c_sizilgunsup.value) hougekiType = hougekiType.substring(0,7) + (+hougekiType.substring(7) + +this.c_sizilgunsup.value);
-		if (eq[I_aCLASS] === CLASSTYPE.Tenrou) hougekiType = this.c_tenrouGuns.value + "Shelling" + this.c_tenrouGunsLv.value;
+		if (eq[I_aCLASS] === CLASSTYPE.Tenrou) hougekiType = this.c_tenrouGuns.value + "砲撃" + this.c_tenrouGunsLv.value;
 		var hougeki = WP_Info.Bullet[ hougekiType ],rengekiP = 0;
 		switch (hougeki.N.substring(0,3)) {
 		case "通常型":
@@ -2494,7 +2494,7 @@ default:
 	if (WP_Rui === 8) { //狩猟笛
 		t += "<a class=f href='gakufu.htm?"+eq[I_aREACH]+"' target=_blank>"+ONPUCOLOR[eq[I_aREACH].charAt(0)]+ONPUCOLOR[eq[I_aREACH].charAt(1)]+ONPUCOLOR[eq[I_aREACH].charAt(2)]+"</a>";
 	} else if (WP_Rui === 9) { //ガンランス
-		t += "<small>" + this.c_tenrouGuns.value + "Shelling" + this.c_tenrouGunsLv.value + "</small>";
+		t += "<small>" + this.c_tenrouGuns.value + "砲撃" + this.c_tenrouGunsLv.value + "</small>";
 	} else if (eq[I_aREACH]) {
 		t += "<small>リーチ：" + eq[I_aREACH] + "</small>";
 	}
