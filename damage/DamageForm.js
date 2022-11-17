@@ -1570,21 +1570,21 @@ case 9: //ガンランス
 			WP_Motion = WP_Motion.concat([{N:"Backhop Slash",T:-1,M:hougeki.M * rengekiP/10|0,ZT:1,ZP:hougeki.FZ * rengekiP/10|0,E:"this.c_sharp.value === '0'"}]); //砲撃連撃
 			break;
 		}
-		hougeki = WP_Info.Bullet["竜"+hougekiType];
+		hougeki = WP_Info.Bullet["Dragon"+hougekiType];
 		switch (this.c_style.value) {
 		case "地":
-			WP_Motion = WP_Motion.concat([{N:hougeki.N,T:-1,M:hougeki.M,ZT:1,ZP:hougeki.FZ,C:"<br>x<i>5回</i>",E:"this.c_sharp.value === '0'"}]); //竜激砲
-			hougeki = WP_Info.Bullet["爆"+hougekiType];
-			WP_Motion = WP_Motion.concat([{N:hougeki.N,T:-1,M:hougeki.M,ZT:1,ZP:hougeki.FZ,C:"<br>x<i>2回</i>",E:"this.c_sharp.value === '0'"}]); //爆竜轟砲
+			WP_Motion = WP_Motion.concat([{N:hougeki.N,T:-1,M:hougeki.M,ZT:1,ZP:hougeki.FZ,C:"<br>x<i>5</i>",E:"this.c_sharp.value === '0'"}]); //竜激砲
+			hougeki = WP_Info.Bullet["Explosive"+hougekiType];
+			WP_Motion = WP_Motion.concat([{N:hougeki.N,T:-1,M:hougeki.M,ZT:1,ZP:hougeki.FZ,C:"<br>x<i>2</i>",E:"this.c_sharp.value === '0'"}]); //爆竜轟砲
 			WP_Motion = WP_Motion.concat([{N:"加算",T:-1,M:hougeki.MA,ZT:1,ZP:hougeki.FZA,C:"<br>1装填分",E:"this.c_sharp.value === '0'"}]); //爆竜轟砲
 			break;
 		case "嵐":
 			if (this.c_kobetu2.selectedIndex) {
-				WP_Motion = WP_Motion.concat([{N:"叩きつけ",P:21,E:"this.c_sharp.value === '0'"}]); //赤ゲージは使用不可
+				WP_Motion = WP_Motion.concat([{N:"Slam",P:21,E:"this.c_sharp.value === '0'"}]); //赤ゲージは使用不可
 			}
 		case "天":
 			if (this.c_kobetu2.selectedIndex) {
-				WP_Motion = WP_Motion.concat([{N:"HB先端",P:5,ZT:1,ZP:hougeki.FZ * 0.85|0,E:"this.c_sharp.value === '0'"},{N:"HB叩きつけ",P:62,E:"this.c_sharp.value === '0'"}]);
+				WP_Motion = WP_Motion.concat([{N:"HB Tip",P:5,ZT:1,ZP:hougeki.FZ * 0.85|0,E:"this.c_sharp.value === '0'"},{N:"HB Slam",P:62,E:"this.c_sharp.value === '0'"}]);
 			}
 			break;
 		}
