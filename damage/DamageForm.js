@@ -417,7 +417,7 @@ INFO[10].Motion = [
 			{flg:{S:" 11",P:" 1",C:"11"},N:"Shoryuken",T:1,P:15,S:-1,ZH:50}
 			];
 INFO[1].Bullet = {
-//N:弾名,P:威力,ZT:属性タイプ,ZB:属性倍率,ZP:属性値,IT:異常タイプ,IP:異常値,C:コメント,K:気絶値,S:Rpd Fire,M:無属性,BN:爆破名,BM:爆破無属性,BFZ:爆破火属性,BC:爆破コメント
+//N:弾名,P:威力,ZT:属性タイプ,ZB:属性倍率,ZP:属性値,IT:異常タイプ,IP:異常値,C:コメント,K:気絶値,S:速射,M:無属性,BN:爆破名,BM:爆破無属性,BFZ:爆破火属性,BC:爆破コメント
 			//通常
 			0:{N:"LV1通常弾",P:6},
 			1:{N:"LV2通常弾",P:12},
@@ -1082,22 +1082,22 @@ case 5: //ライトボウガン
 			this.c_kobetu1_Text.nodeValue = this.wp_gousyu ? "ヘビィB" : "パワーB";
 			//剛武器・進化の設定
 			if (this.wp_gousyu) {
-				o.setAttribute("value", 28),df.appendChild(o.cloneNode(false)),df.lastChild.appendChild(document.createTextNode("Heat Bomb"));
+				o.setAttribute("value", 28),df.appendChild(o.cloneNode(false)),df.lastChild.appendChild(document.createTextNode("排熱弾"));
 			} else if (this.wp_sinka) {
 				switch (eq[I_aSINKAGR]) {
 				case "1": //【燦然】
 				case "4": //【燦然】
 				case "5": //【燦然】
-					o.setAttribute("value", 30),df.appendChild(o.cloneNode(false)),df.lastChild.appendChild(document.createTextNode("Blast S")); //派生後
+					o.setAttribute("value", 30),df.appendChild(o.cloneNode(false)),df.lastChild.appendChild(document.createTextNode("爆撃弾")); //派生後
 					break;
 				case "2": //【絢爛】
 				case "6": //【絢爛】
-					o.setAttribute("value", 31),df.appendChild(o.cloneNode(false)),df.lastChild.appendChild(document.createTextNode("Dragon Blast S"));
+					o.setAttribute("value", 31),df.appendChild(o.cloneNode(false)),df.lastChild.appendChild(document.createTextNode("龍爆撃弾"));
 					break;
 				case "3": //【煌然】
 				case "7": //【煌然】
-					o.setAttribute("value", 30),df.appendChild(o.cloneNode(false)),df.lastChild.appendChild(document.createTextNode("Blast S")); //派生後
-					o.setAttribute("value", 31),df.appendChild(o.cloneNode(false)),df.lastChild.appendChild(document.createTextNode("Dragon Blast S"));
+					o.setAttribute("value", 30),df.appendChild(o.cloneNode(false)),df.lastChild.appendChild(document.createTextNode("爆撃弾")); //派生後
+					o.setAttribute("value", 31),df.appendChild(o.cloneNode(false)),df.lastChild.appendChild(document.createTextNode("龍爆撃弾"));
 					break;
 				}
 			}
@@ -1204,7 +1204,7 @@ case 10: //弓
 		if (debug) this.debug.innerText += "setAuraArrow:\n";
 		if (!this.s_wp.value) return;
 		this.c_tame.length = 6;
-		if (this.c_style.value === "Storm" && this.c_kobetu2.selectedIndex) {
+		if (this.c_style.value === "嵐" && this.c_kobetu2.selectedIndex) {
 			if (this.c_sizilMotCng.checked) {
 				this.c_tame.appendChild(this.yumi_nagi.cloneNode(true));
 			} else {
@@ -1235,7 +1235,7 @@ case 11: //穿龍棍
 	break;
 }
 //表示
-this.damage_head.rows[1].cells[0].innerHTML = "Wpn Multiplier<br>"+BUKITYPE[WP_Info.Type] + WP_Info.Hosei + (WP_Info.Type === 2 ? "%<br>(気絶値)" : WP_Rui === 3 ? "%<br>打72%" : "%");
+this.damage_head.rows[1].cells[0].innerHTML = "武器補正<br>"+BUKITYPE[WP_Info.Type] + WP_Info.Hosei + (WP_Info.Type === 2 ? "%<br>(気絶値)" : WP_Rui === 3 ? "%<br>打72%" : "%");
 
 //個別設定の切り替え
 this.c_kobetu1.style.display = this.c_kobetu1_Text.nodeValue ? "inline" : "none";
@@ -1269,11 +1269,11 @@ if (debug) var time = new Date().getTime();
 switch (WP_Rui) {
 case 1: //ヘビィボウガン
 	switch (this.c_style.value) {
-	case "Earth":
-	case "Heaven":
+	case "地":
+	case "天":
 		this.c_kobetu2_Text.nodeValue = "",this.c_kobetu2.selectedIndex = 0;
 		break;
-	case "Storm":
+	case "嵐":
 		if (!this.heavy_tame) {
 			var df = document.createDocumentFragment(),o = document.createElement("option");
 			o.setAttribute("value", "95"),df.appendChild(o.cloneNode(false)),df.lastChild.appendChild(document.createTextNode("０"));
@@ -1289,11 +1289,11 @@ case 1: //ヘビィボウガン
 case 5: //ライトボウガン
 	this.c_kobetu2.length = 0;
 	switch (this.c_style.value) {
-	case "Earth":
-	case "Heaven":
+	case "地":
+	case "天":
 		this.c_kobetu2_Text.nodeValue = "",this.c_kobetu2.selectedIndex = 0;
 		break;
-	case "Storm":
+	case "嵐":
 		this.c_kobetu2_Text.nodeValue = "ステップ",this.c_kobetu2.length = 2,this.c_kobetu2.options[0].text = "なし",this.c_kobetu2.options[1].text = "あり";
 		this.c_kobetu2.selectedIndex = 1;
 		break;
@@ -1302,12 +1302,12 @@ case 5: //ライトボウガン
 case 9: //ガンランス
 	this.c_kobetu2.length = 0;
 	switch (this.c_style.value) {
-	case "Earth":
+	case "地":
 		this.c_kobetu2_Text.nodeValue = "",this.c_kobetu2.selectedIndex = 0;
 		break;
-	case "Heaven":
-	case "Storm":
-		this.c_kobetu2_Text.nodeValue = "ＨＢ",this.c_kobetu2.length = 2,this.c_kobetu2.options[0].text = "No",this.c_kobetu2.options[1].text = "Yes";
+	case "天":
+	case "嵐":
+		this.c_kobetu2_Text.nodeValue = "ＨＢ",this.c_kobetu2.length = 2,this.c_kobetu2.options[0].text = "なし",this.c_kobetu2.options[1].text = "発動";
 		this.c_kobetu2.selectedIndex = 1;
 		break;
 	}
@@ -1315,11 +1315,11 @@ case 9: //ガンランス
 case 10: //弓
 	this.c_kobetu2.length = 0;
 	switch (this.c_style.value) {
-	case "Earth":
-	case "Heaven":
+	case "地":
+	case "天":
 		this.c_kobetu2_Text.nodeValue = "",this.c_kobetu2.selectedIndex = 0;
 		break;
-	case "Storm":
+	case "嵐":
 		this.c_kobetu2_Text.nodeValue = "姿勢",this.c_kobetu2.length = 2,this.c_kobetu2.options[0].text = "立ち",this.c_kobetu2.options[1].text = "座り";
 		this.c_kobetu2.selectedIndex = 1;
 		break;
@@ -1328,12 +1328,12 @@ case 10: //弓
 	break;
 case 11: //穿龍棍
 	switch (this.c_style.value) {
-	case "Earth":
+	case "地":
 		this.c_kobetu1.length = 6,this.c_kobetu1.options[1].text = "１",this.c_kobetu1.options[2].text = "２",this.c_kobetu1.options[3].text = "３",this.c_kobetu1.options[4].text = "４",this.c_kobetu1.options[5].text = "５";
 		this.setHiden();
 		break;
-	case "Heaven":
-	case "Storm":
+	case "天":
+	case "嵐":
 		this.c_kobetu1.length = 1;
 		break;
 	}
@@ -1358,7 +1358,7 @@ case 3: //ランス
 	this.setMotion();
 	break;
 case 11: //穿龍棍
-	if (this.c_style.value === "Earth") {
+	if (this.c_style.value === "地") {
 		if (this.c_hiden.value >= 12) {
 			this.c_kobetu1.length = 7,this.c_kobetu1.options[6].text = "６";
 		} else {
@@ -1382,7 +1382,7 @@ WP_Motion.length = 0;
 var wp_motion_set = function (motion){
 	var tameAtUp = this.c_tameAtUp.selectedIndex,
 		reach = (WP_Rui === 11 ? this.c_kobetu2.selectedIndex : 0),
-		style = (this.c_style.value === "Earth" ? 0 : this.c_style.value === "Heaven" ? 1 : 2);
+		style = (this.c_style.value === "地" ? 0 : this.c_style.value === "天" ? 1 : 2);
 		
 	for (var i = 0,m = WP_Motion.length - 1,max = motion.length; i < max; i++) {
 		if (+motion[i].flg.S.charAt(style) && +motion[i].flg.P.charAt(motionPow) && +motion[i].flg.C.charAt(motionCng) && (WP_Rui !== 11 || +motion[i].flg.R.charAt(reach))) {
@@ -1454,7 +1454,7 @@ case 6: //双剣
 		wp_motion_set(INFO[WP_Rui].Motion_kijin);
 
 		//天嵐でG級
-		if (this.c_style.value !== "Earth" && this.m_class.selectedIndex === 2) {
+		if (this.c_style.value !== "地" && this.m_class.selectedIndex === 2) {
 		for(var i = 0,m = WP_Motion.length; i < m; i++) {
 				if (WP_Motion[i].R6) {
 					WP_Motion[i].ZH = 70;
@@ -1467,7 +1467,7 @@ case 6: //双剣
 	case 3: //赤消費時
 		wp_motion_set(INFO[WP_Rui].Motion_syouhi);
 		//天嵐でG級
-		if (this.c_style.value !== "Earth" && this.m_class.selectedIndex === 2) {
+		if (this.c_style.value !== "地" && this.m_class.selectedIndex === 2) {
 			for(var i = 0,m = WP_Motion.length; i < m; i++) {
 				if (WP_Motion[i].R6) {
 					WP_Motion[i].ZH = 70;
@@ -1481,15 +1481,15 @@ case 6: //双剣
 	break;
 case 7: //太刀
 	wp_motion_set(INFO[WP_Rui].Motion1);
-	if (this.c_style.value === "Storm") {
+	if (this.c_style.value === "嵐") {
 		if (this.c_kenzyutu.selectedIndex) { //剣術＋２発動か
 			wp_motion_set(INFO[WP_Rui].Motion2_kenzyutu);
 		} else {
 			wp_motion_set(INFO[WP_Rui].Motion2_normal);
 		}
 		for(var i = 0,m = WP_Motion.length; i < m; i++) {
-			if (this.c_kobetu1.selectedIndex && WP_Motion[i].N === "Pierce" ||
-				!this.c_kobetu1.selectedIndex && WP_Motion[i].N === "Strong Pierce") WP_Motion.splice(i, 1),i--,m--; 
+			if (this.c_kobetu1.selectedIndex && WP_Motion[i].N === "貫刺し" ||
+				!this.c_kobetu1.selectedIndex && WP_Motion[i].N === "気刃貫刺し") WP_Motion.splice(i, 1),i--,m--; 
 		}
 	}
 	wp_motion_set(INFO[WP_Rui].Motion3);
@@ -1507,34 +1507,34 @@ case 9: //ガンランス
 		var hougekiType = eq[I_aREACH];
 		if (eq[I_aGR] && this.c_sizilgunscng.value) hougekiType = this.c_sizilgunscng.value + hougekiType.substring(3);
 		if (eq[I_aGR] && this.c_sizilgunsup.value) hougekiType = hougekiType.substring(0,7) + (+hougekiType.substring(7) + +this.c_sizilgunsup.value);
-		if (eq[I_aCLASS] === CLASSTYPE.Tenrou) hougekiType = this.c_tenrouGuns.value + "Shelling" + this.c_tenrouGunsLv.value;
+		if (eq[I_aCLASS] === CLASSTYPE.Tenrou) hougekiType = this.c_tenrouGuns.value + "砲撃" + this.c_tenrouGunsLv.value;
 		var hougeki = WP_Info.Bullet[ hougekiType ],rengekiP = 0;
-		switch (hougeki.N.substring(0,6)) {
-		case "Normal":
+		switch (hougeki.N.substring(0,3)) {
+		case "通常型":
 			rengekiP = 9;break;
-		case "Long  ":
+		case "放射型":
 			rengekiP = 7;break;
-		case "Spread":
+		case "拡散型":
 			rengekiP = 8;break;
 		}
 		//赤ゲージでは砲撃、HB使用不可、龍撃砲可
 		switch (this.c_style.value) {
-		case "Heaven":
+		case "天":
 			if (this.c_kobetu2.selectedIndex) {
 				WP_Motion = WP_Motion.concat([{N:hougeki.N,T:-1,M:hougeki.M,ZT:1,ZP:hougeki.FZ * 3,E:"this.c_sharp.value === '0'"}]); //砲撃(天は3倍)
 
 				WP_Motion = WP_Motion.concat([{N:"クイック",T:-1,M:hougeki.M * 15/10|0,ZT:1,ZP:hougeki.FZ * 3 * 15/10|0,E:"this.c_sharp.value === '0'"}]); //砲撃クイックリロード
-				WP_Motion = WP_Motion.concat([{N:"Backhop Slash",T:-1,M:hougeki.M * rengekiP/10|0,ZT:1,ZP:hougeki.FZ * 3 * rengekiP/10|0,E:"this.c_sharp.value === '0'"}]); //砲撃連撃
+				WP_Motion = WP_Motion.concat([{N:"連撃砲",T:-1,M:hougeki.M * rengekiP/10|0,ZT:1,ZP:hougeki.FZ * 3 * rengekiP/10|0,E:"this.c_sharp.value === '0'"}]); //砲撃連撃
 				break;
 			}
-		case "Storm":
+		case "嵐":
 			if (this.c_kobetu2.selectedIndex) {
 				var motion1 = "", motion2 = "";
 				if (this.c_kensyo.value.substring(0,2) === "BA") { //爆撃剣晶
-					WP_Motion = WP_Motion.concat([{N:hougeki.N.replace("型LV","Elements"),T:-1,M:hougeki.M * 12/10|0,E:"this.c_sharp.value === '0'"}]); //砲撃（属性分）
+					WP_Motion = WP_Motion.concat([{N:hougeki.N.replace("型LV","属性"),T:-1,M:hougeki.M * 12/10|0,E:"this.c_sharp.value === '0'"}]); //砲撃（属性分）
 
 					motion1 = {N:"クイック",T:-1,T:-1,M:hougeki.M * 12/10 * 15/10|0,E:"this.c_sharp.value === '0'"}; //砲撃クイックリロード
-					motion2 = {N:"Backhop Slash",T:-1,M:hougeki.M * 12/10 * rengekiP/10|0,E:"this.c_sharp.value === '0'"}; //砲撃連撃
+					motion2 = {N:"連撃砲",T:-1,M:hougeki.M * 12/10 * rengekiP/10|0,E:"this.c_sharp.value === '0'"}; //砲撃連撃
 				} else {
 					switch (this.c_kensyo.value.substring(0,2)) {
 					case "01":case "02":case "03":case "04":case "05":
@@ -1544,45 +1544,45 @@ case 9: //ガンランス
 						var zokuType = +eq[I_aZOKU];
 					}
 					if (zokuType) { //属性砲撃
-						WP_Motion = WP_Motion.concat([{N:hougeki.N.replace("型LV","Elements"),T:-1,M:0,ZT:zokuType,ZB:hougeki.ZB,E:"this.c_sharp.value === '0'"}]); //砲撃（属性分）
+						WP_Motion = WP_Motion.concat([{N:hougeki.N.replace("型LV","属性"),T:-1,M:0,ZT:zokuType,ZB:hougeki.ZB,E:"this.c_sharp.value === '0'"}]); //砲撃（属性分）
 
 						motion1 = {N:"クイック",T:-1,M:0,ZT:zokuType,ZB:hougeki.ZB * 15/10|0,E:"this.c_sharp.value === '0'"}; //砲撃クイックリロード
-						motion2 = {N:"Backhop Slash",T:-1,M:0,ZT:zokuType,ZB:hougeki.ZB * rengekiP/10|0,E:"this.c_sharp.value === '0'"}; //砲撃連撃
+						motion2 = {N:"連撃砲",T:-1,M:0,ZT:zokuType,ZB:hougeki.ZB * rengekiP/10|0,E:"this.c_sharp.value === '0'"}; //砲撃連撃
 					} else { //打撃砲撃
-						WP_Motion = WP_Motion.concat([{N:hougeki.N.replace("型LV","Elements"),T:-1,M:hougeki.M * 9/10 + 1|0,C:"<small>気絶</small>:"+hougeki.K,E:"this.c_sharp.value === '0'"}]); //砲撃（属性分）
+						WP_Motion = WP_Motion.concat([{N:hougeki.N.replace("型LV","属性"),T:-1,M:hougeki.M * 9/10 + 1|0,C:"<small>気絶</small>:"+hougeki.K,E:"this.c_sharp.value === '0'"}]); //砲撃（属性分）
 
 						motion1 = {N:"クイック",T:-1,M:hougeki.M * 9/10 * 15/10 + 1|0,C:"<small>気絶</small>:"+hougeki.K,E:"this.c_sharp.value === '0'"}; //砲撃クイックリロード
-						motion2 = {N:"Backhop Slash",T:-1,M:hougeki.M * 9/10 * rengekiP/10 + 1|0,C:"<small>気絶</small>:"+hougeki.K,E:"this.c_sharp.value === '0'"}; //砲撃連撃
+						motion2 = {N:"連撃砲",T:-1,M:hougeki.M * 9/10 * rengekiP/10 + 1|0,C:"<small>気絶</small>:"+hougeki.K,E:"this.c_sharp.value === '0'"}; //砲撃連撃
 					}
 				}
-				WP_Motion = WP_Motion.concat([{N:hougeki.N.replace("型LV","Elements"),T:-1,M:hougeki.M * 6/10|0,E:"this.c_sharp.value === '0'"}]); //砲撃（無属性分）
+				WP_Motion = WP_Motion.concat([{N:hougeki.N.replace("型LV","属性"),T:-1,M:hougeki.M * 6/10|0,E:"this.c_sharp.value === '0'"}]); //砲撃（無属性分）
 				
 				WP_Motion = WP_Motion.concat([motion1]); //砲撃クイックリロード
 				WP_Motion = WP_Motion.concat([{N:"クイック",T:-1,M:hougeki.M * 6/10 * 15/10|0,E:"this.c_sharp.value === '0'"}]); //砲撃クイックリロード
 				WP_Motion = WP_Motion.concat([motion2]); //砲撃連撃
-				WP_Motion = WP_Motion.concat([{N:"Backhop Slash",T:-1,M:hougeki.M * 6/10 * rengekiP/10|0,E:"this.c_sharp.value === '0'"}]); //砲撃連撃
+				WP_Motion = WP_Motion.concat([{N:"連撃砲",T:-1,M:hougeki.M * 6/10 * rengekiP/10|0,E:"this.c_sharp.value === '0'"}]); //砲撃連撃
 				break;
 			}
-		case "Earth":
+		case "地":
 			WP_Motion = WP_Motion.concat([{N:hougeki.N,T:-1,M:hougeki.M,ZT:1,ZP:hougeki.FZ,E:"this.c_sharp.value === '0'"}]); //砲撃
 
 			WP_Motion = WP_Motion.concat([{N:"クイック",T:-1,M:hougeki.M * 15/10|0,ZT:1,ZP:hougeki.FZ * 15/10|0,E:"this.c_sharp.value === '0'"}]); //砲撃クイックリロード
-			WP_Motion = WP_Motion.concat([{N:"Backhop Slash",T:-1,M:hougeki.M * rengekiP/10|0,ZT:1,ZP:hougeki.FZ * rengekiP/10|0,E:"this.c_sharp.value === '0'"}]); //砲撃連撃
+			WP_Motion = WP_Motion.concat([{N:"連撃砲",T:-1,M:hougeki.M * rengekiP/10|0,ZT:1,ZP:hougeki.FZ * rengekiP/10|0,E:"this.c_sharp.value === '0'"}]); //砲撃連撃
 			break;
 		}
-		hougeki = WP_Info.Bullet["Dragon"+hougekiType];
+		hougeki = WP_Info.Bullet["竜"+hougekiType];
 		switch (this.c_style.value) {
-		case "Earth":
+		case "地":
 			WP_Motion = WP_Motion.concat([{N:hougeki.N,T:-1,M:hougeki.M,ZT:1,ZP:hougeki.FZ,C:"<br>x<i>5回</i>",E:"this.c_sharp.value === '0'"}]); //竜激砲
-			hougeki = WP_Info.Bullet["Explosive"+hougekiType];
+			hougeki = WP_Info.Bullet["爆"+hougekiType];
 			WP_Motion = WP_Motion.concat([{N:hougeki.N,T:-1,M:hougeki.M,ZT:1,ZP:hougeki.FZ,C:"<br>x<i>2回</i>",E:"this.c_sharp.value === '0'"}]); //爆竜轟砲
 			WP_Motion = WP_Motion.concat([{N:"加算",T:-1,M:hougeki.MA,ZT:1,ZP:hougeki.FZA,C:"<br>1装填分",E:"this.c_sharp.value === '0'"}]); //爆竜轟砲
 			break;
-		case "Storm":
+		case "嵐":
 			if (this.c_kobetu2.selectedIndex) {
-				WP_Motion = WP_Motion.concat([{N:"Overhead Smash",P:21,E:"this.c_sharp.value === '0'"}]); //赤ゲージは使用不可
+				WP_Motion = WP_Motion.concat([{N:"叩きつけ",P:21,E:"this.c_sharp.value === '0'"}]); //赤ゲージは使用不可
 			}
-		case "Heaven":
+		case "天":
 			if (this.c_kobetu2.selectedIndex) {
 				WP_Motion = WP_Motion.concat([{N:"HB先端",P:5,ZT:1,ZP:hougeki.FZ * 0.85|0,E:"this.c_sharp.value === '0'"},{N:"HB叩きつけ",P:62,E:"this.c_sharp.value === '0'"}]);
 			}
@@ -1629,9 +1629,9 @@ case 5: //ライト
 			}
 		} else { //ライト
 			var criPoint = 15;
-			if (this.c_style.value === "Storm" && this.c_kobetu2.selectedIndex) { //嵐でステップ
+			if (this.c_style.value === "嵐" && this.c_kobetu2.selectedIndex) { //嵐でステップ
 				criPoint += 5;
-			} else if (this.c_style.value !== "Earth") { //地以外
+			} else if (this.c_style.value !== "地") { //地以外
 				criPoint += 1;
 			}
 			var tama = WP_Info.Bullet[this.c_tama.value];
@@ -1647,98 +1647,98 @@ case 5: //ライト
 					WP_Motion = WP_Motion.concat([{N:"近距離",P:criPoint,C:"倍"},{N:"中距離１",P:criPoint,C:"倍"},{N:"中距離２",P:criPoint,C:"倍"},{N:"遠距離１",P:criPoint,C:"倍"},{N:"遠距離２",P:10,C:"倍"},{N:"遠距離３",P:8,C:"倍"},{N:"遠距離４",P:5,C:"倍"}/*,{N:"遠距離５",P:0,C:"倍"}*/]);
 			} else { //ライト
 				switch (this.c_style.value) {
-				case "Earth":
+				case "地":
 					WP_Motion = WP_Motion.concat([{N:"近距離",P:criPoint,C:"倍"},{N:"中距離１",P:criPoint,C:"倍"},{N:"中距離２",P:10,C:"倍"},{N:"遠距離１",P:8,C:"倍"},{N:"遠距離２",P:5,C:"倍"},{N:"遠距離３",P:5,C:"倍"}/*,{N:"遠距離４",P:0,C:"倍"},{N:"遠距離５",P:0,C:"倍"}*/]);
 					break;
-				case "Storm":
+				case "嵐":
 					if (this.c_kobetu2.selectedIndex) { //ステップ打ちの時
 						WP_Motion = WP_Motion.concat([{N:"近距離",P:criPoint,C:"倍"},{N:"中距離１",P:criPoint,C:"倍"},{N:"中距離２",P:criPoint,C:"倍"},{N:"遠距離１",P:15,C:"倍"}/*,{N:"遠距離２",P:0,C:"倍"},{N:"遠距離３",P:0,C:"倍"},{N:"遠距離４",P:0,C:"倍"},{N:"遠距離５",P:0,C:"倍"}*/]);
 						break;
 					}
-				case "Heaven":
+				case "天":
 					WP_Motion = WP_Motion.concat([{N:"近距離",P:criPoint,C:"倍"},{N:"中距離１",P:10,C:"倍"},{N:"中距離２",P:8,C:"倍"},{N:"遠距離１",P:5,C:"倍"},{N:"遠距離２",P:5,C:"倍"},{N:"遠距離３",P:5,C:"倍"}/*,{N:"遠距離４",P:0,C:"倍"},{N:"遠距離５",P:0,C:"倍"}*/]);
 					break;
 				}
 			}
 			break;
-		case "LV1 Pierce S":case "LV2 Pierce S":case "LV3 Pierce S":
+		case "LV1貫通弾":case "LV2貫通弾":case "LV3貫通弾":
 			if (WP_Rui === 1){ //ヘビィ
 					WP_Motion = WP_Motion.concat([{N:"近距離",P:10,C:"倍"},{N:"中距離１",P:criPoint,C:"倍"},{N:"中距離２",P:criPoint,C:"倍"},{N:"遠距離１",P:criPoint,C:"倍"},{N:"遠距離２",P:criPoint,C:"倍"},{N:"遠距離３",P:10,C:"倍"},{N:"遠距離４",P:8,C:"倍"},{N:"遠距離５",P:5,C:"倍"}]);
 			} else { //ライト
 				switch (this.c_style.value) {
-				case "Earth":
+				case "地":
 					WP_Motion = WP_Motion.concat([{N:"近距離",P:10,C:"倍"},{N:"中距離１",P:criPoint,C:"倍"},{N:"中距離２",P:criPoint,C:"倍"},{N:"遠距離１",P:criPoint,C:"倍"},{N:"遠距離２",P:10,C:"倍"},{N:"遠距離３",P:8,C:"倍"},{N:"遠距離４",P:5,C:"倍"}/*,{N:"遠距離５",P:0,C:"倍"}*/]);
 					break;
-				case "Storm":
+				case "嵐":
 					if (this.c_kobetu2.selectedIndex) { //ステップ打ちの時
 						WP_Motion = WP_Motion.concat([{N:"近距離",P:criPoint,C:"倍"},{N:"中距離１",P:criPoint,C:"倍"},{N:"中距離２",P:criPoint,C:"倍"},{N:"遠距離１",P:15,C:"倍"}/*,{N:"遠距離２",P:0,C:"倍"},{N:"遠距離３",P:0,C:"倍"},{N:"遠距離４",P:0,C:"倍"},{N:"遠距離５",P:0,C:"倍"}*/]);
 						break;
 					}
-				case "Heaven":
+				case "天":
 					WP_Motion = WP_Motion.concat([{N:"近距離",P:10,C:"倍"},{N:"中距離１",P:criPoint,C:"倍"},{N:"中距離２",P:criPoint,C:"倍"},{N:"遠距離１",P:10,C:"倍"},{N:"遠距離２",P:8,C:"倍"},{N:"遠距離３",P:5,C:"倍"},{N:"遠距離４",P:5,C:"倍"}/*,{N:"遠距離５",P:0,C:"倍"}*/]);
 					break;
 				}
 			}
 			break;
-		case "LV1 Crag S":case "LV2 Crag S":case "LV3 Crag S":
+		case "LV1徹甲榴弾":case "LV2徹甲榴弾":case "LV3徹甲榴弾":
 			WP_Motion[0].N = WP_Motion[0].N.substring(0,6);
 			if (WP_Rui === 1){ //ヘビィ
 					WP_Motion = WP_Motion.concat([{N:"近距離",P:10,C:"倍"},{N:"中距離１",P:criPoint,C:"倍"},{N:"中距離２",P:criPoint,C:"倍"},{N:"遠距離１",P:10,C:"倍"},{N:"遠距離２",P:8,C:"倍"},{N:"遠距離３",P:5,C:"倍"},{N:"遠距離４",P:5,C:"倍"}/*,{N:"遠距離５",P:0,C:"倍"}*/]);
 			} else { //ライト
 				switch (this.c_style.value) {
-				case "Earth":
+				case "地":
 					WP_Motion = WP_Motion.concat([{N:"近距離",P:10,C:"倍"},{N:"中距離１",P:criPoint,C:"倍"},{N:"中距離２",P:10,C:"倍"},{N:"遠距離１",P:8,C:"倍"},{N:"遠距離２",P:8,C:"倍"},{N:"遠距離３",P:5,C:"倍"},{N:"遠距離４",P:5,C:"倍"}/*,{N:"遠距離５",P:0,C:"倍"}*/]);
 					break;
-				case "Storm":
+				case "嵐":
 					if (this.c_kobetu2.selectedIndex) { //ステップ打ちの時
 						WP_Motion = WP_Motion.concat([{N:"近距離",P:criPoint,C:"倍"},{N:"中距離１",P:10,C:"倍"},{N:"中距離２",P:15,C:"倍"}/*,{N:"遠距離１",P:0,C:"倍"},{N:"遠距離２",P:0,C:"倍"},{N:"遠距離３",P:0,C:"倍"},{N:"遠距離４",P:0,C:"倍"},{N:"遠距離５",P:0,C:"倍"}*/]);
 						break;
 					}
-				case "Heaven":
+				case "天":
 					WP_Motion = WP_Motion.concat([{N:"近距離",P:criPoint,C:"倍"},{N:"中距離１",P:10,C:"倍"},{N:"中距離２",P:8,C:"倍"},{N:"遠距離１",P:8,C:"倍"},{N:"遠距離２",P:5,C:"倍"},{N:"遠距離３",P:5,C:"倍"},{N:"遠距離４",P:5,C:"倍"}/*,{N:"遠距離５",P:0,C:"倍"}*/]);
 					break;
 				}
 			}
 			break;
-		case "LV1 Pellet S":case "LV2 Pellet S":case "LV3 Pellet S":case "LV1 Recov S":case "LV2 Recov S":
-			if (WP_Rui === 5 && this.c_style.value === "Storm" && this.c_kobetu2.selectedIndex) { //ライトのステップ打ちの時
+		case "LV1散弾":case "LV2散弾":case "LV3散弾":case "LV1回復弾":case "LV2回復弾":
+			if (WP_Rui === 5 && this.c_style.value === "嵐" && this.c_kobetu2.selectedIndex) { //ライトのステップ打ちの時
 				WP_Motion = WP_Motion.concat([{N:"近距離",P:10,C:"倍"}/*,{N:"中距離１",P:0,C:"倍"},{N:"中距離２",P:0,C:"倍"},{N:"遠距離１",P:0,C:"倍"},{N:"遠距離２",P:0,C:"倍"},{N:"遠距離３",P:0,C:"倍"},{N:"遠距離４",P:0,C:"倍"},{N:"遠距離５",P:0,C:"倍"}*/]);
 			} else {
 				WP_Motion = WP_Motion.concat([{N:"近距離",P:10,C:"倍"},{N:"中距離１",P:10,C:"倍"},{N:"中距離２",P:10,C:"倍"}/*,{N:"遠距離１",P:0,C:"倍"},{N:"遠距離２",P:0,C:"倍"},{N:"遠距離３",P:0,C:"倍"},{N:"遠距離４",P:0,C:"倍"},{N:"遠距離５",P:0,C:"倍"}*/]);
 			}
 			break;
-		case "LV1 Clust S":case "LV2 Clust S":case "LV3 Clust S":case "LV1 Psn S":case "LV2 Psn S":case "LV1 Para S":case "LV2 Para S":case "LV1 Sleep S":case "LV2 Sleep S":
-			if (WP_Rui === 5 && this.c_style.value === "Storm" && this.c_kobetu2.selectedIndex) { //ライトのステップ打ちの時
+		case "LV1拡散弾":case "LV2拡散弾":case "LV3拡散弾":case "LV1毒弾":case "LV2毒弾":case "LV1麻痺弾":case "LV2麻痺弾":case "LV1睡眠弾":case "LV2睡眠弾":
+			if (WP_Rui === 5 && this.c_style.value === "嵐" && this.c_kobetu2.selectedIndex) { //ライトのステップ打ちの時
 				WP_Motion = WP_Motion.concat([{N:"近距離",P:10,C:"倍"},{N:"中距離１",P:10,C:"倍"},{N:"中距離２",P:10,C:"倍"}/*,{N:"遠距離１",P:0,C:"倍"},{N:"遠距離２",P:0,C:"倍"},{N:"遠距離３",P:0,C:"倍"},{N:"遠距離４",P:0,C:"倍"},{N:"遠距離５",P:0,C:"倍"}*/]);
 			} else {
 				WP_Motion = WP_Motion.concat([{N:"近距離",P:10,C:"倍"},{N:"中距離１",P:10,C:"倍"},{N:"中距離２",P:10,C:"倍"},{N:"遠距離１",P:10,C:"倍"},{N:"遠距離２",P:10,C:"倍"},{N:"遠距離３",P:10,C:"倍"},{N:"遠距離４",P:10,C:"倍"},{N:"遠距離５",P:10,C:"倍"}]);
 			}
 			break;
-		case "Flame S":case "Water S":case "Thunder S":case "Frozen S":case "Dragon S":
-			if (WP_Rui === 5 && this.c_style.value === "Storm" && this.c_kobetu2.selectedIndex) { //ライトのステップ打ちの時
+		case "火炎弾":case "水冷弾":case "電撃弾":case "氷結弾":case "滅龍弾":
+			if (WP_Rui === 5 && this.c_style.value === "嵐" && this.c_kobetu2.selectedIndex) { //ライトのステップ打ちの時
 				WP_Motion = WP_Motion.concat([{N:"近距離",P:10,C:"倍"}/*,{N:"中距離１",P:0,C:"倍"},{N:"中距離２",P:0,C:"倍"},{N:"遠距離１",P:0,C:"倍"},{N:"遠距離２",P:0,C:"倍"},{N:"遠距離３",P:0,C:"倍"},{N:"遠距離４",P:0,C:"倍"},{N:"遠距離５",P:0,C:"倍"}*/]);
 			} else {
 				WP_Motion = WP_Motion.concat([{N:"近距離",P:10,C:"倍"},{N:"中距離１",P:10,C:"倍"},{N:"中距離２",P:10,C:"倍"}/*,{N:"遠距離１",P:0,C:"倍"},{N:"遠距離２",P:0,C:"倍"},{N:"遠距離３",P:0,C:"倍"},{N:"遠距離４",P:0,C:"倍"},{N:"遠距離５",P:0,C:"倍"}*/]);
 			}
 			break;
-		case "Blast S":case "Blast S:然":case "Dragon Blast S":
+		case "爆撃弾":case "爆撃弾:然":case "龍爆撃弾":
 			WP_Motion = WP_Motion.concat({N:tama.BN,T:-1,M:tama.BM,ZT:tama.ZT,ZP:tama.BFZ,C:tama.BC});
 			tama.BN = "";
 			break;
 		}
 		if (tama.IT) { //状態異常
 			//状態異常強化 or ライトフィーチャー補正 or ライト嵐の時補正
-			WP_Motion[0].C = (WP_Motion[0].C || "") + "<br>" + IZYONAME[tama.IT] + (tama.IP * (this.c_izyou.checked ? 1125 : 1000)/1000 * (WP_Rui === 5 && this.c_fw.checked ? 12 : 10)/10 * (WP_Rui === 5 && this.c_style.value === "Storm" && this.c_kobetu2.selectedIndex ? 13 : 10)/10|0);
+			WP_Motion[0].C = (WP_Motion[0].C || "") + "<br>" + IZYONAME[tama.IT] + (tama.IP * (this.c_izyou.checked ? 1125 : 1000)/1000 * (WP_Rui === 5 && this.c_fw.checked ? 12 : 10)/10 * (WP_Rui === 5 && this.c_style.value === "嵐" && this.c_kobetu2.selectedIndex ? 13 : 10)/10|0);
 		}
 		if (WP_Rui === 1) { //ヘビィ
-			if (this.c_style.value === "Storm") WP_Motion[0].H = +this.c_kobetu2.value; //嵐ならタメ補正変更
+			if (this.c_style.value === "嵐") WP_Motion[0].H = +this.c_kobetu2.value; //嵐ならタメ補正変更
 		} else { //ライト
 			//嵐のステップ撃ち
-			if (this.c_style.value === "Storm" && this.c_kobetu2.selectedIndex) {
+			if (this.c_style.value === "嵐" && this.c_kobetu2.selectedIndex) {
 				WP_Motion[0].ZH = 150;
 				WP_Motion = WP_Motion.concat([{N:"密着爆風",T:-1,M:30,ZT:1,ZP:12}]);
 			}
-			//武器別(Rpd Fire)
+			//武器別(速射)
 			var eq = this.eq;
 			if (eq[I_aSOKUSYA].indexOf(tama.N) !== -1) {
 				//速射はダメージ半分
@@ -1773,7 +1773,7 @@ case 10: //弓
 			WP_Motion[0].ZH = 70;	//曲射は属性0.7倍
 			WP_Motion = WP_Motion.concat([{N:"-",P:10,C:"倍"}]);
 			if (this.c_tame.value === "爆裂型") {	//爆裂の無属性
-				WP_Motion = WP_Motion.concat({N:"No attribute",T:-1,M:19});
+				WP_Motion = WP_Motion.concat({N:"無属性",T:-1,M:19});
 				WP_Motion[0].ZH = 20;	//爆裂は0.2倍
 			}
 		} else {
@@ -1783,7 +1783,7 @@ case 10: //弓
 			var tama = WP_Info.Bullet[this.c_tame.value];
 			var tameAt = [40,100,150,180,100,112.5][this.c_tame.selectedIndex-2];
 			var tameZoku = [50,75,100,112.5,100,110][this.c_tame.selectedIndex-2];
-			if (this.c_style.value === "Storm" && this.c_kobetu2.selectedIndex) { //嵐のしゃがみ撃ち
+			if (this.c_style.value === "嵐" && this.c_kobetu2.selectedIndex) { //嵐のしゃがみ撃ち
 				//tameAt     *= [120,130,140,140,100,100][this.c_tame.selectedIndex-2]/100;
 				//tameZoku *= [120,130,140,140,100,100][this.c_tame.selectedIndex-2]/100;
 				tameAt     = [48,130,210,252,100,112.5][this.c_tame.selectedIndex-2];
@@ -1840,7 +1840,7 @@ case 10: //弓
 					}
 					if (i === 2 && this.c_tame.value === "爆裂型") WP_Motion[2].M = WP_Info.BakuBin["爆裂追加"];
 				} else { //近接
-						WP_Motion[i].M = binPoint[this.c_style.value === "Earth" ? "Normal" : "TenRan"];
+						WP_Motion[i].M = binPoint[this.c_style.value === "地" ? "Normal" : "TenRan"];
 				}
 				break;
 			case "DA": //打撃ビン
@@ -1852,9 +1852,9 @@ case 10: //弓
 			default: //状態異常ビン
 				if (typeof binPoint === "object") {
 					if (this.c_bin.value.charAt(1) === "1") { //毒
-						WP_Motion[i].C = (WP_Motion[i].C || "") + izyoName + (binPoint[binPlus][yaLv] * (this.c_izyou.checked ? 1125 : 1000)/1000 * [5,10,15,15,10,11][this.c_tame.selectedIndex-1]/10 * (this.c_style.value === "Storm" && this.c_kobetu2.selectedIndex ? [12,13,14,15,10,10][this.c_tame.selectedIndex-1] : 10)/10|0);
+						WP_Motion[i].C = (WP_Motion[i].C || "") + izyoName + (binPoint[binPlus][yaLv] * (this.c_izyou.checked ? 1125 : 1000)/1000 * [5,10,15,15,10,11][this.c_tame.selectedIndex-1]/10 * (this.c_style.value === "嵐" && this.c_kobetu2.selectedIndex ? [12,13,14,15,10,10][this.c_tame.selectedIndex-1] : 10)/10|0);
 					} else {
-						WP_Motion[i].C = (WP_Motion[i].C || "") + izyoName + (binPoint[binPlus][yaLv] * (this.c_izyou.checked ? 1125 : 1000)/1000 * [5,10,10,10,10,11][this.c_tame.selectedIndex-1]/10 * (this.c_style.value === "Storm" && this.c_kobetu2.selectedIndex ? [12,13,14,15,10,10][this.c_tame.selectedIndex-1] : 10)/10|0);
+						WP_Motion[i].C = (WP_Motion[i].C || "") + izyoName + (binPoint[binPlus][yaLv] * (this.c_izyou.checked ? 1125 : 1000)/1000 * [5,10,10,10,10,11][this.c_tame.selectedIndex-1]/10 * (this.c_style.value === "嵐" && this.c_kobetu2.selectedIndex ? [12,13,14,15,10,10][this.c_tame.selectedIndex-1] : 10)/10|0);
 					}
 				} else { //近接
 						WP_Motion[i].C = (WP_Motion[i].C || "") + izyoName + binPoint;
@@ -2164,7 +2164,7 @@ if (eq[I_aCLASS] === CLASSTYPE.Neko) {
 this.d_att.firstChild.nodeValue = eq[I_aAT] * WP_Info.Ritu / 10|0;
 var t = "";
 if (WP_Rui === 1 || WP_Rui === 5){
-	t = this.wp_Gclass || eq[I_aCLASS] === CLASSTYPE.Tenrou || eq[I_aGR] && eq[I_aCLASS] === CLASSTYPE.Senyu || this.wp_sinka || eq[I_aCLASS] === CLASSTYPE.Teni ? "" : "Lv5 upgrade";
+	t = this.wp_Gclass || eq[I_aCLASS] === CLASSTYPE.Tenrou || eq[I_aGR] && eq[I_aCLASS] === CLASSTYPE.Senyu || this.wp_sinka || eq[I_aCLASS] === CLASSTYPE.Teni ? "" : "LV5強化";
 } else if (WP_Rui === 10){
 	t = KYOKUNAME[eq[I_aKYOKUSYA]]; //Arc
 	if (eq[I_aZOKUAT]) t += (t ? "<br>" : "") + ZOKUNAME[eq[I_aZOKU]] + "：" + eq[I_aZOKUAT] + "0"; //属性
@@ -2196,7 +2196,7 @@ case 1: //ヘビィボウガン
 case 5: //ライトボウガン
 	t = RELOADNAME[eq[I_aRELO]] + " " + KICKNAME[eq[I_aKICK]] + " " + SPEEDNAME[eq[I_aSPEED]];
 	if (eq[I_aSOKUSYA] && WP_Rui === 5) {
-		t += (this.wp_gousyu ? "<br>Super Rpd Fire:" : "<br>Rpd Fire:") + eq[I_aSOKUSYA];
+		t += (this.wp_gousyu ? "<br>超速射:" : "<br>速射:") + eq[I_aSOKUSYA];
 	}
 	break;
 case 10: //弓
@@ -2337,7 +2337,7 @@ var eq = this.eq,eqSinka = MST_Equip_Sinka[WP_Info.Id][eq[I_aSINKAGR]][this.c_si
 //画面表示
 this.d_att.firstChild.nodeValue = eqSinka[0] * WP_Info.Ritu / 10|0;
 if (WP_Rui === 1 || WP_Rui === 5){
-	t = this.wp_Gclass || eq[I_aCLASS] === CLASSTYPE.Tenrou || eq[I_aCLASS] === CLASSTYPE.Senyu || this.wp_sinka || eq[I_aCLASS] === CLASSTYPE.Teni ? "" : "Lv5 upgrade";
+	t = this.wp_Gclass || eq[I_aCLASS] === CLASSTYPE.Tenrou || eq[I_aCLASS] === CLASSTYPE.Senyu || this.wp_sinka || eq[I_aCLASS] === CLASSTYPE.Teni ? "" : "LV5強化";
 } else if (WP_Rui === 10){
 	t = KYOKUNAME[eq[I_aKYOKUSYA]]; //Arc
 	if (eq[I_aZOKUAT]) t += (t ? "<br>" : "") + ZOKUNAME[eq[I_aZOKU]] + "：" + eqSinka[1] + "0"; //属性
@@ -2393,7 +2393,7 @@ case 5: //ライトボウガン
 	//Reload,Recoil,Bullet Speed
 	this.d_spec.innerHTML = RELOADNAME[eq[I_aRELO]] + " " + KICKNAME[eq[I_aKICK]] + " " + SPEEDNAME[eq[I_aSPEED]];
 	if (eq[I_aSOKUSYA] && WP_Rui === 5) {
-		this.d_spec.innerHTML += (this.wp_gousyu ? "<br>Super Rpd Fire:" : "<br>Rpd Fire:") + eq[I_aSOKUSYA];
+		this.d_spec.innerHTML += (this.wp_gousyu ? "<br>超速射:" : "<br>速射:") + eq[I_aSOKUSYA];
 	}
 	break;
 }
@@ -2413,7 +2413,7 @@ this.d_att.firstChild.nodeValue = eqG[0] * WP_Info.Ritu / 10|0;
 
 var t = "";
 if (WP_Rui === 1 || WP_Rui === 5){
-	t = this.wp_Gclass || eq[I_aCLASS] === CLASSTYPE.Tenrou || eq[I_aCLASS] === CLASSTYPE.Senyu ? "" : "Lv5 upgrade";
+	t = this.wp_Gclass || eq[I_aCLASS] === CLASSTYPE.Tenrou || eq[I_aCLASS] === CLASSTYPE.Senyu ? "" : "LV5強化";
 } else if (WP_Rui === 10){
 	t = KYOKUNAME[eq[I_aKYOKUSYA]]; //Arc
 	if (eq[I_aZOKUAT]) t += (t ? "<br>" : "") + ZOKUNAME[eq[I_aZOKU]] + "：" + eq[I_aZOKUAT] + "0"; //属性
@@ -2465,7 +2465,7 @@ this.d_att.firstChild.nodeValue = this.c_tenrouAtt.value * WP_Info.Ritu / 10|0;
 
 var t = "";
 if (WP_Rui === 1 || WP_Rui === 5){
-	t = this.wp_Gclass || eq[I_aCLASS] === CLASSTYPE.Tenrou || eq[I_aCLASS] === CLASSTYPE.Senyu ? "" : "Lv5 upgrade";
+	t = this.wp_Gclass || eq[I_aCLASS] === CLASSTYPE.Tenrou || eq[I_aCLASS] === CLASSTYPE.Senyu ? "" : "LV5強化";
 } else if (WP_Rui === 10){
 	if (this.c_tenrouZoku.value-0) t = ZOKUNAME[this.c_tenrouZoku.value] + "：" + this.c_tenrouZokuAtt.value + "0"; //属性
 	t += "<br>" + KYOKUNAME[this.c_tenrouYumiKyoku.value]; //Arc
@@ -2481,7 +2481,7 @@ case 1: //ヘビィボウガン
 case 5: //ライトボウガン
 	t = RELOADNAME[eq[I_aRELO]] + " " + KICKNAME[eq[I_aKICK]] + " " + SPEEDNAME[eq[I_aSPEED]];
 	if (eq[I_aSOKUSYA] && WP_Rui === 5) {
-		t += (this.wp_gousyu ? "<br>Super Rpd Fire:" : "<br>Rpd Fire:") + eq[I_aSOKUSYA];
+		t += (this.wp_gousyu ? "<br>超速射:" : "<br>速射:") + eq[I_aSOKUSYA];
 	}
 	break;
 case 10: //弓
@@ -2494,7 +2494,7 @@ default:
 	if (WP_Rui === 8) { //狩猟笛
 		t += "<a class=f href='gakufu.htm?"+eq[I_aREACH]+"' target=_blank>"+ONPUCOLOR[eq[I_aREACH].charAt(0)]+ONPUCOLOR[eq[I_aREACH].charAt(1)]+ONPUCOLOR[eq[I_aREACH].charAt(2)]+"</a>";
 	} else if (WP_Rui === 9) { //ガンランス
-		t += "<small>" + this.c_tenrouGuns.value + "Shelling" + this.c_tenrouGunsLv.value + "</small>";
+		t += "<small>" + this.c_tenrouGuns.value + "砲撃" + this.c_tenrouGunsLv.value + "</small>";
 	} else if (eq[I_aREACH]) {
 		t += "<small>リーチ：" + eq[I_aREACH] + "</small>";
 	}
@@ -2877,19 +2877,19 @@ case 1: //ヘビィボウガン
 	if (this.c_tamaAtUp.checked) { //弾強化
 		switch (tama_N) {
 		case "LV1通常弾":case "LV2通常弾":case "LV3通常弾":
-		case "LV1 Pierce S":case "LV2 Pierce S":case "LV3 Pierce S":
+		case "LV1貫通弾":case "LV2貫通弾":case "LV3貫通弾":
 			hosei_Skill = 11;break;
-		case "LV1 Pellet S":case "LV2 Pellet S":case "LV3 Pellet S":
+		case "LV1散弾":case "LV2散弾":case "LV3散弾":
 			hosei_Skill = 13;break;
 		}
 	}
 	switch (tama_N) {
-	case "Blast S":
-	case "Blast S:然":
+	case "爆撃弾":
+	case "爆撃弾:然":
 		WP_Motion[0].M = +WP_Info.Bullet[this.c_tama.value].M + this.c_sinkaLv.value/2|0;
 		WP_Motion[1].M = +WP_Info.Bullet[this.c_tama.value].BM + this.c_sinkaLv.value/4|0;
 		break;
-	case "Dragon Blast S":
+	case "龍爆撃弾":
 		WP_Motion[0].ZP = +WP_Info.Bullet[this.c_tama.value].ZP + this.c_sinkaLv.value/1|0;
 		WP_Motion[1].ZP = +WP_Info.Bullet[this.c_tama.value].BFZ + this.c_sinkaLv.value/4|0;
 		break;
@@ -2902,9 +2902,9 @@ case 5: //ライトボウガン
 	if (this.c_tamaAtUp.checked) { //弾強化
 		switch (tama_N) {
 		case "LV1通常弾":case "LV2通常弾":case "LV3通常弾":
-		case "LV1 Pierce S":case "LV2 Pierce S":case "LV3 Pierce S":
+		case "LV1貫通弾":case "LV2貫通弾":case "LV3貫通弾":
 			hosei_Skill = 11;break;
-		case "LV1 Pellet S":case "LV2 Pellet S":case "LV3 Pellet S":
+		case "LV1散弾":case "LV2散弾":case "LV3散弾":
 			hosei_Skill = 13;break;
 		}
 	}
@@ -2939,7 +2939,7 @@ case 7: //太刀
 	break;
 case 9: //ガンランス
 	//ヒートブレード中は、青ゲージ以下の場合、１ランクＵＰする
-	if (this.c_style.value !== "Earth" && sharp <= 5 && this.c_kobetu2.selectedIndex) sharp += 1;
+	if (this.c_style.value !== "地" && sharp <= 5 && this.c_kobetu2.selectedIndex) sharp += 1;
 	break;
 case 10: //弓
 	if (this.c_tamaAtUp.checked) { //弾強化
@@ -3033,7 +3033,7 @@ case 10: //弓
 		break;
 	case "BA": //爆撃ビン
 		bakuFlg = this.c_bin.value;
-		if (this.c_style.value === "Storm" && this.c_tame.selectedIndex >= 6 && this.c_soko.selectedIndex === 2) {
+		if (this.c_style.value === "嵐" && this.c_tame.selectedIndex >= 6 && this.c_soko.selectedIndex === 2) {
 			//底力オーラアロー
 			bakuAt = WP_Info.BakuBin["ｵｰ火事場"];
 		} else {
@@ -3101,7 +3101,7 @@ if (this.enemy_hc && this.wp_hc && (WP_Rui === 1 || WP_Rui === 5 || WP_Rui === 1
 if (this.c_garou.value >= 1) eqCri += 50; //餓狼
 if (this.c_honki.value === "2") eqCri += 30; //本気飲料
 
-if (WP_Rui === 9 && this.c_style.value !== "Earth" && this.c_kobetu2.selectedIndex) eqCri = 100; //ガンランス新スタイルでは100%
+if (WP_Rui === 9 && this.c_style.value !== "地" && this.c_kobetu2.selectedIndex) eqCri = 100; //ガンランス新スタイルでは100%
 if (!(WP_Rui === 1 || WP_Rui === 5 || WP_Rui === 10) && sharp <= 2) eqCri = 0; //ガン以外は黄以下だと無効
 
 if (eqCri > 100) {
@@ -3334,7 +3334,7 @@ for (var cntBui = 0,maxBui = bui.length; cntBui < maxBui; cntBui++){
 			//個別属性補正
 			var kei_zokuhosei = WP_Motion[0].ZH || 100;
 			//狙い撃ち(クリティカル距離のみ）
-			var kei_hit = (this.c_sensya.value !== "0" && WP_Motion[cntMot].P >= (WP_Rui === 5 && this.c_style.value === "Storm" && this.c_kobetu2.selectedIndex ? 20 : 15)) ? 5 : 0;
+			var kei_hit = (this.c_sensya.value !== "0" && WP_Motion[cntMot].P >= (WP_Rui === 5 && this.c_style.value === "嵐" && this.c_kobetu2.selectedIndex ? 20 : 15)) ? 5 : 0;
 
 			//攻撃×威力×モーション(減衰)×補正×肉質×スキル補正×アイテム補正(強撃ビン)×クリティカル(1.25,0.75)
 			var dmg_M_Cr = ~~(eqAt * WP_Motion[0].P/10 * WP_Motion[cntMot].P/10 * WP_Motion[0].H/100 * kei_adjust/100 * (+bui[cntBui][kei_type] + kei_hit)/100 * hosei_Skill/100 * hosei_DMG/10 * criHosei/100); //通常
@@ -3380,11 +3380,11 @@ for (var cntBui = 0,maxBui = bui.length; cntBui < maxBui; cntBui++){
 			switch (WP_Rui) {
 			case 1: //ヘビィボウガン
 				switch (tama_N) {
-				case "LV1 Crag S":case "LV2 Crag S":case "LV3 Crag S":
+				case "LV1徹甲榴弾":case "LV2徹甲榴弾":case "LV3徹甲榴弾":
 					if (this.c_houzyutu.selectedIndex) hosei_Hou_M = 150;
 					hosei_Hou_Zoku = [100,150,160,170][this.c_houzyutu.selectedIndex];
 					break;
-				case "Heat Bomb":
+				case "排熱弾":
 					hosei_Hou_M = [100,110,120,130][this.c_houzyutu.selectedIndex];
 					if (this.c_hiden.value >= 12){ //重銃技【銃仙】は1.2倍
 						hosei_Hou_M *= 12/10;
@@ -3394,7 +3394,7 @@ for (var cntBui = 0,maxBui = bui.length; cntBui < maxBui; cntBui++){
 				break;
 			case 5: //ライトボウガン
 				switch (tama_N) {
-				case "LV1 Crag S":case "LV2 Crag S":case "LV3 Crag S":
+				case "LV1徹甲榴弾":case "LV2徹甲榴弾":case "LV3徹甲榴弾":
 					if (this.c_houzyutu.selectedIndex) hosei_Hou_M = 150;
 					hosei_Hou_Zoku = [100,150,160,170][this.c_houzyutu.selectedIndex];
 					break;
@@ -3741,7 +3741,7 @@ function (evt) {
 		DamageForm.calc();
 		break;
 	case "c_sizilMotCng":
-		if (DamageForm.s_rui.value === "10" && c_style.value === "Storm") DamageForm.setAuraArrow();	//オーラ貫薙
+		if (DamageForm.s_rui.value === "10" && c_style.value === "嵐") DamageForm.setAuraArrow();	//オーラ貫薙
 	case "c_fw":
 	case "c_sizilMotUp":
 		DamageForm.setMotion();
@@ -3799,7 +3799,7 @@ var change_event = function (evt) {
 		DamageForm.cngMons();
 		DamageForm.search();
 		if (DamageForm.wp_hc) DamageForm.cngWeapon(); //性能変化
-		if (DamageForm.s_rui.value === "6" && c_style.value === "Storm") DamageForm.setMotion();	//Flurry
+		if (DamageForm.s_rui.value === "6" && c_style.value === "嵐") DamageForm.setMotion();	//乱舞改
 		DamageForm.calc();
 		break;
 	case "s_rui":
@@ -3882,7 +3882,7 @@ var change_event = function (evt) {
 		DamageForm.calc();
 		break;
 	case "c_kensyo":
-		if (DamageForm.s_rui.value === "9" && DamageForm.c_style.value === "Storm") DamageForm.setMotion();
+		if (DamageForm.s_rui.value === "9" && DamageForm.c_style.value === "嵐") DamageForm.setMotion();
 		DamageForm.calc();
 		break;
 	case "c_kobetu1":
