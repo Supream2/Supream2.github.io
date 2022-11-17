@@ -1509,7 +1509,7 @@ case 9: //ガンランス
 		if (eq[I_aGR] && this.c_sizilgunsup.value) hougekiType = hougekiType.substring(0,7) + (+hougekiType.substring(7) + +this.c_sizilgunsup.value);
 		if (eq[I_aCLASS] === CLASSTYPE.Tenrou) hougekiType = this.c_tenrouGuns.value + "砲撃" + this.c_tenrouGunsLv.value;
 		var hougeki = WP_Info.Bullet[ hougekiType ],rengekiP = 0;
-		switch (hougeki.N.substring(0,3)) {
+		switch (hougeki.N.substring(0,6)) {
 		case "Normal":
 			rengekiP = 9;break;
 		case "Long  ":
