@@ -1510,11 +1510,11 @@ case 9: //ガンランス
 		if (eq[I_aCLASS] === CLASSTYPE.Tenrou) hougekiType = this.c_tenrouGuns.value + "Shot" + this.c_tenrouGunsLv.value;
 		var hougeki = WP_Info.Bullet[ hougekiType ],rengekiP = 0;
 		switch (hougeki.N.substring(0,6)) {
-		case "Normal Shot":
+		case "Normal":
 			rengekiP = 9;break;
 		case "Long  ":
 			rengekiP = 7;break;
-		case "Spread Shot":
+		case "Spread":
 			rengekiP = 8;break;
 		}
 		//赤ゲージでは砲撃、HB使用不可、龍撃砲可
@@ -1572,6 +1572,7 @@ case 9: //ガンランス
 		}
 		switch (this.c_style.value) {
 		case "Earth":
+		    WP_Motion = WP_Motion.concat([{N:"加算",T:-1,M:hougeki.MA,ZT:1,ZP:hougeki.FZA,C:"<br>1装填分",E:"this.c_sharp.value === '0'"}]); //爆竜轟砲
 			break;
 		case "Storm":
 			if (this.c_kobetu2.selectedIndex) {
