@@ -557,33 +557,33 @@ INFO[5].Bullet = {
 			};
 INFO[9].Bullet = {
 //N:名前,M:無属性,FZ:火属性値,ZB:属性砲倍率,K:気絶値,MA:無属性(加算),FZA:火属性値(加算)
-			"Normal ShotLV1":{N:"NormalLV1",M:16,FZ:5,ZB:300,K:3},
-			"Normal ShotLV2":{N:"NormalLV2",M:23,FZ:8,ZB:313,K:4},
-			"Normal ShotLV3":{N:"NormalLV3",M:30,FZ:10,ZB:326,K:5},
-			"Normal ShotLV4":{N:"NormalLV4",M:35,FZ:12,ZB:339,K:6},
-			"Normal ShotLV5":{N:"NormalLV5",M:40,FZ:14,ZB:352,K:7},
-			"Normal ShotLV6":{N:"NormalLV6",M:65,FZ:16,ZB:365,K:8},
-			"Normal ShotLV7":{N:"NormalLV7",M:75,FZ:18,ZB:379,K:9},
-			"Normal ShotLV8":{N:"NormalLV8",M:85,FZ:20,ZB:392,K:10},
-			"Normal ShotLV9":{N:"NormalLV9",M:99,FZ:22,ZB:405,K:11},
-			"Spread ShotLV1":{N:"SpreadLV1",M:31,FZ:10,ZB:550,K:6},
-			"Spread ShotLV2":{N:"SpreadLV2",M:44,FZ:20,ZB:563,K:7},
-			"Spread ShotLV3":{N:"SpreadLV3",M:57,FZ:24,ZB:576,K:8},
-			"Spread ShotLV4":{N:"SpreadLV4",M:63,FZ:29,ZB:589,K:9},
-			"Spread ShotLV5":{N:"SpreadLV5",M:68,FZ:34,ZB:602,K:10},
-			"Spread ShotLV6":{N:"SpreadLV6",M:107,FZ:39,ZB:615,K:11},
-			"Spread ShotLV7":{N:"SpreadLV7",M:119,FZ:43,ZB:629,K:12},
-			"Spread ShotLV8":{N:"SpreadLV8",M:133,FZ:47,ZB:642,K:13},
-			"Spread ShotLV9":{N:"SpreadLV9",M:153,FZ:51,ZB:655,K:14},
-			"Long ShotLV1":{N:"LongLV1",M:24,FZ:11,ZB:500,K:5},
-			"Long ShotLV2":{N:"LongLV2",M:33,FZ:16,ZB:513,K:6},
-			"Long ShotLV3":{N:"LongLV3",M:42,FZ:20,ZB:526,K:7},
-			"Long ShotLV4":{N:"LongLV4",M:48,FZ:22,ZB:539,K:8},
-			"Long ShotLV5":{N:"LongLV5",M:53,FZ:24,ZB:552,K:9},
-			"Long ShotLV6":{N:"LongLV6",M:84,FZ:27,ZB:565,K:10},
-			"Long ShotLV7":{N:"LongLV7",M:95,FZ:30,ZB:579,K:11},
-			"Long ShotLV8":{N:"LongLV8",M:106,FZ:33,ZB:592,K:12},
-			"Long ShotLV9":{N:"LongLV9",M:122,FZ:36,ZB:605,K:13},
+			"Normal Shot ShotLV1":{N:"Normal ShotLV1",M:16,FZ:5,ZB:300,K:3},
+			"Normal Shot ShotLV2":{N:"Normal ShotLV2",M:23,FZ:8,ZB:313,K:4},
+			"Normal Shot ShotLV3":{N:"Normal ShotLV3",M:30,FZ:10,ZB:326,K:5},
+			"Normal Shot ShotLV4":{N:"Normal ShotLV4",M:35,FZ:12,ZB:339,K:6},
+			"Normal Shot ShotLV5":{N:"Normal ShotLV5",M:40,FZ:14,ZB:352,K:7},
+			"Normal Shot ShotLV6":{N:"Normal ShotLV6",M:65,FZ:16,ZB:365,K:8},
+			"Normal Shot ShotLV7":{N:"Normal ShotLV7",M:75,FZ:18,ZB:379,K:9},
+			"Normal Shot ShotLV8":{N:"Normal ShotLV8",M:85,FZ:20,ZB:392,K:10},
+			"Normal Shot ShotLV9":{N:"Normal ShotLV9",M:99,FZ:22,ZB:405,K:11},
+			"Spread Shot ShotLV1":{N:"Spread ShotLV1",M:31,FZ:10,ZB:550,K:6},
+			"Spread Shot ShotLV2":{N:"Spread ShotLV2",M:44,FZ:20,ZB:563,K:7},
+			"Spread Shot ShotLV3":{N:"Spread ShotLV3",M:57,FZ:24,ZB:576,K:8},
+			"Spread Shot ShotLV4":{N:"Spread ShotLV4",M:63,FZ:29,ZB:589,K:9},
+			"Spread Shot ShotLV5":{N:"Spread ShotLV5",M:68,FZ:34,ZB:602,K:10},
+			"Spread Shot ShotLV6":{N:"Spread ShotLV6",M:107,FZ:39,ZB:615,K:11},
+			"Spread Shot ShotLV7":{N:"Spread ShotLV7",M:119,FZ:43,ZB:629,K:12},
+			"Spread Shot ShotLV8":{N:"Spread ShotLV8",M:133,FZ:47,ZB:642,K:13},
+			"Spread Shot ShotLV9":{N:"Spread ShotLV9",M:153,FZ:51,ZB:655,K:14},
+			"Long ShotLV1":{N:"Long  ShotLV1",M:24,FZ:11,ZB:500,K:5},
+			"Long ShotLV2":{N:"Long  ShotLV2",M:33,FZ:16,ZB:513,K:6},
+			"Long ShotLV3":{N:"Long  ShotLV3",M:42,FZ:20,ZB:526,K:7},
+			"Long ShotLV4":{N:"Long  ShotLV4",M:48,FZ:22,ZB:539,K:8},
+			"Long ShotLV5":{N:"Long  ShotLV5",M:53,FZ:24,ZB:552,K:9},
+			"Long ShotLV6":{N:"Long  ShotLV6",M:84,FZ:27,ZB:565,K:10},
+			"Long ShotLV7":{N:"Long  ShotLV7",M:95,FZ:30,ZB:579,K:11},
+			"Long ShotLV8":{N:"Long  ShotLV8",M:106,FZ:33,ZB:592,K:12},
+			"Long ShotLV9":{N:"Long  ShotLV9",M:122,FZ:36,ZB:605,K:13},
 			"Wyvern Fire NormalLV1":{N:"WFireLV1",M:40,FZ:12},
 			"Wyvern Fire NormalLV2":{N:"WFireLV2",M:50,FZ:16},
 			"Wyvern Fire NormalLV3":{N:"WFireLV3",M:62,FZ:18},
@@ -1510,11 +1510,11 @@ case 9: //ガンランス
 		if (eq[I_aCLASS] === CLASSTYPE.Tenrou) hougekiType = this.c_tenrouGuns.value + "Shot" + this.c_tenrouGunsLv.value;
 		var hougeki = WP_Info.Bullet[ hougekiType ],rengekiP = 0;
 		switch (hougeki.N.substring(0,6)) {
-		case "Normal":
+		case "Normal Shot":
 			rengekiP = 9;break;
 		case "Long  ":
 			rengekiP = 7;break;
-		case "Spread":
+		case "Spread Shot":
 			rengekiP = 8;break;
 		}
 		//赤ゲージでは砲撃、HB使用不可、龍撃砲可
@@ -1823,7 +1823,7 @@ case 10: //弓
 					}
 					if (i === 2 && this.c_tame.value === "爆裂型") WP_Motion[2].M = WP_Info.BakuBin["爆裂追加"];
 				} else { //近接
-						WP_Motion[i].M = binPoint[this.c_style.value === "Earth" ? "Normal" : "TenRan"];
+						WP_Motion[i].M = binPoint[this.c_style.value === "Earth" ? "Normal Shot" : "TenRan"];
 				}
 				break;
 			case "DA": //打撃ビン
