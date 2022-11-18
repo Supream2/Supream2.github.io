@@ -1573,9 +1573,9 @@ case 9: //ガンランス
 		hougeki = WP_Info.Bullet["Wyvern Fire "+hougekiType];
 		switch (this.c_style.value) {
 		case "Earth":
-			WP_Motion = WP_Motion.concat([{N:hougeki.N,T:-1,M:hougeki.M,ZT:1,ZP:hougeki.FZ,C:"<br>x<i>5回</i>",E:"this.c_sharp.value === '0'"}]); //竜激砲
+			WP_Motion = WP_Motion.concat([{N:"",T:-1,M:hougeki.M,ZT:1,ZP:hougeki.FZ,C:"<br>x<i>5回</i>",E:"this.c_sharp.value === '0'"}]); //竜激砲
 			hougeki = WP_Info.Bullet["S Wyvern Fire "+hougekiType];
-			WP_Motion = WP_Motion.concat([{N:hougeki.N,T:-1,M:hougeki.M,ZT:1,ZP:hougeki.FZ,C:"<br>x<i>2回</i>",E:"this.c_sharp.value === '0'"}]); //爆竜轟砲
+			WP_Motion = WP_Motion.concat([{N:"",T:-1,M:hougeki.M,ZT:1,ZP:hougeki.FZ,C:"<br>x<i>2回</i>",E:"this.c_sharp.value === '0'"}]); //爆竜轟砲
 			WP_Motion = WP_Motion.concat([{N:"加算",T:-1,M:hougeki.MA,ZT:1,ZP:hougeki.FZA,C:"<br>1装填分",E:"this.c_sharp.value === '0'"}]); //爆竜轟砲
 			break;
 		case "Storm":
