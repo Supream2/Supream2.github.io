@@ -1512,7 +1512,7 @@ case 9: //ガンランス
 		switch (hougeki.N.substring(0,6)) {
 		case "Normal":
 			rengekiP = 9;break;
-		case "Long":
+		case "Long  ":
 			rengekiP = 7;break;
 		case "Spread":
 			rengekiP = 8;break;
