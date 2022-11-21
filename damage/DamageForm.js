@@ -1038,10 +1038,10 @@ default: //剣用
 }
 //表記変更
 if (CK_FULL) {
-	this.c_soko.options[2].text = this.c_soko.options[2].text.substring(0,6) + (this.c_soko.options[2].value/10).toFixed(1) + "倍";
-	this.c_hiden.options[2].text = this.c_hiden.options[2].text.substring(0,2) + "|" + ((this.c_hiden.options[2].value/10).toFixed(1)) + "倍";
-	this.c_hiden.options[3].text = this.c_hiden.options[3].text.substring(0,2) + "|" + ((this.c_hiden.options[3].value/10).toFixed(1)) + "倍";
-	this.c_hiden.options[4].text = this.c_hiden.options[4].text.substring(0,2) + "|" + ((this.c_hiden.options[4].value/10).toFixed(1)) + "倍";
+	this.c_soko.options[2].text = this.c_soko.options[2].text.substring(0,6) + (this.c_soko.options[2].value/10).toFixed(1) + "x";
+	this.c_hiden.options[2].text = this.c_hiden.options[2].text.substring(0,2) + "|" + ((this.c_hiden.options[2].value/10).toFixed(1)) + "x";
+	this.c_hiden.options[3].text = this.c_hiden.options[3].text.substring(0,2) + "|" + ((this.c_hiden.options[3].value/10).toFixed(1)) + "x";
+	this.c_hiden.options[4].text = this.c_hiden.options[4].text.substring(0,2) + "|" + ((this.c_hiden.options[4].value/10).toFixed(1)) + "x";
 }
 
 //武器毎の表記セット
@@ -1651,38 +1651,38 @@ case 5: //ライト
 		switch (tama.N) {
 		case "LV1Normal S":case "LV2Normal S":case "LV3Normal S":
 			if (WP_Rui === 1){ //ヘビィ
-					WP_Motion = WP_Motion.concat([{N:"近距離",P:criPoint,C:"倍"},{N:"中距離１",P:criPoint,C:"倍"},{N:"中距離２",P:criPoint,C:"倍"},{N:"遠距離１",P:criPoint,C:"倍"},{N:"遠距離２",P:10,C:"倍"},{N:"遠距離３",P:8,C:"倍"},{N:"遠距離４",P:5,C:"倍"}/*,{N:"遠距離５",P:0,C:"倍"}*/]);
+					WP_Motion = WP_Motion.concat([{N:"Close Range",P:criPoint,C:"x"},{N:"Med Range1",P:criPoint,C:"x"},{N:"Med Range2",P:criPoint,C:"x"},{N:"Long Range1",P:criPoint,C:"x"},{N:"Long Range2",P:10,C:"x"},{N:"Long Range3",P:8,C:"x"},{N:"Long Range4",P:5,C:"x"}/*,{N:"Long Range5",P:0,C:"x"}*/]);
 			} else { //ライト
 				switch (this.c_style.value) {
 				case "Earth":
-					WP_Motion = WP_Motion.concat([{N:"近距離",P:criPoint,C:"倍"},{N:"中距離１",P:criPoint,C:"倍"},{N:"中距離２",P:10,C:"倍"},{N:"遠距離１",P:8,C:"倍"},{N:"遠距離２",P:5,C:"倍"},{N:"遠距離３",P:5,C:"倍"}/*,{N:"遠距離４",P:0,C:"倍"},{N:"遠距離５",P:0,C:"倍"}*/]);
+					WP_Motion = WP_Motion.concat([{N:"Close Range",P:criPoint,C:"x"},{N:"Med Range1",P:criPoint,C:"x"},{N:"Med Range2",P:10,C:"x"},{N:"Long Range1",P:8,C:"x"},{N:"Long Range2",P:5,C:"x"},{N:"Long Range3",P:5,C:"x"}/*,{N:"Long Range4",P:0,C:"x"},{N:"Long Range5",P:0,C:"x"}*/]);
 					break;
 				case "Storm":
 					if (this.c_kobetu2.selectedIndex) { //ステップ打ちの時
-						WP_Motion = WP_Motion.concat([{N:"近距離",P:criPoint,C:"倍"},{N:"中距離１",P:criPoint,C:"倍"},{N:"中距離２",P:criPoint,C:"倍"},{N:"遠距離１",P:15,C:"倍"}/*,{N:"遠距離２",P:0,C:"倍"},{N:"遠距離３",P:0,C:"倍"},{N:"遠距離４",P:0,C:"倍"},{N:"遠距離５",P:0,C:"倍"}*/]);
+						WP_Motion = WP_Motion.concat([{N:"Close Range",P:criPoint,C:"x"},{N:"Med Range1",P:criPoint,C:"x"},{N:"Med Range2",P:criPoint,C:"x"},{N:"Long Range1",P:15,C:"x"}/*,{N:"Long Range2",P:0,C:"x"},{N:"Long Range3",P:0,C:"x"},{N:"Long Range4",P:0,C:"x"},{N:"Long Range5",P:0,C:"x"}*/]);
 						break;
 					}
 				case "Heaven":
-					WP_Motion = WP_Motion.concat([{N:"近距離",P:criPoint,C:"倍"},{N:"中距離１",P:10,C:"倍"},{N:"中距離２",P:8,C:"倍"},{N:"遠距離１",P:5,C:"倍"},{N:"遠距離２",P:5,C:"倍"},{N:"遠距離３",P:5,C:"倍"}/*,{N:"遠距離４",P:0,C:"倍"},{N:"遠距離５",P:0,C:"倍"}*/]);
+					WP_Motion = WP_Motion.concat([{N:"Close Range",P:criPoint,C:"x"},{N:"Med Range1",P:10,C:"x"},{N:"Med Range2",P:8,C:"x"},{N:"Long Range1",P:5,C:"x"},{N:"Long Range2",P:5,C:"x"},{N:"Long Range3",P:5,C:"x"}/*,{N:"Long Range4",P:0,C:"x"},{N:"Long Range5",P:0,C:"x"}*/]);
 					break;
 				}
 			}
 			break;
 		case "LV1Pierce S":case "LV2Pierce S":case "LV3Pierce S":
 			if (WP_Rui === 1){ //ヘビィ
-					WP_Motion = WP_Motion.concat([{N:"近距離",P:10,C:"倍"},{N:"中距離１",P:criPoint,C:"倍"},{N:"中距離２",P:criPoint,C:"倍"},{N:"遠距離１",P:criPoint,C:"倍"},{N:"遠距離２",P:criPoint,C:"倍"},{N:"遠距離３",P:10,C:"倍"},{N:"遠距離４",P:8,C:"倍"},{N:"遠距離５",P:5,C:"倍"}]);
+					WP_Motion = WP_Motion.concat([{N:"Close Range",P:10,C:"x"},{N:"Med Range1",P:criPoint,C:"x"},{N:"Med Range2",P:criPoint,C:"x"},{N:"Long Range1",P:criPoint,C:"x"},{N:"Long Range2",P:criPoint,C:"x"},{N:"Long Range3",P:10,C:"x"},{N:"Long Range4",P:8,C:"x"},{N:"Long Range5",P:5,C:"x"}]);
 			} else { //ライト
 				switch (this.c_style.value) {
 				case "Earth":
-					WP_Motion = WP_Motion.concat([{N:"近距離",P:10,C:"倍"},{N:"中距離１",P:criPoint,C:"倍"},{N:"中距離２",P:criPoint,C:"倍"},{N:"遠距離１",P:criPoint,C:"倍"},{N:"遠距離２",P:10,C:"倍"},{N:"遠距離３",P:8,C:"倍"},{N:"遠距離４",P:5,C:"倍"}/*,{N:"遠距離５",P:0,C:"倍"}*/]);
+					WP_Motion = WP_Motion.concat([{N:"Close Range",P:10,C:"x"},{N:"Med Range1",P:criPoint,C:"x"},{N:"Med Range2",P:criPoint,C:"x"},{N:"Long Range1",P:criPoint,C:"x"},{N:"Long Range2",P:10,C:"x"},{N:"Long Range3",P:8,C:"x"},{N:"Long Range4",P:5,C:"x"}/*,{N:"Long Range5",P:0,C:"x"}*/]);
 					break;
 				case "Storm":
 					if (this.c_kobetu2.selectedIndex) { //ステップ打ちの時
-						WP_Motion = WP_Motion.concat([{N:"近距離",P:criPoint,C:"倍"},{N:"中距離１",P:criPoint,C:"倍"},{N:"中距離２",P:criPoint,C:"倍"},{N:"遠距離１",P:15,C:"倍"}/*,{N:"遠距離２",P:0,C:"倍"},{N:"遠距離３",P:0,C:"倍"},{N:"遠距離４",P:0,C:"倍"},{N:"遠距離５",P:0,C:"倍"}*/]);
+						WP_Motion = WP_Motion.concat([{N:"Close Range",P:criPoint,C:"x"},{N:"Med Range1",P:criPoint,C:"x"},{N:"Med Range2",P:criPoint,C:"x"},{N:"Long Range1",P:15,C:"x"}/*,{N:"Long Range2",P:0,C:"x"},{N:"Long Range3",P:0,C:"x"},{N:"Long Range4",P:0,C:"x"},{N:"Long Range5",P:0,C:"x"}*/]);
 						break;
 					}
 				case "Heaven":
-					WP_Motion = WP_Motion.concat([{N:"近距離",P:10,C:"倍"},{N:"中距離１",P:criPoint,C:"倍"},{N:"中距離２",P:criPoint,C:"倍"},{N:"遠距離１",P:10,C:"倍"},{N:"遠距離２",P:8,C:"倍"},{N:"遠距離３",P:5,C:"倍"},{N:"遠距離４",P:5,C:"倍"}/*,{N:"遠距離５",P:0,C:"倍"}*/]);
+					WP_Motion = WP_Motion.concat([{N:"Close Range",P:10,C:"x"},{N:"Med Range1",P:criPoint,C:"x"},{N:"Med Range2",P:criPoint,C:"x"},{N:"Long Range1",P:10,C:"x"},{N:"Long Range2",P:8,C:"x"},{N:"Long Range3",P:5,C:"x"},{N:"Long Range4",P:5,C:"x"}/*,{N:"Long Range5",P:0,C:"x"}*/]);
 					break;
 				}
 			}
@@ -1690,42 +1690,42 @@ case 5: //ライト
 		case "LV1Crag  S":case "LV2Crag  S":case "LV3Crag  S":
 			WP_Motion[0].N = WP_Motion[0].N.substring(0,6);
 			if (WP_Rui === 1){ //ヘビィ
-					WP_Motion = WP_Motion.concat([{N:"近距離",P:10,C:"倍"},{N:"中距離１",P:criPoint,C:"倍"},{N:"中距離２",P:criPoint,C:"倍"},{N:"遠距離１",P:10,C:"倍"},{N:"遠距離２",P:8,C:"倍"},{N:"遠距離３",P:5,C:"倍"},{N:"遠距離４",P:5,C:"倍"}/*,{N:"遠距離５",P:0,C:"倍"}*/]);
+					WP_Motion = WP_Motion.concat([{N:"Close Range",P:10,C:"x"},{N:"Med Range1",P:criPoint,C:"x"},{N:"Med Range2",P:criPoint,C:"x"},{N:"Long Range1",P:10,C:"x"},{N:"Long Range2",P:8,C:"x"},{N:"Long Range3",P:5,C:"x"},{N:"Long Range4",P:5,C:"x"}/*,{N:"Long Range5",P:0,C:"x"}*/]);
 			} else { //ライト
 				switch (this.c_style.value) {
 				case "Earth":
-					WP_Motion = WP_Motion.concat([{N:"近距離",P:10,C:"倍"},{N:"中距離１",P:criPoint,C:"倍"},{N:"中距離２",P:10,C:"倍"},{N:"遠距離１",P:8,C:"倍"},{N:"遠距離２",P:8,C:"倍"},{N:"遠距離３",P:5,C:"倍"},{N:"遠距離４",P:5,C:"倍"}/*,{N:"遠距離５",P:0,C:"倍"}*/]);
+					WP_Motion = WP_Motion.concat([{N:"Close Range",P:10,C:"x"},{N:"Med Range1",P:criPoint,C:"x"},{N:"Med Range2",P:10,C:"x"},{N:"Long Range1",P:8,C:"x"},{N:"Long Range2",P:8,C:"x"},{N:"Long Range3",P:5,C:"x"},{N:"Long Range4",P:5,C:"x"}/*,{N:"Long Range5",P:0,C:"x"}*/]);
 					break;
 				case "Storm":
 					if (this.c_kobetu2.selectedIndex) { //ステップ打ちの時
-						WP_Motion = WP_Motion.concat([{N:"近距離",P:criPoint,C:"倍"},{N:"中距離１",P:10,C:"倍"},{N:"中距離２",P:15,C:"倍"}/*,{N:"遠距離１",P:0,C:"倍"},{N:"遠距離２",P:0,C:"倍"},{N:"遠距離３",P:0,C:"倍"},{N:"遠距離４",P:0,C:"倍"},{N:"遠距離５",P:0,C:"倍"}*/]);
+						WP_Motion = WP_Motion.concat([{N:"Close Range",P:criPoint,C:"x"},{N:"Med Range1",P:10,C:"x"},{N:"Med Range2",P:15,C:"x"}/*,{N:"Long Range1",P:0,C:"x"},{N:"Long Range2",P:0,C:"x"},{N:"Long Range3",P:0,C:"x"},{N:"Long Range4",P:0,C:"x"},{N:"Long Range5",P:0,C:"x"}*/]);
 						break;
 					}
 				case "Heaven":
-					WP_Motion = WP_Motion.concat([{N:"近距離",P:criPoint,C:"倍"},{N:"中距離１",P:10,C:"倍"},{N:"中距離２",P:8,C:"倍"},{N:"遠距離１",P:8,C:"倍"},{N:"遠距離２",P:5,C:"倍"},{N:"遠距離３",P:5,C:"倍"},{N:"遠距離４",P:5,C:"倍"}/*,{N:"遠距離５",P:0,C:"倍"}*/]);
+					WP_Motion = WP_Motion.concat([{N:"Close Range",P:criPoint,C:"x"},{N:"Med Range1",P:10,C:"x"},{N:"Med Range2",P:8,C:"x"},{N:"Long Range1",P:8,C:"x"},{N:"Long Range2",P:5,C:"x"},{N:"Long Range3",P:5,C:"x"},{N:"Long Range4",P:5,C:"x"}/*,{N:"Long Range5",P:0,C:"x"}*/]);
 					break;
 				}
 			}
 			break;
 		case "LV1Pelet S":case "LV2Pelet S":case "LV3Pelet S":case "LV1Recov S":case "LV2Recov S":
 			if (WP_Rui === 5 && this.c_style.value === "Storm" && this.c_kobetu2.selectedIndex) { //ライトのステップ打ちの時
-				WP_Motion = WP_Motion.concat([{N:"近距離",P:10,C:"倍"}/*,{N:"中距離１",P:0,C:"倍"},{N:"中距離２",P:0,C:"倍"},{N:"遠距離１",P:0,C:"倍"},{N:"遠距離２",P:0,C:"倍"},{N:"遠距離３",P:0,C:"倍"},{N:"遠距離４",P:0,C:"倍"},{N:"遠距離５",P:0,C:"倍"}*/]);
+				WP_Motion = WP_Motion.concat([{N:"Close Range",P:10,C:"x"}/*,{N:"Med Range1",P:0,C:"x"},{N:"Med Range2",P:0,C:"x"},{N:"Long Range1",P:0,C:"x"},{N:"Long Range2",P:0,C:"x"},{N:"Long Range3",P:0,C:"x"},{N:"Long Range4",P:0,C:"x"},{N:"Long Range5",P:0,C:"x"}*/]);
 			} else {
-				WP_Motion = WP_Motion.concat([{N:"近距離",P:10,C:"倍"},{N:"中距離１",P:10,C:"倍"},{N:"中距離２",P:10,C:"倍"}/*,{N:"遠距離１",P:0,C:"倍"},{N:"遠距離２",P:0,C:"倍"},{N:"遠距離３",P:0,C:"倍"},{N:"遠距離４",P:0,C:"倍"},{N:"遠距離５",P:0,C:"倍"}*/]);
+				WP_Motion = WP_Motion.concat([{N:"Close Range",P:10,C:"x"},{N:"Med Range1",P:10,C:"x"},{N:"Med Range2",P:10,C:"x"}/*,{N:"Long Range1",P:0,C:"x"},{N:"Long Range2",P:0,C:"x"},{N:"Long Range3",P:0,C:"x"},{N:"Long Range4",P:0,C:"x"},{N:"Long Range5",P:0,C:"x"}*/]);
 			}
 			break;
 		case "LV1Pellet S":case "LV2Pellet S":case "LV3Pellet S":case "LV1Psn   S":case "LV2Psn   S":case "LV1Para  S":case "LV2Para  S":case "LV1Sleep S":case "LV2Sleep S":
 			if (WP_Rui === 5 && this.c_style.value === "Storm" && this.c_kobetu2.selectedIndex) { //ライトのステップ打ちの時
-				WP_Motion = WP_Motion.concat([{N:"近距離",P:10,C:"倍"},{N:"中距離１",P:10,C:"倍"},{N:"中距離２",P:10,C:"倍"}/*,{N:"遠距離１",P:0,C:"倍"},{N:"遠距離２",P:0,C:"倍"},{N:"遠距離３",P:0,C:"倍"},{N:"遠距離４",P:0,C:"倍"},{N:"遠距離５",P:0,C:"倍"}*/]);
+				WP_Motion = WP_Motion.concat([{N:"Close Range",P:10,C:"x"},{N:"Med Range1",P:10,C:"x"},{N:"Med Range2",P:10,C:"x"}/*,{N:"Long Range1",P:0,C:"x"},{N:"Long Range2",P:0,C:"x"},{N:"Long Range3",P:0,C:"x"},{N:"Long Range4",P:0,C:"x"},{N:"Long Range5",P:0,C:"x"}*/]);
 			} else {
-				WP_Motion = WP_Motion.concat([{N:"近距離",P:10,C:"倍"},{N:"中距離１",P:10,C:"倍"},{N:"中距離２",P:10,C:"倍"},{N:"遠距離１",P:10,C:"倍"},{N:"遠距離２",P:10,C:"倍"},{N:"遠距離３",P:10,C:"倍"},{N:"遠距離４",P:10,C:"倍"},{N:"遠距離５",P:10,C:"倍"}]);
+				WP_Motion = WP_Motion.concat([{N:"Close Range",P:10,C:"x"},{N:"Med Range1",P:10,C:"x"},{N:"Med Range2",P:10,C:"x"},{N:"Long Range1",P:10,C:"x"},{N:"Long Range2",P:10,C:"x"},{N:"Long Range3",P:10,C:"x"},{N:"Long Range4",P:10,C:"x"},{N:"Long Range5",P:10,C:"x"}]);
 			}
 			break;
 		case "Flame S":case "Water S":case "Thund S":case "Freez S":case "Dragn S":
 			if (WP_Rui === 5 && this.c_style.value === "Storm" && this.c_kobetu2.selectedIndex) { //ライトのステップ打ちの時
-				WP_Motion = WP_Motion.concat([{N:"近距離",P:10,C:"倍"}/*,{N:"中距離１",P:0,C:"倍"},{N:"中距離２",P:0,C:"倍"},{N:"遠距離１",P:0,C:"倍"},{N:"遠距離２",P:0,C:"倍"},{N:"遠距離３",P:0,C:"倍"},{N:"遠距離４",P:0,C:"倍"},{N:"遠距離５",P:0,C:"倍"}*/]);
+				WP_Motion = WP_Motion.concat([{N:"Close Range",P:10,C:"x"}/*,{N:"Med Range1",P:0,C:"x"},{N:"Med Range2",P:0,C:"x"},{N:"Long Range1",P:0,C:"x"},{N:"Long Range2",P:0,C:"x"},{N:"Long Range3",P:0,C:"x"},{N:"Long Range4",P:0,C:"x"},{N:"Long Range5",P:0,C:"x"}*/]);
 			} else {
-				WP_Motion = WP_Motion.concat([{N:"近距離",P:10,C:"倍"},{N:"中距離１",P:10,C:"倍"},{N:"中距離２",P:10,C:"倍"}/*,{N:"遠距離１",P:0,C:"倍"},{N:"遠距離２",P:0,C:"倍"},{N:"遠距離３",P:0,C:"倍"},{N:"遠距離４",P:0,C:"倍"},{N:"遠距離５",P:0,C:"倍"}*/]);
+				WP_Motion = WP_Motion.concat([{N:"Close Range",P:10,C:"x"},{N:"Med Range1",P:10,C:"x"},{N:"Med Range2",P:10,C:"x"}/*,{N:"Long Range1",P:0,C:"x"},{N:"Long Range2",P:0,C:"x"},{N:"Long Range3",P:0,C:"x"},{N:"Long Range4",P:0,C:"x"},{N:"Long Range5",P:0,C:"x"}*/]);
 			}
 			break;
 		case "Blast S":case "Blast S:然":case "Dragn Blast S":
@@ -1743,7 +1743,7 @@ case 5: //ライト
 			//嵐のステップ撃ち
 			if (this.c_style.value === "Storm" && this.c_kobetu2.selectedIndex) {
 				WP_Motion[0].ZH = 150;
-				WP_Motion = WP_Motion.concat([{N:"密着爆風",T:-1,M:30,ZT:1,ZP:12}]);
+				WP_Motion = WP_Motion.concat([{N:"Contact Blast",T:-1,M:30,ZT:1,ZP:12}]);
 			}
 			//武器別(速射)
 			var eq = this.eq;
@@ -1751,7 +1751,7 @@ case 5: //ライト
 				//速射はダメージ半分
 				WP_Motion[0].C = (WP_Motion[0].C || "") + "<div style='color:blue'>" + tama.S + "</div>";
 				WP_Motion[0].H = 50;
-				if (WP_Motion[WP_Motion.length-1].N === "密着爆風") {
+				if (WP_Motion[WP_Motion.length-1].N === "Contact Blast") {
 					//爆風は1/10
 					WP_Motion[WP_Motion.length-1].M = WP_Motion[WP_Motion.length-1].M / 10|0,WP_Motion[WP_Motion.length-1].ZP = WP_Motion[WP_Motion.length-1].ZP / 10|0;
 				}
@@ -1778,7 +1778,7 @@ case 10: //弓
 			WP_Motion = [(function (e){var F = function(){};F.prototype = e;return new F;})(WP_Info.Bullet[this.c_tame.value])];
 			WP_Motion[0].C = WP_Motion[0].C.substring(3);	//余計なのが入るので消し
 			WP_Motion[0].ZH = 70;	//曲射は属性0.7倍
-			WP_Motion = WP_Motion.concat([{N:"-",P:10,C:"倍"}]);
+			WP_Motion = WP_Motion.concat([{N:"-",P:10,C:"x"}]);
 			if (this.c_tame.value === "爆裂型") {	//爆裂の無属性
 				WP_Motion = WP_Motion.concat({N:"無属性",T:-1,M:19});
 				WP_Motion[0].ZH = 20;	//爆裂は0.2倍
@@ -1796,21 +1796,21 @@ case 10: //弓
 				tameAt     = [48,130,210,252,100,112.5][this.c_tame.selectedIndex-2];
 				tameZoku = [60,97.5,140,157.5,100,110][this.c_tame.selectedIndex-2];
 			}
-			WP_Motion = [{N:tama.N,P:tama.P[this.c_ya.value],H:tameAt,ZH:tameZoku,C:"<br>" + (tameAt/100) +"倍"}];
+			WP_Motion = [{N:tama.N,P:tama.P[this.c_ya.value],H:tameAt,ZH:tameZoku,C:"<br>" + (tameAt/100) +"x"}];
 			//距離
 			switch (this.c_tame.value.substring(0,3)) {
 			case "Rpd":
-				WP_Motion = WP_Motion.concat([{N:"近距離",P:10,C:"倍"},{N:"中距離１",P:criPoint,C:"倍"},{N:"中距離２",P:criPoint,C:"倍"},{N:"遠距離１",P:10,C:"倍"},{N:"遠距離２",P:8,C:"倍"},{N:"遠距離３",P:8,C:"倍"},{N:"遠距離４",P:5,C:"倍"}]);break;
+				WP_Motion = WP_Motion.concat([{N:"Close Range",P:10,C:"x"},{N:"Med Range1",P:criPoint,C:"x"},{N:"Med Range2",P:criPoint,C:"x"},{N:"Long Range1",P:10,C:"x"},{N:"Long Range2",P:8,C:"x"},{N:"Long Range3",P:8,C:"x"},{N:"Long Range4",P:5,C:"x"}]);break;
 			case "Spr":
-				WP_Motion = WP_Motion.concat([{N:"近距離",P:10,C:"倍"},{N:"中距離１",P:criPoint,C:"倍"},{N:"中距離２",P:10,C:"倍"},{N:"遠距離１",P:8,C:"倍"},{N:"遠距離２",P:8,C:"倍"},{N:"遠距離３",P:5,C:"倍"}/*,{N:"遠距離４",P:0,C:"倍"}*/]);break;
+				WP_Motion = WP_Motion.concat([{N:"Close Range",P:10,C:"x"},{N:"Med Range1",P:criPoint,C:"x"},{N:"Med Range2",P:10,C:"x"},{N:"Long Range1",P:8,C:"x"},{N:"Long Range2",P:8,C:"x"},{N:"Long Range3",P:5,C:"x"}/*,{N:"Long Range4",P:0,C:"x"}*/]);break;
 			case "Prc":
-				WP_Motion = WP_Motion.concat([{N:"近距離",P:10,C:"倍"},{N:"中距離１",P:criPoint,C:"倍"},{N:"中距離２",P:criPoint,C:"倍"},{N:"遠距離１",P:criPoint,C:"倍"},{N:"遠距離２",P:10,C:"倍"},{N:"遠距離３",P:8,C:"倍"},{N:"遠距離４",P:5,C:"倍"}]);break;
+				WP_Motion = WP_Motion.concat([{N:"Close Range",P:10,C:"x"},{N:"Med Range1",P:criPoint,C:"x"},{N:"Med Range2",P:criPoint,C:"x"},{N:"Long Range1",P:criPoint,C:"x"},{N:"Long Range2",P:10,C:"x"},{N:"Long Range3",P:8,C:"x"},{N:"Long Range4",P:5,C:"x"}]);break;
 			case "Chg":
 				WP_Motion[0].X = 5; //オーラアローはダメージ５倍
-				WP_Motion = WP_Motion.concat([{N:"近距離",P:10,C:"倍"},{N:"中距離１",P:criPoint,C:"倍"},{N:"中距離２",P:criPoint,C:"倍"},{N:"遠距離１",P:criPoint,C:"倍"},{N:"遠距離２",P:criPoint,C:"倍"},{N:"遠距離３",P:criPoint,C:"倍"},{N:"遠距離４",P:10,C:"倍"},{N:"遠距離５",P:8,C:"倍"}]);break;
+				WP_Motion = WP_Motion.concat([{N:"Close Range",P:10,C:"x"},{N:"Med Range1",P:criPoint,C:"x"},{N:"Med Range2",P:criPoint,C:"x"},{N:"Long Range1",P:criPoint,C:"x"},{N:"Long Range2",P:criPoint,C:"x"},{N:"Long Range3",P:criPoint,C:"x"},{N:"Long Range4",P:10,C:"x"},{N:"Long Range5",P:8,C:"x"}]);break;
 			case "Ara":
 				WP_Motion[0].C = "<br>ﾋｯﾄ毎に40%減";
-				WP_Motion = WP_Motion.concat([{N:"近距離",P:criPoint,C:"倍"},{N:"中距離１",P:criPoint,C:"倍"},{N:"中距離２",P:criPoint,C:"倍"},{N:"遠距離１",P:criPoint,C:"倍"},{N:"遠距離２",P:criPoint,C:"倍"},{N:"遠距離３",P:criPoint,C:"倍"},{N:"遠距離４",P:10,C:"倍"},{N:"遠距離５",P:8,C:"倍"}]);break;
+				WP_Motion = WP_Motion.concat([{N:"Close Range",P:criPoint,C:"x"},{N:"Med Range1",P:criPoint,C:"x"},{N:"Med Range2",P:criPoint,C:"x"},{N:"Long Range1",P:criPoint,C:"x"},{N:"Long Range2",P:criPoint,C:"x"},{N:"Long Range3",P:criPoint,C:"x"},{N:"Long Range4",P:10,C:"x"},{N:"Long Range5",P:8,C:"x"}]);break;
 			}
 		}
 	}
