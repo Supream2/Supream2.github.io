@@ -29,9 +29,9 @@ var CK_FULL = location.pathname.indexOf("damageT") !== -1,
 					[0,125,0,0,0,125], /*灼零*/
 					[0,0,0,150,50,0] /*皇鳴*/
 				],
-	IZYONAME = ["","Psn","Par","Slp","Explosive"],
+	IZYONAME = ["","Psn","Par","Slp","Bmb"],
 	RELOADNAME = ["Reload:Very Slow","Reload:Slow","Reload:Normal","Reload:Fast","Reload:Very Fast"],
-	KICKNAME = ["Recoil:最大","Recoil:大","Recoil:中","Recoil:やや小","Recoil:小"],
+	KICKNAME = ["Recoil:Very Large","Recoil:Large","Recoil:Medium","Recoil:Small","Recoil:Smaller"],
 	SPEEDNAME = ["Bullet Speed:Very Slow","Bullet Speed:Slow","Bullet Speed:Fast","Bullet Speed:Very Fast","Bullet Speed:Fastest","Bullet Speed:Slowest"],
 	ONPUCOLOR = [0,"<span class=fr>♪</span>","<span class=fy>♪</span>","<span class=fw>♪</span>","<span class=fb>♪</span>","<span class=fg>♪</span>","<span class=fp>♪</span>","<span class=fa>♪</span>"],
 	KYOKUNAME = ["Wide","Narrow","Bomb","Slicing"],
