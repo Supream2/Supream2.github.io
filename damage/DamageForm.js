@@ -653,10 +653,10 @@ INFO[10].Bullet = {
 			"Prc2":{N:"PrcLV2",P:[6],C:"|6x4"},
 			"Prc3":{N:"PrcLV3",P:[6],C:"|6x5"},
 			"Prc4":{N:"PrcLV4",P:[6],C:"|6x6"},
-			"ｵｰﾗ4":{N:"Chrg LV4",P:[12],C:"|12"},
-			"ｵｰﾗ5":{N:"Chrg LV5",P:[12],C:"|12"},
-			"貫薙4":{N:"貫薙 LV4",P:[47],C:"|47x6"},
-			"貫薙5":{N:"貫薙 LV5",P:[47],C:"|47x6"},
+			"Chg4":{N:"Chrg LV4",P:[12],C:"|12"},
+			"Chg5":{N:"Chrg LV5",P:[12],C:"|12"},
+			"Ara4":{N:"Aura LV4",P:[47],C:"|47x6"},
+			"Ara5":{N:"Aura LV5",P:[47],C:"|47x6"},
 			"Wide":{N:"Wide",P:18,K:3,C:"|18x7"},
 			"Narrow":{N:"Narrow",P:16,K:2,C:"|16x5"},
 			"Bomb":{N:"Bomb",P:15,K:30,C:"|15"},
@@ -664,20 +664,20 @@ INFO[10].Bullet = {
 			};
 INFO[10].IzyoBin = {"近接":2,
 					//ノーマル,+1,+2,+3
-					"連射":[[13,7,5,4],[14,8,5,4],[17,9,6,5],[19,10,7,6]],
-					"拡散":[[5,6,5,5],[5,6,5,5],[6,7,6,6],[7,9,7,7]],
-					"貫通":[[5,4,4,4],[5,4,4,4],[6,5,5,5],[7,6,6,6]],
-					"ｵｰ":25,"貫薙":19,"Wide":2,"Narrow":6,"Bomb":0,"Slicing":2};
+					"Rpd":[[13,7,5,4],[14,8,5,4],[17,9,6,5],[19,10,7,6]],
+					"Spr":[[5,6,5,5],[5,6,5,5],[6,7,6,6],[7,9,7,7]],
+					"Prc":[[5,4,4,4],[5,4,4,4],[6,5,5,5],[7,6,6,6]],
+					"Chg":25,"Ara":19,"Wide":2,"Narrow":6,"Bomb":0,"Slicing":2};
 INFO[10].BakuBin = {"近接":{Normal:2,TenRan:10},
-					"連射":[70,40,32,28],
-					"拡散":[26,32,22,24],
-					"貫通":[28,28,28,28],
-					"ｵｰ":37,"貫薙":0,"ｵｰ火事場":55,"Wide":26,"Narrow":28,"Bomb":50,"爆裂追加":100,"Slicing":24};
+					"Rpd":[70,40,32,28],
+					"Spr":[26,32,22,24],
+					"Prc":[28,28,28,28],
+					"Chg":37,"Ara":0,"ｵｰ火事場":55,"Wide":26,"Narrow":28,"Bomb":50,"爆裂追加":100,"Slicing":24};
 INFO[10].DaBin = {"近接":0,
-					"連射":4,
-					"拡散":4,
-					"貫通":4,
-					"ｵｰ":20,"貫薙":0,"Wide":4,"Narrow":4,"Bomb":4,"Slicing":4};
+					"Rpd":4,
+					"Spr":4,
+					"Prc":4,
+					"Chg":20,"Ara":0,"Wide":4,"Narrow":4,"Bomb":4,"Slicing":4};
 var createGauge = function (w){
 	var MaxSharp = +w.substring(3,6);
 	//通常
@@ -1798,17 +1798,17 @@ case 10: //弓
 			}
 			WP_Motion = [{N:tama.N,P:tama.P[this.c_ya.value],H:tameAt,ZH:tameZoku,C:"<br>" + (tameAt/100) +"倍"}];
 			//距離
-			switch (this.c_tame.value.substring(0,2)) {
+			switch (this.c_tame.value.substring(0,3)) {
 			case "Rpd":
 				WP_Motion = WP_Motion.concat([{N:"近距離",P:10,C:"倍"},{N:"中距離１",P:criPoint,C:"倍"},{N:"中距離２",P:criPoint,C:"倍"},{N:"遠距離１",P:10,C:"倍"},{N:"遠距離２",P:8,C:"倍"},{N:"遠距離３",P:8,C:"倍"},{N:"遠距離４",P:5,C:"倍"}]);break;
 			case "Spr":
 				WP_Motion = WP_Motion.concat([{N:"近距離",P:10,C:"倍"},{N:"中距離１",P:criPoint,C:"倍"},{N:"中距離２",P:10,C:"倍"},{N:"遠距離１",P:8,C:"倍"},{N:"遠距離２",P:8,C:"倍"},{N:"遠距離３",P:5,C:"倍"}/*,{N:"遠距離４",P:0,C:"倍"}*/]);break;
 			case "Prc":
 				WP_Motion = WP_Motion.concat([{N:"近距離",P:10,C:"倍"},{N:"中距離１",P:criPoint,C:"倍"},{N:"中距離２",P:criPoint,C:"倍"},{N:"遠距離１",P:criPoint,C:"倍"},{N:"遠距離２",P:10,C:"倍"},{N:"遠距離３",P:8,C:"倍"},{N:"遠距離４",P:5,C:"倍"}]);break;
-			case "ｵｰ":
+			case "Chg":
 				WP_Motion[0].X = 5; //オーラアローはダメージ５倍
 				WP_Motion = WP_Motion.concat([{N:"近距離",P:10,C:"倍"},{N:"中距離１",P:criPoint,C:"倍"},{N:"中距離２",P:criPoint,C:"倍"},{N:"遠距離１",P:criPoint,C:"倍"},{N:"遠距離２",P:criPoint,C:"倍"},{N:"遠距離３",P:criPoint,C:"倍"},{N:"遠距離４",P:10,C:"倍"},{N:"遠距離５",P:8,C:"倍"}]);break;
-			case "貫薙":
+			case "Ara":
 				WP_Motion[0].C = "<br>ﾋｯﾄ毎に40%減";
 				WP_Motion = WP_Motion.concat([{N:"近距離",P:criPoint,C:"倍"},{N:"中距離１",P:criPoint,C:"倍"},{N:"中距離２",P:criPoint,C:"倍"},{N:"遠距離１",P:criPoint,C:"倍"},{N:"遠距離２",P:criPoint,C:"倍"},{N:"遠距離３",P:criPoint,C:"倍"},{N:"遠距離４",P:10,C:"倍"},{N:"遠距離５",P:8,C:"倍"}]);break;
 			}
