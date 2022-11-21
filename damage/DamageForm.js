@@ -29,7 +29,7 @@ var CK_FULL = location.pathname.indexOf("damageT") !== -1,
 					[0,125,0,0,0,125], /*灼零*/
 					[0,0,0,150,50,0] /*皇鳴*/
 				],
-	IZYONAME = ["","Poison","Para","Sleep","Explosive"],
+	IZYONAME = ["","Psn","Par","Slp","Explosive"],
 	RELOADNAME = ["Reload:Very Slow","Reload:Slow","Reload:Normal","Reload:Fast","Reload:Very Fast"],
 	KICKNAME = ["Recoil:最大","Recoil:大","Recoil:中","Recoil:やや小","Recoil:小"],
 	SPEEDNAME = ["Bullet Speed:Very Slow","Bullet Speed:Slow","Bullet Speed:Fast","Bullet Speed:Very Fast","Bullet Speed:Fastest","Bullet Speed:Slowest"],
