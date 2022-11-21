@@ -1194,7 +1194,7 @@ case 10: //弓
 			df.appendChild(o.cloneNode(false)),df.lastChild.appendChild(document.createTextNode("-----"));
 		} else {
 			for (var i = 0,w = WP_Info.Bullet[this.c_tame.value].P,max = w.length; i < max ; i++) {
-				o.setAttribute("value", i),df.appendChild(o.cloneNode(false)),df.lastChild.appendChild(document.createTextNode((i+1) + "矢:" + w[i]));
+				o.setAttribute("value", i),df.appendChild(o.cloneNode(false)),df.lastChild.appendChild(document.createTextNode((i+1) + "Arrow:" + w[i]));
 			}
 		}
 		this.c_ya.length = 0,this.c_ya.appendChild(df);
