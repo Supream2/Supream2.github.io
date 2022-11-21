@@ -1173,7 +1173,7 @@ case 10: //弓
 		var bin = eq[I_aBIN],b = (CK_FULL ? " Coating" : ""),df = document.createDocumentFragment(),o = document.createElement("option");
 		if (bin.indexOf("Pwr") !== -1) o.setAttribute("value", "KG"),df.appendChild(o.cloneNode(false)),df.lastChild.appendChild(document.createTextNode("Power"+b));
 		o.setAttribute("value", "11" + (bin.indexOf("Psn+") !== -1 ? bin.charAt(bin.indexOf("Psn+") + 2) : 0)),df.appendChild(o.cloneNode(false)),df.lastChild.appendChild(document.createTextNode("Psn"+b));
-		if (bin.indexOf("Poison") === -1) df.lastChild.style.backgroundColor = "lightpink";
+		if (bin.indexOf("Psn") === -1) df.lastChild.style.backgroundColor = "lightpink";
 		o.setAttribute("value", "12" + (bin.indexOf("Par+") !== -1 ? bin.charAt(bin.indexOf("Par+") + 2) : 0)),df.appendChild(o.cloneNode(false)),df.lastChild.appendChild(document.createTextNode("Para"+b));
 		if (bin.indexOf("Par") === -1) df.lastChild.style.backgroundColor = "lightpink";
 		o.setAttribute("value", "13" + (bin.indexOf("Slp+") !== -1 ? bin.charAt(bin.indexOf("Slp+") + 2) : 0)),df.appendChild(o.cloneNode(false)),df.lastChild.appendChild(document.createTextNode("Sleep"+b));
