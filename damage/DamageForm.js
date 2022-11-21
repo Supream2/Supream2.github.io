@@ -1214,12 +1214,12 @@ case 10: //弓
 	}
 	if (!this.yumi_aura) {
 		var df = document.createDocumentFragment(),o = document.createElement("option");
-		o.setAttribute("value", "ｵｰﾗ4"),df.appendChild(o.cloneNode(false)),df.lastChild.appendChild(document.createTextNode("4:" + WP_Info.Bullet["ｵｰﾗ4"].N + (CK_FULL ? WP_Info.Bullet["ｵｰﾗ4"].C : "")));
-		o.setAttribute("value", "ｵｰﾗ5"),df.appendChild(o.cloneNode(false)),df.lastChild.appendChild(document.createTextNode("5:" + WP_Info.Bullet["ｵｰﾗ5"].N + (CK_FULL ? WP_Info.Bullet["ｵｰﾗ5"].C : "")));
+		o.setAttribute("value", "Chg4"),df.appendChild(o.cloneNode(false)),df.lastChild.appendChild(document.createTextNode("4:" + WP_Info.Bullet["Chg4"].N + (CK_FULL ? WP_Info.Bullet["Chg4"].C : "")));
+		o.setAttribute("value", "Chg5"),df.appendChild(o.cloneNode(false)),df.lastChild.appendChild(document.createTextNode("5:" + WP_Info.Bullet["Chg5"].N + (CK_FULL ? WP_Info.Bullet["Chg5"].C : "")));
 		this.yumi_aura = df.cloneNode(true);
 		var df = document.createDocumentFragment(),o = document.createElement("option");
-		o.setAttribute("value", "貫薙4"),df.appendChild(o.cloneNode(false)),df.lastChild.appendChild(document.createTextNode("4:" + WP_Info.Bullet["貫薙4"].N + (CK_FULL ? WP_Info.Bullet["貫薙4"].C : "")));
-		o.setAttribute("value", "貫薙5"),df.appendChild(o.cloneNode(false)),df.lastChild.appendChild(document.createTextNode("5:" + WP_Info.Bullet["貫薙5"].N + (CK_FULL ? WP_Info.Bullet["貫薙5"].C : "")));
+		o.setAttribute("value", "Ara4"),df.appendChild(o.cloneNode(false)),df.lastChild.appendChild(document.createTextNode("4:" + WP_Info.Bullet["Ara4"].N + (CK_FULL ? WP_Info.Bullet["Ara4"].C : "")));
+		o.setAttribute("value", "Ara5"),df.appendChild(o.cloneNode(false)),df.lastChild.appendChild(document.createTextNode("5:" + WP_Info.Bullet["Ara5"].N + (CK_FULL ? WP_Info.Bullet["Ara5"].C : "")));
 		this.yumi_nagi = df.cloneNode(true);
 	}
 	//立ち有無を変えたらモーションを変更
@@ -3748,7 +3748,7 @@ function (evt) {
 		DamageForm.calc();
 		break;
 	case "c_sizilMotCng":
-		if (DamageForm.s_rui.value === "10" && c_style.value === "Storm") DamageForm.setAuraArrow();	//オーラ貫薙
+		if (DamageForm.s_rui.value === "10" && c_style.value === "Storm") DamageForm.setAuraArrow();	//オーラAra
 	case "c_fw":
 	case "c_sizilMotUp":
 		DamageForm.setMotion();
