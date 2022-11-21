@@ -1320,7 +1320,7 @@ case 10: //弓
 		this.c_kobetu2_Text.nodeValue = "",this.c_kobetu2.selectedIndex = 0;
 		break;
 	case "Storm":
-		this.c_kobetu2_Text.nodeValue = "姿勢",this.c_kobetu2.length = 2,this.c_kobetu2.options[0].text = "立ち",this.c_kobetu2.options[1].text = "座り";
+		this.c_kobetu2_Text.nodeValue = "Posture",this.c_kobetu2.length = 2,this.c_kobetu2.options[0].text = "Standing",this.c_kobetu2.options[1].text = "Kneeling";
 		this.c_kobetu2.selectedIndex = 1;
 		break;
 	}
