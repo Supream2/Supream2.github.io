@@ -440,34 +440,34 @@ INFO[1].Bullet = {
 			21:{N:"LV1Sleep S",P:0,IT:3,IP:25},
 			22:{N:"LV2Sleep S",P:0,IT:3,IP:50},
 
-			9:{N:"LV1徹甲榴弾",P:3,BN:"(爆破)",BM:30,BFZ:40,BC:"<br>気絶10"},
-			10:{N:"LV2徹甲榴弾",P:3,BN:"(爆破)",BM:40,BFZ:60,BC:"<br>気絶10"},
-			11:{N:"LV3徹甲榴弾",P:3,BN:"(爆破)",BM:50,BFZ:80,BC:"<br>気絶10"},
-			23:{N:"火炎弾",P:1,ZT:1,ZB:500},
-			24:{N:"水冷弾",P:1,ZT:2,ZB:250,C:"<br>x<i>3回</i>"},
-			25:{N:"電撃弾",P:1,ZT:3,ZB:270,C:"<br>x<i>3回</i>"},
-			26:{N:"氷結弾",P:1,ZT:5,ZB:250,C:"<br>x<i>3回</i>"},
-			27:{N:"滅龍弾",P:1,ZT:4,ZP:90,C:"<br>x<i>6回</i>"},
-			28:{N:"排熱弾",T:-1,ZT:1,ZP:22,M:22},
-			29:{N:"爆撃弾",T:-1,M:30,C:"+LV/2",BN:"(持続)",BM:15,BC:"+LV/4<br>x<i>15回</i>"},
-			30:{N:"爆撃弾:然",T:-1,M:36,C:"+LV/2",BN:"(持続)",BM:18,BC:"+LV/4<br>x<i>15回</i>"},
-			31:{N:"龍爆撃弾",T:-1,M:20,ZT:4,ZP:60,C:"+LV",BN:"(持続)",BM:0,BFZ:120,BC:"LV/4<br>x<i>15回</i>"},
+			9:{N:"LV1Crag  S",P:3,BN:"(Blast)",BM:30,BFZ:40,BC:"<br>Stun10"},
+			10:{N:"LV2Crag  S",P:3,BN:"(Blast)",BM:40,BFZ:60,BC:"<br>Stun10"},
+			11:{N:"LV3Crag  S",P:3,BN:"(Blast)",BM:50,BFZ:80,BC:"<br>Stun10"},
+			23:{N:"Flame S",P:1,ZT:1,ZB:500},
+			24:{N:"Water S",P:1,ZT:2,ZB:250,C:"<br>x<i>3</i>"},
+			25:{N:"Thund S",P:1,ZT:3,ZB:270,C:"<br>x<i>3</i>"},
+			26:{N:"Freez S",P:1,ZT:5,ZB:250,C:"<br>x<i>3</i>"},
+			27:{N:"Dragn S",P:1,ZT:4,ZP:90,C:"<br>x<i>6</i>"},
+			28:{N:"Heat Bomb",T:-1,ZT:1,ZP:22,M:22},
+			29:{N:"Blast S",T:-1,M:30,C:"+LV/2",BN:"(DoT)",BM:15,BC:"+LV/4<br>x<i>15</i>"},
+			30:{N:"Blast S:然",T:-1,M:36,C:"+LV/2",BN:"(DoT)",BM:18,BC:"+LV/4<br>x<i>15</i>"},
+			31:{N:"Dragn Blast S",T:-1,M:20,ZT:4,ZP:60,C:"+LV",BN:"(DoT)",BM:0,BFZ:120,BC:"LV/4<br>x<i>15</i>"},
 
 			//圧縮 CN:着弾名,CM:着弾無属性
-			C0:{N:"LV1Normal S",P:19,K:3,CN:"(着弾)",CM:10},
-			C1:{N:"LV2Normal S",P:48,K:5,CN:"(着弾)",CM:20},
-			C2:{N:"LV3Normal S",P:48,C:"x<i>n回</i>",K:7,CN:"(着弾)",CM:10},
-			C3:{N:"LV1Pierce S",P:50,C:"x<i>3回</i>",K:7,CN:"(着弾)",CM:20},
-			C4:{N:"LV2Pierce S",P:45,C:"x<i>4回</i>",K:7,CN:"(着弾)",CM:20},
-			C5:{N:"LV3Pierce S",P:35,C:"x<i>6回</i>",K:14,CN:"(着弾)",CM:20},
-			C6:{N:"LV1Pelet S",P:30,ZT:2,ZP:25,C:"<br>x<i>3回</i>",K:6,CN:"(着弾)",CM:5},
-			C7:{N:"LV2Pelet S",P:30,ZT:2,ZP:20,C:"<br>x<i>4回</i>",K:6,CN:"(着弾)",CM:5},
-			C8:{N:"LV3Pelet S",P:30,ZT:2,ZP:20,C:"<br>x<i>5回</i>",K:6,CN:"(着弾)",CM:5},
+			C0:{N:"LV1Normal S",P:19,K:3,CN:"(Land)",CM:10},
+			C1:{N:"LV2Normal S",P:48,K:5,CN:"(Land)",CM:20},
+			C2:{N:"LV3Normal S",P:48,C:"x<i>n</i>",K:7,CN:"(Land)",CM:10},
+			C3:{N:"LV1Pierce S",P:50,C:"x<i>3</i>",K:7,CN:"(Land)",CM:20},
+			C4:{N:"LV2Pierce S",P:45,C:"x<i>4</i>",K:7,CN:"(Land)",CM:20},
+			C5:{N:"LV3Pierce S",P:35,C:"x<i>6</i>",K:14,CN:"(Land)",CM:20},
+			C6:{N:"LV1Pelet S",P:30,ZT:2,ZP:25,C:"<br>x<i>3</i>",K:6,CN:"(Land)",CM:5},
+			C7:{N:"LV2Pelet S",P:30,ZT:2,ZP:20,C:"<br>x<i>4</i>",K:6,CN:"(Land)",CM:5},
+			C8:{N:"LV3Pelet S",P:30,ZT:2,ZP:20,C:"<br>x<i>5</i>",K:6,CN:"(Land)",CM:5},
 			C12:{N:"LV1Pellet S",P:-1},
 			C13:{N:"LV2Pellet S",P:-1},
 			C14:{N:"LV3Pellet S",P:-1},
-			C15:{N:"LV1Recov S",P:0,C:"<br>回復30"},
-			C16:{N:"LV2Recov S",P:0,C:"<br>回復50"},
+			C15:{N:"LV1Recov S",P:0,C:"<br>Recov 30"},
+			C16:{N:"LV2Recov S",P:0,C:"<br>Recov 50"},
 			C17:{N:"LV1Psn   S",P:60,IT:1,IP:20,K:25},
 			C18:{N:"LV2Psn   S",P:90,IT:1,IP:40,K:25},
 			C19:{N:"LV1Para  S",P:60,IT:2,IP:20,K:25},
@@ -475,34 +475,34 @@ INFO[1].Bullet = {
 			C21:{N:"LV1Sleep S",P:0,IT:3,IP:20,K:25},
 			C22:{N:"LV2Sleep S",P:0,IT:3,IP:40,K:25},
 
-			C9:{N:"LV1徹甲榴弾",P:20,K:25,BN:"(爆破)",BM:24,BFZ:20,BC:"<br>気絶10",CN:"(着弾)",CM:20},
-			C10:{N:"LV2徹甲榴弾",P:20,K:25,BN:"(爆破)",BM:32,BFZ:30,BC:"<br>気絶10",CN:"(着弾)",CM:20},
-			C11:{N:"LV3徹甲榴弾",P:20,K:25,BN:"(爆破)",BM:40,BFZ:40,BC:"<br>気絶10",CN:"(着弾)",CM:20},
-			C23:{N:"火炎弾",P:5,ZT:1,ZB:300,K:20,CN:"(着弾)",CM:20},
-			C24:{N:"水冷弾",P:5,ZT:2,ZB:150,C:"<br>x<i>3回</i>",K:17,CN:"(着弾)",CM:20},
-			C25:{N:"電撃弾",P:5,ZT:3,ZB:170,C:"<br>x<i>3回</i>",K:17,CN:"(着弾)",CM:20},
-			C26:{N:"氷結弾",P:5,ZT:5,ZB:150,C:"<br>x<i>3回</i>",K:17,CN:"(着弾)",CM:20},
-			C27:{N:"滅龍弾",P:5,ZT:4,ZP:720,C:"<br>x<i>6回</i>",K:100,CN:"(着弾)",CM:20},
-			C28:{N:"排熱弾",P:-1},
-			C29:{N:"爆撃弾",P:-1},
-			C30:{N:"爆撃弾:然",P:-1},
-			C31:{N:"龍爆撃弾",P:-1},
+			C9:{N:"LV1Crag  S",P:20,K:25,BN:"(Blast)",BM:24,BFZ:20,BC:"<br>Stun10",CN:"(Land)",CM:20},
+			C10:{N:"LV2Crag  S",P:20,K:25,BN:"(Blast)",BM:32,BFZ:30,BC:"<br>Stun10",CN:"(Land)",CM:20},
+			C11:{N:"LV3Crag  S",P:20,K:25,BN:"(Blast)",BM:40,BFZ:40,BC:"<br>Stun10",CN:"(Land)",CM:20},
+			C23:{N:"Flame S",P:5,ZT:1,ZB:300,K:20,CN:"(Land)",CM:20},
+			C24:{N:"Water S",P:5,ZT:2,ZB:150,C:"<br>x<i>3</i>",K:17,CN:"(Land)",CM:20},
+			C25:{N:"Thund S",P:5,ZT:3,ZB:170,C:"<br>x<i>3</i>",K:17,CN:"(Land)",CM:20},
+			C26:{N:"Freez S",P:5,ZT:5,ZB:150,C:"<br>x<i>3</i>",K:17,CN:"(Land)",CM:20},
+			C27:{N:"Dragn S",P:5,ZT:4,ZP:720,C:"<br>x<i>6</i>",K:100,CN:"(Land)",CM:20},
+			C28:{N:"Heat Bomb",P:-1},
+			C29:{N:"Blast S",P:-1},
+			C30:{N:"Blast S:然",P:-1},
+			C31:{N:"Dragn Blast S",P:-1},
 
 			//パーフェクト圧縮
-			P0:{N:"LV1Normal S",P:31,K:3,CN:"(着弾)",CM:10},
-			P1:{N:"LV2Normal S",P:73,K:5,CN:"(着弾)",CM:20},
-			P2:{N:"LV3Normal S",P:72,C:"x<i>n回</i>",K:7,CN:"(着弾)",CM:10},
-			P3:{N:"LV1Pierce S",P:70,C:"x<i>3回</i>",K:7,CN:"(着弾)",CM:20},
-			P4:{N:"LV2Pierce S",P:62,C:"x<i>4回</i>",K:7,CN:"(着弾)",CM:20},
-			P5:{N:"LV3Pierce S",P:49,C:"x<i>6回</i>",K:14,CN:"(着弾)",CM:20},
-			P6:{N:"LV1Pelet S",P:40,ZT:2,ZP:35,C:"<br>x<i>3回</i>",K:6,CN:"(着弾)",CM:5},
-			P7:{N:"LV2Pelet S",P:40,ZT:2,ZP:25,C:"<br>x<i>4回</i>",K:6,CN:"(着弾)",CM:5},
-			P8:{N:"LV3Pelet S",P:40,ZT:2,ZP:25,C:"<br>x<i>5回</i>",K:6,CN:"(着弾)",CM:5},
+			P0:{N:"LV1Normal S",P:31,K:3,CN:"(Land)",CM:10},
+			P1:{N:"LV2Normal S",P:73,K:5,CN:"(Land)",CM:20},
+			P2:{N:"LV3Normal S",P:72,C:"x<i>n</i>",K:7,CN:"(Land)",CM:10},
+			P3:{N:"LV1Pierce S",P:70,C:"x<i>3</i>",K:7,CN:"(Land)",CM:20},
+			P4:{N:"LV2Pierce S",P:62,C:"x<i>4</i>",K:7,CN:"(Land)",CM:20},
+			P5:{N:"LV3Pierce S",P:49,C:"x<i>6</i>",K:14,CN:"(Land)",CM:20},
+			P6:{N:"LV1Pelet S",P:40,ZT:2,ZP:35,C:"<br>x<i>3</i>",K:6,CN:"(Land)",CM:5},
+			P7:{N:"LV2Pelet S",P:40,ZT:2,ZP:25,C:"<br>x<i>4</i>",K:6,CN:"(Land)",CM:5},
+			P8:{N:"LV3Pelet S",P:40,ZT:2,ZP:25,C:"<br>x<i>5</i>",K:6,CN:"(Land)",CM:5},
 			P12:{N:"LV1Pellet S",P:-1},
 			P13:{N:"LV2Pellet S",P:-1},
 			P14:{N:"LV3Pellet S",P:-1},
-			P15:{N:"LV1Recov S",P:0,C:"<br>回復30"},
-			P16:{N:"LV2Recov S",P:0,C:"<br>回復50"},
+			P15:{N:"LV1Recov S",P:0,C:"<br>Recov 30"},
+			P16:{N:"LV2Recov S",P:0,C:"<br>Recov 50"},
 			P17:{N:"LV1Psn   S",P:80,IT:1,IP:25,K:25},
 			P18:{N:"LV2Psn   S",P:110,IT:1,IP:50,K:25},
 			P19:{N:"LV1Para  S",P:80,IT:2,IP:25,K:25},
@@ -510,35 +510,35 @@ INFO[1].Bullet = {
 			P21:{N:"LV1Sleep S",P:0,IT:3,IP:25,K:25},
 			P22:{N:"LV2Sleep S",P:0,IT:3,IP:50,K:25},
 
-			P9:{N:"LV1徹甲榴弾",P:20,K:25,BN:"(爆破)",BM:30,BFZ:20,BC:"<br>気絶10",CN:"(着弾)",CM:20},
-			P10:{N:"LV2徹甲榴弾",P:20,K:25,BN:"(爆破)",BM:40,BFZ:30,BC:"<br>気絶10",CN:"(着弾)",CM:20},
-			P11:{N:"LV3徹甲榴弾",P:20,K:25,BN:"(爆破)",BM:50,BFZ:40,BC:"<br>気絶10",CN:"(着弾)",CM:20},
-			P23:{N:"火炎弾",P:8,ZT:1,ZB:400,K:20,CN:"(着弾)",CM:20},
-			P24:{N:"水冷弾",P:8,ZT:2,ZB:200,C:"<br>x<i>3回</i>",K:17,CN:"(着弾)",CM:20},
-			P25:{N:"電撃弾",P:8,ZT:3,ZB:215,C:"<br>x<i>3回</i>",K:17,CN:"(着弾)",CM:20},
-			P26:{N:"氷結弾",P:8,ZT:5,ZB:200,C:"<br>x<i>3回</i>",K:17,CN:"(着弾)",CM:20},
-			P27:{N:"滅龍弾",P:5,ZT:4,ZP:905,C:"<br>x<i>6回</i>",K:100,CN:"(着弾)",CM:20},
-			P28:{N:"排熱弾",P:-1},
-			P29:{N:"爆撃弾",P:-1},
-			P30:{N:"爆撃弾:然",P:-1},
-			P31:{N:"龍爆撃弾",P:-1}
+			P9:{N:"LV1Crag  S",P:20,K:25,BN:"(Blast)",BM:30,BFZ:20,BC:"<br>Stun10",CN:"(Land)",CM:20},
+			P10:{N:"LV2Crag  S",P:20,K:25,BN:"(Blast)",BM:40,BFZ:30,BC:"<br>Stun10",CN:"(Land)",CM:20},
+			P11:{N:"LV3Crag  S",P:20,K:25,BN:"(Blast)",BM:50,BFZ:40,BC:"<br>Stun10",CN:"(Land)",CM:20},
+			P23:{N:"Flame S",P:8,ZT:1,ZB:400,K:20,CN:"(Land)",CM:20},
+			P24:{N:"Water S",P:8,ZT:2,ZB:200,C:"<br>x<i>3</i>",K:17,CN:"(Land)",CM:20},
+			P25:{N:"Thund S",P:8,ZT:3,ZB:215,C:"<br>x<i>3</i>",K:17,CN:"(Land)",CM:20},
+			P26:{N:"Freez S",P:8,ZT:5,ZB:200,C:"<br>x<i>3</i>",K:17,CN:"(Land)",CM:20},
+			P27:{N:"Dragn S",P:5,ZT:4,ZP:905,C:"<br>x<i>6</i>",K:100,CN:"(Land)",CM:20},
+			P28:{N:"Heat Bomb",P:-1},
+			P29:{N:"Blast S",P:-1},
+			P30:{N:"Blast S:然",P:-1},
+			P31:{N:"Dragn Blast S",P:-1}
 			};
 INFO[5].Bullet = {
 //N:弾名,P:威力,ZT:属性タイプ,ZB:属性倍率,ZP:属性値,IT:異常タイプ,IP:異常値,C:コメント,K:気絶値,S:速射,M:無属性,BN:爆破名,BM:爆破無属性,BFZ:爆破火属性,BC:爆破コメント
-			0:{N:"LV1Normal S",P:6,S:"5発速射"},
-			1:{N:"LV2Normal S",P:12,S:"5発速射"},
-			2:{N:"LV3Normal S",P:12,C:"x<i>n回</i>"},
-			3:{N:"LV1Pierce S",P:10,C:"x<i>3回</i>",S:"3発速射"},
-			4:{N:"LV2Pierce S",P:9,C:"x<i>4回</i>"},
-			5:{N:"LV3Pierce S",P:7,C:"x<i>6回</i>"},
-			6:{N:"LV1Pelet S",P:5,ZT:2,ZP:5,C:"<br>x<i>3回</i>",S:"3発速射"},
-			7:{N:"LV2Pelet S",P:5,ZT:2,ZP:4,C:"<br>x<i>4回</i>",S:"3発速射"},
-			8:{N:"LV3Pelet S",P:5,ZT:2,ZP:4,C:"<br>x<i>5回</i>",S:"3発速射"},
-			12:{N:"LV1Pellet S",P:6,BN:"(Single)",BM:32,BFZ:2,BC:"<br>x<i>3個</i>"},
-			13:{N:"LV2Pellet S",P:6,BN:"(Single)",BM:32,BFZ:2,BC:"<br>x<i>4個</i>"},
-			14:{N:"LV3Pellet S",P:6,BN:"(Single)",BM:32,BFZ:2,BC:"<br>x<i>5個</i>"},
-			15:{N:"LV1Recov S",P:0,C:"<br>回復30"},
-			16:{N:"LV2Recov S",P:0,C:"<br>回復50"},
+			0:{N:"LV1Normal S",P:6,S:"RFire 5"},
+			1:{N:"LV2Normal S",P:12,S:"RFire 5"},
+			2:{N:"LV3Normal S",P:12,C:"x<i>n</i>"},
+			3:{N:"LV1Pierce S",P:10,C:"x<i>3</i>",S:"RFire 3"},
+			4:{N:"LV2Pierce S",P:9,C:"x<i>4</i>"},
+			5:{N:"LV3Pierce S",P:7,C:"x<i>6</i>"},
+			6:{N:"LV1Pelet S",P:5,ZT:2,ZP:5,C:"<br>x<i>3</i>",S:"RFire 3"},
+			7:{N:"LV2Pelet S",P:5,ZT:2,ZP:4,C:"<br>x<i>4</i>",S:"RFire 3"},
+			8:{N:"LV3Pelet S",P:5,ZT:2,ZP:4,C:"<br>x<i>5</i>",S:"RFire 3"},
+			12:{N:"LV1Pellet S",P:6,BN:"(Single)",BM:32,BFZ:2,BC:"<br>x<i>3 hits</i>"},
+			13:{N:"LV2Pellet S",P:6,BN:"(Single)",BM:32,BFZ:2,BC:"<br>x<i>4 hits</i>"},
+			14:{N:"LV3Pellet S",P:6,BN:"(Single)",BM:32,BFZ:2,BC:"<br>x<i>5 hits</i>"},
+			15:{N:"LV1Recov S",P:0,C:"<br>Recov 30"},
+			16:{N:"LV2Recov S",P:0,C:"<br>Recov 50"},
 			17:{N:"LV1Psn   S",P:10,IT:1,IP:25},
 			18:{N:"LV2Psn   S",P:15,IT:1,IP:50},
 			19:{N:"LV1Para  S",P:10,IT:2,IP:25},
@@ -546,14 +546,14 @@ INFO[5].Bullet = {
 			21:{N:"LV1Sleep S",P:0,IT:3,IP:25},
 			22:{N:"LV2Sleep S",P:0,IT:3,IP:50},
 
-			9:{N:"LV1徹甲榴弾",P:3,S:"2発速射",BN:"(爆破)",BM:30,BFZ:40,BC:"<br>気絶5"},
-			10:{N:"LV2徹甲榴弾",P:3,BN:"(爆破)",BM:40,BFZ:60,BC:"<br>気絶5"},
-			11:{N:"LV3徹甲榴弾",P:3,BN:"(爆破)",BM:50,BFZ:80,BC:"<br>気絶5"},
-			23:{N:"火炎弾",P:1,ZT:1,ZB:400				,S:"5発速射"},
-			24:{N:"水冷弾",P:1,ZT:2,ZB:200,C:"<br>x<i>3回</i>",S:"3発速射"},
-			25:{N:"電撃弾",P:1,ZT:3,ZB:200,C:"<br>x<i>3回</i>",S:"3発速射"},
-			26:{N:"氷結弾",P:1,ZT:5,ZB:200,C:"<br>x<i>3回</i>",S:"3発速射"},
-			27:{N:"滅龍弾",P:1,ZT:4,ZP:75,C:"<br>x<i>6回</i>"}
+			9:{N:"LV1Crag  S",P:3,S:"RFire 2",BN:"(Blast)",BM:30,BFZ:40,BC:"<br>Stun5"},
+			10:{N:"LV2Crag  S",P:3,BN:"(Blast)",BM:40,BFZ:60,BC:"<br>Stun5"},
+			11:{N:"LV3Crag  S",P:3,BN:"(Blast)",BM:50,BFZ:80,BC:"<br>Stun5"},
+			23:{N:"Flame S",P:1,ZT:1,ZB:400				,S:"RFire 5"},
+			24:{N:"Water S",P:1,ZT:2,ZB:200,C:"<br>x<i>3</i>",S:"RFire 3"},
+			25:{N:"Thund S",P:1,ZT:3,ZB:200,C:"<br>x<i>3</i>",S:"RFire 3"},
+			26:{N:"Freez S",P:1,ZT:5,ZB:200,C:"<br>x<i>3</i>",S:"RFire 3"},
+			27:{N:"Dragn S",P:1,ZT:4,ZP:75,C:"<br>x<i>6</i>"}
 			};
 INFO[9].Bullet = {
 //N:名前,M:無属性,FZ:火属性値,ZB:属性砲倍率,K:気絶値,MA:無属性(加算),FZA:火属性値(加算)
@@ -1082,22 +1082,22 @@ case 5: //ライトボウガン
 			this.c_kobetu1_Text.nodeValue = this.wp_gousyu ? "ヘビィB" : "パワーB";
 			//剛武器・進化の設定
 			if (this.wp_gousyu) {
-				o.setAttribute("value", 28),df.appendChild(o.cloneNode(false)),df.lastChild.appendChild(document.createTextNode("排熱弾"));
+				o.setAttribute("value", 28),df.appendChild(o.cloneNode(false)),df.lastChild.appendChild(document.createTextNode("Heat Bomb"));
 			} else if (this.wp_sinka) {
 				switch (eq[I_aSINKAGR]) {
 				case "1": //【燦然】
 				case "4": //【燦然】
 				case "5": //【燦然】
-					o.setAttribute("value", 30),df.appendChild(o.cloneNode(false)),df.lastChild.appendChild(document.createTextNode("爆撃弾")); //派生後
+					o.setAttribute("value", 30),df.appendChild(o.cloneNode(false)),df.lastChild.appendChild(document.createTextNode("Blast S")); //派生後
 					break;
 				case "2": //【絢爛】
 				case "6": //【絢爛】
-					o.setAttribute("value", 31),df.appendChild(o.cloneNode(false)),df.lastChild.appendChild(document.createTextNode("龍爆撃弾"));
+					o.setAttribute("value", 31),df.appendChild(o.cloneNode(false)),df.lastChild.appendChild(document.createTextNode("Dragn Blast S"));
 					break;
 				case "3": //【煌然】
 				case "7": //【煌然】
-					o.setAttribute("value", 30),df.appendChild(o.cloneNode(false)),df.lastChild.appendChild(document.createTextNode("爆撃弾")); //派生後
-					o.setAttribute("value", 31),df.appendChild(o.cloneNode(false)),df.lastChild.appendChild(document.createTextNode("龍爆撃弾"));
+					o.setAttribute("value", 30),df.appendChild(o.cloneNode(false)),df.lastChild.appendChild(document.createTextNode("Blast S")); //派生後
+					o.setAttribute("value", 31),df.appendChild(o.cloneNode(false)),df.lastChild.appendChild(document.createTextNode("Dragn Blast S"));
 					break;
 				}
 			}
@@ -1687,7 +1687,7 @@ case 5: //ライト
 				}
 			}
 			break;
-		case "LV1徹甲榴弾":case "LV2徹甲榴弾":case "LV3徹甲榴弾":
+		case "LV1Crag  S":case "LV2Crag  S":case "LV3Crag  S":
 			WP_Motion[0].N = WP_Motion[0].N.substring(0,6);
 			if (WP_Rui === 1){ //ヘビィ
 					WP_Motion = WP_Motion.concat([{N:"近距離",P:10,C:"倍"},{N:"中距離１",P:criPoint,C:"倍"},{N:"中距離２",P:criPoint,C:"倍"},{N:"遠距離１",P:10,C:"倍"},{N:"遠距離２",P:8,C:"倍"},{N:"遠距離３",P:5,C:"倍"},{N:"遠距離４",P:5,C:"倍"}/*,{N:"遠距離５",P:0,C:"倍"}*/]);
@@ -1721,14 +1721,14 @@ case 5: //ライト
 				WP_Motion = WP_Motion.concat([{N:"近距離",P:10,C:"倍"},{N:"中距離１",P:10,C:"倍"},{N:"中距離２",P:10,C:"倍"},{N:"遠距離１",P:10,C:"倍"},{N:"遠距離２",P:10,C:"倍"},{N:"遠距離３",P:10,C:"倍"},{N:"遠距離４",P:10,C:"倍"},{N:"遠距離５",P:10,C:"倍"}]);
 			}
 			break;
-		case "火炎弾":case "水冷弾":case "電撃弾":case "氷結弾":case "滅龍弾":
+		case "Flame S":case "Water S":case "Thund S":case "Freez S":case "Dragn S":
 			if (WP_Rui === 5 && this.c_style.value === "Storm" && this.c_kobetu2.selectedIndex) { //ライトのステップ打ちの時
 				WP_Motion = WP_Motion.concat([{N:"近距離",P:10,C:"倍"}/*,{N:"中距離１",P:0,C:"倍"},{N:"中距離２",P:0,C:"倍"},{N:"遠距離１",P:0,C:"倍"},{N:"遠距離２",P:0,C:"倍"},{N:"遠距離３",P:0,C:"倍"},{N:"遠距離４",P:0,C:"倍"},{N:"遠距離５",P:0,C:"倍"}*/]);
 			} else {
 				WP_Motion = WP_Motion.concat([{N:"近距離",P:10,C:"倍"},{N:"中距離１",P:10,C:"倍"},{N:"中距離２",P:10,C:"倍"}/*,{N:"遠距離１",P:0,C:"倍"},{N:"遠距離２",P:0,C:"倍"},{N:"遠距離３",P:0,C:"倍"},{N:"遠距離４",P:0,C:"倍"},{N:"遠距離５",P:0,C:"倍"}*/]);
 			}
 			break;
-		case "爆撃弾":case "爆撃弾:然":case "龍爆撃弾":
+		case "Blast S":case "Blast S:然":case "Dragn Blast S":
 			WP_Motion = WP_Motion.concat({N:tama.BN,T:-1,M:tama.BM,ZT:tama.ZT,ZP:tama.BFZ,C:tama.BC});
 			tama.BN = "";
 			break;
@@ -2891,12 +2891,12 @@ case 1: //ヘビィボウガン
 		}
 	}
 	switch (tama_N) {
-	case "爆撃弾":
-	case "爆撃弾:然":
+	case "Blast S":
+	case "Blast S:然":
 		WP_Motion[0].M = +WP_Info.Bullet[this.c_tama.value].M + this.c_sinkaLv.value/2|0;
 		WP_Motion[1].M = +WP_Info.Bullet[this.c_tama.value].BM + this.c_sinkaLv.value/4|0;
 		break;
-	case "龍爆撃弾":
+	case "Dragn Blast S":
 		WP_Motion[0].ZP = +WP_Info.Bullet[this.c_tama.value].ZP + this.c_sinkaLv.value/1|0;
 		WP_Motion[1].ZP = +WP_Info.Bullet[this.c_tama.value].BFZ + this.c_sinkaLv.value/4|0;
 		break;
@@ -3387,11 +3387,11 @@ for (var cntBui = 0,maxBui = bui.length; cntBui < maxBui; cntBui++){
 			switch (WP_Rui) {
 			case 1: //ヘビィボウガン
 				switch (tama_N) {
-				case "LV1徹甲榴弾":case "LV2徹甲榴弾":case "LV3徹甲榴弾":
+				case "LV1Crag  S":case "LV2Crag  S":case "LV3Crag  S":
 					if (this.c_houzyutu.selectedIndex) hosei_Hou_M = 150;
 					hosei_Hou_Zoku = [100,150,160,170][this.c_houzyutu.selectedIndex];
 					break;
-				case "排熱弾":
+				case "Heat Bomb":
 					hosei_Hou_M = [100,110,120,130][this.c_houzyutu.selectedIndex];
 					if (this.c_hiden.value >= 12){ //重銃技【銃仙】は1.2倍
 						hosei_Hou_M *= 12/10;
@@ -3401,7 +3401,7 @@ for (var cntBui = 0,maxBui = bui.length; cntBui < maxBui; cntBui++){
 				break;
 			case 5: //ライトボウガン
 				switch (tama_N) {
-				case "LV1徹甲榴弾":case "LV2徹甲榴弾":case "LV3徹甲榴弾":
+				case "LV1Crag  S":case "LV2Crag  S":case "LV3Crag  S":
 					if (this.c_houzyutu.selectedIndex) hosei_Hou_M = 150;
 					hosei_Hou_Zoku = [100,150,160,170][this.c_houzyutu.selectedIndex];
 					break;
