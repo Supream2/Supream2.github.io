@@ -1163,7 +1163,7 @@ case 10: //弓
 		var ya_G = eq[I_aYA].split(":");
 		if (eq[I_aCLASS] === CLASSTYPE.Tenrou) ya_G =  (this.c_tenrouYumiya1.value + this.c_tenrouYumiyaLv1.value + ":" + this.c_tenrouYumiya2.value + this.c_tenrouYumiyaLv2.value + ":" + this.c_tenrouYumiya3.value + this.c_tenrouYumiyaLv3.value + ":" + this.c_tenrouYumiya4.value + this.c_tenrouYumiyaLv4.value).split(":");;
 		for (var i = 0; i < 4; i++){
-			o.setAttribute("value", ya_G[i]),df.appendChild(o.cloneNode(false)),df.lastChild.appendChild(document.createTextNode((i+2) + ":" + WP_Info.Bullet[ya_G[i]].N + (CK_FULL ? WP_Info.Bullet[ya_G[i]].C : "")));
+			o.setAttribute("value", ya_G[i]),df.appendChild(o.cloneNode(false)),df.lastChild.appendChild(document.createTextNode((i+1) + ":" + WP_Info.Bullet[ya_G[i]].N + (CK_FULL ? WP_Info.Bullet[ya_G[i]].C : "")));
 		}
 		this.c_tame.length = 1,this.c_tame.appendChild(df);
 		this.setAuraArrow();
