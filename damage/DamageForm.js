@@ -1171,15 +1171,15 @@ case 10: //弓
 
 		//ビン
 		var bin = eq[I_aBIN],b = (CK_FULL ? "ビン" : ""),df = document.createDocumentFragment(),o = document.createElement("option");
-		if (bin.indexOf("強") !== -1) o.setAttribute("value", "KG"),df.appendChild(o.cloneNode(false)),df.lastChild.appendChild(document.createTextNode("強撃"+b));
-		o.setAttribute("value", "11" + (bin.indexOf("毒+") !== -1 ? bin.charAt(bin.indexOf("毒+") + 2) : 0)),df.appendChild(o.cloneNode(false)),df.lastChild.appendChild(document.createTextNode("毒"+b));
-		if (bin.indexOf("毒") === -1) df.lastChild.style.backgroundColor = "lightpink";
-		o.setAttribute("value", "12" + (bin.indexOf("麻+") !== -1 ? bin.charAt(bin.indexOf("麻+") + 2) : 0)),df.appendChild(o.cloneNode(false)),df.lastChild.appendChild(document.createTextNode("麻痺"+b));
-		if (bin.indexOf("麻") === -1) df.lastChild.style.backgroundColor = "lightpink";
-		o.setAttribute("value", "13" + (bin.indexOf("睡+") !== -1 ? bin.charAt(bin.indexOf("睡+") + 2) : 0)),df.appendChild(o.cloneNode(false)),df.lastChild.appendChild(document.createTextNode("睡眠"+b));
-		if (bin.indexOf("睡") === -1) df.lastChild.style.backgroundColor = "lightpink";
-		if (bin.indexOf("爆") !== -1) o.setAttribute("value", "BA"),df.appendChild(o.cloneNode(false)),df.lastChild.appendChild(document.createTextNode("爆撃"+b));
-		if (bin.indexOf("打") !== -1) o.setAttribute("value", "DA"),df.appendChild(o.cloneNode(false)),df.lastChild.appendChild(document.createTextNode("打撃"+b));
+		if (bin.indexOf("Power") !== -1) o.setAttribute("value", "KG"),df.appendChild(o.cloneNode(false)),df.lastChild.appendChild(document.createTextNode("強撃"+b));
+		o.setAttribute("value", "11" + (bin.indexOf("Poison+") !== -1 ? bin.charAt(bin.indexOf("Posion+") + 2) : 0)),df.appendChild(o.cloneNode(false)),df.lastChild.appendChild(document.createTextNode("Poison"+b));
+		if (bin.indexOf("Poison") === -1) df.lastChild.style.backgroundColor = "lightpink";
+		o.setAttribute("value", "12" + (bin.indexOf("Para+") !== -1 ? bin.charAt(bin.indexOf("Para+") + 2) : 0)),df.appendChild(o.cloneNode(false)),df.lastChild.appendChild(document.createTextNode("麻痺"+b));
+		if (bin.indexOf("Para") === -1) df.lastChild.style.backgroundColor = "lightpink";
+		o.setAttribute("value", "13" + (bin.indexOf("Sleep+") !== -1 ? bin.charAt(bin.indexOf("Sleep+") + 2) : 0)),df.appendChild(o.cloneNode(false)),df.lastChild.appendChild(document.createTextNode("睡眠"+b));
+		if (bin.indexOf("Sleep") === -1) df.lastChild.style.backgroundColor = "lightpink";
+		if (bin.indexOf("Bomb") !== -1) o.setAttribute("value", "BA"),df.appendChild(o.cloneNode(false)),df.lastChild.appendChild(document.createTextNode("爆撃"+b));
+		if (bin.indexOf("Impact") !== -1) o.setAttribute("value", "DA"),df.appendChild(o.cloneNode(false)),df.lastChild.appendChild(document.createTextNode("打撃"+b));
 		this.c_bin.length = 1,this.c_bin.appendChild(df);
 
 		this.cngTame();
