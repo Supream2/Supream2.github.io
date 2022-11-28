@@ -1779,7 +1779,7 @@ case 10: //弓
 			WP_Motion[0].C = WP_Motion[0].C.substring(3);	//余計なのが入るので消し
 			WP_Motion[0].ZH = 70;	//曲射は属性0.7倍
 			WP_Motion = WP_Motion.concat([{N:"-",P:10,C:"x"}]);
-			if (this.c_tame.value === "爆裂型") {	//爆裂の無属性
+			if (this.c_tame.value === "Bomb") {	//爆裂の無属性
 				WP_Motion = WP_Motion.concat({N:"無属性",T:-1,M:19});
 				WP_Motion[0].ZH = 20;	//爆裂は0.2倍
 			}
@@ -1838,7 +1838,7 @@ case 10: //弓
 			case "KG": //強撃ビン
 				break;
 			case "BA": //爆撃ビン
-				WP_Motion[i].C = (WP_Motion[i].C || "") + "爆撃";
+				WP_Motion[i].C = (WP_Motion[i].C || "") + "Bomb";
 				if (this.c_tame.selectedIndex) {
 					if (typeof binPoint === "number") {
 						WP_Motion[i].M = binPoint;
@@ -3430,7 +3430,7 @@ for (var cntBui = 0,maxBui = bui.length; cntBui < maxBui; cntBui++){
 			}
 			var dmg_M_No = dmg_M_Cr;
 			//爆裂型の無属性ダメージを計算
-			if (WP_Rui === 10 && this.c_tame.value === "Explosive Shot") {
+			if (WP_Rui === 10 && this.c_tame.value === "Bomb") {
 				if (this.c_bin.value === "BA") {
 					//爆撃ビン
 					var dmg_M_Cr = bakuAt * 2; //通常
