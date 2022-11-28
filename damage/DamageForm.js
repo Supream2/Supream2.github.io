@@ -2097,7 +2097,7 @@ if (ck_sort) {
 	list.sort(function (a, b){return Fulltohalf(b[1][I_aNAME]) < Fulltohalf(a[1][I_aNAME]) ? 1 : -1});
 }
 //区切り挿入
-var eqAt = 99999, sortname = ["","武器倍率:","会心付倍率:","属性値:","状態異常値:","弾数:"][ck_sort];
+var eqAt = 99999, sortname = ["","Weapon Multiplier:","Crit Multiplier:","Element:","Status:","No of Bullets:"][ck_sort];
 var df = document.createDocumentFragment(),o = document.createElement("option");
 for(var i = 0,m = list.length; i < m; i++) {
 	if (ck_sort && eqAt-list[i][3] > 0) {
