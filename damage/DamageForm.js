@@ -2330,7 +2330,7 @@ for(var eqid in eqlist) {
 		}
 	} else if (CLASSTYPE.GClass.indexOf(eq[I_aCLASS]) >= 0 && eq[I_aSINKAGR]) {
 		var eqG = eq[I_aSINKAGR].split("!");
-		var w = eqG[eqG.length-2].split(".");
+		var w = eqG[eqG.length-1].split(".");
 		eq[I_aAT] = w[0],eq[I_aZOKUAT] = w[1],eq[I_aZYOUAT] = w[2],eq[I_aCRI] = w[3];
 	}
 }
