@@ -1170,7 +1170,7 @@ case 10: //弓
 		this.c_tame.selectedIndex = 4;
 
 		//ビン
-		var bin = eq[I_aBIN],b = (CK_FULL ? " Coating" : ""),df = document.createDocumentFragment(),o = document.createElement("option");
+		var bin = eq[I_aBIN],b = (CK_FULL ? "Coating" : ""),df = document.createDocumentFragment(),o = document.createElement("option");
 		if (bin.indexOf("Pwr") !== -1) o.setAttribute("value", "KG"),df.appendChild(o.cloneNode(false)),df.lastChild.appendChild(document.createTextNode("Pwr"+b));
 		o.setAttribute("value", "11" + (bin.indexOf("Psn+") !== -1 ? bin.charAt(bin.indexOf("Psn+") + 2) : 0)),df.appendChild(o.cloneNode(false)),df.lastChild.appendChild(document.createTextNode("Psn"+b));
 		if (bin.indexOf("Psn") === -1) df.lastChild.style.backgroundColor = "lightpink";
@@ -1180,7 +1180,7 @@ case 10: //弓
 		if (bin.indexOf("Slp") === -1) df.lastChild.style.backgroundColor = "lightpink";
 		if (bin.indexOf("Bmb") !== -1) o.setAttribute("value", "BA"),df.appendChild(o.cloneNode(false)),df.lastChild.appendChild(document.createTextNode("Bmb"+b));
 		if (bin.indexOf("Imp") !== -1) o.setAttribute("value", "DA"),df.appendChild(o.cloneNode(false)),df.lastChild.appendChild(document.createTextNode("Imp"+b));
-		this.c_bin.length = 3,this.c_bin.appendChild(df);
+		this.c_bin.length = 1,this.c_bin.appendChild(df);
 
 		this.cngTame();
 		if (debug) this.debug.innerText += "cngWpSub:" + (new Date().getTime() - time) + "\n";
