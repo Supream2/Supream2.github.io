@@ -1587,11 +1587,11 @@ case 9: //ガンランス
 			break;
 		case "Storm":
 			if (this.c_kobetu2.selectedIndex) {
-				WP_Motion = WP_Motion.concat([{N:"叩きつけ",P:21,E:"this.c_sharp.value === '0'"}]); //赤ゲージは使用不可
+				WP_Motion = WP_Motion.concat([{N:"Slam",P:21,E:"this.c_sharp.value === '0'"}]); //赤ゲージは使用不可
 			}
 		case "Heaven":
 			if (this.c_kobetu2.selectedIndex) {
-				WP_Motion = WP_Motion.concat([{N:"HB先端",P:5,ZT:1,ZP:hougeki.FZ * 0.85|0,E:"this.c_sharp.value === '0'"},{N:"HB叩きつけ",P:62,E:"this.c_sharp.value === '0'"}]);
+				WP_Motion = WP_Motion.concat([{N:"HB Tip",P:5,ZT:1,ZP:hougeki.FZ * 0.85|0,E:"this.c_sharp.value === '0'"},{N:"HB Slam",P:62,E:"this.c_sharp.value === '0'"}]);
 			}
 			break;
 		}
@@ -1905,7 +1905,7 @@ for (var i = 0,j = 0,t = ""; i < maxMot; i++) {
 		if (WP_Motion[i].M) { //無属性+属性
 			t = "Explosion" + WP_Motion[i].M + (WP_Motion[i].ZT ? "+" + ZOKUNAME[WP_Motion[i].ZT] + WP_Motion[i].ZP : "");
 		} else if (WP_Motion[i].ZB) { //武器属性依存
-			t = "<small>属性</small>x" + (WP_Motion[i].ZB/100).toFixed(2);
+			t = "<small>Ele</small>x" + (WP_Motion[i].ZB/100).toFixed(2);
 		} else { //属性のみ
 			t = (WP_Motion[i].ZT ? ZOKUNAME[WP_Motion[i].ZT] + WP_Motion[i].ZP : "");
 		}
