@@ -681,7 +681,7 @@ INFO[10].DaBin = {"近接":0,
 var createGauge = function (w){
 	var MaxSharp = +w.substring(3,6);
 	//通常
-	var wkSharp = MaxSharp,Gauge = MST_Gauge[w.substring(0,3)].split(","),wkGauge = [];
+	var wkSharp = MaxSharp,Gauge = MST_Gauge[w.substring(0,4)].split(","),wkGauge = [];
 	for (var i = 0;i<8;i++) wkGauge[i] = +Gauge[i] > wkSharp ? wkSharp : Gauge[i];
 	var wkT = "";
 	if (wkGauge[0]-0 > 0) wkT += "r" + parseInt(wkGauge[0]/4);
