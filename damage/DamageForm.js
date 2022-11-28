@@ -2530,7 +2530,7 @@ if (debug) this.debug.innerText += "cngTenrou:" + (new Date().getTime() - time) 
 //------------------------------------モンスターリスト変更----------
 ,cngMosList : function(){
 if (debug) var time = new Date().getTime();
-var mos_class = this.m_class.selectedIndex,thead = [["大型","古龍","中型","小型"],["大型","剛種","中型","小型"],["大型","極征","中型","小型"],["大型","番人","中型","小型"]][mos_class],bk_m_enemy = this.m_enemy.value;
+var mos_class = this.m_class.selectedIndex,thead = [["Large","Elder","Medium","Small"],["Large","Gou","Medium","Small"],["Large","Conquest","Medium","Small"],["Large","Guardian","Medium","Small"]][mos_class],bk_m_enemy = this.m_enemy.value;
 this.m_status.selectedIndex = this.m_ang.selectedIndex = this.m_def.selectedIndex = this.m_hc.selectedIndex = 0;
 
 var df = document.createDocumentFragment(),o = document.createElement("option");
