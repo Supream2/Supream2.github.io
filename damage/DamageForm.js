@@ -1048,7 +1048,7 @@ if (CK_FULL) {
 switch (WP_Rui) {
 case 0: //大剣
 	this.s_reach.style.display = "inline";
-	this.c_kobetu1_Text.nodeValue = "刃部",this.c_kobetu1.length = 2,this.c_kobetu1.options[1].text = "中腹";
+	this.c_kobetu1_Text.nodeValue = "Blade",this.c_kobetu1.length = 2,this.c_kobetu1.options[1].text = "Mid Blade";
 	break;
 case 1: //ヘビィボウガン
 case 5: //ライトボウガン
@@ -1121,21 +1121,21 @@ case 6: //双剣
 	this.s_reach.style.display = "inline";
 	if (!this.sou_hauchi) {
 		var df = document.createDocumentFragment(),o = document.createElement("option");
-		o.setAttribute("value", "100"),df.appendChild(o.cloneNode(false)),df.lastChild.appendChild(document.createTextNode("なし"));
-		o.setAttribute("value", "105"),df.appendChild(o.cloneNode(false)),df.lastChild.appendChild(document.createTextNode("１回"));
-		o.setAttribute("value", "110"),df.appendChild(o.cloneNode(false)),df.lastChild.appendChild(document.createTextNode("２回"));
-		o.setAttribute("value", "115"),df.appendChild(o.cloneNode(false)),df.lastChild.appendChild(document.createTextNode("３回"));
-		o.setAttribute("value", "120"),df.appendChild(o.cloneNode(false)),df.lastChild.appendChild(document.createTextNode("４回"));
+		o.setAttribute("value", "100"),df.appendChild(o.cloneNode(false)),df.lastChild.appendChild(document.createTextNode("None"));
+		o.setAttribute("value", "105"),df.appendChild(o.cloneNode(false)),df.lastChild.appendChild(document.createTextNode("１x"));
+		o.setAttribute("value", "110"),df.appendChild(o.cloneNode(false)),df.lastChild.appendChild(document.createTextNode("２x"));
+		o.setAttribute("value", "115"),df.appendChild(o.cloneNode(false)),df.lastChild.appendChild(document.createTextNode("３x"));
+		o.setAttribute("value", "120"),df.appendChild(o.cloneNode(false)),df.lastChild.appendChild(document.createTextNode("４x"));
 		this.sou_hauchi = df;
 	}
-	this.c_kobetu1_Text.nodeValue = "鬼人",this.c_kobetu1.length = 4,this.c_kobetu1.options[1].text = "発動",this.c_kobetu1.options[2].text = "開放",this.c_kobetu1.options[3].text = "赤消費";
-	this.c_kobetu2_Text.nodeValue = "刃打",this.c_kobetu2.length = 0,this.c_kobetu2.appendChild(this.sou_hauchi.cloneNode(true));
+	this.c_kobetu1_Text.nodeValue = "Demon",this.c_kobetu1.length = 4,this.c_kobetu1.options[1].text = "Active",this.c_kobetu1.options[2].text = "True",this.c_kobetu1.options[3].text = "Red True";
+	this.c_kobetu2_Text.nodeValue = "Edge Sharpen",this.c_kobetu2.length = 0,this.c_kobetu2.appendChild(this.sou_hauchi.cloneNode(true));
 	this.cngKobetu1 = function(){this.setMotion();}
 	break;
 case 7: //太刀
 	this.s_reach.style.display = "inline";
-	this.c_kobetu1_Text.nodeValue = "気刃",this.c_kobetu1.length = 2,this.c_kobetu1.options[1].text = "発動";
-	this.c_kobetu2_Text.nodeValue = "刃部",this.c_kobetu2.length = 2,this.c_kobetu2.options[0].text = "なし",this.c_kobetu2.options[1].text = "中腹";
+	this.c_kobetu1_Text.nodeValue = "Spirit",this.c_kobetu1.length = 2,this.c_kobetu1.options[1].text = "Active";
+	this.c_kobetu2_Text.nodeValue = "Blade",this.c_kobetu2.length = 2,this.c_kobetu2.options[0].text = "None",this.c_kobetu2.options[1].text = "Mid Blade";
 	this.cngKobetu1 = function(){
 		if (!this.c_kobetu1.selectedIndex) this.c_tane.value = 0; //気刃なし状態 時限は強制解除
 		this.setMotion();
