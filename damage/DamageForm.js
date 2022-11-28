@@ -1235,7 +1235,7 @@ case 11: //穿龍棍
 	break;
 }
 //表示
-this.damage_head.rows[1].cells[0].innerHTML = "武器補正<br>"+BUKITYPE[WP_Info.Type] + WP_Info.Hosei + (WP_Info.Type === 2 ? "%<br>(気絶値)" : WP_Rui === 3 ? "%<br>打72%" : "%");
+this.damage_head.rows[1].cells[0].innerHTML = "武器補正<br>"+BUKITYPE[WP_Info.Type] + WP_Info.Hosei + (WP_Info.Type === 2 ? "%<br>(Stun)" : WP_Rui === 3 ? "%<br>Imp72%" : "%");
 
 //個別設定の切り替え
 this.c_kobetu1.style.display = this.c_kobetu1_Text.nodeValue ? "inline" : "none";
@@ -2203,7 +2203,7 @@ case 1: //ヘビィボウガン
 case 5: //ライトボウガン
 	t = RELOADNAME[eq[I_aRELO]] + " " + KICKNAME[eq[I_aKICK]] + " " + SPEEDNAME[eq[I_aSPEED]];
 	if (eq[I_aSOKUSYA] && WP_Rui === 5) {
-		t += (this.wp_gousyu ? "<br>超速射:" : "<br>速射:") + eq[I_aSOKUSYA];
+		t += (this.wp_gousyu ? "<br>S Rapid Fire:" : "<br>Rapid Fire:") + eq[I_aSOKUSYA];
 	}
 	break;
 case 10: //弓
@@ -2400,7 +2400,7 @@ case 5: //ライトボウガン
 	//Reload,Recoil,Bullet Speed
 	this.d_spec.innerHTML = RELOADNAME[eq[I_aRELO]] + " " + KICKNAME[eq[I_aKICK]] + " " + SPEEDNAME[eq[I_aSPEED]];
 	if (eq[I_aSOKUSYA] && WP_Rui === 5) {
-		this.d_spec.innerHTML += (this.wp_gousyu ? "<br>超速射:" : "<br>速射:") + eq[I_aSOKUSYA];
+		this.d_spec.innerHTML += (this.wp_gousyu ? "<br>S Rapid Fire:" : "<br>Rapid Fire:") + eq[I_aSOKUSYA];
 	}
 	break;
 }
@@ -2488,7 +2488,7 @@ case 1: //ヘビィボウガン
 case 5: //ライトボウガン
 	t = RELOADNAME[eq[I_aRELO]] + " " + KICKNAME[eq[I_aKICK]] + " " + SPEEDNAME[eq[I_aSPEED]];
 	if (eq[I_aSOKUSYA] && WP_Rui === 5) {
-		t += (this.wp_gousyu ? "<br>超速射:" : "<br>速射:") + eq[I_aSOKUSYA];
+		t += (this.wp_gousyu ? "<br>S Rapid Fire:" : "<br>Rapid Fire:") + eq[I_aSOKUSYA];
 	}
 	break;
 case 10: //弓
