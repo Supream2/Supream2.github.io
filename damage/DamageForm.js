@@ -1056,7 +1056,7 @@ case 5: //ライトボウガン
 		this.c_shot.length = 3,this.c_shot.options[0].text = "Reloadﾞ",this.c_shot.options[1].text = "Compress",this.c_shot.options[2].text = "Ｐ";
 		this.c_kobetu1_Text.nodeValue = "PowerB",this.c_kobetu1.length = 2,this.c_kobetu1.options[1].text = "Yes",this.c_kobetu1.selectedIndex = 1;
 	} else { //ライト
-		this.c_shot.length = 3,this.c_shot.options[0].text = "ｼｮｯﾄ",this.c_shot.options[1].text = "ｼﾞｬｽﾄ",this.c_shot.options[2].text = "Ｐ";
+		this.c_shot.length = 3,this.c_shot.options[0].text = "Shot",this.c_shot.options[1].text = "Just Shot",this.c_shot.options[2].text = "Ｐ";
 	}
 	this.cngKobetu2 = function(){this.setMotion();} //ステップ有無（ライト）・タメ（ヘビィ）
 	//武器を選ぶ度に実行
@@ -1079,7 +1079,7 @@ case 5: //ライトボウガン
 		//個別設定
 		if (WP_Rui === 1) { //ヘビィ
 			//バレル名変更
-			this.c_kobetu1_Text.nodeValue = this.wp_gousyu ? "ヘビィB" : "パワーB";
+			this.c_kobetu1_Text.nodeValue = this.wp_gousyu ? "HeavyB" : "powerB";
 			//剛武器・進化の設定
 			if (this.wp_gousyu) {
 				o.setAttribute("value", 28),df.appendChild(o.cloneNode(false)),df.lastChild.appendChild(document.createTextNode("Heat Bomb"));
@@ -1228,7 +1228,7 @@ case 10: //弓
 case 11: //穿龍棍
 	this.c_houzyutu.disabled = this.c_taizyutu.disabled = false;
 	//this.c_kobetu1_Text.nodeValue = "ゲージ",this.c_kobetu1.length = 6,this.c_kobetu1.options[1].text = "１",this.c_kobetu1.options[2].text = "２",this.c_kobetu1.options[3].text = "３",this.c_kobetu1.options[4].text = "４",this.c_kobetu1.options[5].text = "５";
-	this.c_kobetu1_Text.nodeValue = "Guage";
+	this.c_kobetu1_Text.nodeValue = "Gauge";
 	this.c_kobetu2_Text.nodeValue = "Length",this.c_kobetu2.length = 2,this.c_kobetu2.options[0].text = "Long",this.c_kobetu2.options[1].text = "Short";
 	//リーチを変えたらモーションを変更
 	this.cngKobetu2 = function(){this.setMotion();}
