@@ -1530,7 +1530,7 @@ case 9: //ガンランス
 			if (this.c_kobetu2.selectedIndex) {
 				WP_Motion = WP_Motion.concat([{N:hougeki.N,T:-1,M:hougeki.M,ZT:1,ZP:hougeki.FZ * 3,E:"this.c_sharp.value === '0'"}]); //砲撃(天は3倍)
 
-				WP_Motion = WP_Motion.concat([{N:"クイック",T:-1,M:hougeki.M * 15/10|0,ZT:1,ZP:hougeki.FZ * 3 * 15/10|0,E:"this.c_sharp.value === '0'"}]); //砲撃クイックリロード
+				WP_Motion = WP_Motion.concat([{N:"Qk Rel Shot",T:-1,M:hougeki.M * 15/10|0,ZT:1,ZP:hougeki.FZ * 3 * 15/10|0,E:"this.c_sharp.value === '0'"}]); //砲撃クイックリロード
 				WP_Motion = WP_Motion.concat([{N:"Backhop Slash",T:-1,M:hougeki.M * rengekiP/10|0,ZT:1,ZP:hougeki.FZ * 3 * rengekiP/10|0,E:"this.c_sharp.value === '0'"}]); //砲撃連撃
 				break;
 			}
@@ -1540,7 +1540,7 @@ case 9: //ガンランス
 				if (this.c_kensyo.value.substring(0,2) === "BA") { //爆撃剣晶
 					WP_Motion = WP_Motion.concat([{N:hougeki.N.replace("型LV","属性"),T:-1,M:hougeki.M * 12/10|0,E:"this.c_sharp.value === '0'"}]); //砲撃（属性分）
 
-					motion1 = {N:"クイック",T:-1,T:-1,M:hougeki.M * 12/10 * 15/10|0,E:"this.c_sharp.value === '0'"}; //砲撃クイックリロード
+					motion1 = {N:"Qk Rel Shot",T:-1,T:-1,M:hougeki.M * 12/10 * 15/10|0,E:"this.c_sharp.value === '0'"}; //砲撃クイックリロード
 					motion2 = {N:"Backhop Slash",T:-1,M:hougeki.M * 12/10 * rengekiP/10|0,E:"this.c_sharp.value === '0'"}; //砲撃連撃
 				} else {
 					switch (this.c_kensyo.value.substring(0,2)) {
@@ -1553,19 +1553,19 @@ case 9: //ガンランス
 					if (zokuType) { //属性砲撃
 						WP_Motion = WP_Motion.concat([{N:hougeki.N.replace("型LV","属性"),T:-1,M:0,ZT:zokuType,ZB:hougeki.ZB,E:"this.c_sharp.value === '0'"}]); //砲撃（属性分）
 
-						motion1 = {N:"クイック",T:-1,M:0,ZT:zokuType,ZB:hougeki.ZB * 15/10|0,E:"this.c_sharp.value === '0'"}; //砲撃クイックリロード
+						motion1 = {N:"Qk Rel Shot",T:-1,M:0,ZT:zokuType,ZB:hougeki.ZB * 15/10|0,E:"this.c_sharp.value === '0'"}; //砲撃クイックリロード
 						motion2 = {N:"Backhop Slash",T:-1,M:0,ZT:zokuType,ZB:hougeki.ZB * rengekiP/10|0,E:"this.c_sharp.value === '0'"}; //砲撃連撃
 					} else { //打撃砲撃
 						WP_Motion = WP_Motion.concat([{N:hougeki.N.replace("型LV","属性"),T:-1,M:hougeki.M * 9/10 + 1|0,C:"<small>気絶</small>:"+hougeki.K,E:"this.c_sharp.value === '0'"}]); //砲撃（属性分）
 
-						motion1 = {N:"クイック",T:-1,M:hougeki.M * 9/10 * 15/10 + 1|0,C:"<small>気絶</small>:"+hougeki.K,E:"this.c_sharp.value === '0'"}; //砲撃クイックリロード
+						motion1 = {N:"Qk Rel Shot",T:-1,M:hougeki.M * 9/10 * 15/10 + 1|0,C:"<small>気絶</small>:"+hougeki.K,E:"this.c_sharp.value === '0'"}; //砲撃クイックリロード
 						motion2 = {N:"Backhop Slash",T:-1,M:hougeki.M * 9/10 * rengekiP/10 + 1|0,C:"<small>気絶</small>:"+hougeki.K,E:"this.c_sharp.value === '0'"}; //砲撃連撃
 					}
 				}
 				WP_Motion = WP_Motion.concat([{N:hougeki.N.replace("型LV","属性"),T:-1,M:hougeki.M * 6/10|0,E:"this.c_sharp.value === '0'"}]); //砲撃（無属性分）
 				
 				WP_Motion = WP_Motion.concat([motion1]); //砲撃クイックリロード
-				WP_Motion = WP_Motion.concat([{N:"クイック",T:-1,M:hougeki.M * 6/10 * 15/10|0,E:"this.c_sharp.value === '0'"}]); //砲撃クイックリロード
+				WP_Motion = WP_Motion.concat([{N:"Qk Rel Shot",T:-1,M:hougeki.M * 6/10 * 15/10|0,E:"this.c_sharp.value === '0'"}]); //砲撃クイックリロード
 				WP_Motion = WP_Motion.concat([motion2]); //砲撃連撃
 				WP_Motion = WP_Motion.concat([{N:"Backhop Slash",T:-1,M:hougeki.M * 6/10 * rengekiP/10|0,E:"this.c_sharp.value === '0'"}]); //砲撃連撃
 				break;
@@ -1573,17 +1573,17 @@ case 9: //ガンランス
 		case "Earth":
 			WP_Motion = WP_Motion.concat([{N:hougeki.N,T:-1,M:hougeki.M,ZT:1,ZP:hougeki.FZ,E:"this.c_sharp.value === '0'"}]); //砲撃
 
-			WP_Motion = WP_Motion.concat([{N:"クイック",T:-1,M:hougeki.M * 15/10|0,ZT:1,ZP:hougeki.FZ * 15/10|0,E:"this.c_sharp.value === '0'"}]); //砲撃クイックリロード
+			WP_Motion = WP_Motion.concat([{N:"Qk Rel Shot",T:-1,M:hougeki.M * 15/10|0,ZT:1,ZP:hougeki.FZ * 15/10|0,E:"this.c_sharp.value === '0'"}]); //砲撃クイックリロード
 			WP_Motion = WP_Motion.concat([{N:"Backhop Slash",T:-1,M:hougeki.M * rengekiP/10|0,ZT:1,ZP:hougeki.FZ * rengekiP/10|0,E:"this.c_sharp.value === '0'"}]); //砲撃連撃
 			break;
 		}
 		hougeki = WP_Info.Bullet["Wyvern Fire "+hougekiType.split(" ").join("").replace("Shot","")];
 		switch (this.c_style.value) {
 		case "Earth":
-			WP_Motion = WP_Motion.concat([{N:hougeki.N,T:-1,M:hougeki.M,ZT:1,ZP:hougeki.FZ,C:"<br>x<i>5回</i>",E:"this.c_sharp.value === '0'"}]); //竜激砲
+			WP_Motion = WP_Motion.concat([{N:hougeki.N,T:-1,M:hougeki.M,ZT:1,ZP:hougeki.FZ,C:"<br>x<i>5x</i>",E:"this.c_sharp.value === '0'"}]); //竜激砲
 			hougeki = WP_Info.Bullet["S Wyvern Fire "+hougekiType.split(" ").join("").replace("Shot","")];
-			WP_Motion = WP_Motion.concat([{N:hougeki.N,T:-1,M:hougeki.M,ZT:1,ZP:hougeki.FZ,C:"<br>x<i>2回</i>",E:"this.c_sharp.value === '0'"}]); //爆竜轟砲
-			WP_Motion = WP_Motion.concat([{N:"加算",T:-1,M:hougeki.MA,ZT:1,ZP:hougeki.FZA,C:"<br>1装填分",E:"this.c_sharp.value === '0'"}]); //爆竜轟砲
+			WP_Motion = WP_Motion.concat([{N:hougeki.N,T:-1,M:hougeki.M,ZT:1,ZP:hougeki.FZ,C:"<br>x<i>2x</i>",E:"this.c_sharp.value === '0'"}]); //爆竜轟砲
+			WP_Motion = WP_Motion.concat([{N:"Addtnl",T:-1,M:hougeki.MA,ZT:1,ZP:hougeki.FZA,C:"<br>1Load",E:"this.c_sharp.value === '0'"}]); //爆竜轟砲
 			break;
 		case "Storm":
 			if (this.c_kobetu2.selectedIndex) {
@@ -1903,7 +1903,7 @@ for (var i = 0,j = 0,t = ""; i < maxMot; i++) {
 		break;
 	case -1: //他
 		if (WP_Motion[i].M) { //無属性+属性
-			t = "爆" + WP_Motion[i].M + (WP_Motion[i].ZT ? "+" + ZOKUNAME[WP_Motion[i].ZT] + WP_Motion[i].ZP : "");
+			t = "Explosion" + WP_Motion[i].M + (WP_Motion[i].ZT ? "+" + ZOKUNAME[WP_Motion[i].ZT] + WP_Motion[i].ZP : "");
 		} else if (WP_Motion[i].ZB) { //武器属性依存
 			t = "<small>属性</small>x" + (WP_Motion[i].ZB/100).toFixed(2);
 		} else { //属性のみ
