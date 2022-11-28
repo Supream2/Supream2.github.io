@@ -1819,18 +1819,18 @@ case 10: //弓
 		switch (this.c_bin.value) {
 		case "BA": //爆撃ビン
 			var yaLv = this.c_tame.value.charAt(2)-1;
-			var binPoint = WP_Info.BakuBin[this.c_tame.value.substring(0,4)];
+			var binPoint = WP_Info.BakuBin[this.c_tame.value.substring(0,3)];
 			break;
 		case "KG": //強撃ビン
 			break;
 		case "DA": //打撃ビン
-			var binPoint = WP_Info.DaBin[this.c_tame.value.substring(0,4)];
+			var binPoint = WP_Info.DaBin[this.c_tame.value.substring(0,3)];
 			break;
 		default: //状態異常ビン
 			var izyoName = IZYONAME[this.c_bin.value.charAt(1)];
-			var binPlus = +this.c_bin.value.charAt(2);
-			var yaLv = +this.c_tame.value.charAt(2)-1;
-			var binPoint = WP_Info.IzyoBin[this.c_tame.value.substring(0,4)];
+			var binPlus = +this.c_bin.value.charAt(3);
+			var yaLv = +this.c_tame.value.charAt(3)-1;
+			var binPoint = WP_Info.IzyoBin[this.c_tame.value.substring(0,3)];
 		}
 		var m = this.c_tame.selectedIndex ? 1 : WP_Motion.length;
 		for (var i = 0; i < m; i++) {
