@@ -1905,7 +1905,7 @@ for (var i = 0,j = 0,t = ""; i < maxMot; i++) {
 		if (WP_Motion[i].M) { //無属性+属性
 			t = "Explosion" + WP_Motion[i].M + (WP_Motion[i].ZT ? "+" + ZOKUNAME[WP_Motion[i].ZT] + WP_Motion[i].ZP : "");
 		} else if (WP_Motion[i].ZB) { //武器属性依存
-			t = "<small>Ele</small>x" + (WP_Motion[i].ZB/100).toFixed(2);
+			t = "<small>属性</small>x" + (WP_Motion[i].ZB/100).toFixed(2);
 		} else { //属性のみ
 			t = (WP_Motion[i].ZT ? ZOKUNAME[WP_Motion[i].ZT] + WP_Motion[i].ZP : "");
 		}
