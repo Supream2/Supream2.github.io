@@ -1180,7 +1180,7 @@ case 10: //弓
 		if (bin.indexOf("Slp") === -1) df.lastChild.style.backgroundColor = "lightpink";
 		if (bin.indexOf("Bmb") !== -1) o.setAttribute("value", "BA"),df.appendChild(o.cloneNode(false)),df.lastChild.appendChild(document.createTextNode("Bmb"+b));
 		if (bin.indexOf("Imp") !== -1) o.setAttribute("value", "DA"),df.appendChild(o.cloneNode(false)),df.lastChild.appendChild(document.createTextNode("Imp"+b));
-		this.c_bin.length = 1,this.c_bin.appendChild(df);
+		this.c_bin.length = 3,this.c_bin.appendChild(df);
 
 		this.cngTame();
 		if (debug) this.debug.innerText += "cngWpSub:" + (new Date().getTime() - time) + "\n";
