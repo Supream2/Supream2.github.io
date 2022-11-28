@@ -1053,8 +1053,8 @@ case 0: //大剣
 case 1: //ヘビィボウガン
 case 5: //ライトボウガン
 	if (WP_Rui === 1){ //ヘビィ
-		this.c_shot.length = 3,this.c_shot.options[0].text = "ﾘﾛｰﾄﾞ",this.c_shot.options[1].text = "圧縮",this.c_shot.options[2].text = "Ｐ";
-		this.c_kobetu1_Text.nodeValue = "パワーB",this.c_kobetu1.length = 2,this.c_kobetu1.options[1].text = "あり",this.c_kobetu1.selectedIndex = 1;
+		this.c_shot.length = 3,this.c_shot.options[0].text = "Reloadﾞ",this.c_shot.options[1].text = "Compress",this.c_shot.options[2].text = "Ｐ";
+		this.c_kobetu1_Text.nodeValue = "PowerB",this.c_kobetu1.length = 2,this.c_kobetu1.options[1].text = "Yes",this.c_kobetu1.selectedIndex = 1;
 	} else { //ライト
 		this.c_shot.length = 3,this.c_shot.options[0].text = "ｼｮｯﾄ",this.c_shot.options[1].text = "ｼﾞｬｽﾄ",this.c_shot.options[2].text = "Ｐ";
 	}
@@ -1134,7 +1134,7 @@ case 6: //双剣
 	break;
 case 7: //太刀
 	this.s_reach.style.display = "inline";
-	this.c_kobetu1_Text.nodeValue = "Spirit",this.c_kobetu1.length = 2,this.c_kobetu1.options[1].text = "Active";
+	this.c_kobetu1_Text.nodeValue = "Spirit Blade",this.c_kobetu1.length = 2,this.c_kobetu1.options[1].text = "Active";
 	this.c_kobetu2_Text.nodeValue = "Blade",this.c_kobetu2.length = 2,this.c_kobetu2.options[0].text = "None",this.c_kobetu2.options[1].text = "Mid Blade";
 	this.cngKobetu1 = function(){
 		if (!this.c_kobetu1.selectedIndex) this.c_tane.value = 0; //気刃なし状態 時限は強制解除
@@ -1228,8 +1228,8 @@ case 10: //弓
 case 11: //穿龍棍
 	this.c_houzyutu.disabled = this.c_taizyutu.disabled = false;
 	//this.c_kobetu1_Text.nodeValue = "ゲージ",this.c_kobetu1.length = 6,this.c_kobetu1.options[1].text = "１",this.c_kobetu1.options[2].text = "２",this.c_kobetu1.options[3].text = "３",this.c_kobetu1.options[4].text = "４",this.c_kobetu1.options[5].text = "５";
-	this.c_kobetu1_Text.nodeValue = "ゲージ";
-	this.c_kobetu2_Text.nodeValue = "リーチ",this.c_kobetu2.length = 2,this.c_kobetu2.options[0].text = "長",this.c_kobetu2.options[1].text = "短";
+	this.c_kobetu1_Text.nodeValue = "Guage";
+	this.c_kobetu2_Text.nodeValue = "Length",this.c_kobetu2.length = 2,this.c_kobetu2.options[0].text = "Long",this.c_kobetu2.options[1].text = "Short";
 	//リーチを変えたらモーションを変更
 	this.cngKobetu2 = function(){this.setMotion();}
 	break;
@@ -1282,7 +1282,7 @@ case 1: //ヘビィボウガン
 			o.setAttribute("value", "150"),df.appendChild(o.cloneNode(false)),df.lastChild.appendChild(document.createTextNode("３"));
 			this.heavy_tame = df;
 		}
-		this.c_kobetu2_Text.nodeValue = "溜め",this.c_kobetu2.length = 0,this.c_kobetu2.appendChild(this.heavy_tame.cloneNode(true));
+		this.c_kobetu2_Text.nodeValue = "Charge",this.c_kobetu2.length = 0,this.c_kobetu2.appendChild(this.heavy_tame.cloneNode(true));
 		break;
 	}
 	break;
@@ -1294,7 +1294,7 @@ case 5: //ライトボウガン
 		this.c_kobetu2_Text.nodeValue = "",this.c_kobetu2.selectedIndex = 0;
 		break;
 	case "Storm":
-		this.c_kobetu2_Text.nodeValue = "ステップ",this.c_kobetu2.length = 2,this.c_kobetu2.options[0].text = "なし",this.c_kobetu2.options[1].text = "あり";
+		this.c_kobetu2_Text.nodeValue = "Step Shot",this.c_kobetu2.length = 2,this.c_kobetu2.options[0].text = "None",this.c_kobetu2.options[1].text = "Yes";
 		this.c_kobetu2.selectedIndex = 1;
 		break;
 	}
@@ -1307,7 +1307,7 @@ case 9: //ガンランス
 		break;
 	case "Heaven":
 	case "Storm":
-		this.c_kobetu2_Text.nodeValue = "ＨＢ",this.c_kobetu2.length = 2,this.c_kobetu2.options[0].text = "なし",this.c_kobetu2.options[1].text = "発動";
+		this.c_kobetu2_Text.nodeValue = "ＨＢ",this.c_kobetu2.length = 2,this.c_kobetu2.options[0].text = "None",this.c_kobetu2.options[1].text = "Active";
 		this.c_kobetu2.selectedIndex = 1;
 		break;
 	}
@@ -1349,7 +1349,7 @@ if (debug) this.debug.innerText += "cngStyle:" + (new Date().getTime() - time) +
 switch (WP_Rui) {
 case 2: //ハンマー
 	if (this.c_hiden.value >= 12) {
-		this.c_kobetu1_Text.nodeValue = "溜め",this.c_kobetu1.length = 2,this.c_kobetu1.options[1].text = "瞬撃";
+		this.c_kobetu1_Text.nodeValue = "Charge",this.c_kobetu1.length = 2,this.c_kobetu1.options[1].text = "Instant Atk";
 	} else {
 		this.c_kobetu1_Text.nodeValue = "",this.c_kobetu1.selectedIndex = 0;
 	}
