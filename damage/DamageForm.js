@@ -2369,7 +2369,7 @@ default:
 	if (WP_Rui === 8) { //狩猟笛
 		t += "<a class=f href='gakufu.htm?"+eq[I_aREACH]+"' target=_blank>"+ONPUCOLOR[eq[I_aREACH].charAt(0)]+ONPUCOLOR[eq[I_aREACH].charAt(1)]+ONPUCOLOR[eq[I_aREACH].charAt(2)]+"</a>";
 	} else if (WP_Rui === 9) { //ガンランス
-		eq[I_aREACH] = eq[I_aREACH].substring(0,13) + eqSinka[6];
+		eq[I_aREACH] = eq[I_aREACH].substring(0,7) + eqSinka[6];
 		t += "<small>" + eq[I_aREACH] + "</small>";
 	} else if (WP_Rui === 12) { //スラッシュアックス
 		t += "<small>" + eq[I_aREACH] + "</small>";
@@ -2445,7 +2445,7 @@ default:
 	if (WP_Rui === 8) { //狩猟笛
 		t += "<a class=f href='gakufu.htm?"+eq[I_aREACH]+"' target=_blank>"+ONPUCOLOR[eq[I_aREACH].charAt(0)]+ONPUCOLOR[eq[I_aREACH].charAt(1)]+ONPUCOLOR[eq[I_aREACH].charAt(2)]+"</a>";
 	} else if (WP_Rui === 9) { //ガンランス
-		eq[I_aREACH] = eq[I_aREACH].substring(0,13) + eqG[5];
+		eq[I_aREACH] = eq[I_aREACH].substring(0,7) + eqG[5];
 		t += "<small>" + eq[I_aREACH] + "</small>";
 	} else if (WP_Rui === 12) { //スラッシュアックス
 		t += "<small>" + eq[I_aREACH] + "</small>";
