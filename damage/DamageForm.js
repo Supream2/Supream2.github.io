@@ -2218,7 +2218,7 @@ default:
 	} else if (WP_Rui === 9 || WP_Rui === 12) { //ガンランス,スラッシュアックス
 		t += "<small>" + eq[I_aREACH] + "</small>";
 	} else if (eq[I_aREACH]) {
-		t += "<small>リーチ：" + eq[I_aREACH] + "</small>";
+		t += "<small>Length：" + eq[I_aREACH] + "</small>";
 	}
 }
 this.d_spec.innerHTML = t;
@@ -2374,7 +2374,7 @@ default:
 	} else if (WP_Rui === 12) { //スラッシュアックス
 		t += "<small>" + eq[I_aREACH] + "</small>";
 	} else if (eq[I_aREACH]) {
-		t += "<small>リーチ：" + eq[I_aREACH] + "</small>";
+		t += "<small>Length：" + eq[I_aREACH] + "</small>";
 	}
 	this.d_spec.innerHTML = t;
 }
@@ -2450,7 +2450,7 @@ default:
 	} else if (WP_Rui === 12) { //スラッシュアックス
 		t += "<small>" + eq[I_aREACH] + "</small>";
 	} else if (eq[I_aREACH]) {
-		t += "<small>リーチ：" + eq[I_aREACH] + "</small>";
+		t += "<small>Length：" + eq[I_aREACH] + "</small>";
 	}
 	this.d_spec.innerHTML = t;
 	break;
@@ -2503,7 +2503,7 @@ default:
 	} else if (WP_Rui === 9) { //ガンランス
 		t += "<small>" + this.c_tenrouGuns.value + "砲撃" + this.c_tenrouGunsLv.value + "</small>";
 	} else if (eq[I_aREACH]) {
-		t += "<small>リーチ：" + eq[I_aREACH] + "</small>";
+		t += "<small>Length：" + eq[I_aREACH] + "</small>";
 	}
 }
 this.d_spec.innerHTML = t;
