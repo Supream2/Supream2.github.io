@@ -1818,8 +1818,8 @@ case 10: //弓
 	if (this.c_bin.value) {
 		switch (this.c_bin.value) {
 		case "BA": //爆撃ビン
-			var yaLv = this.c_tame.value.charAt(3)-1;
-			var binPoint = WP_Info.BakuBin[this.c_tame.value.substring(0,3)];
+			var yaLv = this.c_tame.value.charAt(4)-1;
+			var binPoint = WP_Info.BakuBin[this.c_tame.value.substring(0,4)];
 			break;
 		case "KG": //強撃ビン
 			break;
