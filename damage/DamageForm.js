@@ -2013,18 +2013,6 @@ case 10: //弓
 		case "4":
 			t += (t ? " && " : "") + new RegExp("...:...:...:" + this.s_ya.value + ".") + ".test(e_ya)";
 			break;
-		case "5":
-			t += (t ? " && " : "") + new RegExp("....:....:....:" + this.s_ya.value + ".") + ".test(e_ya)";
-			break;
-		case "6":
-			t += (t ? " && " : "") + new RegExp("....:....:" + this.s_ya.value + ".:....") + ".test(e_ya)";
-			break;
-		case "7":
-			t += (t ? " && " : "") + new RegExp("....:" + this.s_ya.value + ".:....:....") + ".test(e_ya)";
-			break;
-		case "8":
-			t += (t ? " && " : "") + new RegExp(this.s_ya.value + ".:....:....:....") + ".test(e_ya)";
-			break;
 		}
 	}
 	if (this.s_bin.value) t += (t ? " && " : "") + "e_bin.lastIndexOf(\"" + this.s_bin.value + "\") !== -1";
