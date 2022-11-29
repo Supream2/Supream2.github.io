@@ -1073,7 +1073,7 @@ case 5: //ライトボウガン
 				} else {
 					c = +eq[I_aGUN+i] + this.c_tamaAdd.checked;
 				}
-				df.lastChild.appendChild(document.createTextNode(WP_Info.Bullet[i].N + ":" + c + "発"));
+				df.lastChild.appendChild(document.createTextNode(WP_Info.Bullet[i].N + ":" + c + " Ammo"));
 			}
 		}
 		//個別設定
@@ -1612,7 +1612,7 @@ case 5: //ライト
 			//圧縮撃ち
 			if (this.c_shot.selectedIndex && +this.c_tama.value < 28) {
 				//弾数
-				var s = Math.abs(this.c_tama.options[this.c_tama.selectedIndex].text.split(":")[1].replace("発",""));
+				var s = Math.abs(this.c_tama.options[this.c_tama.selectedIndex].text.split(":")[1].replace(" Ammo",""));
 				if (this.c_shot.selectedIndex === 1) { //圧縮
 					var tama = (function (e){var F = function(){};F.prototype = e;return new F;})(WP_Info.Bullet["C"+this.c_tama.value]);
 				} else { //パーフェクト圧縮
