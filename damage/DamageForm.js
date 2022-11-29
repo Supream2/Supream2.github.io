@@ -1776,7 +1776,7 @@ case 10: //弓
 		if (this.c_tame.selectedIndex === 1) {
 			//Arc
 			WP_Motion = [(function (e){var F = function(){};F.prototype = e;return new F;})(WP_Info.Bullet[this.c_tame.value])];
-			WP_Motion[0].C = WP_Motion[0].C.substring(4);	//余計なのが入るので消し
+			WP_Motion[0].C = WP_Motion[0].C.substring(3);	//余計なのが入るので消し
 			WP_Motion[0].ZH = 70;	//曲射は属性0.7倍
 			WP_Motion = WP_Motion.concat([{N:"-",P:10,C:"x"}]);
 			if (this.c_tame.value === "Bomb") {	//爆裂の無属性
@@ -1845,7 +1845,7 @@ case 10: //弓
 					} else {
 						WP_Motion[i].M = binPoint[yaLv];
 					}
-					if (i === 2 && this.c_tame.value === "Bomb") WP_Motion[2].M = WP_Info.BakuBin["爆裂追加"];
+					if (i === 2 && this.c_tame.value === "Bmb") WP_Motion[2].M = WP_Info.BakuBin["爆裂追加"];
 				} else { //近接
 						WP_Motion[i].M = binPoint[this.c_style.value === "Earth" ? "Normal Shot" : "TenRan"];
 				}
