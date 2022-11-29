@@ -1235,7 +1235,7 @@ case 11: //穿龍棍
 	break;
 }
 //表示
-this.damage_head.rows[1].cells[0].innerHTML = "武器補正<br>"+BUKITYPE[WP_Info.Type] + WP_Info.Hosei + (WP_Info.Type === 2 ? "%<br>(Stun)" : WP_Rui === 3 ? "%<br>Imp72%" : "%");
+this.damage_head.rows[1].cells[0].innerHTML = "Wep Multiplier<br>"+BUKITYPE[WP_Info.Type] + WP_Info.Hosei + (WP_Info.Type === 2 ? "%<br>(Stun)" : WP_Rui === 3 ? "%<br>Imp72%" : "%");
 
 //個別設定の切り替え
 this.c_kobetu1.style.display = this.c_kobetu1_Text.nodeValue ? "inline" : "none";
