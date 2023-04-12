@@ -65,9 +65,9 @@ var creSaiLink = function (data,obj,rank,season) {
 			map_id = Saisyu_Id[w[0]] + "-";
 		txt += Saisyu_Name[w[0]] + " Area:" +
 				(w[3].indexOf("h") !== -1	? w[3].replace("h"," <span id=\"" + map_id + w[1] + "." + map_id + rank + "." + w[2] + "." + season + i + "\"><span class=h>Day</span> ")
-											: w[3].replace("★"," <span id=\"" + map_id + w[1] + "." + map_id + rank + "." + w[2] + "." + season + i + "\"><span class=★>Night</span> ")
+											: w[3].replace("y"," <span id=\"" + map_id + w[1] + "." + map_id + rank + "." + w[2] + "." + season + i + "\"><span class=y>Night</span> ")
 				) + "%</span>" +
-				(w.length > 4	? " <span id=\"" + map_id + w[4] + "." + map_id + rank + "." + w[5] + "." + season + i + "\"><span class=★>Night</span> " + w[6] + "%</span><br>"
+				(w.length > 4	? " <span id=\"" + map_id + w[4] + "." + map_id + rank + "." + w[5] + "." + season + i + "\"><span class=y>Night</span> " + w[6] + "%</span><br>"
 								: "<br>");
 	}
 	obj.innerHTML = txt;/*.replace(/s /g," Mining ").replace(/m /g," Insects ").replace(/t /g," Fishing ")*/;
