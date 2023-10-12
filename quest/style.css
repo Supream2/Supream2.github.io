@@ -7,7 +7,7 @@ b {font-family: "ＭＳ ゴシック",sans-serif; border-right:2px ridge #ffffff
 body {width:65em}
 .g{background-color:gainsboro;} /*期間外*/
 .e{background-color:cornsilk;} /*EX*/
-.r{background-color:98f498;} /*猟団*/
+.r{background-color:#98f498;} /*猟団*/
 .h{background-color:gray;} /*廃止*/
 i {font-style:normal;display:block;font-size:80%;} /*期間*/
 
